@@ -2,10 +2,10 @@
 
 ## Game Description
 
-The OVERKILL is a rogue-like shooter based game where you have to murder different waves of enemies, obtaining coins with each kill and having the chance to level up your power with the help of new guns.
-The variety of levels will have increased difficulty with different bullet speeds and strategic enemies.
+The POKER BOMB is a card-like based game where you have to combine different types of poker-hands, completing the requests will give you the chance to level up and retrieve your rewards.
+The variety of levels will have increased difficulty with different types of cards and requests.
 
-This project was developed by Donal Knuth (knuth@edu.fe.up.pt), Timothy J. Berners-Lee (timothy@edu.fe.up.pt) and Vinton G. Cerf (vinton@edu.fe.up.pt) for LDTS 2021-22.
+This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro (up202008133@up.pt) and Alexandre Sa (up201905383@up.pt) for LDTS 2021-22.
 
 ## Implemented Features
 
