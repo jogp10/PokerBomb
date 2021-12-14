@@ -1,4 +1,4 @@
-# LDTS_T12_G03 - OVERKILL
+# LDTS_T12_G03 - POKER BOMB
 
 ## Game Description
 
@@ -17,13 +17,14 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 - **Connected Menus** - The user has the capability of browsing through the different menus including in game ones. (Ex: Main Menu, Instructions, Play, Shop and Pause).
 - **Buttons** - Functional and interactive buttons.
 - **Mouse and Keyboard control** - The mouse and keyboard inputs are received through the respective events and interpreted according to the current game state.
-- **Different levels** - 20 different levels with an increasing difficulty were implemented.
+- **Different levels** - Different levels with an increasing difficulty will be implemented.
+- **Quests** - To level up is a must complete the quests within the time.
 - **Shop interaction and money management** - The player may buy new items in the in game shop, some of which consist of new power-ups.
 - **Animations** - Several animations are incorporated in this game, like card explosions, win and loss messages or level loading.
-- **Cards** - The game will have different types of cards, which represent different requests in order to complete the tasks successfully.
-- **Power-ups** - In the game store the player will be able to spend money earned by completing objectives to buy power-ups (ex: score multiplier upgrades).
-- **Seasons** - When the player completes a certain number of levels, new power-ups will be added to the game, or a free gift may be given to the player, like a money boost or a free power-up.
-- **
+- **Cards** - Several types of cards to deal with  (from time limited cards, to limited plays and frozen cards).
+- **Power Ups** - Implementation of power-ups (e.g. Unfreeze cards, stop the time, extra time).
+- **Seasons** - A season is determined by the number of levels passed and for each new season unlocks upgrades. New power-ups will be added to the game, or a free gift may be given to the player, like a money boost or a free power-up.
+- **Build your own level** - We invite you to collaborate with us and make your level from scratch.
 
 
 
