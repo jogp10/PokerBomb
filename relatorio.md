@@ -1,4 +1,4 @@
-# LDTS_T06_G01 - OVERKILL
+# LDTS_T12_G03 - OVERKILL
 
 ## Game Description
 
@@ -9,18 +9,23 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 
 ## Implemented Features
 
-- **Connected Menus** - The user has the capability of browsing through the different menus including in game ones. (Ex: Main Menu, Instructions, Play, Shop and Pause).
-- **Buttons** - Functional and interactive buttons.
-- **Mouse and Keyboard control** - The mouse and keyboard inputs are received through the respective events and interpreted according to the current game state.
-- **Player control** - The player may move with the keyboard control and shoot his gun when the left mouse button is pressed.
-- **Collisions detection** - Collisions between different objects are verified. (Ex: Player, Bombs, Enemies, Obstacles).
-- **Different levels** - 7 different levels with an increasing difficulty were implemented.
-- **Shop interaction and money management** - The player may buy new items in the in game shop, some of which consist of new weapons, power ups and potions.
-- **Animations** - Several animations are incorporated in this game, from bomb explosions to level loading and the effects of consuming potions.
+
+
 
 ## Planned Features
 
-All the planned features were successfully implemented.
+- **Connected Menus** - The user has the capability of browsing through the different menus including in game ones. (Ex: Main Menu, Instructions, Play, Shop and Pause).
+- **Buttons** - Functional and interactive buttons.
+- **Mouse and Keyboard control** - The mouse and keyboard inputs are received through the respective events and interpreted according to the current game state.
+- **Different levels** - 20 different levels with an increasing difficulty were implemented.
+- **Shop interaction and money management** - The player may buy new items in the in game shop, some of which consist of new power-ups.
+- **Animations** - Several animations are incorporated in this game, like card explosions, win and loss messages or level loading.
+- **Cards** - The game will have different types of cards, which represent different requests in order to complete the tasks successfully.
+- **Power-ups** - In the game store the player will be able to spend money earned by completing objectives to buy power-ups (ex: score multiplier upgrades).
+- **Seasons** - When the player completes a certain number of levels, new power-ups will be added to the game, or a free gift may be given to the player, like a money boost or a free power-up.
+- **
+
+
 
 ## Design
 
