@@ -26,5 +26,3 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 - **Power Ups** - Implementation of power-ups (e.g. Unfreeze cards, stop the time, extra time).
 - **Seasons** - A season is determined by the number of levels passed and for each new season unlocks upgrades. New power-ups will be added to the game, or a free gift may be given to the player, like a money boost or a free power-up.
 - **Build your own level** - We invite you to collaborate with us and make your level from scratch.
-
-
