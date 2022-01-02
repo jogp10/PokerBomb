@@ -6,7 +6,7 @@ public class DynamiteCard extends Card{
         numberOfPlaysUntilDynamite = 5;
     }
 
-    public void removePlays() { numberOfPlaysUntilDynamite--; }
+    public void removePlays() { removePlays(1); }
     public void removePlays(int number_plays) {numberOfPlaysUntilDynamite-=number_plays; }
 
     public int getNumberOfPlaysTillDynamite() { return numberOfPlaysUntilDynamite; }
