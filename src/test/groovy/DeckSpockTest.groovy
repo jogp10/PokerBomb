@@ -10,7 +10,7 @@ class DeckSpockTest extends Specification{
             Card card = deck.getCard(0)
 
         then:
-            card.getValue() == Value.TWO
+            card.getValue() == Rank.TWO
             card.getSuit() == Suit.HEART
     }
 }

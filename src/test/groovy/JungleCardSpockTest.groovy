@@ -3,7 +3,7 @@ import spock.lang.Specification
 class JungleCardSpockTest extends Specification{
     def 'JungleCard removePlays'() {
         given:
-            Card jungleCard = new JungleCard(Suit.DIAMOND, Value.JACK)
+            Card jungleCard = new JungleCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             jungleCard.removeLayers()
@@ -14,7 +14,7 @@ class JungleCardSpockTest extends Specification{
 
     def 'JungleCard removePlays 2'() {
         given:
-            Card jungleCard = new JungleCard(Suit.DIAMOND, Value.JACK)
+            Card jungleCard = new JungleCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             jungleCard.removeLayers(2)
@@ -25,7 +25,7 @@ class JungleCardSpockTest extends Specification{
 
     def 'JungleCard constructor'() {
         given:
-            Card jungleCard = new JungleCard(Suit.DIAMOND, Value.JACK)
+            Card jungleCard = new JungleCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             int numberOfLayers = jungleCard.getNumberOfLayers()

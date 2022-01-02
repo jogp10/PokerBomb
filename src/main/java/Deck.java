@@ -14,9 +14,9 @@ public class Deck {
     public void createFullDeck() {
         // Generate Cards
         for(Suit cardSuit : Suit.values()) {
-            for(Value cardValue : Value.values()) {
+            for(Rank cardRank : Rank.values()) {
                 // Add a new card to the deck
-                this.cards.add( new Card(cardSuit, cardValue));
+                this.cards.add( new Card(cardSuit, cardRank));
             }
         }
     }
@@ -71,4 +71,7 @@ public class Deck {
         return comingFrom.removeCard(cardToDraw);
     }
 
+    public ArrayList<Card> getDeck(){
+        return cards;
+    }
 }

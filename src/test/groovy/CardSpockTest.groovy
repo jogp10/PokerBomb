@@ -4,7 +4,7 @@ class CardSpockTest extends Specification {
 
     def 'Card Suit'() {
         given:
-            Card card = new Card(Suit.CLUB, Value.ACE)
+            Card card = new Card(Suit.CLUB, Rank.ACE)
 
         when:
             Suit suit = card.getSuit()
@@ -15,7 +15,7 @@ class CardSpockTest extends Specification {
 
     def 'Card to string'() {
         given:
-            Card card = new Card(Suit.DIAMOND, Value.ACE)
+            Card card = new Card(Suit.DIAMOND, Rank.ACE)
 
         when:
             String string = card.toString()
@@ -26,13 +26,13 @@ class CardSpockTest extends Specification {
 
     def 'Card Value'() {
         given:
-            Card card = new Card(Suit.CLUB, Value.ACE)
+            Card card = new Card(Suit.CLUB, Rank.ACE)
 
         when:
-            Value value = card.getValue()
+            Rank value = card.getValue()
 
         then:
-            value == Value.ACE
+            value == Rank.ACE
     }
 
 }

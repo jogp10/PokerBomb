@@ -1,8 +1,8 @@
 public class BomberCard extends Card{
     int numberOfPlaysUntilBomb;
 
-    public BomberCard(Suit suit, Value value) {
-        super(suit, value);
+    public BomberCard(Suit suit, Rank rank) {
+        super(suit, rank);
         numberOfPlaysUntilBomb = 7;
     }
 

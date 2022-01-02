@@ -1,8 +1,8 @@
 public class JungleCard extends Card{
     private int numberOfLayers;
 
-    public JungleCard(Suit suit, Value value) {
-        super(suit, value);
+    public JungleCard(Suit suit, Rank rank) {
+        super(suit, rank);
         numberOfLayers = 3;
     }
 

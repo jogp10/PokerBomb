@@ -4,7 +4,7 @@ class FrozenCardSpockTest extends Specification{
 
     def 'FrozenCard removeLayers'() {
         given:
-            Card frozenCard = new FrozenCard(Suit.DIAMOND, Value.JACK)
+            Card frozenCard = new FrozenCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             frozenCard.removeLayers()
@@ -15,7 +15,7 @@ class FrozenCardSpockTest extends Specification{
 
     def 'FrozenCard removeLayers 2'() {
         given:
-            Card frozenCard = new FrozenCard(Suit.DIAMOND, Value.JACK)
+            Card frozenCard = new FrozenCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             frozenCard.removeLayers(2)
@@ -26,7 +26,7 @@ class FrozenCardSpockTest extends Specification{
 
     def 'FrozenCard constructor'() {
         given:
-            Card frozenCard = new FrozenCard(Suit.DIAMOND, Value.JACK)
+            Card frozenCard = new FrozenCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             int numberOfLayers = frozenCard.getNumberOfLayers()

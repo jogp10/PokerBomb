@@ -3,7 +3,7 @@ import spock.lang.Specification
 class DynamiteCardSpockTest extends Specification{
     def 'DynamiteCard removePlays'() {
         given:
-            Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Value.JACK)
+            Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             dynamiteCard.removePlays()
@@ -14,7 +14,7 @@ class DynamiteCardSpockTest extends Specification{
 
     def 'DynamiteCard removePlays 2'() {
         given:
-            Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Value.JACK)
+            Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             dynamiteCard.removePlays(2)
@@ -25,7 +25,7 @@ class DynamiteCardSpockTest extends Specification{
 
     def 'DynamiteCard constructor'() {
         given:
-            Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Value.JACK)
+            Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             int numberOfPlaysTillDynamite = dynamiteCard.getNumberOfPlaysTillDynamite()

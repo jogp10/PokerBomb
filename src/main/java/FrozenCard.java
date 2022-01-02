@@ -1,8 +1,8 @@
 public class FrozenCard extends Card{
     private int numberOfLayers;
 
-    public FrozenCard(Suit suit, Value value) {
-        super(suit, value);
+    public FrozenCard(Suit suit, Rank rank) {
+        super(suit, rank);
         numberOfLayers = 2;
     }
 

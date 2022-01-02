@@ -1,4 +1,4 @@
-public enum Value {
+public enum Rank {
     TWO,
     THREE,
     FOUR,

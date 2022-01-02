@@ -1,8 +1,8 @@
 public class DynamiteCard extends Card{
     private int numberOfPlaysUntilDynamite;
 
-    public DynamiteCard(Suit suit, Value value) {
-        super(suit, value);
+    public DynamiteCard(Suit suit, Rank rank) {
+        super(suit, rank);
         numberOfPlaysUntilDynamite = 5;
     }
 

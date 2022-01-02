@@ -4,7 +4,7 @@ class BomberCardSpockTest extends Specification{
 
     def 'BomberCard removePlays'() {
         given:
-            Card bomberCard = new BomberCard(Suit.DIAMOND, Value.JACK)
+            Card bomberCard = new BomberCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             bomberCard.removePlays()
@@ -15,7 +15,7 @@ class BomberCardSpockTest extends Specification{
 
     def 'BomberCard removePlays 2'() {
         given:
-            Card bomberCard = new BomberCard(Suit.DIAMOND, Value.JACK)
+            Card bomberCard = new BomberCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             bomberCard.removePlays(2)
@@ -26,7 +26,7 @@ class BomberCardSpockTest extends Specification{
 
     def 'BomberCard constructor'() {
         given:
-            Card bomberCard = new BomberCard(Suit.DIAMOND, Value.JACK)
+            Card bomberCard = new BomberCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             int numberOfPlaysTillBomb = bomberCard.getNumberOfPlaysTillBomb()
