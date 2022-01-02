@@ -8,17 +8,9 @@ import java.util.ArrayList;
 
 public class Application {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Menu menu = new Menu();
+        //menu.mainMenu();
 
-        try {
-            Terminal terminal = new DefaultTerminalFactory().createTerminal();
-            Screen screen = new TerminalScreen(terminal);
-            screen.setCursorPosition(null); // we don't need a cursor
-            screen.startScreen(); // screens must be started
-            screen.doResizeIfNecessary(); // resize screen if necessary
-        }catch (IOException e){
-            e.printStackTrace();
-        }
 
         // Player's info
             long playerCoins = 0;
@@ -35,6 +27,5 @@ public class Application {
             int numberOfShelfs = 2; // it can be a diferent value
             ArrayList<Deck> shelfsDeck = new ArrayList<>();
             for(int i=0; i<numberOfShelfs; i++) shelfsDeck.add(new Deck());
-
     }
 }
