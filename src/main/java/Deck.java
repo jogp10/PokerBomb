@@ -70,4 +70,5 @@ public class Deck {
         this.cards.add(comingFrom.getCard(cardToDraw));
         return comingFrom.removeCard(cardToDraw);
     }
+
 }

@@ -7,6 +7,10 @@ class DeckSpockTest extends Specification{
 
         when:
             deck.createFullDeck()
-            deck
+            Card card = deck.getCard(0)
+
+        then:
+            card.getValue() == Value.TWO
+            card.getSuit() == Suit.HEART
     }
 }
