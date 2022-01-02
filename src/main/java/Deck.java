@@ -8,7 +8,7 @@ public class Deck {
 
     // construct
     public Deck() {
-        this.cards = new ArrayList<Card>();
+        this.cards = new ArrayList<>();
     }
 
     public void createFullDeck() {
@@ -22,19 +22,19 @@ public class Deck {
     }
 
     public String toString() {
-        String cardListOutput = "";
+        StringBuilder cardListOutput = new StringBuilder();
         for(Card card: this.cards) {
-            cardListOutput += "\n" + card.toString();
+            cardListOutput.append("\n").append(card.toString());
         }
-        return cardListOutput;
+        return cardListOutput.toString();
     }
 
     public void shuffle() {
-        ArrayList<Card> tmpDeck = new ArrayList<Card>();
+        ArrayList<Card> tmpDeck = new ArrayList<>();
 
         // Random
         Random random = new Random();
-        int randomCardIndex = 0;
+        int randomCardIndex;
         int originalSize = this.cards.size();
 
         for( int i = 0; i < originalSize; i++) {
@@ -63,7 +63,11 @@ public class Deck {
     }
 
     //Draws from the deck
-    public Card draw() {
-        return this.getCard(0);
+    public Card draw(Deck comingFrom) {
+        return this.draw(comingFrom, 0);
+    }
+    public Card draw(Deck comingFrom, int cardToDraw) {
+        this.cards.add(comingFrom.getCard(cardToDraw));
+        return comingFrom.removeCard(cardToDraw);
     }
 }
