@@ -1,3 +1,5 @@
+package com.pockerbomb;
+
 import java.util.ArrayList;
 
 public class Hand {

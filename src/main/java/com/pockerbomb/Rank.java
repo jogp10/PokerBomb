@@ -1,3 +1,5 @@
+package com.pockerbomb;
+
 public enum Rank {
     TWO,
     THREE,

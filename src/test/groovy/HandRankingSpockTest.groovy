@@ -1,8 +1,13 @@
+import com.pockerbomb.Card
+import com.pockerbomb.Deck
+import com.pockerbomb.Hand
+import com.pockerbomb.Rank
+import com.pockerbomb.Suit
 import spock.lang.Specification
 
 class HandRankingSpockTest extends Specification {
 
-    def 'Royal Flush Hand'() {
+    def 'Royal Flush com.pockerbomb.Hand'() {
         given:
         Card card1 = new Card(Suit.HEART, Rank.TEN)
         Card card2 = new Card(Suit.HEART, Rank.JACK)
@@ -25,7 +30,7 @@ class HandRankingSpockTest extends Specification {
         royalFlush == "Royal Flush"
     }
 
-    def 'Straight Flush Hand'() {
+    def 'Straight Flush com.pockerbomb.Hand'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.SEVEN)
         Card card2 = new Card(Suit.DIAMOND, Rank.EIGHT)
@@ -48,7 +53,7 @@ class HandRankingSpockTest extends Specification {
         straightFlush == "Straight Flush"
     }
 
-    def 'Four of a Kind Hand'() {
+    def 'Four of a Kind com.pockerbomb.Hand'() {
         given:
         Card card1 = new Card(Suit.HEART, Rank.NINE)
         Card card2 = new Card(Suit.SPADE, Rank.NINE)
@@ -71,7 +76,7 @@ class HandRankingSpockTest extends Specification {
         fourOfAKind == "Four of a Kind"
     }
 
-    def 'Full House Hand'() {
+    def 'Full House com.pockerbomb.Hand'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.SIX)
         Card card2 = new Card(Suit.SPADE, Rank.SIX)
@@ -94,7 +99,7 @@ class HandRankingSpockTest extends Specification {
         fullHouse == "Full House"
     }
 
-    def 'Flush Hand'() {
+    def 'Flush com.pockerbomb.Hand'() {
         given:
         Card card1 = new Card(Suit.HEART, Rank.TWO)
         Card card2 = new Card(Suit.HEART, Rank.SEVEN)
@@ -117,7 +122,7 @@ class HandRankingSpockTest extends Specification {
         flush == "Flush"
     }
 
-    def 'Straight Hand'() {
+    def 'Straight com.pockerbomb.Hand'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.THREE)
         Card card2 = new Card(Suit.CLUB, Rank.FOUR)
@@ -140,13 +145,13 @@ class HandRankingSpockTest extends Specification {
         straight == "Straight"
     }
 
-    def 'Three of a Kind Hand'() {
+    def 'Three of a Kind com.pockerbomb.Hand'() {
         given:
         Card card1 = new Card(Suit.HEART, Rank.EIGHT)
         Card card2 = new Card(Suit.SPADE, Rank.EIGHT)
         Card card3 = new Card(Suit.CLUB, Rank.EIGHT)
         Card card4 = new Card(Suit.CLUB, Rank.TWO)
-        //Card card5 = new Card(Suit.DIAMOND, Rank.TEN)
+        //com.pockerbomb.Card card5 = new com.pockerbomb.Card(com.pockerbomb.Suit.DIAMOND, com.pockerbomb.Rank.TEN)
 
         Deck deck = new Deck()
 
@@ -163,7 +168,7 @@ class HandRankingSpockTest extends Specification {
         threeOfAKind == "Three of a Kind"
     }
 
-    def 'Two Pairs Hand'() {
+    def 'Two Pairs com.pockerbomb.Hand'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.QUEEN)
         Card card2 = new Card(Suit.SPADE, Rank.QUEEN)
@@ -186,7 +191,7 @@ class HandRankingSpockTest extends Specification {
         twoPairs == "Two Pairs"
     }
 
-    def 'Pair Hand'() {
+    def 'Pair com.pockerbomb.Hand'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.NINE)
         Card card2 = new Card(Suit.HEART, Rank.NINE)
@@ -208,8 +213,8 @@ class HandRankingSpockTest extends Specification {
     def 'None'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.ACE)
-        //Card card2 = new Card(Suit.HEART, Rank.NINE)
-        //Card card3 = new Card(Suit.SPADE, Rank.TEN)
+        //com.pockerbomb.Card card2 = new com.pockerbomb.Card(com.pockerbomb.Suit.HEART, com.pockerbomb.Rank.NINE)
+        //com.pockerbomb.Card card3 = new com.pockerbomb.Card(com.pockerbomb.Suit.SPADE, com.pockerbomb.Rank.TEN)
 
         Deck deck = new Deck()
 

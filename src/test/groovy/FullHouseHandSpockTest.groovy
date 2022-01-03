@@ -1,7 +1,12 @@
+import com.pockerbomb.Card
+import com.pockerbomb.Deck
+import com.pockerbomb.Hand
+import com.pockerbomb.Rank
+import com.pockerbomb.Suit
 import spock.lang.Specification
 
 class FullHouseHandSpockTest extends Specification {
-    def 'Full House Hand 1'() {
+    def 'Full House com.pockerbomb.Hand 1'() {
         given:
         Card card1 = new Card(Suit.CLUB, Rank.TWO)
         Card card2 = new Card(Suit.DIAMOND, Rank.TWO)
@@ -22,7 +27,7 @@ class FullHouseHandSpockTest extends Specification {
         fullHouse
     }
 
-    def 'Full House Hand 2'() {
+    def 'Full House com.pockerbomb.Hand 2'() {
         given:
         Card card1 = new Card(Suit.CLUB, Rank.SIX)
         Card card2 = new Card(Suit.SPADE, Rank.SIX)
@@ -43,7 +48,7 @@ class FullHouseHandSpockTest extends Specification {
         fullHouse
     }
 
-    def 'Full House Hand 3'() {
+    def 'Full House com.pockerbomb.Hand 3'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.QUEEN)
         Card card2 = new Card(Suit.HEART, Rank.QUEEN)

@@ -1,7 +1,12 @@
+import com.pockerbomb.Card
+import com.pockerbomb.Deck
+import com.pockerbomb.Hand
+import com.pockerbomb.Rank
+import com.pockerbomb.Suit
 import spock.lang.Specification
 
 class ThreeOfAKindHandSpockTest extends Specification {
-    def 'Three of a Kind Hand 1'() {
+    def 'Three of a Kind com.pockerbomb.Hand 1'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.FOUR)
         Card card2 = new Card(Suit.HEART, Rank.FOUR)
@@ -22,7 +27,7 @@ class ThreeOfAKindHandSpockTest extends Specification {
         threeOfAKind
     }
 
-    def 'Three of a Kind Hand 2'() {
+    def 'Three of a Kind com.pockerbomb.Hand 2'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.THREE)
         Card card2 = new Card(Suit.CLUB, Rank.TEN)
@@ -43,7 +48,7 @@ class ThreeOfAKindHandSpockTest extends Specification {
         threeOfAKind
     }
 
-    def 'Three of a Kind Hand 3'() {
+    def 'Three of a Kind com.pockerbomb.Hand 3'() {
         given:
         Card card1 = new Card(Suit.HEART, Rank.SEVEN)
         Card card2 = new Card(Suit.HEART, Rank.NINE)
@@ -64,7 +69,7 @@ class ThreeOfAKindHandSpockTest extends Specification {
         threeOfAKind
     }
 
-    def 'Three of a Kind Hand 4'() {
+    def 'Three of a Kind com.pockerbomb.Hand 4'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.FOUR)
         Card card2 = new Card(Suit.HEART, Rank.FOUR)
@@ -83,7 +88,7 @@ class ThreeOfAKindHandSpockTest extends Specification {
         threeOfAKind
     }
 
-    def 'Three of a Kind Hand 5'() {
+    def 'Three of a Kind com.pockerbomb.Hand 5'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.THREE)
         Card card2 = new Card(Suit.CLUB, Rank.TEN)

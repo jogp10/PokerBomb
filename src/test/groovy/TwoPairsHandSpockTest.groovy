@@ -1,7 +1,12 @@
+import com.pockerbomb.Card
+import com.pockerbomb.Deck
+import com.pockerbomb.Hand
+import com.pockerbomb.Rank
+import com.pockerbomb.Suit
 import spock.lang.Specification
 
 class TwoPairsHandSpockTest extends Specification {
-    def 'Two Pairs Hand 1'() {
+    def 'Two Pairs com.pockerbomb.Hand 1'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.TWO)
         Card card2 = new Card(Suit.HEART, Rank.TWO)
@@ -22,7 +27,7 @@ class TwoPairsHandSpockTest extends Specification {
         twoPairs
     }
 
-    def 'Two Pairs Hand 2'() {
+    def 'Two Pairs com.pockerbomb.Hand 2'() {
         given:
         Card card1 = new Card(Suit.HEART, Rank.FOUR)
         Card card2 = new Card(Suit.CLUB, Rank.FOUR)
@@ -43,7 +48,7 @@ class TwoPairsHandSpockTest extends Specification {
         twoPairs
     }
 
-    def 'Two Pairs Hand 3'() {
+    def 'Two Pairs com.pockerbomb.Hand 3'() {
         given:
         Card card1 = new Card(Suit.SPADE, Rank.THREE)
         Card card2 = new Card(Suit.CLUB, Rank.KING)
@@ -64,7 +69,7 @@ class TwoPairsHandSpockTest extends Specification {
         twoPairs
     }
 
-    def 'Two Pairs Hand 4'() {
+    def 'Two Pairs com.pockerbomb.Hand 4'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.TWO)
         Card card2 = new Card(Suit.HEART, Rank.TWO)

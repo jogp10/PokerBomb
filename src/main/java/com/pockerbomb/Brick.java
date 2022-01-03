@@ -1,3 +1,5 @@
+package com.pockerbomb;
+
 public class Brick {
     private int numberOfLayers;
 

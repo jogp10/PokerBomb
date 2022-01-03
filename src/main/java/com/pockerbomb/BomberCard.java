@@ -1,3 +1,5 @@
+package com.pockerbomb;
+
 public class BomberCard extends Card{
     int numberOfPlaysUntilBomb;
 

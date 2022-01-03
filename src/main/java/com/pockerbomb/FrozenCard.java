@@ -1,3 +1,5 @@
+package com.pockerbomb;
+
 public class FrozenCard extends Card{
     private int numberOfLayers;
 

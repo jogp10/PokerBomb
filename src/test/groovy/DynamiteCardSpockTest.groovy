@@ -1,9 +1,13 @@
+import com.pockerbomb.Card
+import com.pockerbomb.DynamiteCard
+import com.pockerbomb.Rank
+import com.pockerbomb.Suit
 import spock.lang.Specification
 
 class DynamiteCardSpockTest extends Specification{
-    def 'DynamiteCard removePlays'() {
+    def 'com.pockerbomb.DynamiteCard removePlays'() {
         given:
-            Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Rank.JACK)
+        Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             dynamiteCard.removePlays()
@@ -12,7 +16,7 @@ class DynamiteCardSpockTest extends Specification{
             dynamiteCard.getNumberOfPlaysTillDynamite()==4
     }
 
-    def 'DynamiteCard removePlays 2'() {
+    def 'com.pockerbomb.DynamiteCard removePlays 2'() {
         given:
             Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Rank.JACK)
 
@@ -23,7 +27,7 @@ class DynamiteCardSpockTest extends Specification{
             dynamiteCard.getNumberOfPlaysTillDynamite()==3
     }
 
-    def 'DynamiteCard constructor'() {
+    def 'com.pockerbomb.DynamiteCard constructor'() {
         given:
             Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Rank.JACK)
 

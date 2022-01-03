@@ -1,3 +1,5 @@
+package com.pockerbomb;
+
 public class JungleCard extends Card{
     private int numberOfLayers;
     private int numberOfPlaysToAddLayer;

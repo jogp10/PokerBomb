@@ -1,7 +1,12 @@
+import com.pockerbomb.Card
+import com.pockerbomb.Deck
+import com.pockerbomb.Hand
+import com.pockerbomb.Rank
+import com.pockerbomb.Suit
 import spock.lang.Specification
 
 class FourOfAKindHandSpockTest extends Specification {
-    def 'Four of a Kind Hand 1'() {
+    def 'Four of a Kind com.pockerbomb.Hand 1'() {
         given:
         Card card1 = new Card(Suit.CLUB, Rank.THREE)
         Card card2 = new Card(Suit.DIAMOND, Rank.THREE)
@@ -22,7 +27,7 @@ class FourOfAKindHandSpockTest extends Specification {
         fourOfAKind
     }
 
-    def 'Four of a Kind Hand 2'() {
+    def 'Four of a Kind com.pockerbomb.Hand 2'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.SIX)
         Card card2 = new Card(Suit.SPADE, Rank.ACE)
@@ -43,7 +48,7 @@ class FourOfAKindHandSpockTest extends Specification {
         fourOfAKind
     }
 
-    def 'Four of a Kind Hand 3'() {
+    def 'Four of a Kind com.pockerbomb.Hand 3'() {
         given:
         Card card1 = new Card(Suit.SPADE, Rank.QUEEN)
         Card card2 = new Card(Suit.DIAMOND, Rank.QUEEN)
@@ -64,7 +69,7 @@ class FourOfAKindHandSpockTest extends Specification {
         fourOfAKind
     }
 
-    def 'Four of a Kind Hand 4'() {
+    def 'Four of a Kind com.pockerbomb.Hand 4'() {
         given:
         Card card1 = new Card(Suit.CLUB, Rank.THREE)
         Card card2 = new Card(Suit.DIAMOND, Rank.THREE)

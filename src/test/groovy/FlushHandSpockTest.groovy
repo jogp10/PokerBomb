@@ -1,7 +1,12 @@
+import com.pockerbomb.Card
+import com.pockerbomb.Deck
+import com.pockerbomb.Hand
+import com.pockerbomb.Rank
+import com.pockerbomb.Suit
 import spock.lang.Specification
 
 class FlushHandSpockTest extends Specification {
-    def 'Flush Hand 1'() {
+    def 'Flush com.pockerbomb.Hand 1'() {
         given:
         Card card1 = new Card(Suit.CLUB, Rank.TWO)
         Card card2 = new Card(Suit.CLUB, Rank.FOUR)
@@ -22,7 +27,7 @@ class FlushHandSpockTest extends Specification {
         flush
     }
 
-    def 'Flush Hand 2'() {
+    def 'Flush com.pockerbomb.Hand 2'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.FIVE)
         Card card2 = new Card(Suit.DIAMOND, Rank.SIX)
@@ -43,7 +48,7 @@ class FlushHandSpockTest extends Specification {
         flush
     }
 
-    def 'Flush Hand 3'() {
+    def 'Flush com.pockerbomb.Hand 3'() {
         given:
         Card card1 = new Card(Suit.SPADE, Rank.EIGHT)
         Card card2 = new Card(Suit.SPADE, Rank.TEN)
