@@ -7,7 +7,7 @@ public class FrozenCard extends Card{
     }
 
     public void removeLayers(){
-        numberOfLayers--;
+        removeLayers(1);
     }
     public void removeLayers(int number_layers) {numberOfLayers-=number_layers; }
 

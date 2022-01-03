@@ -33,4 +33,31 @@ class JungleCardSpockTest extends Specification{
         then:
             numberOfLayers==3
     }
+
+    def 'JungleCard add layer'() {
+        given:
+            Card jungleCard = new JungleCard(Suit.SPADE, Rank.NINE)
+
+        when:
+            jungleCard.addNumberOfPlaysWithoutCombo()
+
+        then:
+            jungleCard.getNumberOfLayers()==3
+    }
+
+    def 'JungleCard add layer 2'() {
+        given:
+            Card jungleCard = new JungleCard(Suit.SPADE, Rank.NINE)
+            jungleCard.removeLayers(2)
+            jungleCard.addNumberOfPlaysWithoutCombo()
+            jungleCard.addNumberOfPlaysWithoutCombo()
+            jungleCard.addNumberOfPlaysWithoutCombo()
+
+
+        when:
+            jungleCard.addNumberOfPlaysWithoutCombo()
+
+        then:
+            jungleCard.getNumberOfLayers()==2
+    }
 }
