@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Menu {
     private Screen screen;
-    TextGraphics tg = screen.newTextGraphics();
+    TextGraphics tg;
 
     public Menu() {
         try {
@@ -25,6 +25,7 @@ public class Menu {
 
     public void mainMenu() {
         try {
+            tg = screen.newTextGraphics();
             screen.clear();
             tg.putString(10, 10, "Welcome to POKER BOMB");
             screen.refresh();

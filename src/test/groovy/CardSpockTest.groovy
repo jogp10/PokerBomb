@@ -29,7 +29,7 @@ class CardSpockTest extends Specification {
             Card card = new Card(Suit.CLUB, Rank.ACE)
 
         when:
-            Rank value = card.getValue()
+            Rank value = card.getRank()
 
         then:
             value == Rank.ACE
