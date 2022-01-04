@@ -1,8 +1,9 @@
+import com.pockerbomb.Brick
 import spock.lang.Specification
 
 class BrickSpockTest extends Specification{
 
-    def 'Brick removeLayers'() {
+    def 'com.pockerbomb.Brick removeLayers'() {
         given:
             Brick brick = new Brick()
 
@@ -13,9 +14,9 @@ class BrickSpockTest extends Specification{
             brick.numberOfLayers==0
     }
 
-    def 'Brick constructor'() {
+    def 'com.pockerbomb.Brick constructor'() {
         given:
-            Brick brick = new Brick()
+        Brick brick = new Brick()
 
         when:
             int numberOfLayers = brick.getNumberOfLayers()

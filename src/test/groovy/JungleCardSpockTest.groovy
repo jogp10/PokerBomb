@@ -1,7 +1,11 @@
+import com.pockerbomb.Card
+import com.pockerbomb.JungleCard
+import com.pockerbomb.Rank
+import com.pockerbomb.Suit
 import spock.lang.Specification
 
 class JungleCardSpockTest extends Specification{
-    def 'JungleCard removePlays'() {
+    def 'com.pockerbomb.JungleCard removePlays'() {
         given:
             Card jungleCard = new JungleCard(Suit.DIAMOND, Rank.JACK)
 
@@ -12,7 +16,7 @@ class JungleCardSpockTest extends Specification{
             jungleCard.getNumberOfLayers()==2
     }
 
-    def 'JungleCard removePlays 2'() {
+    def 'com.pockerbomb.JungleCard removePlays 2'() {
         given:
             Card jungleCard = new JungleCard(Suit.DIAMOND, Rank.JACK)
 
@@ -23,7 +27,7 @@ class JungleCardSpockTest extends Specification{
             jungleCard.getNumberOfLayers()==1
     }
 
-    def 'JungleCard constructor'() {
+    def 'com.pockerbomb.JungleCard constructor'() {
         given:
             Card jungleCard = new JungleCard(Suit.DIAMOND, Rank.JACK)
 
@@ -34,7 +38,7 @@ class JungleCardSpockTest extends Specification{
             numberOfLayers==3
     }
 
-    def 'JungleCard add layer'() {
+    def 'com.pockerbomb.JungleCard add layer'() {
         given:
             Card jungleCard = new JungleCard(Suit.SPADE, Rank.NINE)
 
@@ -45,9 +49,9 @@ class JungleCardSpockTest extends Specification{
             jungleCard.getNumberOfLayers()==3
     }
 
-    def 'JungleCard add layer 2'() {
+    def 'com.pockerbomb.JungleCard add layer 2'() {
         given:
-            Card jungleCard = new JungleCard(Suit.SPADE, Rank.NINE)
+        Card jungleCard = new JungleCard(Suit.SPADE, Rank.NINE)
             jungleCard.removeLayers(2)
             jungleCard.addNumberOfPlaysWithoutCombo()
             jungleCard.addNumberOfPlaysWithoutCombo()

@@ -1,8 +1,12 @@
+import com.pockerbomb.BomberCard
+import com.pockerbomb.Card
+import com.pockerbomb.Rank
+import com.pockerbomb.Suit
 import spock.lang.Specification
 
 class BomberCardSpockTest extends Specification{
 
-    def 'BomberCard removePlays'() {
+    def 'com.pockerbomb.BomberCard removePlays'() {
         given:
             Card bomberCard = new BomberCard(Suit.DIAMOND, Rank.JACK)
 
@@ -13,9 +17,9 @@ class BomberCardSpockTest extends Specification{
             bomberCard.getNumberOfPlaysTillBomb()==6
     }
 
-    def 'BomberCard removePlays 2'() {
+    def 'com.pockerbomb.BomberCard removePlays 2'() {
         given:
-            Card bomberCard = new BomberCard(Suit.DIAMOND, Rank.JACK)
+        Card bomberCard = new BomberCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             bomberCard.removePlays(2)
@@ -24,7 +28,7 @@ class BomberCardSpockTest extends Specification{
             bomberCard.getNumberOfPlaysTillBomb()==5
     }
 
-    def 'BomberCard constructor'() {
+    def 'com.pockerbomb.BomberCard constructor'() {
         given:
             Card bomberCard = new BomberCard(Suit.DIAMOND, Rank.JACK)
 

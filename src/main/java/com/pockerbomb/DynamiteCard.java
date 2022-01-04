@@ -1,3 +1,5 @@
+package com.pockerbomb;
+
 public class DynamiteCard extends Card{
     private int numberOfPlaysUntilDynamite;
 

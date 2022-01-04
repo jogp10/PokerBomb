@@ -1,8 +1,12 @@
+import com.pockerbomb.Card
+import com.pockerbomb.FrozenCard
+import com.pockerbomb.Rank
+import com.pockerbomb.Suit
 import spock.lang.Specification
 
 class FrozenCardSpockTest extends Specification{
 
-    def 'FrozenCard removeLayers'() {
+    def 'com.pockerbomb.FrozenCard removeLayers'() {
         given:
             Card frozenCard = new FrozenCard(Suit.DIAMOND, Rank.JACK)
 
@@ -13,9 +17,9 @@ class FrozenCardSpockTest extends Specification{
             frozenCard.getNumberOfLayers()==1
     }
 
-    def 'FrozenCard removeLayers 2'() {
+    def 'com.pockerbomb.FrozenCard removeLayers 2'() {
         given:
-            Card frozenCard = new FrozenCard(Suit.DIAMOND, Rank.JACK)
+        Card frozenCard = new FrozenCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             frozenCard.removeLayers(2)
@@ -24,7 +28,7 @@ class FrozenCardSpockTest extends Specification{
             frozenCard.getNumberOfLayers()==0
     }
 
-    def 'FrozenCard constructor'() {
+    def 'com.pockerbomb.FrozenCard constructor'() {
         given:
             Card frozenCard = new FrozenCard(Suit.DIAMOND, Rank.JACK)
 

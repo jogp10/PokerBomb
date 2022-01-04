@@ -1,4 +1,9 @@
+package com.pockerbomb;
 import com.googlecode.lanterna.TerminalPosition;
+
+
+
+
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextCharacter;
 import com.googlecode.lanterna.TextColor;
@@ -18,6 +23,7 @@ public class Menu {
     private Screen screen;
     private TextGraphics graphics;
     //TextGraphics tg = screen.newTextGraphics();
+    TextGraphics tg;
 
     public Menu() {
         try {
@@ -43,6 +49,7 @@ public class Menu {
         String t3 = "|    |__| | \\_ |___ |  \\    |__] |__| |  | |__]";
 
         try {
+            tg = screen.newTextGraphics();
             screen.clear();
             TextGraphics tg = screen.newTextGraphics();
 
