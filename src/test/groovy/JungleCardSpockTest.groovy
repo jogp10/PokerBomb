@@ -13,7 +13,7 @@ class JungleCardSpockTest extends Specification{
             jungleCard.removeSpecialAttribute()
 
         then:
-            jungleCard.getSpecialAttribute()==2
+            jungleCard.getSpecialAttribute()<0
     }
 
     def 'com.pockerbomb.JungleCard removePlays 2'() {
@@ -24,7 +24,7 @@ class JungleCardSpockTest extends Specification{
             jungleCard.removeSpecialAttribute(2)
 
         then:
-            jungleCard.getSpecialAttribute()==1
+            jungleCard.getSpecialAttribute()<1
     }
 
     def 'com.pockerbomb.JungleCard constructor'() {
@@ -35,7 +35,7 @@ class JungleCardSpockTest extends Specification{
             int numberOfLayers = jungleCard.getSpecialAttribute()
 
         then:
-            numberOfLayers==3
+            numberOfLayers==0
     }
 
     def 'com.pockerbomb.JungleCard add layer'() {
@@ -46,13 +46,12 @@ class JungleCardSpockTest extends Specification{
             jungleCard.addNumberOfPlaysWithoutCombo()
 
         then:
-            jungleCard.getSpecialAttribute()==3
+            jungleCard.getSpecialAttribute()==0
     }
 
     def 'com.pockerbomb.JungleCard add layer 2'() {
         given:
         Card jungleCard = new JungleCard(Suit.SPADE, Rank.NINE)
-            jungleCard.removeSpecialAttribute(2)
             jungleCard.addNumberOfPlaysWithoutCombo()
             jungleCard.addNumberOfPlaysWithoutCombo()
             jungleCard.addNumberOfPlaysWithoutCombo()
@@ -62,6 +61,6 @@ class JungleCardSpockTest extends Specification{
             jungleCard.addNumberOfPlaysWithoutCombo()
 
         then:
-            jungleCard.getSpecialAttribute()==2
+            jungleCard.getSpecialAttribute()==1
     }
 }

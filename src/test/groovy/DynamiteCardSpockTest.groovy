@@ -16,17 +16,6 @@ class DynamiteCardSpockTest extends Specification{
             dynamiteCard.getSpecialAttribute()==4
     }
 
-    def 'com.pockerbomb.DynamiteCard removePlays 2'() {
-        given:
-            Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Rank.JACK)
-
-        when:
-            dynamiteCard.removeSpecialAttribute(2)
-
-        then:
-            dynamiteCard.getSpecialAttribute()==3
-    }
-
     def 'com.pockerbomb.DynamiteCard constructor'() {
         given:
             Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Rank.JACK)

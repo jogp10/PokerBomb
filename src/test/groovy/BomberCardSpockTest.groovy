@@ -22,10 +22,10 @@ class BomberCardSpockTest extends Specification{
         Card bomberCard = new BomberCard(Suit.DIAMOND, Rank.JACK)
 
         when:
-            bomberCard.removeSpecialAttribute(2)
+            bomberCard.removeSpecialAttribute()
 
         then:
-            bomberCard.getSpecialAttribute()==5
+            bomberCard.getSpecialAttribute()==6
     }
 
     def 'com.pockerbomb.BomberCard constructor'() {

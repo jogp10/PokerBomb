@@ -24,7 +24,7 @@ class HandRankingSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        String royalFlush = Hand.handRaking(deck)
+        String royalFlush = Hand.handRanking(deck)
 
         then:
         royalFlush == "Royal Flush"
@@ -47,7 +47,7 @@ class HandRankingSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        String straightFlush = Hand.handRaking(deck)
+        String straightFlush = Hand.handRanking(deck)
 
         then:
         straightFlush == "Straight Flush"
@@ -70,7 +70,7 @@ class HandRankingSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        String fourOfAKind = Hand.handRaking(deck)
+        String fourOfAKind = Hand.handRanking(deck)
 
         then:
         fourOfAKind == "Four of a Kind"
@@ -93,7 +93,7 @@ class HandRankingSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        String fullHouse = Hand.handRaking(deck)
+        String fullHouse = Hand.handRanking(deck)
 
         then:
         fullHouse == "Full House"
@@ -116,7 +116,7 @@ class HandRankingSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        String flush = Hand.handRaking(deck)
+        String flush = Hand.handRanking(deck)
 
         then:
         flush == "Flush"
@@ -139,7 +139,7 @@ class HandRankingSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        String straight = Hand.handRaking(deck)
+        String straight = Hand.handRanking(deck)
 
         then:
         straight == "Straight"
@@ -162,7 +162,7 @@ class HandRankingSpockTest extends Specification {
         //deck.addCard(card5)
 
         when:
-        String threeOfAKind = Hand.handRaking(deck)
+        String threeOfAKind = Hand.handRanking(deck)
 
         then:
         threeOfAKind == "Three of a Kind"
@@ -185,7 +185,7 @@ class HandRankingSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        String twoPairs = Hand.handRaking(deck)
+        String twoPairs = Hand.handRanking(deck)
 
         then:
         twoPairs == "Two Pairs"
@@ -204,7 +204,7 @@ class HandRankingSpockTest extends Specification {
         deck.addCard(card3)
 
         when:
-        String pair = Hand.handRaking(deck)
+        String pair = Hand.handRanking(deck)
 
         then:
         pair == "Pair"
@@ -223,7 +223,7 @@ class HandRankingSpockTest extends Specification {
         //deck.addCard(card3)
 
         when:
-        String none = Hand.handRaking(deck)
+        String none = Hand.handRanking(deck)
 
         then:
         none == "None"
