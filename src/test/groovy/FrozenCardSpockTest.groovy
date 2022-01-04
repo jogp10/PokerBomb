@@ -11,10 +11,10 @@ class FrozenCardSpockTest extends Specification{
             Card frozenCard = new FrozenCard(Suit.DIAMOND, Rank.JACK)
 
         when:
-            frozenCard.removeSpecialAttribute()
+            frozenCard.removeLayers()
 
         then:
-            frozenCard.getSpecialAttribute()==1
+            frozenCard.getNumberOfLayers()==1
     }
 
     def 'com.pockerbomb.FrozenCard removeLayers 2'() {
@@ -22,10 +22,10 @@ class FrozenCardSpockTest extends Specification{
         Card frozenCard = new FrozenCard(Suit.DIAMOND, Rank.JACK)
 
         when:
-            frozenCard.removeSpecialAttribute(2)
+            frozenCard.removeLayers(2)
 
         then:
-            frozenCard.getSpecialAttribute()==0
+            frozenCard.getNumberOfLayers()==0
     }
 
     def 'com.pockerbomb.FrozenCard constructor'() {
@@ -33,7 +33,7 @@ class FrozenCardSpockTest extends Specification{
             Card frozenCard = new FrozenCard(Suit.DIAMOND, Rank.JACK)
 
         when:
-            int numberOfLayers = frozenCard.getSpecialAttribute()
+            int numberOfLayers = frozenCard.getNumberOfLayers()
 
         then:
             numberOfLayers==2

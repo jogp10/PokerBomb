@@ -1,42 +1,21 @@
 package com.pockerbomb;
 
-public class JungleCard extends Card implements GenericSpecialCard{
+public class JungleCard extends Card{
     private int numberOfLayers;
     private int numberOfPlaysToAddLayer;
 
     public JungleCard(Suit suit, Rank rank) {
         super(suit, rank);
-        numberOfLayers = 0;
+        numberOfLayers = 3;
         numberOfPlaysToAddLayer = 0;
     }
 
-
-    @Override
-    public void removeSpecialAttribute(){
-        removeSpecialAttribute(1);
+    public void removeLayers(){
+        removeLayers(1);
     }
-
-    @Override
-    public void removeSpecialAttribute(int number_layers) {
+    public void removeLayers(int number_layers) {
         numberOfLayers-=number_layers;
         numberOfPlaysToAddLayer=0;
-    }
-
-    @Override
-    public int getSpecialAttribute(){
-        return numberOfLayers;
-    }
-
-    @Override
-    public boolean isActive() {
-        return numberOfLayers > 0;
-    }
-
-    @Override
-    public void draw() {
-        if(isActive()){
-
-        }
     }
 
     public void addNumberOfPlaysWithoutCombo() {
@@ -44,8 +23,9 @@ public class JungleCard extends Card implements GenericSpecialCard{
         numberOfPlaysToAddLayer++;
 
         if(numberOfPlaysToAddLayer>3 && numberOfLayers!=3){
-            removeSpecialAttribute(-1);
+            removeLayers(-1);
         }
     }
 
+    public int getNumberOfLayers(){ return numberOfLayers; }
 }

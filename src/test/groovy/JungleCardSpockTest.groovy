@@ -10,10 +10,10 @@ class JungleCardSpockTest extends Specification{
             Card jungleCard = new JungleCard(Suit.DIAMOND, Rank.JACK)
 
         when:
-            jungleCard.removeSpecialAttribute()
+            jungleCard.removeLayers()
 
         then:
-            jungleCard.getSpecialAttribute()==2
+            jungleCard.getNumberOfLayers()==2
     }
 
     def 'com.pockerbomb.JungleCard removePlays 2'() {
@@ -21,10 +21,10 @@ class JungleCardSpockTest extends Specification{
             Card jungleCard = new JungleCard(Suit.DIAMOND, Rank.JACK)
 
         when:
-            jungleCard.removeSpecialAttribute(2)
+            jungleCard.removeLayers(2)
 
         then:
-            jungleCard.getSpecialAttribute()==1
+            jungleCard.getNumberOfLayers()==1
     }
 
     def 'com.pockerbomb.JungleCard constructor'() {
@@ -32,7 +32,7 @@ class JungleCardSpockTest extends Specification{
             Card jungleCard = new JungleCard(Suit.DIAMOND, Rank.JACK)
 
         when:
-            int numberOfLayers = jungleCard.getSpecialAttribute()
+            int numberOfLayers = jungleCard.getNumberOfLayers()
 
         then:
             numberOfLayers==3
@@ -46,13 +46,13 @@ class JungleCardSpockTest extends Specification{
             jungleCard.addNumberOfPlaysWithoutCombo()
 
         then:
-            jungleCard.getSpecialAttribute()==3
+            jungleCard.getNumberOfLayers()==3
     }
 
     def 'com.pockerbomb.JungleCard add layer 2'() {
         given:
         Card jungleCard = new JungleCard(Suit.SPADE, Rank.NINE)
-            jungleCard.removeSpecialAttribute(2)
+            jungleCard.removeLayers(2)
             jungleCard.addNumberOfPlaysWithoutCombo()
             jungleCard.addNumberOfPlaysWithoutCombo()
             jungleCard.addNumberOfPlaysWithoutCombo()
@@ -62,6 +62,6 @@ class JungleCardSpockTest extends Specification{
             jungleCard.addNumberOfPlaysWithoutCombo()
 
         then:
-            jungleCard.getSpecialAttribute()==2
+            jungleCard.getNumberOfLayers()==2
     }
 }

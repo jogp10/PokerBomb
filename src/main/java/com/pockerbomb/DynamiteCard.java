@@ -1,6 +1,6 @@
 package com.pockerbomb;
 
-public class DynamiteCard extends Card implements GenericSpecialCard{
+public class DynamiteCard extends Card{
     private int numberOfPlaysUntilDynamite;
 
     public DynamiteCard(Suit suit, Rank rank) {
@@ -8,32 +8,8 @@ public class DynamiteCard extends Card implements GenericSpecialCard{
         numberOfPlaysUntilDynamite = 5;
     }
 
+    public void removePlays() { removePlays(1); }
+    public void removePlays(int number_plays) {numberOfPlaysUntilDynamite-=number_plays; }
 
-    @Override
-    public void removeSpecialAttribute() {
-        numberOfPlaysUntilDynamite--;
-    }
-
-    @Override
-    public void removeSpecialAttribute(int number_plays) {
-        removeSpecialAttribute();
-    }
-
-    @Override
-    public int getSpecialAttribute() {
-        return numberOfPlaysUntilDynamite;
-    }
-
-    @Override
-    public boolean isActive() {
-        return numberOfPlaysUntilDynamite > 0;
-    }
-
-    @Override
-    public void draw() {
-        if(isActive()){
-
-        }
-    }
-
+    public int getNumberOfPlaysTillDynamite() { return numberOfPlaysUntilDynamite; }
 }

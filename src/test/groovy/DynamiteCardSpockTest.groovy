@@ -10,10 +10,10 @@ class DynamiteCardSpockTest extends Specification{
         Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Rank.JACK)
 
         when:
-            dynamiteCard.removeSpecialAttribute()
+            dynamiteCard.removePlays()
 
         then:
-            dynamiteCard.getSpecialAttribute()==4
+            dynamiteCard.getNumberOfPlaysTillDynamite()==4
     }
 
     def 'com.pockerbomb.DynamiteCard removePlays 2'() {
@@ -21,10 +21,10 @@ class DynamiteCardSpockTest extends Specification{
             Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Rank.JACK)
 
         when:
-            dynamiteCard.removeSpecialAttribute(2)
+            dynamiteCard.removePlays(2)
 
         then:
-            dynamiteCard.getSpecialAttribute()==3
+            dynamiteCard.getNumberOfPlaysTillDynamite()==3
     }
 
     def 'com.pockerbomb.DynamiteCard constructor'() {
@@ -32,7 +32,7 @@ class DynamiteCardSpockTest extends Specification{
             Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Rank.JACK)
 
         when:
-            int numberOfPlaysTillDynamite = dynamiteCard.getSpecialAttribute()
+            int numberOfPlaysTillDynamite = dynamiteCard.getNumberOfPlaysTillDynamite()
 
         then:
             numberOfPlaysTillDynamite==5
