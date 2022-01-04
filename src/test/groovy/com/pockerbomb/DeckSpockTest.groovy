@@ -1,3 +1,5 @@
+package com.pockerbomb
+
 import com.pockerbomb.Card
 import com.pockerbomb.Deck
 import com.pockerbomb.Rank

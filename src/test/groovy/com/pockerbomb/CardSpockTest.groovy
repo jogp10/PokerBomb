@@ -1,3 +1,5 @@
+package com.pockerbomb
+
 import com.pockerbomb.Card
 import com.pockerbomb.Rank
 import com.pockerbomb.Suit

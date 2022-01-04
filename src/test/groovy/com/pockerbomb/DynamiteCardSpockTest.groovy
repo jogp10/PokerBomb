@@ -1,3 +1,6 @@
+package com.pockerbomb
+
+import com.pockerbomb.BomberCard
 import com.pockerbomb.Card
 import com.pockerbomb.DynamiteCard
 import com.pockerbomb.Rank
@@ -16,6 +19,17 @@ class DynamiteCardSpockTest extends Specification{
             dynamiteCard.getSpecialAttribute()==4
     }
 
+    def 'com.pockerbomb.BomberCard removePlays 2'() {
+        given:
+        Card bomberCard = new BomberCard(Suit.DIAMOND, Rank.JACK)
+
+        when:
+        bomberCard.removeSpecialAttribute(10)
+
+        then:
+        bomberCard.getSpecialAttribute()==6
+    }
+
     def 'com.pockerbomb.DynamiteCard constructor'() {
         given:
             Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Rank.JACK)
@@ -26,4 +40,6 @@ class DynamiteCardSpockTest extends Specification{
         then:
             numberOfPlaysTillDynamite==5
     }
+
+
 }

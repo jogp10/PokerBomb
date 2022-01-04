@@ -1,3 +1,5 @@
+package com.pockerbomb
+
 import com.pockerbomb.Card
 import com.pockerbomb.FrozenCard
 import com.pockerbomb.Rank

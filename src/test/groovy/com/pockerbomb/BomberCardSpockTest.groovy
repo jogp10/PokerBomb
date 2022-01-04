@@ -1,3 +1,5 @@
+package com.pockerbomb
+
 import com.pockerbomb.BomberCard
 import com.pockerbomb.Card
 import com.pockerbomb.Rank
@@ -22,7 +24,7 @@ class BomberCardSpockTest extends Specification{
         Card bomberCard = new BomberCard(Suit.DIAMOND, Rank.JACK)
 
         when:
-            bomberCard.removeSpecialAttribute()
+            bomberCard.removeSpecialAttribute(10)
 
         then:
             bomberCard.getSpecialAttribute()==6
@@ -37,6 +39,24 @@ class BomberCardSpockTest extends Specification{
 
         then:
             numberOfPlaysTillBomb==7
+    }
+
+    def 'com.pockerbomb.BomberCard isActive'() {
+        given:
+            BomberCard bomberCard = new BomberCard(Suit.DIAMOND, Rank.JACK)
+            bomberCard.removeSpecialAttribute()
+            bomberCard.removeSpecialAttribute()
+            bomberCard.removeSpecialAttribute()
+            bomberCard.removeSpecialAttribute()
+            bomberCard.removeSpecialAttribute()
+            bomberCard.removeSpecialAttribute()
+
+        when:
+            bomberCard.removeSpecialAttribute()
+
+        then:
+            !bomberCard.isActive()
+
     }
 
 }

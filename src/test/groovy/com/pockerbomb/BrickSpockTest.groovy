@@ -1,4 +1,7 @@
+package com.pockerbomb
+
 import com.pockerbomb.Brick
+import com.pockerbomb.GenericSpecialCard
 import spock.lang.Specification
 
 class BrickSpockTest extends Specification{
@@ -23,5 +26,13 @@ class BrickSpockTest extends Specification{
 
         then:
             numberOfLayers==1
+    }
+
+    def 'com.pockerbomb.Brick isActive'() {
+        given:
+            GenericSpecialCard brick = new Brick()
+
+        expect:
+            brick.isActive()
     }
 }
