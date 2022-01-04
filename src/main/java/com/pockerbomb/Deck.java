@@ -64,11 +64,11 @@ public class Deck {
         this.cards.add(addCard);
     }
 
-    //Draws from the deck
-    public Card draw(Deck comingFrom) {
-        return this.draw(comingFrom, 0);
+    //Pop from the deck
+    public Card pop(Deck comingFrom) {
+        return this.pop(comingFrom, 0);
     }
-    public Card draw(Deck comingFrom, int cardToDraw) {
+    public Card pop(Deck comingFrom, int cardToDraw) {
         this.cards.add(comingFrom.getCard(cardToDraw));
         return comingFrom.removeCard(cardToDraw);
     }

@@ -8,10 +8,10 @@ class BrickSpockTest extends Specification{
             Brick brick = new Brick()
 
         when:
-            brick.removeLayers()
+            brick.removeSpecialAttribute()
 
         then:
-            brick.numberOfLayers==0
+            brick.specialAttribute==0
     }
 
     def 'com.pockerbomb.Brick constructor'() {
@@ -19,7 +19,7 @@ class BrickSpockTest extends Specification{
         Brick brick = new Brick()
 
         when:
-            int numberOfLayers = brick.getNumberOfLayers()
+            int numberOfLayers = brick.getSpecialAttribute()
 
         then:
             numberOfLayers==1
