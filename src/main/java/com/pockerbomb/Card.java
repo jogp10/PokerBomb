@@ -1,8 +1,8 @@
 package com.pockerbomb;
 
 public class Card {
-    private final Suit suit;
-    private final Rank rank;
+    protected final Suit suit;
+    protected final Rank rank;
 
     public Card(Suit suit, Rank rank) {
         this.rank = rank;
@@ -67,6 +67,7 @@ public class Card {
         }
         return value;
     }
+
     public int getSuitValue() {
         int value;
         switch (suit) {
@@ -86,5 +87,9 @@ public class Card {
                 value = 0;
         }
         return value;
+    }
+
+    public void draw() {
+        
     }
 }

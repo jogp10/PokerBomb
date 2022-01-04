@@ -61,7 +61,7 @@ class DeckSpockTest extends Specification{
             deck.addCard(card)
 
         when:
-            Card drawn = deck.draw(deck)
+            Card drawn = deck.pop(deck)
 
         then:
             drawn == card
@@ -76,7 +76,7 @@ class DeckSpockTest extends Specification{
             deck.addCard(card)
 
         when:
-            Card drawn = deck.draw(deck, 1)
+            Card drawn = deck.pop(deck, 1)
 
         then:
             drawn == card

@@ -11,10 +11,10 @@ class BomberCardSpockTest extends Specification{
             Card bomberCard = new BomberCard(Suit.DIAMOND, Rank.JACK)
 
         when:
-            bomberCard.removePlays()
+            bomberCard.removeSpecialAttribute()
 
         then:
-            bomberCard.getNumberOfPlaysTillBomb()==6
+            bomberCard.getSpecialAttribute()==6
     }
 
     def 'com.pockerbomb.BomberCard removePlays 2'() {
@@ -22,10 +22,10 @@ class BomberCardSpockTest extends Specification{
         Card bomberCard = new BomberCard(Suit.DIAMOND, Rank.JACK)
 
         when:
-            bomberCard.removePlays(2)
+            bomberCard.removeSpecialAttribute(2)
 
         then:
-            bomberCard.getNumberOfPlaysTillBomb()==5
+            bomberCard.getSpecialAttribute()==5
     }
 
     def 'com.pockerbomb.BomberCard constructor'() {
@@ -33,7 +33,7 @@ class BomberCardSpockTest extends Specification{
             Card bomberCard = new BomberCard(Suit.DIAMOND, Rank.JACK)
 
         when:
-            int numberOfPlaysTillBomb = bomberCard.getNumberOfPlaysTillBomb()
+            int numberOfPlaysTillBomb = bomberCard.getSpecialAttribute()
 
         then:
             numberOfPlaysTillBomb==7

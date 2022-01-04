@@ -1,6 +1,6 @@
 package com.pockerbomb;
 
-public class FrozenCard extends Card{
+public class FrozenCard extends Card implements GenericSpecialCard{
     private int numberOfLayers;
 
     public FrozenCard(Suit suit, Rank rank) {
@@ -8,12 +8,32 @@ public class FrozenCard extends Card{
         numberOfLayers = 2;
     }
 
-    public void removeLayers(){
-        removeLayers(1);
-    }
-    public void removeLayers(int number_layers) {numberOfLayers-=number_layers; }
 
-    public int getNumberOfLayers(){
+    @Override
+    public void removeSpecialAttribute() {
+        removeSpecialAttribute(1);
+    }
+
+    @Override
+    public void removeSpecialAttribute(int number_layers) {
+        numberOfLayers-=number_layers;
+    }
+
+    @Override
+    public int getSpecialAttribute() {
         return numberOfLayers;
     }
+
+    @Override
+    public boolean isActive() {
+        return numberOfLayers > 0;
+    }
+
+    @Override
+    public void draw() {
+        if(isActive()){
+
+        }
+    }
+
 }
