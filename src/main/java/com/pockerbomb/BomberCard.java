@@ -1,17 +1,10 @@
 package com.pockerbomb;
 
-public class BomberCard extends Card implements GenericSpecialCard{
-    private int numberOfPlaysUntilBomb;
+public class BomberCard extends GenericSpecialCard {
 
     public BomberCard(Suit suit, Rank rank) {
         super(suit, rank);
-        numberOfPlaysUntilBomb = 7;
-    }
-
-
-    @Override
-    public void removeSpecialAttribute() {
-        numberOfPlaysUntilBomb--;
+        specialAttribute = 7;
     }
 
     @Override
@@ -20,21 +13,11 @@ public class BomberCard extends Card implements GenericSpecialCard{
     }
 
     @Override
-    public int getSpecialAttribute() {
-        return numberOfPlaysUntilBomb;
-    }
-
-    @Override
-    public boolean isActive() {
-        return numberOfPlaysUntilBomb > 0;
-    }
-
-    @Override
     public void draw() {
+        super.draw();
         if(isActive()){
 
         }
     }
-
 
 }

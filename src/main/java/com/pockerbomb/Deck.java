@@ -76,4 +76,10 @@ public class Deck {
     public ArrayList<Card> getDeck(){
         return cards;
     }
+
+    public void draw() {
+        for(Card card: cards){
+            card.draw();
+        }
+    }
 }
