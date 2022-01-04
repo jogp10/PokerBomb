@@ -284,7 +284,7 @@ public class Hand {
         return a1 || a2 || a3 || a4;
     }
 
-    public static String handRaking(Deck deck) {
+    public static String handRanking(Deck deck) {
         String hand;
 
         if (isRoyalFlush(deck)) {
