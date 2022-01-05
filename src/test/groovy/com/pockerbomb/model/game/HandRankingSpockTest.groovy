@@ -16,7 +16,7 @@ class HandRankingSpockTest extends Specification {
         NormalCard card4 = new NormalCard(Suit.HEART, Rank.KING)
         NormalCard card5 = new NormalCard(Suit.HEART, Rank.ACE)
 
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
 
         deck.addCard(card1)
         deck.addCard(card2)
@@ -39,7 +39,7 @@ class HandRankingSpockTest extends Specification {
         NormalCard card4 = new NormalCard(Suit.DIAMOND, Rank.TEN)
         NormalCard card5 = new NormalCard(Suit.DIAMOND, Rank.JACK)
 
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
 
         deck.addCard(card1)
         deck.addCard(card2)
@@ -62,7 +62,7 @@ class HandRankingSpockTest extends Specification {
         NormalCard card4 = new NormalCard(Suit.DIAMOND, Rank.NINE)
         NormalCard card5 = new NormalCard(Suit.DIAMOND, Rank.THREE)
 
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
 
         deck.addCard(card1)
         deck.addCard(card2)
@@ -85,7 +85,7 @@ class HandRankingSpockTest extends Specification {
         NormalCard card4 = new NormalCard(Suit.CLUB, Rank.THREE)
         NormalCard card5 = new NormalCard(Suit.SPADE, Rank.THREE)
 
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
 
         deck.addCard(card1)
         deck.addCard(card2)
@@ -108,7 +108,7 @@ class HandRankingSpockTest extends Specification {
         NormalCard card4 = new NormalCard(Suit.HEART, Rank.ACE)
         NormalCard card5 = new NormalCard(Suit.HEART, Rank.FOUR)
 
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
 
         deck.addCard(card1)
         deck.addCard(card2)
@@ -131,7 +131,7 @@ class HandRankingSpockTest extends Specification {
         NormalCard card4 = new NormalCard(Suit.SPADE, Rank.SIX)
         NormalCard card5 = new NormalCard(Suit.HEART, Rank.SEVEN)
 
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
 
         deck.addCard(card1)
         deck.addCard(card2)
@@ -154,7 +154,7 @@ class HandRankingSpockTest extends Specification {
         NormalCard card4 = new NormalCard(Suit.CLUB, Rank.TWO)
         //com.pockerbomb.model.cards.Card card5 = new com.pockerbomb.model.cards.Card(com.pockerbomb.model.cards.Suit.DIAMOND, com.pockerbomb.model.cards.Rank.TEN)
 
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
 
         deck.addCard(card1)
         deck.addCard(card2)
@@ -177,7 +177,7 @@ class HandRankingSpockTest extends Specification {
         NormalCard card4 = new NormalCard(Suit.CLUB, Rank.TWO)
         NormalCard card5 = new NormalCard(Suit.SPADE, Rank.FIVE)
 
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
 
         deck.addCard(card1)
         deck.addCard(card2)
@@ -198,7 +198,7 @@ class HandRankingSpockTest extends Specification {
         NormalCard card2 = new NormalCard(Suit.HEART, Rank.NINE)
         NormalCard card3 = new NormalCard(Suit.SPADE, Rank.TEN)
 
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
 
         deck.addCard(card1)
         deck.addCard(card2)
@@ -217,7 +217,7 @@ class HandRankingSpockTest extends Specification {
         //com.pockerbomb.model.cards.Card card2 = new com.pockerbomb.model.cards.Card(com.pockerbomb.model.cards.Suit.HEART, com.pockerbomb.model.cards.Rank.NINE)
         //com.pockerbomb.model.cards.Card card3 = new com.pockerbomb.model.cards.Card(com.pockerbomb.model.cards.Suit.SPADE, com.pockerbomb.model.cards.Rank.TEN)
 
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
 
         deck.addCard(card1)
         //deck.addCard(card2)

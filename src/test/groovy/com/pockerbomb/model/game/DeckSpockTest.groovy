@@ -9,7 +9,7 @@ import spock.lang.Specification
 class DeckSpockTest extends Specification{
     def 'CreateFullDeck'() {
         given:
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
 
         when:
             deck.createFullDeck()
@@ -21,7 +21,7 @@ class DeckSpockTest extends Specification{
 
     def 'Shuffle'() {
         given:
-            DeckModel deck = Mock(DeckModel)
+            Deck deck = Mock(Deck)
             deck.createFullDeck()
 
         when:
@@ -33,7 +33,7 @@ class DeckSpockTest extends Specification{
 
     def 'AddCard'() {
         given:
-            DeckModel deck = new DeckModel()
+            Deck deck = new Deck()
             NormalCard card = new NormalCard(Suit.HEART, Rank.SEVEN)
 
         when:
@@ -45,7 +45,7 @@ class DeckSpockTest extends Specification{
 
     def 'RemoveCard'() {
         given:
-            DeckModel deck = new DeckModel()
+            Deck deck = new Deck()
             NormalCard card = Mock(NormalCard)
             deck.addCard(card)
 
@@ -58,7 +58,7 @@ class DeckSpockTest extends Specification{
 
     def 'DrawCard'() {
         given:
-            DeckModel deck = new DeckModel()
+            Deck deck = new Deck()
             NormalCard card = new NormalCard(Suit.HEART, Rank.ACE)
             deck.addCard(card)
 
@@ -71,7 +71,7 @@ class DeckSpockTest extends Specification{
 
     def 'DrawCard 2'() {
         given:
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
         NormalCard card = new NormalCard(Suit.HEART, Rank.ACE)
             deck.addCard(card)
             card = new NormalCard(Suit.DIAMOND, Rank.JACK)
@@ -86,7 +86,7 @@ class DeckSpockTest extends Specification{
 
     def 'ToString' () {
         given:
-            DeckModel deck = new DeckModel()
+            Deck deck = new Deck()
             NormalCard card = new NormalCard(Suit.DIAMOND, Rank.TWO)
             deck.addCard(card)
 

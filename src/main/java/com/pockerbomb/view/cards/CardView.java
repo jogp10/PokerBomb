@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CardView extends View<Card> {
+
     public static String backgroundColour = "#FFFFFF";
 
     static final List<String> suits = new ArrayList<String>() {{

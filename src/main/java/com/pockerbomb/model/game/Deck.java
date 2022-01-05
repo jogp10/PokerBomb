@@ -9,13 +9,13 @@ import com.pockerbomb.model.game.cards.Suit;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class DeckModel implements Model {
+public class Deck implements Model {
 
     // instance vars
     private ArrayList<Card> cards;
 
     // construct
-    public DeckModel() {
+    public Deck() {
         this.cards = new ArrayList<>();
     }
 
@@ -71,10 +71,10 @@ public class DeckModel implements Model {
     }
 
     //Pop from the deck
-    public Card pop(DeckModel comingFrom) {
+    public Card pop(Deck comingFrom) {
         return this.pop(comingFrom, 0);
     }
-    public Card pop(DeckModel comingFrom, int cardToDraw) {
+    public Card pop(Deck comingFrom, int cardToDraw) {
         this.cards.add(comingFrom.getCard(cardToDraw));
         return comingFrom.removeCard(cardToDraw);
     }

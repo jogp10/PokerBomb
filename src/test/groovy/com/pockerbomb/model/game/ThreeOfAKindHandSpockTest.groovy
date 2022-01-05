@@ -14,7 +14,7 @@ class ThreeOfAKindHandSpockTest extends Specification {
         NormalCard card3 = new NormalCard(Suit.CLUB, Rank.FOUR)
         NormalCard card4 = new NormalCard(Suit.SPADE, Rank.SEVEN)
         NormalCard card5 = new NormalCard(Suit.SPADE, Rank.QUEEN)
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
         deck.addCard(card3)
@@ -35,7 +35,7 @@ class ThreeOfAKindHandSpockTest extends Specification {
         NormalCard card3 = new NormalCard(Suit.DIAMOND, Rank.TEN)
         NormalCard card4 = new NormalCard(Suit.HEART, Rank.TEN)
         NormalCard card5 = new NormalCard(Suit.SPADE, Rank.KING)
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
         deck.addCard(card3)
@@ -56,7 +56,7 @@ class ThreeOfAKindHandSpockTest extends Specification {
         NormalCard card3 = new NormalCard(Suit.SPADE, Rank.ACE)
         NormalCard card4 = new NormalCard(Suit.CLUB, Rank.ACE)
         NormalCard card5 = new NormalCard(Suit.HEART, Rank.ACE)
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
         deck.addCard(card3)
@@ -76,7 +76,7 @@ class ThreeOfAKindHandSpockTest extends Specification {
         NormalCard card2 = new NormalCard(Suit.HEART, Rank.FOUR)
         NormalCard card3 = new NormalCard(Suit.CLUB, Rank.FOUR)
 
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
 
         deck.addCard(card1)
         deck.addCard(card2)
@@ -96,7 +96,7 @@ class ThreeOfAKindHandSpockTest extends Specification {
         NormalCard card3 = new NormalCard(Suit.DIAMOND, Rank.TEN)
         NormalCard card4 = new NormalCard(Suit.HEART, Rank.TEN)
 
-        DeckModel deck = new DeckModel()
+        Deck deck = new Deck()
 
         deck.addCard(card1)
         deck.addCard(card2)

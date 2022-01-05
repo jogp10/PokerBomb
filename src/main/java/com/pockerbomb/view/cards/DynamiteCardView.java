@@ -9,6 +9,7 @@ import com.pockerbomb.view.View;
 import java.io.IOException;
 
 public class DynamiteCardView extends View<DynamiteCard> {
+
     CardView cardView;
 
     public DynamiteCardView(DynamiteCard model, TextGraphics graphics) {

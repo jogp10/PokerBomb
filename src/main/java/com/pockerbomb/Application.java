@@ -1,7 +1,6 @@
 package com.pockerbomb;
 
-import com.pockerbomb.model.game.DeckModel;
-import com.pockerbomb.model.menu.Menu;
+import com.pockerbomb.model.game.Deck;
 
 import java.util.ArrayList;
 
@@ -18,14 +17,14 @@ public class Application {
 
         // Preparation for the start of a level
             // Create our playing deck
-            DeckModel playingDeck = new DeckModel();
+            Deck playingDeck = new Deck();
             playingDeck.createFullDeck();
             playingDeck.shuffle();
             //Create a deck for the player
-            DeckModel playerDeck = new DeckModel();
+            Deck playerDeck = new Deck();
             //Create a deck for each shelf
             int numberOfShelfs = 2; // it can be a diferent value
-            ArrayList<DeckModel> shelfsDeck = new ArrayList<>();
-            for(int i=0; i<numberOfShelfs; i++) shelfsDeck.add(new DeckModel());
+            ArrayList<Deck> shelfsDeck = new ArrayList<>();
+            for(int i=0; i<numberOfShelfs; i++) shelfsDeck.add(new Deck());
     }
 }

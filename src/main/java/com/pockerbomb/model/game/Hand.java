@@ -65,7 +65,7 @@ public class Hand implements Model {
     }
 
     //5 cards of the same suit
-    public static boolean isFlush(DeckModel deck) {
+    public static boolean isFlush(Deck deck) {
         ArrayList<Card> hand = deck.getDeck();
 
         if (hand.size() < 5)
@@ -77,7 +77,7 @@ public class Hand implements Model {
     }
 
     //5 cards in sequence from low to high. An Ace can be high or low
-    public static boolean isStraight(DeckModel deck) {
+    public static boolean isStraight(Deck deck) {
         ArrayList<Card> hand = deck.getDeck();
         int i, testRank;
 
@@ -113,17 +113,17 @@ public class Hand implements Model {
     }
 
     //A continuous run of 5 cards, all of the same suit. An Ace will be low in a straight flush
-    public static boolean isStraightFlush(DeckModel deck) {
+    public static boolean isStraightFlush(Deck deck) {
         return isFlush(deck) && isStraight(deck);
     }
 
     //A continuous run of 5 cards from 10 to Ace, all of the same suit. The highest score hand!
-    public static boolean isRoyalFlush(DeckModel deck) {
+    public static boolean isRoyalFlush(Deck deck) {
         return isFlush(deck) && isStraight(deck) && deck.getDeck().get(4).getRank() == Rank.ACE;
     }
 
     //4 cards of the same value
-    public static boolean isFourOfAKind(DeckModel deck) {
+    public static boolean isFourOfAKind(Deck deck) {
         ArrayList<Card> hand = deck.getDeck();
         boolean a1, a2 = false;
 
@@ -152,7 +152,7 @@ public class Hand implements Model {
     }
 
     //2 cards of one value and 3 cards of another value
-    public static boolean isFullHouse(DeckModel deck) {
+    public static boolean isFullHouse(Deck deck) {
         ArrayList<Card> hand = deck.getDeck();
         boolean a1, a2;
 
@@ -179,7 +179,7 @@ public class Hand implements Model {
     }
 
     //3 cards of the same value
-    public static boolean isThreeOfAKind(DeckModel deck) {
+    public static boolean isThreeOfAKind(Deck deck) {
         ArrayList<Card> hand = deck.getDeck();
         boolean a1, a2 = false, a3 = false;
 
@@ -215,7 +215,7 @@ public class Hand implements Model {
     }
 
     //2 cards of one value and 2 cards of another value
-    public static boolean isTwoPairs(DeckModel deck) {
+    public static boolean isTwoPairs(Deck deck) {
         ArrayList<Card> hand = deck.getDeck();
         boolean a1, a2 = false, a3 = false;
 
@@ -251,7 +251,7 @@ public class Hand implements Model {
     }
 
     //2 cards of the same value
-    public static boolean isPair(DeckModel deck) {
+    public static boolean isPair(Deck deck) {
         ArrayList<Card> hand = deck.getDeck();
         boolean a1, a2 = false, a3 = false, a4 = false;
 
@@ -289,7 +289,7 @@ public class Hand implements Model {
         return a1 || a2 || a3 || a4;
     }
 
-    public static String handRanking(DeckModel deck) {
+    public static String handRanking(Deck deck) {
         String hand;
 
         if (isRoyalFlush(deck)) {
