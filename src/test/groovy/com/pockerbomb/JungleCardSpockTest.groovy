@@ -5,18 +5,18 @@ import spock.lang.Specification
 class JungleCardSpockTest extends Specification{
     def 'com.pockerbomb.JungleCard removePlays'() {
         given:
-            Card jungleCard = new JungleCard(Suit.DIAMOND, Rank.JACK)
+            GenericSpecialCard jungleCard = new JungleCard(Suit.DIAMOND, Rank.JACK)
 
         when:
-            jungleCard.removeSpecialAttribute()
+            jungleCard.removeSpecialAttribute(1)
 
         then:
-            jungleCard.getSpecialAttribute()<0
+            jungleCard.getSpecialAttribute()==0
     }
 
     def 'com.pockerbomb.JungleCard removePlays 2'() {
         given:
-            Card jungleCard = new JungleCard(Suit.DIAMOND, Rank.JACK)
+            GenericSpecialCard jungleCard = new JungleCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             jungleCard.removeSpecialAttribute(2)
@@ -27,7 +27,7 @@ class JungleCardSpockTest extends Specification{
 
     def 'com.pockerbomb.JungleCard constructor'() {
         given:
-            Card jungleCard = new JungleCard(Suit.DIAMOND, Rank.JACK)
+            GenericSpecialCard jungleCard = new JungleCard(Suit.DIAMOND, Rank.JACK)
 
         when:
             int numberOfLayers = jungleCard.getSpecialAttribute()
@@ -38,7 +38,7 @@ class JungleCardSpockTest extends Specification{
 
     def 'com.pockerbomb.JungleCard add layer'() {
         given:
-            Card jungleCard = new JungleCard(Suit.SPADE, Rank.NINE)
+            GenericSpecialCard jungleCard = new JungleCard(Suit.SPADE, Rank.NINE)
 
         when:
             jungleCard.addNumberOfPlaysWithoutCombo()
@@ -49,7 +49,7 @@ class JungleCardSpockTest extends Specification{
 
     def 'com.pockerbomb.JungleCard add layer 2'() {
         given:
-        Card jungleCard = new JungleCard(Suit.SPADE, Rank.NINE)
+            Card jungleCard = new JungleCard(Suit.SPADE, Rank.NINE)
             jungleCard.addNumberOfPlaysWithoutCombo()
             jungleCard.addNumberOfPlaysWithoutCombo()
             jungleCard.addNumberOfPlaysWithoutCombo()
@@ -60,5 +60,14 @@ class JungleCardSpockTest extends Specification{
 
         then:
             jungleCard.getSpecialAttribute()==1
+    }
+
+    def 'com.pockerbomb.JungleCard isActive'() {
+        given:
+            Card jungleCard = new JungleCard(Suit.DIAMOND, Rank.JACK)
+
+        expect:
+            !jungleCard.isActive()
+
     }
 }

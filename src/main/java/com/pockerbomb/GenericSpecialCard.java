@@ -1,26 +1,11 @@
 package com.pockerbomb;
 
-public abstract class GenericSpecialCard extends Card {
-    protected int specialAttribute;
+public interface GenericSpecialCard {
+    void removeSpecialAttribute(int i);
 
-    GenericSpecialCard(Suit suit, Rank rank){
-        super(suit, rank);
-    }
+    int getSpecialAttribute();
 
-    void removeSpecialAttribute() {
-        specialAttribute--;
+    boolean isActive();
 
-    }
-
-    void removeSpecialAttribute(int i) {
-        specialAttribute-=i;
-    }
-
-    int getSpecialAttribute() {
-        return specialAttribute;
-    }
-
-    boolean isActive() {
-        return specialAttribute > 0;
-    }
+    void draw();
 }

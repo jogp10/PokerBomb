@@ -26,6 +26,7 @@ public class Menu {
     TextGraphics tg;
 
     public Menu() {
+
         try {
             TerminalSize terminalSize = new TerminalSize(60, 60);
             DefaultTerminalFactory terminalFactory = new

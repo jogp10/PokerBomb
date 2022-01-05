@@ -5,11 +5,11 @@ import spock.lang.Specification
 class FourOfAKindHandSpockTest extends Specification {
     def 'Four of a Kind com.pockerbomb.Hand 1'() {
         given:
-        Card card1 = new Card(Suit.CLUB, Rank.THREE)
-        Card card2 = new Card(Suit.DIAMOND, Rank.THREE)
-        Card card3 = new Card(Suit.SPADE, Rank.THREE)
-        Card card4 = new Card(Suit.HEART, Rank.THREE)
-        Card card5 = new Card(Suit.CLUB, Rank.FIVE)
+        NormalCard card1 = new NormalCard(Suit.CLUB, Rank.THREE)
+        NormalCard card2 = new NormalCard(Suit.DIAMOND, Rank.THREE)
+        NormalCard card3 = new NormalCard(Suit.SPADE, Rank.THREE)
+        NormalCard card4 = new NormalCard(Suit.HEART, Rank.THREE)
+        NormalCard card5 = new NormalCard(Suit.CLUB, Rank.FIVE)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -26,11 +26,11 @@ class FourOfAKindHandSpockTest extends Specification {
 
     def 'Four of a Kind com.pockerbomb.Hand 2'() {
         given:
-        Card card1 = new Card(Suit.DIAMOND, Rank.SIX)
-        Card card2 = new Card(Suit.SPADE, Rank.ACE)
-        Card card3 = new Card(Suit.DIAMOND, Rank.ACE)
-        Card card4 = new Card(Suit.CLUB, Rank.ACE)
-        Card card5 = new Card(Suit.HEART, Rank.ACE)
+        NormalCard card1 = new NormalCard(Suit.DIAMOND, Rank.SIX)
+        NormalCard card2 = new NormalCard(Suit.SPADE, Rank.ACE)
+        NormalCard card3 = new NormalCard(Suit.DIAMOND, Rank.ACE)
+        NormalCard card4 = new NormalCard(Suit.CLUB, Rank.ACE)
+        NormalCard card5 = new NormalCard(Suit.HEART, Rank.ACE)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -47,11 +47,11 @@ class FourOfAKindHandSpockTest extends Specification {
 
     def 'Four of a Kind com.pockerbomb.Hand 3'() {
         given:
-        Card card1 = new Card(Suit.SPADE, Rank.QUEEN)
-        Card card2 = new Card(Suit.DIAMOND, Rank.QUEEN)
-        Card card3 = new Card(Suit.CLUB, Rank.QUEEN)
-        Card card4 = new Card(Suit.HEART, Rank.QUEEN)
-        Card card5 = new Card(Suit.SPADE, Rank.KING)
+        NormalCard card1 = new NormalCard(Suit.SPADE, Rank.QUEEN)
+        NormalCard card2 = new NormalCard(Suit.DIAMOND, Rank.QUEEN)
+        NormalCard card3 = new NormalCard(Suit.CLUB, Rank.QUEEN)
+        NormalCard card4 = new NormalCard(Suit.HEART, Rank.QUEEN)
+        NormalCard card5 = new NormalCard(Suit.SPADE, Rank.KING)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -68,10 +68,10 @@ class FourOfAKindHandSpockTest extends Specification {
 
     def 'Four of a Kind com.pockerbomb.Hand 4'() {
         given:
-        Card card1 = new Card(Suit.CLUB, Rank.THREE)
-        Card card2 = new Card(Suit.DIAMOND, Rank.THREE)
-        Card card3 = new Card(Suit.SPADE, Rank.THREE)
-        Card card4 = new Card(Suit.HEART, Rank.THREE)
+        NormalCard card1 = new NormalCard(Suit.CLUB, Rank.THREE)
+        NormalCard card2 = new NormalCard(Suit.DIAMOND, Rank.THREE)
+        NormalCard card3 = new NormalCard(Suit.SPADE, Rank.THREE)
+        NormalCard card4 = new NormalCard(Suit.HEART, Rank.THREE)
 
         Deck deck = new Deck()
         deck.addCard(card1)

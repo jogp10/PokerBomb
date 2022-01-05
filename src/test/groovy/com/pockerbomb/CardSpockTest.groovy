@@ -6,10 +6,10 @@ class CardSpockTest extends Specification {
 
     def 'com.pockerbomb.Card com.pockerbomb.Suit'() {
         given:
-            Card card = new Card(Suit.CLUB, Rank.ACE)
+            NormalCard card = new NormalCard(Suit.CLUB, Rank.ACE)
 
         when:
-        Suit suit = card.getSuit()
+            Suit suit = card.getSuit()
 
         then:
             suit == Suit.CLUB
@@ -17,7 +17,7 @@ class CardSpockTest extends Specification {
 
     def 'com.pockerbomb.Card to string'() {
         given:
-            Card card = new Card(Suit.DIAMOND, Rank.ACE)
+            NormalCard card = new NormalCard(Suit.DIAMOND, Rank.ACE)
 
         when:
             String string = card.toString()
@@ -28,7 +28,7 @@ class CardSpockTest extends Specification {
 
     def 'com.pockerbomb.Card Value'() {
         given:
-            Card card = new Card(Suit.CLUB, Rank.ACE)
+            NormalCard card = new NormalCard(Suit.CLUB, Rank.ACE)
 
         when:
             Rank value = card.getRank()

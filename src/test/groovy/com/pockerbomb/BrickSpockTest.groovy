@@ -6,10 +6,10 @@ class BrickSpockTest extends Specification{
 
     def 'com.pockerbomb.Brick removeLayers'() {
         given:
-            Brick brick = new Brick()
+            Card brick = new Brick()
 
         when:
-            brick.removeSpecialAttribute()
+            brick.removeSpecialAttribute(1)
 
         then:
             brick.specialAttribute==0
@@ -17,7 +17,7 @@ class BrickSpockTest extends Specification{
 
     def 'com.pockerbomb.Brick constructor'() {
         given:
-        Brick brick = new Brick()
+            Card brick = new Brick()
 
         when:
             int numberOfLayers = brick.getSpecialAttribute()
@@ -28,9 +28,9 @@ class BrickSpockTest extends Specification{
 
     def 'com.pockerbomb.Brick isActive'() {
         given:
-            GenericSpecialCard brick = new Brick()
+            Card brick = new Brick()
 
         expect:
-            brick.isActive()
+            brick.isActive();
     }
 }

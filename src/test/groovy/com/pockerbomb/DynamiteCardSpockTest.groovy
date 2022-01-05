@@ -5,24 +5,13 @@ import spock.lang.Specification
 class DynamiteCardSpockTest extends Specification{
     def 'com.pockerbomb.DynamiteCard removePlays'() {
         given:
-        Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Rank.JACK)
+            Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Rank.JACK)
 
         when:
-            dynamiteCard.removeSpecialAttribute()
+            dynamiteCard.removeSpecialAttribute(1)
 
         then:
             dynamiteCard.getSpecialAttribute()==4
-    }
-
-    def 'com.pockerbomb.BomberCard removePlays 2'() {
-        given:
-        Card bomberCard = new BomberCard(Suit.DIAMOND, Rank.JACK)
-
-        when:
-        bomberCard.removeSpecialAttribute(10)
-
-        then:
-        bomberCard.getSpecialAttribute()==6
     }
 
     def 'com.pockerbomb.DynamiteCard constructor'() {
@@ -34,6 +23,19 @@ class DynamiteCardSpockTest extends Specification{
 
         then:
             numberOfPlaysTillDynamite==5
+    }
+
+    def 'com.pockerbomb.DynamiteCard isActive'() {
+        given:
+            Card dynamiteCard = new DynamiteCard(Suit.DIAMOND, Rank.JACK)
+            dynamiteCard.removeSpecialAttribute(4)
+
+        when:
+            dynamiteCard.removeSpecialAttribute(1)
+
+        then:
+            !dynamiteCard.isActive()
+
     }
 
 

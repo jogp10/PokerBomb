@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Hand {
 
-    public static void sortByRank(ArrayList<Card> hand) {
+    public static void sortByRank(ArrayList<NormalCard> hand) {
         int i, j, min_j;
 
       /* ---------------------------------------------------
@@ -26,12 +26,12 @@ public class Hand {
          /* ---------------------------------------------------
             Swap a[i] and a[min_j]
             --------------------------------------------------- */
-            Card help = hand.get(i);
+            NormalCard help = hand.get(i);
             hand.set(i, hand.get(min_j));
             hand.set(min_j, help);
         }
     }
-    public static void sortBySuit(ArrayList<Card> hand) {
+    public static void sortBySuit(ArrayList<NormalCard> hand) {
         int i, j, min_j;
 
       /* ---------------------------------------------------
@@ -53,7 +53,7 @@ public class Hand {
          /* ---------------------------------------------------
             Swap a[i] and a[min_j]
             --------------------------------------------------- */
-            Card help = hand.get(i);
+            NormalCard help = hand.get(i);
             hand.set(i, hand.get(min_j));
             hand.set(min_j, help);
         }
@@ -61,7 +61,7 @@ public class Hand {
 
     //5 cards of the same suit
     public static boolean isFlush(Deck deck) {
-        ArrayList<Card> hand = deck.getDeck();
+        ArrayList<NormalCard> hand = deck.getDeck();
 
         if (hand.size() < 5)
             return false;   // Make sure we have 5 cards....
@@ -73,7 +73,7 @@ public class Hand {
 
     //5 cards in sequence from low to high. An Ace can be high or low
     public static boolean isStraight(Deck deck) {
-        ArrayList<Card> hand = deck.getDeck();
+        ArrayList<NormalCard> hand = deck.getDeck();
         int i, testRank;
 
         if (hand.size() < 5 )
@@ -119,7 +119,7 @@ public class Hand {
 
     //4 cards of the same value
     public static boolean isFourOfAKind(Deck deck) {
-        ArrayList<Card> hand = deck.getDeck();
+        ArrayList<NormalCard> hand = deck.getDeck();
         boolean a1, a2 = false;
 
         if (hand.size() < 4)
@@ -148,7 +148,7 @@ public class Hand {
 
     //2 cards of one value and 3 cards of another value
     public static boolean isFullHouse(Deck deck) {
-        ArrayList<Card> hand = deck.getDeck();
+        ArrayList<NormalCard> hand = deck.getDeck();
         boolean a1, a2;
 
         if (hand.size() < 5)
@@ -175,7 +175,7 @@ public class Hand {
 
     //3 cards of the same value
     public static boolean isThreeOfAKind(Deck deck) {
-        ArrayList<Card> hand = deck.getDeck();
+        ArrayList<NormalCard> hand = deck.getDeck();
         boolean a1, a2 = false, a3 = false;
 
         if (hand.size() < 3)
@@ -211,7 +211,7 @@ public class Hand {
 
     //2 cards of one value and 2 cards of another value
     public static boolean isTwoPairs(Deck deck) {
-        ArrayList<Card> hand = deck.getDeck();
+        ArrayList<NormalCard> hand = deck.getDeck();
         boolean a1, a2 = false, a3 = false;
 
         if (hand.size() < 4)
@@ -247,7 +247,7 @@ public class Hand {
 
     //2 cards of the same value
     public static boolean isPair(Deck deck) {
-        ArrayList<Card> hand = deck.getDeck();
+        ArrayList<NormalCard> hand = deck.getDeck();
         boolean a1, a2 = false, a3 = false, a4 = false;
 
         if (hand.size() < 2)
