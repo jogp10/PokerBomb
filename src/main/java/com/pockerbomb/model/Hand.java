@@ -1,5 +1,8 @@
 package com.pockerbomb.model;
 
+import com.pockerbomb.model.cards.Card;
+import com.pockerbomb.model.cards.Rank;
+
 import java.util.ArrayList;
 
 public class Hand {

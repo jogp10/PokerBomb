@@ -1,25 +1,17 @@
-package com.pockerbomb.model;
+package com.pockerbomb.model.cards;
 
-public class JungleCard extends Card implements GenericSpecialCard {
+public class FrozenCard extends Card implements GenericSpecialCard {
     private int specialAttribute;
-    private int countToAddAttribute;
 
 
-    public JungleCard(Suit suit, Rank rank) {
+    public FrozenCard(Suit suit, Rank rank) {
         super(suit, rank);
-        specialAttribute = 1;
-        countToAddAttribute = 0;
+        specialAttribute = 2;
     }
 
     @Override
     public boolean PlayWithoutCombo() {
-        countToAddAttribute++;
-        if(countToAddAttribute==3){
-            specialAttribute++;
-            countToAddAttribute=0;
-        }
-        if(specialAttribute>3) specialAttribute=3;
-        return specialAttribute==0;
+        return false;
     }
 
     @Override

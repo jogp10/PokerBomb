@@ -1,5 +1,9 @@
 package com.pockerbomb.model;
 
+import com.pockerbomb.model.cards.Card;
+import com.pockerbomb.model.cards.Rank;
+import com.pockerbomb.model.cards.Suit;
+
 import java.util.ArrayList;
 import java.util.Random;
 

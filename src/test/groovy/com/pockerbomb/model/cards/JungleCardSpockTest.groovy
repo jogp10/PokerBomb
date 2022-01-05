@@ -1,8 +1,8 @@
-package com.pockerbomb.model
+package com.pockerbomb.model.cards
 
-import com.pockerbomb.model.JungleCard
-import com.pockerbomb.model.Rank
-import com.pockerbomb.model.Suit
+import com.pockerbomb.model.cards.JungleCard
+import com.pockerbomb.model.cards.Rank
+import com.pockerbomb.model.cards.Suit
 import spock.lang.Specification
 
 class JungleCardSpockTest extends Specification{
@@ -11,7 +11,7 @@ class JungleCardSpockTest extends Specification{
         jungleCard = new JungleCard(Suit.CLUB, Rank.ACE)
     }
 
-    def 'com.pockerbomb.model.JungleCard removePlays'() {
+    def 'com.pockerbomb.model.cards.JungleCard removePlays'() {
         when:
             jungleCard.removeSpecialAttribute(1)
 
@@ -19,7 +19,7 @@ class JungleCardSpockTest extends Specification{
             jungleCard.getSpecialAttribute()==0
     }
 
-    def 'com.pockerbomb.model.JungleCard constructor'() {
+    def 'com.pockerbomb.model.cards.JungleCard constructor'() {
         when:
             int numberSpecialAttribute = jungleCard.getSpecialAttribute()
 
@@ -27,7 +27,7 @@ class JungleCardSpockTest extends Specification{
             numberSpecialAttribute==1
     }
 
-    def 'com.pockerbomb.model.JungleCard isActive'() {
+    def 'com.pockerbomb.model.cards.JungleCard isActive'() {
         when:
             jungleCard.removeSpecialAttribute(1)
 
@@ -35,12 +35,12 @@ class JungleCardSpockTest extends Specification{
             !jungleCard.isActive()
     }
 
-    def 'com.pockerbomb.model.JungleCard PlayWithCombo'() {
+    def 'com.pockerbomb.model.cards.JungleCard PlayWithCombo'() {
         expect:
             jungleCard.PlayWithCombo(4);
     }
 
-    def 'com.pockerbomb.model.JungleCard PlayWithoutCombo'() {
+    def 'com.pockerbomb.model.cards.JungleCard PlayWithoutCombo'() {
         expect:
             !jungleCard.PlayWithoutCombo();
     }

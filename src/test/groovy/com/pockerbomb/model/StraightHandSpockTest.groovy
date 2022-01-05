@@ -1,10 +1,8 @@
 package com.pockerbomb.model
 
-import com.pockerbomb.model.Card
-import com.pockerbomb.model.Deck
-import com.pockerbomb.model.Hand
-import com.pockerbomb.model.Rank
-import com.pockerbomb.model.Suit
+import com.pockerbomb.model.cards.Card
+import com.pockerbomb.model.cards.Rank
+import com.pockerbomb.model.cards.Suit
 import spock.lang.Specification
 
 class StraightHandSpockTest extends Specification {

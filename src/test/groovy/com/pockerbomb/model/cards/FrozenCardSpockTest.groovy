@@ -1,8 +1,8 @@
-package com.pockerbomb.model
+package com.pockerbomb.model.cards
 
-import com.pockerbomb.model.FrozenCard
-import com.pockerbomb.model.Rank
-import com.pockerbomb.model.Suit
+import com.pockerbomb.model.cards.FrozenCard
+import com.pockerbomb.model.cards.Rank
+import com.pockerbomb.model.cards.Suit
 import spock.lang.Specification
 
 class FrozenCardSpockTest extends Specification{
@@ -11,7 +11,7 @@ class FrozenCardSpockTest extends Specification{
         frozenCard = new FrozenCard(Suit.CLUB, Rank.ACE)
     }
 
-    def 'com.pockerbomb.model.FrozenCard removeLayers'() {
+    def 'com.pockerbomb.model.cards.FrozenCard removeLayers'() {
         when:
             frozenCard.removeSpecialAttribute(1)
 
@@ -19,7 +19,7 @@ class FrozenCardSpockTest extends Specification{
             frozenCard.getSpecialAttribute()==1
     }
 
-    def 'com.pockerbomb.model.FrozenCard removeLayers 2'() {
+    def 'com.pockerbomb.model.cards.FrozenCard removeLayers 2'() {
         when:
             frozenCard.removeSpecialAttribute(2)
 
@@ -27,7 +27,7 @@ class FrozenCardSpockTest extends Specification{
             frozenCard.getSpecialAttribute()==0
     }
 
-    def 'com.pockerbomb.model.FrozenCard constructor'() {
+    def 'com.pockerbomb.model.cards.FrozenCard constructor'() {
         when:
             int numberOfLayers = frozenCard.getSpecialAttribute()
 
@@ -35,7 +35,7 @@ class FrozenCardSpockTest extends Specification{
             numberOfLayers==2
     }
 
-    def 'com.pockerbomb.model.FrozenCard isActive'() {
+    def 'com.pockerbomb.model.cards.FrozenCard isActive'() {
         when:
             frozenCard.removeSpecialAttribute(2)
 
@@ -44,12 +44,12 @@ class FrozenCardSpockTest extends Specification{
 
     }
 
-    def 'com.pockerbomb.model.FrozenCard PlayWithCombo'() {
+    def 'com.pockerbomb.model.cards.FrozenCard PlayWithCombo'() {
         expect:
             !frozenCard.PlayWithCombo(1);
     }
 
-    def 'com.pockerbomb.model.FrozenCard PlayWithoutCombo'() {
+    def 'com.pockerbomb.model.cards.FrozenCard PlayWithoutCombo'() {
         expect:
             !frozenCard.PlayWithoutCombo();
     }

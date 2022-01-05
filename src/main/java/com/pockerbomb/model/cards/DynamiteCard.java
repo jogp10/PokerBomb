@@ -1,23 +1,22 @@
-package com.pockerbomb.model;
+package com.pockerbomb.model.cards;
 
-public class FrozenCard extends Card implements GenericSpecialCard {
+public class DynamiteCard extends Card implements GenericSpecialCard {
     private int specialAttribute;
 
-
-    public FrozenCard(Suit suit, Rank rank) {
+    public DynamiteCard(Suit suit, Rank rank) {
         super(suit, rank);
-        specialAttribute = 2;
+        specialAttribute = 5;
     }
 
     @Override
     public boolean PlayWithoutCombo() {
-        return false;
+        removeSpecialAttribute(1);
+        return specialAttribute==0;
     }
 
     @Override
     public boolean PlayWithCombo(int i) {
-        removeSpecialAttribute(i);
-        return specialAttribute==0;
+        return true;
     }
 
     @Override
