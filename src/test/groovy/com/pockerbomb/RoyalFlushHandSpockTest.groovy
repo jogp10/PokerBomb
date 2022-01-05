@@ -1,10 +1,5 @@
 package com.pockerbomb
 
-import com.pockerbomb.Card
-import com.pockerbomb.Deck
-import com.pockerbomb.Hand
-import com.pockerbomb.Rank
-import com.pockerbomb.Suit
 import spock.lang.Specification
 
 class RoyalFlushHandSpockTest extends Specification {

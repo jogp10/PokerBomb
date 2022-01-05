@@ -1,7 +1,5 @@
 package com.pockerbomb
 
-import com.pockerbomb.Brick
-import com.pockerbomb.GenericSpecialCard
 import spock.lang.Specification
 
 class BrickSpockTest extends Specification{

@@ -1,8 +1,5 @@
 package com.pockerbomb
 
-import com.pockerbomb.Card
-import com.pockerbomb.Rank
-import com.pockerbomb.Suit
 import spock.lang.Specification
 
 class CardSpockTest extends Specification {

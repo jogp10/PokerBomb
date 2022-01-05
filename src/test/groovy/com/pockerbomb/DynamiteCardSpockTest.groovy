@@ -1,10 +1,5 @@
 package com.pockerbomb
 
-import com.pockerbomb.BomberCard
-import com.pockerbomb.Card
-import com.pockerbomb.DynamiteCard
-import com.pockerbomb.Rank
-import com.pockerbomb.Suit
 import spock.lang.Specification
 
 class DynamiteCardSpockTest extends Specification{
