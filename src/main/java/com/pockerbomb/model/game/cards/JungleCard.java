@@ -12,7 +12,13 @@ public class JungleCard extends Card implements GenericSpecialCard {
     }
 
     @Override
-    public boolean PlayWithoutCombo() {
+    boolean inACombo(int i) {
+        removeSpecialAttribute(i);
+        return specialAttribute==0;
+    }
+
+    @Override
+    boolean notInACombo() {
         countToAddAttribute++;
         if(countToAddAttribute==3){
             specialAttribute++;
@@ -22,11 +28,6 @@ public class JungleCard extends Card implements GenericSpecialCard {
         return specialAttribute==0;
     }
 
-    @Override
-    public boolean PlayWithCombo(int i) {
-        removeSpecialAttribute(i);
-        return specialAttribute==0;
-    }
 
     @Override
     public void removeSpecialAttribute(int i) {
@@ -43,13 +44,5 @@ public class JungleCard extends Card implements GenericSpecialCard {
     @Override
     public boolean isActive() {
         return specialAttribute>0;
-    }
-
-    @Override
-    public void draw() {
-        super.draw();
-        if(isActive()){
-
-        }
     }
 }

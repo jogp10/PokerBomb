@@ -10,15 +10,16 @@ public class FrozenCard extends Card implements GenericSpecialCard {
     }
 
     @Override
-    public boolean PlayWithoutCombo() {
-        return false;
-    }
-
-    @Override
-    public boolean PlayWithCombo(int i) {
+    boolean inACombo(int i) {
         removeSpecialAttribute(i);
         return specialAttribute==0;
     }
+
+    @Override
+    boolean notInACombo() {
+        return false;
+    }
+
 
     @Override
     public void removeSpecialAttribute(int i) {
@@ -35,13 +36,5 @@ public class FrozenCard extends Card implements GenericSpecialCard {
     @Override
     public boolean isActive() {
         return specialAttribute>0;
-    }
-
-    @Override
-    public void draw() {
-        super.draw();
-        if(isActive()){
-
-        }
     }
 }

@@ -37,11 +37,11 @@ class JungleCardSpockTest extends Specification{
 
     def 'com.pockerbomb.model.cards.JungleCard PlayWithCombo'() {
         expect:
-            jungleCard.PlayWithCombo(4);
+            jungleCard.inACombo(4);
     }
 
     def 'com.pockerbomb.model.cards.JungleCard PlayWithoutCombo'() {
         expect:
-            !jungleCard.PlayWithoutCombo();
+            !jungleCard.notInACombo();
     }
 }

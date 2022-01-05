@@ -37,12 +37,12 @@ class DynamiteCardSpockTest extends Specification{
 
     def 'com.pockerbomb.model.cards.DynamiteCard PlayWithCombo'() {
         expect:
-            dynamiteCard.PlayWithCombo(1);
+            dynamiteCard.inACombo(1);
     }
 
     def 'com.pockerbomb.model.cards.DynamiteCard PlayWithoutCombo'() {
         expect:
-            !dynamiteCard.PlayWithoutCombo();
+            !dynamiteCard.notInACombo();
     }
 
 

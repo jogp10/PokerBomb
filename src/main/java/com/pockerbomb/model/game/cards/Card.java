@@ -1,10 +1,13 @@
 package com.pockerbomb.model.game.cards;
 
-public class Card {
+import com.pockerbomb.model.Model;
+
+public abstract class Card implements Model {
+
     protected Suit suit;
     protected Rank rank;
 
-    public Card(Suit suit, Rank rank){
+    public Card(Suit suit, Rank rank) {
         this.suit = suit;
         this.rank = rank;
     }
@@ -39,15 +42,7 @@ public class Card {
         return 0;
     }
 
-    public boolean PlayWithoutCombo() {
-        return false;
-    }
-
-    public boolean PlayWithCombo(int i) {
-        return true;
-    } // return true to destroy card
-
-    public void draw() {
-    }
+    abstract boolean inACombo(int i);
+    abstract boolean notInACombo();
 
 }

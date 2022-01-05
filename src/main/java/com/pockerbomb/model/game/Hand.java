@@ -1,11 +1,12 @@
 package com.pockerbomb.model.game;
 
+import com.pockerbomb.model.Model;
 import com.pockerbomb.model.game.cards.Card;
 import com.pockerbomb.model.game.cards.Rank;
 
 import java.util.ArrayList;
 
-public class Hand {
+public class Hand implements Model {
 
     public static void sortByRank(ArrayList<Card> hand) {
         int i, j, min_j;
@@ -34,6 +35,7 @@ public class Hand {
             hand.set(min_j, help);
         }
     }
+
     public static void sortBySuit(ArrayList<Card> hand) {
         int i, j, min_j;
 
@@ -63,7 +65,7 @@ public class Hand {
     }
 
     //5 cards of the same suit
-    public static boolean isFlush(Deck deck) {
+    public static boolean isFlush(DeckModel deck) {
         ArrayList<Card> hand = deck.getDeck();
 
         if (hand.size() < 5)
@@ -75,7 +77,7 @@ public class Hand {
     }
 
     //5 cards in sequence from low to high. An Ace can be high or low
-    public static boolean isStraight(Deck deck) {
+    public static boolean isStraight(DeckModel deck) {
         ArrayList<Card> hand = deck.getDeck();
         int i, testRank;
 
@@ -111,17 +113,17 @@ public class Hand {
     }
 
     //A continuous run of 5 cards, all of the same suit. An Ace will be low in a straight flush
-    public static boolean isStraightFlush(Deck deck) {
+    public static boolean isStraightFlush(DeckModel deck) {
         return isFlush(deck) && isStraight(deck);
     }
 
     //A continuous run of 5 cards from 10 to Ace, all of the same suit. The highest score hand!
-    public static boolean isRoyalFlush(Deck deck) {
+    public static boolean isRoyalFlush(DeckModel deck) {
         return isFlush(deck) && isStraight(deck) && deck.getDeck().get(4).getRank() == Rank.ACE;
     }
 
     //4 cards of the same value
-    public static boolean isFourOfAKind(Deck deck) {
+    public static boolean isFourOfAKind(DeckModel deck) {
         ArrayList<Card> hand = deck.getDeck();
         boolean a1, a2 = false;
 
@@ -150,7 +152,7 @@ public class Hand {
     }
 
     //2 cards of one value and 3 cards of another value
-    public static boolean isFullHouse(Deck deck) {
+    public static boolean isFullHouse(DeckModel deck) {
         ArrayList<Card> hand = deck.getDeck();
         boolean a1, a2;
 
@@ -177,7 +179,7 @@ public class Hand {
     }
 
     //3 cards of the same value
-    public static boolean isThreeOfAKind(Deck deck) {
+    public static boolean isThreeOfAKind(DeckModel deck) {
         ArrayList<Card> hand = deck.getDeck();
         boolean a1, a2 = false, a3 = false;
 
@@ -213,7 +215,7 @@ public class Hand {
     }
 
     //2 cards of one value and 2 cards of another value
-    public static boolean isTwoPairs(Deck deck) {
+    public static boolean isTwoPairs(DeckModel deck) {
         ArrayList<Card> hand = deck.getDeck();
         boolean a1, a2 = false, a3 = false;
 
@@ -249,7 +251,7 @@ public class Hand {
     }
 
     //2 cards of the same value
-    public static boolean isPair(Deck deck) {
+    public static boolean isPair(DeckModel deck) {
         ArrayList<Card> hand = deck.getDeck();
         boolean a1, a2 = false, a3 = false, a4 = false;
 
@@ -287,7 +289,7 @@ public class Hand {
         return a1 || a2 || a3 || a4;
     }
 
-    public static String handRanking(Deck deck) {
+    public static String handRanking(DeckModel deck) {
         String hand;
 
         if (isRoyalFlush(deck)) {

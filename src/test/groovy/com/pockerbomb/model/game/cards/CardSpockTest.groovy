@@ -1,14 +1,12 @@
 package com.pockerbomb.model.game.cards
 
-import com.pockerbomb.model.game.cards.Card
-import com.pockerbomb.model.game.cards.Rank
-import com.pockerbomb.model.game.cards.Suit
+
 import spock.lang.Specification
 
 class CardSpockTest extends Specification {
-    Card card;
+    NormalCard card;
     def setup(){
-        card = new Card(Suit.CLUB, Rank.ACE)
+        card = new NormalCard(Suit.CLUB, Rank.ACE)
     }
 
     def 'com.pockerbomb.model.cards.Card com.pockerbomb.model.cards.Suit'() {
@@ -37,12 +35,12 @@ class CardSpockTest extends Specification {
 
     def 'com.pockerbomb.model.cards.Card PlayWithCombo'() {
         expect:
-            card.PlayWithCombo(1);
+            card.inACombo(1);
     }
 
     def 'com.pockerbomb.model.cards.Card PlayWithoutCombo'() {
         expect:
-            !card.PlayWithoutCombo();
+            !card.notInACombo();
     }
 
 }
