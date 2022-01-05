@@ -1,27 +1,94 @@
 package com.pockerbomb.model.menu;
 import com.googlecode.lanterna.TerminalPosition;
-
 import com.googlecode.lanterna.input.KeyStroke;
-
-
-
 import com.googlecode.lanterna.TerminalSize;
-import com.googlecode.lanterna.TextCharacter;
+
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
-import com.googlecode.lanterna.input.KeyType;
+
 import com.googlecode.lanterna.screen.Screen;
 import com.googlecode.lanterna.screen.TerminalScreen;
 import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
 import com.googlecode.lanterna.terminal.Terminal;
+import com.pockerbomb.model.Model;
 
-import java.awt.*;
 import java.io.IOException;
 
 import static com.googlecode.lanterna.SGR.BOLD;
 
 
-public class Menu {
+
+public class Menu implements Model {
+
+    public enum Option {START, INST, STORE, EXIT}    //Enum used to avoid typing errors
+
+    public String[] optString = {"PLAY", "INSTRUCTIONS", "STORE", "EXIT"}; //get the string associated to the enumerator
+
+    Option selected;
+    Option[] opt = Option.values();
+
+    public Menu(boolean inGame) {
+        this.selected = Option.START;
+        if (inGame) optString[0] = "CONTINUE";
+    }
+
+
+    public Option getSelected() {
+        return selected;
+    }
+
+    public void setSelected(Option selected) {
+        this.selected = selected;
+    }
+
+    public int getPosElem(Option target) {
+        int i = 0;
+        for (; opt[i] != target; i++) ;
+        return i;
+    }
+
+    public void nextSelected() {
+        if (selected == Option.EXIT) selected = Option.START;
+        else {
+            //find the position of this.selected in the opt array
+            int i = getPosElem(selected);
+            i++;
+            selected = opt[i];
+        }
+    }
+
+    public void previousSelected() {
+        if (selected == Option.START) selected = Option.EXIT;
+        else {
+            //find the position of this.selected in the opt array
+            int i = getPosElem(selected);
+            i--;
+            selected = opt[i];
+        }
+    }
+
+    public String enumToString(Option menuOption) {
+        int position = getPosElem(menuOption);
+        return optString[position];
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
     private Screen screen;
     private TextGraphics graphics;
     //TextGraphics tg = screen.newTextGraphics();
@@ -210,7 +277,7 @@ public class Menu {
     }
 
 
-
+*/
 
 
 

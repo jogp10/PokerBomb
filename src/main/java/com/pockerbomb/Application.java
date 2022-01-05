@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public class Application {
     public static void main(String[] args) {
 
-        Menu menu = new Menu();
-        menu.run();
+        /*Menu menu = new Menu();
+        menu.run();*/
 
 
         // Player's info
