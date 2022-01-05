@@ -45,19 +45,6 @@ public class MenuView extends View<Menu>{
         borderView.draw(COL_BEGIN_SELECTED, getStringLine(model.getPosElem(selected)) - 1);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     @Override
     public void draw(int col, int row) throws IOException {
         clear(col, row);
