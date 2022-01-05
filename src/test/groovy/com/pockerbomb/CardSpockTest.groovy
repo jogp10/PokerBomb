@@ -3,10 +3,13 @@ package com.pockerbomb
 import spock.lang.Specification
 
 class CardSpockTest extends Specification {
+    def setup(){
+
+    }
 
     def 'com.pockerbomb.Card com.pockerbomb.Suit'() {
         given:
-            NormalCard card = new NormalCard(Suit.CLUB, Rank.ACE)
+            Card card = new Card(Suit.CLUB, Rank.ACE)
 
         when:
             Suit suit = card.getSuit()
@@ -17,7 +20,7 @@ class CardSpockTest extends Specification {
 
     def 'com.pockerbomb.Card to string'() {
         given:
-            NormalCard card = new NormalCard(Suit.DIAMOND, Rank.ACE)
+            Card card = new Card(Suit.DIAMOND, Rank.ACE)
 
         when:
             String string = card.toString()
@@ -28,7 +31,7 @@ class CardSpockTest extends Specification {
 
     def 'com.pockerbomb.Card Value'() {
         given:
-            NormalCard card = new NormalCard(Suit.CLUB, Rank.ACE)
+            Card card = new Card(Suit.CLUB, Rank.ACE)
 
         when:
             Rank value = card.getRank()

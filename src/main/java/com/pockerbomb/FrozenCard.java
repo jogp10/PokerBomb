@@ -1,31 +1,41 @@
 package com.pockerbomb;
 
-public class FrozenCard extends NormalCard implements GenericSpecialCard {
-    private int numOfLayers;
+public class FrozenCard extends Card implements GenericSpecialCard {
+    private int specialAttribute;
+
 
     public FrozenCard(Suit suit, Rank rank) {
         super(suit, rank);
-        numOfLayers = 2;
+        specialAttribute = 2;
     }
 
     @Override
-    public void removeSpecialAttribute(int number_layers) {
-        if(numOfLayers-number_layers<0){
-            numOfLayers=0;
-        }
-        else numOfLayers-=number_layers;
+    public boolean PlayWithoutCombo() {
+        return false;
+    }
+
+    @Override
+    public boolean PlayWithCombo(int i) {
+        removeSpecialAttribute(i);
+        return specialAttribute==0;
+    }
+
+    @Override
+    public void removeSpecialAttribute(int i) {
+        if(specialAttribute-i<0){
+            specialAttribute=0;
+        } else specialAttribute-=i;
     }
 
     @Override
     public int getSpecialAttribute() {
-        return numOfLayers;
+        return specialAttribute;
     }
 
     @Override
     public boolean isActive() {
-        return numOfLayers>0;
+        return specialAttribute>0;
     }
-
 
     @Override
     public void draw() {

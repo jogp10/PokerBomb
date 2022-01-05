@@ -1,28 +1,39 @@
 package com.pockerbomb;
 
-public class DynamiteCard extends NormalCard implements GenericSpecialCard {
-    private int numOfPlaysTillDynamite;
+public class DynamiteCard extends Card implements GenericSpecialCard {
+    private int specialAttribute;
+
     public DynamiteCard(Suit suit, Rank rank) {
         super(suit, rank);
-        numOfPlaysTillDynamite = 5;
+        specialAttribute = 5;
     }
 
+    @Override
+    public boolean PlayWithoutCombo() {
+        removeSpecialAttribute(1);
+        return specialAttribute==0;
+    }
 
     @Override
-    public void removeSpecialAttribute(int number_plays) {
-        if(numOfPlaysTillDynamite-number_plays<0){
-            numOfPlaysTillDynamite=0;
-        } else numOfPlaysTillDynamite-=number_plays;
+    public boolean PlayWithCombo(int i) {
+        return true;
+    }
+
+    @Override
+    public void removeSpecialAttribute(int i) {
+        if(specialAttribute-i<0){
+            specialAttribute=0;
+        } else specialAttribute-=i;
     }
 
     @Override
     public int getSpecialAttribute() {
-        return numOfPlaysTillDynamite;
+        return specialAttribute;
     }
 
     @Override
     public boolean isActive() {
-        return numOfPlaysTillDynamite>0;
+        return specialAttribute>0;
     }
 
     @Override
@@ -32,5 +43,4 @@ public class DynamiteCard extends NormalCard implements GenericSpecialCard {
 
         }
     }
-
 }

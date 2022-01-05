@@ -9,7 +9,7 @@ class DeckSpockTest extends Specification{
 
         when:
             deck.createFullDeck()
-            ArrayList<NormalCard> cards = deck.getDeck()
+            ArrayList<Card> cards = deck.getDeck()
 
         then:
             cards.size()==52
@@ -30,7 +30,7 @@ class DeckSpockTest extends Specification{
     def 'AddCard'() {
         given:
             Deck deck = new Deck()
-            NormalCard card = new NormalCard(Suit.HEART, Rank.SEVEN)
+            Card card = new Card(Suit.HEART, Rank.SEVEN)
 
         when:
             deck.addCard(card)
@@ -42,7 +42,7 @@ class DeckSpockTest extends Specification{
     def 'RemoveCard'() {
         given:
             Deck deck = new Deck()
-            NormalCard card = Mock(NormalCard)
+            Card card = Mock(Card)
             deck.addCard(card)
 
         when:
@@ -55,11 +55,11 @@ class DeckSpockTest extends Specification{
     def 'DrawCard'() {
         given:
             Deck deck = new Deck()
-            NormalCard card = new NormalCard(Suit.HEART, Rank.ACE)
+            Card card = new Card(Suit.HEART, Rank.ACE)
             deck.addCard(card)
 
         when:
-            NormalCard drawn = deck.pop(deck)
+            Card drawn = deck.pop(deck)
 
         then:
             drawn == card
@@ -68,13 +68,13 @@ class DeckSpockTest extends Specification{
     def 'DrawCard 2'() {
         given:
             Deck deck = new Deck()
-            NormalCard card = new NormalCard(Suit.HEART, Rank.ACE)
+            Card card = new Card(Suit.HEART, Rank.ACE)
             deck.addCard(card)
-            card = new NormalCard(Suit.DIAMOND, Rank.JACK)
+            card = new Card(Suit.DIAMOND, Rank.JACK)
             deck.addCard(card)
 
         when:
-            NormalCard drawn = deck.pop(deck, 1)
+            Card drawn = deck.pop(deck, 1)
 
         then:
             drawn == card
@@ -83,7 +83,7 @@ class DeckSpockTest extends Specification{
     def 'ToString' () {
         given:
             Deck deck = new Deck()
-            NormalCard card = new NormalCard(Suit.DIAMOND, Rank.TWO)
+            Card card = new Card(Suit.DIAMOND, Rank.TWO)
             deck.addCard(card)
 
         expect:

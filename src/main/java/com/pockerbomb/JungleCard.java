@@ -1,32 +1,48 @@
 package com.pockerbomb;
 
-public class JungleCard extends NormalCard implements GenericSpecialCard {
-    private int numOfLayers;
-    private int numOfPlaysToAddLayer;
+public class JungleCard extends Card implements GenericSpecialCard {
+    private int specialAttribute;
+    private int countToAddAttribute;
+
 
     public JungleCard(Suit suit, Rank rank) {
         super(suit, rank);
-        numOfLayers = 0;
-        numOfPlaysToAddLayer = 0;
+        specialAttribute = 1;
+        countToAddAttribute = 0;
     }
 
     @Override
-    public void removeSpecialAttribute(int number_layers) {
-        if(numOfLayers-number_layers<0){
-            numOfLayers=0;
+    public boolean PlayWithoutCombo() {
+        countToAddAttribute++;
+        if(countToAddAttribute==3){
+            specialAttribute++;
+            countToAddAttribute=0;
         }
-        else numOfLayers-=number_layers;
-        numOfPlaysToAddLayer=0;
+        if(specialAttribute>3) specialAttribute=3;
+        return specialAttribute==0;
     }
 
     @Override
-    public  int getSpecialAttribute() {
-        return numOfLayers;
+    public boolean PlayWithCombo(int i) {
+        removeSpecialAttribute(i);
+        return specialAttribute==0;
+    }
+
+    @Override
+    public void removeSpecialAttribute(int i) {
+        if(specialAttribute-i<0){
+            specialAttribute=0;
+        } else specialAttribute-=i;
+    }
+
+    @Override
+    public int getSpecialAttribute() {
+        return specialAttribute;
     }
 
     @Override
     public boolean isActive() {
-        return numOfLayers>0;
+        return specialAttribute>0;
     }
 
     @Override
@@ -36,19 +52,4 @@ public class JungleCard extends NormalCard implements GenericSpecialCard {
 
         }
     }
-
-    public void addLayer(int number_layers){
-        numOfLayers+=number_layers;
-        if(numOfLayers-3>0) numOfLayers=3;
-    }
-
-    public void addNumberOfPlaysWithoutCombo() {
-        // Add another layer if card is not in a combo after 4 plays
-        numOfPlaysToAddLayer++;
-
-        if(numOfPlaysToAddLayer>3 && numOfLayers!=3){
-            addLayer(1);
-        }
-    }
-
 }

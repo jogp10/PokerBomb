@@ -4,7 +4,11 @@ import java.util.ArrayList;
 
 public class Application {
     public static void main(String[] args) {
+        GetCardFactory cardFactory = new GetCardFactory();
 
+        Card card = cardFactory.getCard(Suit.CLUB, Rank.TWO, "Jungle");
+
+        card.draw();
 
         Menu menu = new Menu();
         menu.draw();
