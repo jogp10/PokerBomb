@@ -9,15 +9,16 @@ public class DynamiteCard extends Card implements GenericSpecialCard {
     }
 
     @Override
-    public boolean PlayWithoutCombo() {
+    boolean inACombo(int i) {
+        return true;
+    }
+
+    @Override
+    boolean notInACombo() {
         removeSpecialAttribute(1);
         return specialAttribute==0;
     }
 
-    @Override
-    public boolean PlayWithCombo(int i) {
-        return true;
-    }
 
     @Override
     public void removeSpecialAttribute(int i) {
@@ -36,11 +37,4 @@ public class DynamiteCard extends Card implements GenericSpecialCard {
         return specialAttribute>0;
     }
 
-    @Override
-    public void draw() {
-        super.draw();
-        if(isActive()){
-
-        }
-    }
 }

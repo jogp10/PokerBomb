@@ -1,19 +1,21 @@
 package com.pockerbomb.model.game;
 
+import com.pockerbomb.model.Model;
 import com.pockerbomb.model.game.cards.Card;
+import com.pockerbomb.model.game.cards.NormalCard;
 import com.pockerbomb.model.game.cards.Rank;
 import com.pockerbomb.model.game.cards.Suit;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Deck {
+public class DeckModel implements Model {
 
     // instance vars
     private ArrayList<Card> cards;
 
     // construct
-    public Deck() {
+    public DeckModel() {
         this.cards = new ArrayList<>();
     }
 
@@ -22,7 +24,7 @@ public class Deck {
         for(Suit cardSuit : Suit.values()) {
             for(Rank cardRank : Rank.values()) {
                 // Add a new card to the deck
-                this.cards.add( new Card(cardSuit, cardRank));
+                this.cards.add( new NormalCard(cardSuit, cardRank));
             }
         }
     }
@@ -69,21 +71,15 @@ public class Deck {
     }
 
     //Pop from the deck
-    public Card pop(Deck comingFrom) {
+    public Card pop(DeckModel comingFrom) {
         return this.pop(comingFrom, 0);
     }
-    public Card pop(Deck comingFrom, int cardToDraw) {
+    public Card pop(DeckModel comingFrom, int cardToDraw) {
         this.cards.add(comingFrom.getCard(cardToDraw));
         return comingFrom.removeCard(cardToDraw);
     }
 
     public ArrayList<Card> getDeck(){
         return cards;
-    }
-
-    public void draw() {
-        for(Card card: cards){
-            card.draw();
-        }
     }
 }

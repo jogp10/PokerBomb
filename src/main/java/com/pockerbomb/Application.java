@@ -1,9 +1,13 @@
 package com.pockerbomb;
 
+
 import com.pockerbomb.controller.Controller;
 import com.pockerbomb.controller.state.FactoryState;
-import com.pockerbomb.model.game.Deck;
-import com.pockerbomb.model.menu.Menu;
+import com.pockerbomb.model.game.DeckModel;
+
+import com.pockerbomb.model.game.DeckModel;
+
+
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -23,17 +27,27 @@ public class Application {
 
         // Preparation for the start of a level
             // Create our playing deck
+
         /*
             Deck playingDeck = new Deck();
+
+            DeckModel playingDeck = new DeckModel();
+
             playingDeck.createFullDeck();
             playingDeck.shuffle();
             //Create a deck for the player
-            Deck playerDeck = new Deck();
+            DeckModel playerDeck = new DeckModel();
             //Create a deck for each shelf
             int numberOfShelfs = 2; // it can be a diferent value
+
             ArrayList<Deck> shelfsDeck = new ArrayList<>();
             for(int i=0; i<numberOfShelfs; i++) shelfsDeck.add(new Deck());
-            */
+
+
+
+            ArrayList<DeckModel> shelfsDeck = new ArrayList<>();
+            for(int i=0; i<numberOfShelfs; i++) shelfsDeck.add(new DeckModel());
+*/
 
     }
 }

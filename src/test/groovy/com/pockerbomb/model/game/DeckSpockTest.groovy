@@ -1,7 +1,7 @@
 package com.pockerbomb.model.game
 
-import com.pockerbomb.model.game.Deck
-import com.pockerbomb.model.game.cards.Card
+
+import com.pockerbomb.model.game.cards.NormalCard
 import com.pockerbomb.model.game.cards.Rank
 import com.pockerbomb.model.game.cards.Suit
 import spock.lang.Specification
@@ -9,11 +9,11 @@ import spock.lang.Specification
 class DeckSpockTest extends Specification{
     def 'CreateFullDeck'() {
         given:
-        Deck deck = new Deck()
+        DeckModel deck = new DeckModel()
 
         when:
             deck.createFullDeck()
-            ArrayList<Card> cards = deck.getDeck()
+            ArrayList<NormalCard> cards = deck.getDeck()
 
         then:
             cards.size()==52
@@ -21,7 +21,7 @@ class DeckSpockTest extends Specification{
 
     def 'Shuffle'() {
         given:
-            Deck deck = Mock(Deck)
+            DeckModel deck = Mock(DeckModel)
             deck.createFullDeck()
 
         when:
@@ -33,8 +33,8 @@ class DeckSpockTest extends Specification{
 
     def 'AddCard'() {
         given:
-            Deck deck = new Deck()
-            Card card = new Card(Suit.HEART, Rank.SEVEN)
+            DeckModel deck = new DeckModel()
+            NormalCard card = new NormalCard(Suit.HEART, Rank.SEVEN)
 
         when:
             deck.addCard(card)
@@ -45,8 +45,8 @@ class DeckSpockTest extends Specification{
 
     def 'RemoveCard'() {
         given:
-            Deck deck = new Deck()
-            Card card = Mock(Card)
+            DeckModel deck = new DeckModel()
+            NormalCard card = Mock(NormalCard)
             deck.addCard(card)
 
         when:
@@ -58,12 +58,12 @@ class DeckSpockTest extends Specification{
 
     def 'DrawCard'() {
         given:
-            Deck deck = new Deck()
-            Card card = new Card(Suit.HEART, Rank.ACE)
+            DeckModel deck = new DeckModel()
+            NormalCard card = new NormalCard(Suit.HEART, Rank.ACE)
             deck.addCard(card)
 
         when:
-            Card drawn = deck.pop(deck)
+            NormalCard drawn = deck.pop(deck)
 
         then:
             drawn == card
@@ -71,14 +71,14 @@ class DeckSpockTest extends Specification{
 
     def 'DrawCard 2'() {
         given:
-        Deck deck = new Deck()
-        Card card = new Card(Suit.HEART, Rank.ACE)
+        DeckModel deck = new DeckModel()
+        NormalCard card = new NormalCard(Suit.HEART, Rank.ACE)
             deck.addCard(card)
-            card = new Card(Suit.DIAMOND, Rank.JACK)
+            card = new NormalCard(Suit.DIAMOND, Rank.JACK)
             deck.addCard(card)
 
         when:
-            Card drawn = deck.pop(deck, 1)
+            NormalCard drawn = deck.pop(deck, 1)
 
         then:
             drawn == card
@@ -86,8 +86,8 @@ class DeckSpockTest extends Specification{
 
     def 'ToString' () {
         given:
-            Deck deck = new Deck()
-            Card card = new Card(Suit.DIAMOND, Rank.TWO)
+            DeckModel deck = new DeckModel()
+            NormalCard card = new NormalCard(Suit.DIAMOND, Rank.TWO)
             deck.addCard(card)
 
         expect:

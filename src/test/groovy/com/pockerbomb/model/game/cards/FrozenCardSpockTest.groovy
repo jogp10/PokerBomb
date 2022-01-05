@@ -46,11 +46,11 @@ class FrozenCardSpockTest extends Specification{
 
     def 'com.pockerbomb.model.cards.FrozenCard PlayWithCombo'() {
         expect:
-            !frozenCard.PlayWithCombo(1);
+            !frozenCard.inACombo(1);
     }
 
     def 'com.pockerbomb.model.cards.FrozenCard PlayWithoutCombo'() {
         expect:
-            !frozenCard.PlayWithoutCombo();
+            !frozenCard.notInACombo();
     }
 }

@@ -1,8 +1,7 @@
 package com.pockerbomb.model.game
 
-import com.pockerbomb.model.game.Deck
-import com.pockerbomb.model.game.Hand
-import com.pockerbomb.model.game.cards.Card
+
+import com.pockerbomb.model.game.cards.NormalCard
 import com.pockerbomb.model.game.cards.Rank
 import com.pockerbomb.model.game.cards.Suit
 import spock.lang.Specification
@@ -10,12 +9,12 @@ import spock.lang.Specification
 class FourOfAKindHandSpockTest extends Specification {
     def 'Four of a Kind com.pockerbomb.model.game.Hand 1'() {
         given:
-        Card card1 = new Card(Suit.CLUB, Rank.THREE)
-        Card card2 = new Card(Suit.DIAMOND, Rank.THREE)
-        Card card3 = new Card(Suit.SPADE, Rank.THREE)
-        Card card4 = new Card(Suit.HEART, Rank.THREE)
-        Card card5 = new Card(Suit.CLUB, Rank.FIVE)
-        Deck deck = new Deck()
+        NormalCard card1 = new NormalCard(Suit.CLUB, Rank.THREE)
+        NormalCard card2 = new NormalCard(Suit.DIAMOND, Rank.THREE)
+        NormalCard card3 = new NormalCard(Suit.SPADE, Rank.THREE)
+        NormalCard card4 = new NormalCard(Suit.HEART, Rank.THREE)
+        NormalCard card5 = new NormalCard(Suit.CLUB, Rank.FIVE)
+        DeckModel deck = new DeckModel()
         deck.addCard(card1)
         deck.addCard(card2)
         deck.addCard(card3)
@@ -31,12 +30,12 @@ class FourOfAKindHandSpockTest extends Specification {
 
     def 'Four of a Kind com.pockerbomb.model.game.Hand 2'() {
         given:
-        Card card1 = new Card(Suit.DIAMOND, Rank.SIX)
-        Card card2 = new Card(Suit.SPADE, Rank.ACE)
-        Card card3 = new Card(Suit.DIAMOND, Rank.ACE)
-        Card card4 = new Card(Suit.CLUB, Rank.ACE)
-        Card card5 = new Card(Suit.HEART, Rank.ACE)
-        Deck deck = new Deck()
+        NormalCard card1 = new NormalCard(Suit.DIAMOND, Rank.SIX)
+        NormalCard card2 = new NormalCard(Suit.SPADE, Rank.ACE)
+        NormalCard card3 = new NormalCard(Suit.DIAMOND, Rank.ACE)
+        NormalCard card4 = new NormalCard(Suit.CLUB, Rank.ACE)
+        NormalCard card5 = new NormalCard(Suit.HEART, Rank.ACE)
+        DeckModel deck = new DeckModel()
         deck.addCard(card1)
         deck.addCard(card2)
         deck.addCard(card3)
@@ -52,12 +51,12 @@ class FourOfAKindHandSpockTest extends Specification {
 
     def 'Four of a Kind com.pockerbomb.model.game.Hand 3'() {
         given:
-        Card card1 = new Card(Suit.SPADE, Rank.QUEEN)
-        Card card2 = new Card(Suit.DIAMOND, Rank.QUEEN)
-        Card card3 = new Card(Suit.CLUB, Rank.QUEEN)
-        Card card4 = new Card(Suit.HEART, Rank.QUEEN)
-        Card card5 = new Card(Suit.SPADE, Rank.KING)
-        Deck deck = new Deck()
+        NormalCard card1 = new NormalCard(Suit.SPADE, Rank.QUEEN)
+        NormalCard card2 = new NormalCard(Suit.DIAMOND, Rank.QUEEN)
+        NormalCard card3 = new NormalCard(Suit.CLUB, Rank.QUEEN)
+        NormalCard card4 = new NormalCard(Suit.HEART, Rank.QUEEN)
+        NormalCard card5 = new NormalCard(Suit.SPADE, Rank.KING)
+        DeckModel deck = new DeckModel()
         deck.addCard(card1)
         deck.addCard(card2)
         deck.addCard(card3)
@@ -73,12 +72,12 @@ class FourOfAKindHandSpockTest extends Specification {
 
     def 'Four of a Kind com.pockerbomb.model.game.Hand 4'() {
         given:
-        Card card1 = new Card(Suit.CLUB, Rank.THREE)
-        Card card2 = new Card(Suit.DIAMOND, Rank.THREE)
-        Card card3 = new Card(Suit.SPADE, Rank.THREE)
-        Card card4 = new Card(Suit.HEART, Rank.THREE)
+        NormalCard card1 = new NormalCard(Suit.CLUB, Rank.THREE)
+        NormalCard card2 = new NormalCard(Suit.DIAMOND, Rank.THREE)
+        NormalCard card3 = new NormalCard(Suit.SPADE, Rank.THREE)
+        NormalCard card4 = new NormalCard(Suit.HEART, Rank.THREE)
 
-        Deck deck = new Deck()
+        DeckModel deck = new DeckModel()
         deck.addCard(card1)
         deck.addCard(card2)
         deck.addCard(card3)
