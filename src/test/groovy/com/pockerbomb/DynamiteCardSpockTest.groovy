@@ -3,10 +3,12 @@ package com.pockerbomb
 import spock.lang.Specification
 
 class DynamiteCardSpockTest extends Specification{
-    def 'com.pockerbomb.DynamiteCard removePlays'() {
-        given:
-            Card dynamiteCard = new DynamiteCard(Suit.SPADE, Rank.QUEEN)
+    DynamiteCard dynamiteCard;
+    def setup(){
+        dynamiteCard = new DynamiteCard(Suit.CLUB, Rank.ACE)
+    }
 
+    def 'com.pockerbomb.DynamiteCard removePlays'() {
         when:
             dynamiteCard.removeSpecialAttribute(1)
 
@@ -15,27 +17,29 @@ class DynamiteCardSpockTest extends Specification{
     }
 
     def 'com.pockerbomb.DynamiteCard constructor'() {
-        given:
-            Card dynamiteCard = new DynamiteCard(Suit.SPADE, Rank.QUEEN)
-
         when:
             int numberOfPlaysTillDynamite = dynamiteCard.getSpecialAttribute()
-
         then:
             numberOfPlaysTillDynamite==5
     }
 
     def 'com.pockerbomb.DynamiteCard isActive'() {
-        given:
-            Card dynamiteCard = new DynamiteCard(Suit.SPADE, Rank.QUEEN)
-            dynamiteCard.removeSpecialAttribute(4)
-
         when:
-            dynamiteCard.removeSpecialAttribute(1)
+            dynamiteCard.removeSpecialAttribute(5)
 
         then:
             !dynamiteCard.isActive()
 
+    }
+
+    def 'com.pockerbomb.DynamiteCard PlayWithCombo'() {
+        expect:
+            dynamiteCard.PlayWithCombo(1);
+    }
+
+    def 'com.pockerbomb.DynamiteCard PlayWithoutCombo'() {
+        expect:
+            !dynamiteCard.PlayWithoutCombo();
     }
 
 

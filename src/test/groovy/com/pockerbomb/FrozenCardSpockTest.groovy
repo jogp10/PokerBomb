@@ -3,11 +3,12 @@ package com.pockerbomb
 import spock.lang.Specification
 
 class FrozenCardSpockTest extends Specification{
+    FrozenCard frozenCard;
+    def setup(){
+        frozenCard = new FrozenCard(Suit.CLUB, Rank.ACE)
+    }
 
     def 'com.pockerbomb.FrozenCard removeLayers'() {
-        given:
-            Card frozenCard = new FrozenCard(Suit.CLUB, Rank.EIGHT)
-
         when:
             frozenCard.removeSpecialAttribute(1)
 
@@ -16,9 +17,6 @@ class FrozenCardSpockTest extends Specification{
     }
 
     def 'com.pockerbomb.FrozenCard removeLayers 2'() {
-        given:
-            Card frozenCard = new FrozenCard(Suit.CLUB, Rank.EIGHT)
-
         when:
             frozenCard.removeSpecialAttribute(2)
 
@@ -27,9 +25,6 @@ class FrozenCardSpockTest extends Specification{
     }
 
     def 'com.pockerbomb.FrozenCard constructor'() {
-        given:
-            Card frozenCard = new FrozenCard(Suit.CLUB, Rank.EIGHT)
-
         when:
             int numberOfLayers = frozenCard.getSpecialAttribute()
 
@@ -38,15 +33,21 @@ class FrozenCardSpockTest extends Specification{
     }
 
     def 'com.pockerbomb.FrozenCard isActive'() {
-        given:
-            Card frozenCard = new FrozenCard(Suit.CLUB, Rank.EIGHT)
-            frozenCard.removeSpecialAttribute(1)
-
         when:
-            frozenCard.removeSpecialAttribute(1)
+            frozenCard.removeSpecialAttribute(2)
 
         then:
             !frozenCard.isActive()
 
+    }
+
+    def 'com.pockerbomb.FrozenCard PlayWithCombo'() {
+        expect:
+            !frozenCard.PlayWithCombo(1);
+    }
+
+    def 'com.pockerbomb.FrozenCard PlayWithoutCombo'() {
+        expect:
+            !frozenCard.PlayWithoutCombo();
     }
 }
