@@ -48,7 +48,7 @@ public class MenuState extends ControllerState<Menu> {
                         }
                         break;
                     case INST:
-                        //nextState = factory.genInstState(inGame);
+                        nextState = factory.genInsState(inGame);
                         break;
                     case EXIT:
                         nextState = null;
