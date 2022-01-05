@@ -3,10 +3,7 @@ package com.pockerbomb;
 
 import com.pockerbomb.controller.Controller;
 import com.pockerbomb.controller.state.FactoryState;
-import com.pockerbomb.model.game.DeckModel;
-
-import com.pockerbomb.model.game.DeckModel;
-
+import com.pockerbomb.model.game.Deck;
 
 
 import java.io.IOException;
@@ -36,7 +33,7 @@ public class Application {
             playingDeck.createFullDeck();
             playingDeck.shuffle();
             //Create a deck for the player
-            DeckModel playerDeck = new DeckModel();
+            Deck playerDeck = new Deck();
             //Create a deck for each shelf
             int numberOfShelfs = 2; // it can be a diferent value
 
