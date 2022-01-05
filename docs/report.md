@@ -14,7 +14,7 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 
 ## Planned Features
 
-- **Connected Menus** - The user has the capability of browsing through the different menus including in game ones. (Ex: Main com.pockerbomb.Menu, Instructions, Play, Shop and Pause).
+- **Connected Menus** - The user has the capability of browsing through the different menus including in game ones. (Ex: Main com.pockerbomb.model.Menu, Instructions, Play, Shop and Pause).
 - **Buttons** - Functional and interactive buttons.
 - **Mouse and Keyboard control** - The mouse and keyboard inputs are received through the respective events and interpreted according to the current game state.
 - **Different levels** - Different levels with an increasing difficulty will be implemented.
