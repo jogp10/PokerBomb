@@ -1,8 +1,8 @@
-package com.pockerbomb.model
+package com.pockerbomb.model.cards
 
-import com.pockerbomb.model.Card
-import com.pockerbomb.model.Rank
-import com.pockerbomb.model.Suit
+import com.pockerbomb.model.cards.Card
+import com.pockerbomb.model.cards.Rank
+import com.pockerbomb.model.cards.Suit
 import spock.lang.Specification
 
 class CardSpockTest extends Specification {
@@ -11,7 +11,7 @@ class CardSpockTest extends Specification {
         card = new Card(Suit.CLUB, Rank.ACE)
     }
 
-    def 'com.pockerbomb.model.Card com.pockerbomb.model.Suit'() {
+    def 'com.pockerbomb.model.cards.Card com.pockerbomb.model.cards.Suit'() {
         when:
             Suit suit = card.getSuit()
 
@@ -19,7 +19,7 @@ class CardSpockTest extends Specification {
             suit == Suit.CLUB
     }
 
-    def 'com.pockerbomb.model.Card to string'() {
+    def 'com.pockerbomb.model.cards.Card to string'() {
         when:
             String string = card.toString()
 
@@ -27,7 +27,7 @@ class CardSpockTest extends Specification {
             string == "CLUB-ACE"
     }
 
-    def 'com.pockerbomb.model.Card Value'() {
+    def 'com.pockerbomb.model.cards.Card Value'() {
         when:
             Rank value = card.getRank()
 
@@ -35,12 +35,12 @@ class CardSpockTest extends Specification {
             value == Rank.ACE
     }
 
-    def 'com.pockerbomb.model.Card PlayWithCombo'() {
+    def 'com.pockerbomb.model.cards.Card PlayWithCombo'() {
         expect:
             card.PlayWithCombo(1);
     }
 
-    def 'com.pockerbomb.model.Card PlayWithoutCombo'() {
+    def 'com.pockerbomb.model.cards.Card PlayWithoutCombo'() {
         expect:
             !card.PlayWithoutCombo();
     }

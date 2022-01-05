@@ -1,4 +1,4 @@
-package com.pockerbomb.model;
+package com.pockerbomb.model.powerup;
 
 public interface GenericPowerUp {
 

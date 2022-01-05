@@ -1,8 +1,8 @@
-package com.pockerbomb.model
+package com.pockerbomb.model.cards
 
-import com.pockerbomb.model.DynamiteCard
-import com.pockerbomb.model.Rank
-import com.pockerbomb.model.Suit
+import com.pockerbomb.model.cards.DynamiteCard
+import com.pockerbomb.model.cards.Rank
+import com.pockerbomb.model.cards.Suit
 import spock.lang.Specification
 
 class DynamiteCardSpockTest extends Specification{
@@ -11,7 +11,7 @@ class DynamiteCardSpockTest extends Specification{
         dynamiteCard = new DynamiteCard(Suit.CLUB, Rank.ACE)
     }
 
-    def 'com.pockerbomb.model.DynamiteCard removePlays'() {
+    def 'com.pockerbomb.model.cards.DynamiteCard removePlays'() {
         when:
             dynamiteCard.removeSpecialAttribute(1)
 
@@ -19,14 +19,14 @@ class DynamiteCardSpockTest extends Specification{
             dynamiteCard.getSpecialAttribute()==4
     }
 
-    def 'com.pockerbomb.model.DynamiteCard constructor'() {
+    def 'com.pockerbomb.model.cards.DynamiteCard constructor'() {
         when:
             int numberOfPlaysTillDynamite = dynamiteCard.getSpecialAttribute()
         then:
             numberOfPlaysTillDynamite==5
     }
 
-    def 'com.pockerbomb.model.DynamiteCard isActive'() {
+    def 'com.pockerbomb.model.cards.DynamiteCard isActive'() {
         when:
             dynamiteCard.removeSpecialAttribute(5)
 
@@ -35,12 +35,12 @@ class DynamiteCardSpockTest extends Specification{
 
     }
 
-    def 'com.pockerbomb.model.DynamiteCard PlayWithCombo'() {
+    def 'com.pockerbomb.model.cards.DynamiteCard PlayWithCombo'() {
         expect:
             dynamiteCard.PlayWithCombo(1);
     }
 
-    def 'com.pockerbomb.model.DynamiteCard PlayWithoutCombo'() {
+    def 'com.pockerbomb.model.cards.DynamiteCard PlayWithoutCombo'() {
         expect:
             !dynamiteCard.PlayWithoutCombo();
     }

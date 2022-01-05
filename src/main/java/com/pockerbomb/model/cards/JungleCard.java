@@ -1,22 +1,31 @@
-package com.pockerbomb.model;
+package com.pockerbomb.model.cards;
 
-public class DynamiteCard extends Card implements GenericSpecialCard {
+public class JungleCard extends Card implements GenericSpecialCard {
     private int specialAttribute;
+    private int countToAddAttribute;
 
-    public DynamiteCard(Suit suit, Rank rank) {
+
+    public JungleCard(Suit suit, Rank rank) {
         super(suit, rank);
-        specialAttribute = 5;
+        specialAttribute = 1;
+        countToAddAttribute = 0;
     }
 
     @Override
     public boolean PlayWithoutCombo() {
-        removeSpecialAttribute(1);
+        countToAddAttribute++;
+        if(countToAddAttribute==3){
+            specialAttribute++;
+            countToAddAttribute=0;
+        }
+        if(specialAttribute>3) specialAttribute=3;
         return specialAttribute==0;
     }
 
     @Override
     public boolean PlayWithCombo(int i) {
-        return true;
+        removeSpecialAttribute(i);
+        return specialAttribute==0;
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.pockerbomb.model;
+package com.pockerbomb.model.cards;
 
 public interface GenericSpecialCard {
     void removeSpecialAttribute(int i);

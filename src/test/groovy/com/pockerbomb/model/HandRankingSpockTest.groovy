@@ -1,10 +1,8 @@
 package com.pockerbomb.model
 
-import com.pockerbomb.model.Card
-import com.pockerbomb.model.Deck
-import com.pockerbomb.model.Hand
-import com.pockerbomb.model.Rank
-import com.pockerbomb.model.Suit
+import com.pockerbomb.model.cards.Card
+import com.pockerbomb.model.cards.Rank
+import com.pockerbomb.model.cards.Suit
 import spock.lang.Specification
 
 class HandRankingSpockTest extends Specification {
@@ -153,7 +151,7 @@ class HandRankingSpockTest extends Specification {
         Card card2 = new Card(Suit.SPADE, Rank.EIGHT)
         Card card3 = new Card(Suit.CLUB, Rank.EIGHT)
         Card card4 = new Card(Suit.CLUB, Rank.TWO)
-        //com.pockerbomb.model.Card card5 = new com.pockerbomb.model.Card(com.pockerbomb.model.Suit.DIAMOND, com.pockerbomb.model.Rank.TEN)
+        //com.pockerbomb.model.cards.Card card5 = new com.pockerbomb.model.cards.Card(com.pockerbomb.model.cards.Suit.DIAMOND, com.pockerbomb.model.cards.Rank.TEN)
 
         Deck deck = new Deck()
 
@@ -215,8 +213,8 @@ class HandRankingSpockTest extends Specification {
     def 'None'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.ACE)
-        //com.pockerbomb.model.Card card2 = new com.pockerbomb.model.Card(com.pockerbomb.model.Suit.HEART, com.pockerbomb.model.Rank.NINE)
-        //com.pockerbomb.model.Card card3 = new com.pockerbomb.model.Card(com.pockerbomb.model.Suit.SPADE, com.pockerbomb.model.Rank.TEN)
+        //com.pockerbomb.model.cards.Card card2 = new com.pockerbomb.model.cards.Card(com.pockerbomb.model.cards.Suit.HEART, com.pockerbomb.model.cards.Rank.NINE)
+        //com.pockerbomb.model.cards.Card card3 = new com.pockerbomb.model.cards.Card(com.pockerbomb.model.cards.Suit.SPADE, com.pockerbomb.model.cards.Rank.TEN)
 
         Deck deck = new Deck()
 

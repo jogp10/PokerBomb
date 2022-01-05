@@ -1,4 +1,4 @@
-package com.pockerbomb.model;
+package com.pockerbomb.model.cards;
 
 public class Card {
     protected Suit suit;
