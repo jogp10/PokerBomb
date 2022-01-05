@@ -1,7 +1,7 @@
 package com.pockerbomb;
 
-import com.pockerbomb.model.Deck;
-import com.pockerbomb.model.Menu;
+import com.pockerbomb.model.game.Deck;
+import com.pockerbomb.model.menu.Menu;
 
 import java.util.ArrayList;
 
