@@ -1,4 +1,4 @@
-package com.pockerbomb.model.game
+package com.pockerbomb.model.game.cards
 
 import com.pockerbomb.model.game.cards.Deck
 import com.pockerbomb.model.game.cards.Hand
