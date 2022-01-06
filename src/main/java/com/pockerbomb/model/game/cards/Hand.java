@@ -1,8 +1,6 @@
-package com.pockerbomb.model.game;
+package com.pockerbomb.model.game.cards;
 
 import com.pockerbomb.model.Model;
-import com.pockerbomb.model.game.cards.Card;
-import com.pockerbomb.model.game.cards.Rank;
 
 import java.util.ArrayList;
 

@@ -1,7 +1,6 @@
 package com.pockerbomb.view.cards;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
-import com.pockerbomb.model.game.cards.Card;
 import com.pockerbomb.model.game.cards.JungleCard;
 import com.pockerbomb.view.View;
 

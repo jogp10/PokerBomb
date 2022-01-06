@@ -1,11 +1,9 @@
 package com.pockerbomb.model.game.cards
 
-import com.pockerbomb.model.game.cards.FrozenCard
-import com.pockerbomb.model.game.cards.Rank
-import com.pockerbomb.model.game.cards.Suit
+
 import spock.lang.Specification
 
-class FrozenCardSpockTest extends Specification{
+class FrozenCardSpockTest1 extends Specification{
     FrozenCard frozenCard;
     def setup(){
         frozenCard = new FrozenCard(Suit.CLUB, Rank.ACE)

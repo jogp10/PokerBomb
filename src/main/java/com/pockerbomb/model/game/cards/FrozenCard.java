@@ -1,6 +1,6 @@
 package com.pockerbomb.model.game.cards;
 
-public class FrozenCard extends Card implements GenericSpecialCard {
+public class FrozenCard extends Card {
     private int specialAttribute;
 
 
@@ -20,21 +20,9 @@ public class FrozenCard extends Card implements GenericSpecialCard {
         return false;
     }
 
-
-    @Override
     public void removeSpecialAttribute(int i) {
         if(specialAttribute-i<0){
             specialAttribute=0;
         } else specialAttribute-=i;
-    }
-
-    @Override
-    public int getSpecialAttribute() {
-        return specialAttribute;
-    }
-
-    @Override
-    public boolean isActive() {
-        return specialAttribute>0;
     }
 }

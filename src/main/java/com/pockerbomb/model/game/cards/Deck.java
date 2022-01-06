@@ -1,10 +1,6 @@
-package com.pockerbomb.model.game;
+package com.pockerbomb.model.game.cards;
 
 import com.pockerbomb.model.Model;
-import com.pockerbomb.model.game.cards.Card;
-import com.pockerbomb.model.game.cards.NormalCard;
-import com.pockerbomb.model.game.cards.Rank;
-import com.pockerbomb.model.game.cards.Suit;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -24,14 +20,14 @@ public class Deck implements Model {
         for(Suit cardSuit : Suit.values()) {
             for(Rank cardRank : Rank.values()) {
                 // Add a new card to the deck
-                this.cards.add( new NormalCard(cardSuit, cardRank));
+                this.cards.add( new Card(cardSuit, cardRank));
             }
         }
     }
 
     public String toString() {
         StringBuilder cardListOutput = new StringBuilder();
-        for(Card card: this.cards) {
+        for(Card card : this.cards) {
             cardListOutput.append("\n").append(card.toString());
         }
         return cardListOutput.toString();

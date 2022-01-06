@@ -1,19 +1,20 @@
 package com.pockerbomb.model.game
 
-
-import com.pockerbomb.model.game.cards.NormalCard
+import com.pockerbomb.model.game.cards.Deck
+import com.pockerbomb.model.game.cards.Hand
+import com.pockerbomb.model.game.cards.Card
 import com.pockerbomb.model.game.cards.Rank
 import com.pockerbomb.model.game.cards.Suit
 import spock.lang.Specification
 
 class StraightFlushHandSpockTest extends Specification {
-    def 'Straight Flush com.pockerbomb.model.game.Hand 1'() {
+    def 'Straight Flush com.pockerbomb.model.game.cards.Hand 1'() {
         given:
-        NormalCard card1 = new NormalCard(Suit.CLUB, Rank.FIVE)
-        NormalCard card2 = new NormalCard(Suit.CLUB, Rank.SIX)
-        NormalCard card3 = new NormalCard(Suit.CLUB, Rank.SEVEN)
-        NormalCard card4 = new NormalCard(Suit.CLUB, Rank.EIGHT)
-        NormalCard card5 = new NormalCard(Suit.CLUB, Rank.NINE)
+        Card card1 = new Card(Suit.CLUB, Rank.FIVE)
+        Card card2 = new Card(Suit.CLUB, Rank.SIX)
+        Card card3 = new Card(Suit.CLUB, Rank.SEVEN)
+        Card card4 = new Card(Suit.CLUB, Rank.EIGHT)
+        Card card5 = new Card(Suit.CLUB, Rank.NINE)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -28,13 +29,13 @@ class StraightFlushHandSpockTest extends Specification {
         straightFlush
     }
 
-    def 'Straight Flush com.pockerbomb.model.game.Hand 2'() {
+    def 'Straight Flush com.pockerbomb.model.game.cards.Hand 2'() {
         given:
-        NormalCard card1 = new NormalCard(Suit.HEART, Rank.ACE)
-        NormalCard card2 = new NormalCard(Suit.HEART, Rank.TWO)
-        NormalCard card3 = new NormalCard(Suit.HEART, Rank.THREE)
-        NormalCard card4 = new NormalCard(Suit.HEART, Rank.FOUR)
-        NormalCard card5 = new NormalCard(Suit.HEART, Rank.FIVE)
+        Card card1 = new Card(Suit.HEART, Rank.ACE)
+        Card card2 = new Card(Suit.HEART, Rank.TWO)
+        Card card3 = new Card(Suit.HEART, Rank.THREE)
+        Card card4 = new Card(Suit.HEART, Rank.FOUR)
+        Card card5 = new Card(Suit.HEART, Rank.FIVE)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -49,13 +50,13 @@ class StraightFlushHandSpockTest extends Specification {
         straightFlush
     }
 
-    def 'Straight Flush com.pockerbomb.model.game.Hand 3'() {
+    def 'Straight Flush com.pockerbomb.model.game.cards.Hand 3'() {
         given:
-        NormalCard card1 = new NormalCard(Suit.SPADE, Rank.NINE)
-        NormalCard card2 = new NormalCard(Suit.SPADE, Rank.TEN)
-        NormalCard card3 = new NormalCard(Suit.SPADE, Rank.JACK)
-        NormalCard card4 = new NormalCard(Suit.SPADE, Rank.QUEEN)
-        NormalCard card5 = new NormalCard(Suit.SPADE, Rank.KING)
+        Card card1 = new Card(Suit.SPADE, Rank.NINE)
+        Card card2 = new Card(Suit.SPADE, Rank.TEN)
+        Card card3 = new Card(Suit.SPADE, Rank.JACK)
+        Card card4 = new Card(Suit.SPADE, Rank.QUEEN)
+        Card card5 = new Card(Suit.SPADE, Rank.KING)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)

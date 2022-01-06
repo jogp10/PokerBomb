@@ -1,19 +1,20 @@
 package com.pockerbomb.model.game
 
-
-import com.pockerbomb.model.game.cards.NormalCard
+import com.pockerbomb.model.game.cards.Deck
+import com.pockerbomb.model.game.cards.Hand
+import com.pockerbomb.model.game.cards.Card
 import com.pockerbomb.model.game.cards.Rank
 import com.pockerbomb.model.game.cards.Suit
 import spock.lang.Specification
 
 class FullHouseHandSpockTest extends Specification {
-    def 'Full House com.pockerbomb.model.game.Hand 1'() {
+    def 'Full House com.pockerbomb.model.game.cards.Hand 1'() {
         given:
-        NormalCard card1 = new NormalCard(Suit.CLUB, Rank.TWO)
-        NormalCard card2 = new NormalCard(Suit.DIAMOND, Rank.TWO)
-        NormalCard card3 = new NormalCard(Suit.DIAMOND, Rank.SEVEN)
-        NormalCard card4 = new NormalCard(Suit.SPADE, Rank.SEVEN)
-        NormalCard card5 = new NormalCard(Suit.HEART, Rank.SEVEN)
+        Card card1 = new Card(Suit.CLUB, Rank.TWO)
+        Card card2 = new Card(Suit.DIAMOND, Rank.TWO)
+        Card card3 = new Card(Suit.DIAMOND, Rank.SEVEN)
+        Card card4 = new Card(Suit.SPADE, Rank.SEVEN)
+        Card card5 = new Card(Suit.HEART, Rank.SEVEN)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -28,13 +29,13 @@ class FullHouseHandSpockTest extends Specification {
         fullHouse
     }
 
-    def 'Full House com.pockerbomb.model.game.Hand 2'() {
+    def 'Full House com.pockerbomb.model.game.cards.Hand 2'() {
         given:
-        NormalCard card1 = new NormalCard(Suit.CLUB, Rank.SIX)
-        NormalCard card2 = new NormalCard(Suit.SPADE, Rank.SIX)
-        NormalCard card3 = new NormalCard(Suit.HEART, Rank.SIX)
-        NormalCard card4 = new NormalCard(Suit.DIAMOND, Rank.KING)
-        NormalCard card5 = new NormalCard(Suit.SPADE, Rank.KING)
+        Card card1 = new Card(Suit.CLUB, Rank.SIX)
+        Card card2 = new Card(Suit.SPADE, Rank.SIX)
+        Card card3 = new Card(Suit.HEART, Rank.SIX)
+        Card card4 = new Card(Suit.DIAMOND, Rank.KING)
+        Card card5 = new Card(Suit.SPADE, Rank.KING)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -49,13 +50,13 @@ class FullHouseHandSpockTest extends Specification {
         fullHouse
     }
 
-    def 'Full House com.pockerbomb.model.game.Hand 3'() {
+    def 'Full House com.pockerbomb.model.game.cards.Hand 3'() {
         given:
-        NormalCard card1 = new NormalCard(Suit.DIAMOND, Rank.QUEEN)
-        NormalCard card2 = new NormalCard(Suit.HEART, Rank.QUEEN)
-        NormalCard card3 = new NormalCard(Suit.SPADE, Rank.ACE)
-        NormalCard card4 = new NormalCard(Suit.DIAMOND, Rank.ACE)
-        NormalCard card5 = new NormalCard(Suit.CLUB, Rank.ACE)
+        Card card1 = new Card(Suit.DIAMOND, Rank.QUEEN)
+        Card card2 = new Card(Suit.HEART, Rank.QUEEN)
+        Card card3 = new Card(Suit.SPADE, Rank.ACE)
+        Card card4 = new Card(Suit.DIAMOND, Rank.ACE)
+        Card card5 = new Card(Suit.CLUB, Rank.ACE)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)

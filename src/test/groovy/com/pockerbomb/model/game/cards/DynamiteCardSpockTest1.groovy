@@ -1,11 +1,9 @@
 package com.pockerbomb.model.game.cards
 
-import com.pockerbomb.model.game.cards.DynamiteCard
-import com.pockerbomb.model.game.cards.Rank
-import com.pockerbomb.model.game.cards.Suit
+
 import spock.lang.Specification
 
-class DynamiteCardSpockTest extends Specification{
+class DynamiteCardSpockTest1 extends Specification{
     DynamiteCard dynamiteCard;
     def setup(){
         dynamiteCard = new DynamiteCard(Suit.CLUB, Rank.ACE)

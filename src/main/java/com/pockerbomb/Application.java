@@ -3,11 +3,9 @@ package com.pockerbomb;
 
 import com.pockerbomb.controller.Controller;
 import com.pockerbomb.controller.state.FactoryState;
-import com.pockerbomb.model.game.Deck;
 
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class Application {
     public static void main(String[] args) throws IOException, InterruptedException, CloneNotSupportedException, ClassNotFoundException {

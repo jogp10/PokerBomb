@@ -2,14 +2,18 @@ package com.pockerbomb.model.game.cards;
 
 import com.pockerbomb.model.Model;
 
-public abstract class Card implements Model {
+public class Card implements Model {
 
     protected Suit suit;
     protected Rank rank;
 
+    protected int specialAttribute;
+
+
     public Card(Suit suit, Rank rank) {
         this.suit = suit;
         this.rank = rank;
+        specialAttribute = 0;
     }
 
     public String toString() {
@@ -42,7 +46,18 @@ public abstract class Card implements Model {
         return 0;
     }
 
-    abstract boolean inACombo(int i);
-    abstract boolean notInACombo();
+    public boolean isActive() {
+        return specialAttribute>0;
+    }
+
+    public int getSpecialAttribute() { return specialAttribute; }
+
+    boolean inACombo(int i){
+        return true;
+    }
+
+    boolean notInACombo(){
+        return false;
+    }
 
 }

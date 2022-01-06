@@ -1,19 +1,20 @@
 package com.pockerbomb.model.game
 
-
-import com.pockerbomb.model.game.cards.NormalCard
+import com.pockerbomb.model.game.cards.Deck
+import com.pockerbomb.model.game.cards.Hand
+import com.pockerbomb.model.game.cards.Card
 import com.pockerbomb.model.game.cards.Rank
 import com.pockerbomb.model.game.cards.Suit
 import spock.lang.Specification
 
 class FlushHandSpockTest extends Specification {
-    def 'Flush com.pockerbomb.model.game.Hand 1'() {
+    def 'Flush com.pockerbomb.model.game.cards.Hand 1'() {
         given:
-        NormalCard card1 = new NormalCard(Suit.CLUB, Rank.TWO)
-        NormalCard card2 = new NormalCard(Suit.CLUB, Rank.FOUR)
-        NormalCard card3 = new NormalCard(Suit.CLUB, Rank.SEVEN)
-        NormalCard card4 = new NormalCard(Suit.CLUB, Rank.TEN)
-        NormalCard card5 = new NormalCard(Suit.CLUB, Rank.KING)
+        Card card1 = new Card(Suit.CLUB, Rank.TWO)
+        Card card2 = new Card(Suit.CLUB, Rank.FOUR)
+        Card card3 = new Card(Suit.CLUB, Rank.SEVEN)
+        Card card4 = new Card(Suit.CLUB, Rank.TEN)
+        Card card5 = new Card(Suit.CLUB, Rank.KING)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -28,13 +29,13 @@ class FlushHandSpockTest extends Specification {
         flush
     }
 
-    def 'Flush com.pockerbomb.model.game.Hand 2'() {
+    def 'Flush com.pockerbomb.model.game.cards.Hand 2'() {
         given:
-        NormalCard card1 = new NormalCard(Suit.DIAMOND, Rank.FIVE)
-        NormalCard card2 = new NormalCard(Suit.DIAMOND, Rank.SIX)
-        NormalCard card3 = new NormalCard(Suit.DIAMOND, Rank.SEVEN)
-        NormalCard card4 = new NormalCard(Suit.DIAMOND, Rank.JACK)
-        NormalCard card5 = new NormalCard(Suit.DIAMOND, Rank.ACE)
+        Card card1 = new Card(Suit.DIAMOND, Rank.FIVE)
+        Card card2 = new Card(Suit.DIAMOND, Rank.SIX)
+        Card card3 = new Card(Suit.DIAMOND, Rank.SEVEN)
+        Card card4 = new Card(Suit.DIAMOND, Rank.JACK)
+        Card card5 = new Card(Suit.DIAMOND, Rank.ACE)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -49,13 +50,13 @@ class FlushHandSpockTest extends Specification {
         flush
     }
 
-    def 'Flush com.pockerbomb.model.game.Hand 3'() {
+    def 'Flush com.pockerbomb.model.game.cards.Hand 3'() {
         given:
-        NormalCard card1 = new NormalCard(Suit.SPADE, Rank.EIGHT)
-        NormalCard card2 = new NormalCard(Suit.SPADE, Rank.TEN)
-        NormalCard card3 = new NormalCard(Suit.SPADE, Rank.JACK)
-        NormalCard card4 = new NormalCard(Suit.SPADE, Rank.KING)
-        NormalCard card5 = new NormalCard(Suit.SPADE, Rank.ACE)
+        Card card1 = new Card(Suit.SPADE, Rank.EIGHT)
+        Card card2 = new Card(Suit.SPADE, Rank.TEN)
+        Card card3 = new Card(Suit.SPADE, Rank.JACK)
+        Card card4 = new Card(Suit.SPADE, Rank.KING)
+        Card card5 = new Card(Suit.SPADE, Rank.ACE)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)

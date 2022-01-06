@@ -1,11 +1,9 @@
 package com.pockerbomb.model.game.cards
 
-import com.pockerbomb.model.game.cards.JungleCard
-import com.pockerbomb.model.game.cards.Rank
-import com.pockerbomb.model.game.cards.Suit
+
 import spock.lang.Specification
 
-class JungleCardSpockTest extends Specification{
+class JungleCardSpockTest1 extends Specification{
     JungleCard jungleCard;
     def setup(){
         jungleCard = new JungleCard(Suit.CLUB, Rank.ACE)

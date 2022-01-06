@@ -1,19 +1,20 @@
 package com.pockerbomb.model.game
 
-
-import com.pockerbomb.model.game.cards.NormalCard
+import com.pockerbomb.model.game.cards.Deck
+import com.pockerbomb.model.game.cards.Hand
+import com.pockerbomb.model.game.cards.Card
 import com.pockerbomb.model.game.cards.Rank
 import com.pockerbomb.model.game.cards.Suit
 import spock.lang.Specification
 
 class ThreeOfAKindHandSpockTest extends Specification {
-    def 'Three of a Kind com.pockerbomb.model.game.Hand 1'() {
+    def 'Three of a Kind com.pockerbomb.model.game.cards.Hand 1'() {
         given:
-        NormalCard card1 = new NormalCard(Suit.DIAMOND, Rank.FOUR)
-        NormalCard card2 = new NormalCard(Suit.HEART, Rank.FOUR)
-        NormalCard card3 = new NormalCard(Suit.CLUB, Rank.FOUR)
-        NormalCard card4 = new NormalCard(Suit.SPADE, Rank.SEVEN)
-        NormalCard card5 = new NormalCard(Suit.SPADE, Rank.QUEEN)
+        Card card1 = new Card(Suit.DIAMOND, Rank.FOUR)
+        Card card2 = new Card(Suit.HEART, Rank.FOUR)
+        Card card3 = new Card(Suit.CLUB, Rank.FOUR)
+        Card card4 = new Card(Suit.SPADE, Rank.SEVEN)
+        Card card5 = new Card(Suit.SPADE, Rank.QUEEN)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -28,13 +29,13 @@ class ThreeOfAKindHandSpockTest extends Specification {
         threeOfAKind
     }
 
-    def 'Three of a Kind com.pockerbomb.model.game.Hand 2'() {
+    def 'Three of a Kind com.pockerbomb.model.game.cards.Hand 2'() {
         given:
-        NormalCard card1 = new NormalCard(Suit.DIAMOND, Rank.THREE)
-        NormalCard card2 = new NormalCard(Suit.CLUB, Rank.TEN)
-        NormalCard card3 = new NormalCard(Suit.DIAMOND, Rank.TEN)
-        NormalCard card4 = new NormalCard(Suit.HEART, Rank.TEN)
-        NormalCard card5 = new NormalCard(Suit.SPADE, Rank.KING)
+        Card card1 = new Card(Suit.DIAMOND, Rank.THREE)
+        Card card2 = new Card(Suit.CLUB, Rank.TEN)
+        Card card3 = new Card(Suit.DIAMOND, Rank.TEN)
+        Card card4 = new Card(Suit.HEART, Rank.TEN)
+        Card card5 = new Card(Suit.SPADE, Rank.KING)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -49,13 +50,13 @@ class ThreeOfAKindHandSpockTest extends Specification {
         threeOfAKind
     }
 
-    def 'Three of a Kind com.pockerbomb.model.game.Hand 3'() {
+    def 'Three of a Kind com.pockerbomb.model.game.cards.Hand 3'() {
         given:
-        NormalCard card1 = new NormalCard(Suit.HEART, Rank.SEVEN)
-        NormalCard card2 = new NormalCard(Suit.HEART, Rank.NINE)
-        NormalCard card3 = new NormalCard(Suit.SPADE, Rank.ACE)
-        NormalCard card4 = new NormalCard(Suit.CLUB, Rank.ACE)
-        NormalCard card5 = new NormalCard(Suit.HEART, Rank.ACE)
+        Card card1 = new Card(Suit.HEART, Rank.SEVEN)
+        Card card2 = new Card(Suit.HEART, Rank.NINE)
+        Card card3 = new Card(Suit.SPADE, Rank.ACE)
+        Card card4 = new Card(Suit.CLUB, Rank.ACE)
+        Card card5 = new Card(Suit.HEART, Rank.ACE)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -70,11 +71,11 @@ class ThreeOfAKindHandSpockTest extends Specification {
         threeOfAKind
     }
 
-    def 'Three of a Kind com.pockerbomb.model.game.Hand 4'() {
+    def 'Three of a Kind com.pockerbomb.model.game.cards.Hand 4'() {
         given:
-        NormalCard card1 = new NormalCard(Suit.DIAMOND, Rank.FOUR)
-        NormalCard card2 = new NormalCard(Suit.HEART, Rank.FOUR)
-        NormalCard card3 = new NormalCard(Suit.CLUB, Rank.FOUR)
+        Card card1 = new Card(Suit.DIAMOND, Rank.FOUR)
+        Card card2 = new Card(Suit.HEART, Rank.FOUR)
+        Card card3 = new Card(Suit.CLUB, Rank.FOUR)
 
         Deck deck = new Deck()
 
@@ -89,12 +90,12 @@ class ThreeOfAKindHandSpockTest extends Specification {
         threeOfAKind
     }
 
-    def 'Three of a Kind com.pockerbomb.model.game.Hand 5'() {
+    def 'Three of a Kind com.pockerbomb.model.game.cards.Hand 5'() {
         given:
-        NormalCard card1 = new NormalCard(Suit.DIAMOND, Rank.THREE)
-        NormalCard card2 = new NormalCard(Suit.CLUB, Rank.TEN)
-        NormalCard card3 = new NormalCard(Suit.DIAMOND, Rank.TEN)
-        NormalCard card4 = new NormalCard(Suit.HEART, Rank.TEN)
+        Card card1 = new Card(Suit.DIAMOND, Rank.THREE)
+        Card card2 = new Card(Suit.CLUB, Rank.TEN)
+        Card card3 = new Card(Suit.DIAMOND, Rank.TEN)
+        Card card4 = new Card(Suit.HEART, Rank.TEN)
 
         Deck deck = new Deck()
 

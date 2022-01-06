@@ -1,10 +1,11 @@
-package com.pockerbomb.view;
+package com.pockerbomb.view.cards;
 
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
-import com.pockerbomb.model.game.Deck;
+import com.pockerbomb.model.game.cards.Deck;
 import com.pockerbomb.model.game.cards.Card;
+import com.pockerbomb.view.View;
 import com.pockerbomb.view.cards.CardView;
 
 import java.io.IOException;
@@ -43,7 +44,7 @@ public class DeckView extends View<Deck> {
         graphics.setBackgroundColor(TextColor.Factory.fromString("#808080"));
         graphics.fillRectangle(new TerminalPosition(col, row), new TerminalSize(25, 7), ' ');
 
-        for(Card card: model.getDeck()){
+        for(Card card : model.getDeck()){
             View<Card> cardView = new CardView(card, graphics);
             cardView.draw(startCol, row);
             startCol+=incr;

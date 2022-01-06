@@ -1,6 +1,6 @@
 package com.pockerbomb.model.game.cards;
 
-public class JungleCard extends Card implements GenericSpecialCard {
+public class JungleCard extends Card {
     private int specialAttribute;
     private int countToAddAttribute;
 
@@ -29,20 +29,9 @@ public class JungleCard extends Card implements GenericSpecialCard {
     }
 
 
-    @Override
     public void removeSpecialAttribute(int i) {
         if(specialAttribute-i<0){
             specialAttribute=0;
         } else specialAttribute-=i;
-    }
-
-    @Override
-    public int getSpecialAttribute() {
-        return specialAttribute;
-    }
-
-    @Override
-    public boolean isActive() {
-        return specialAttribute>0;
     }
 }
