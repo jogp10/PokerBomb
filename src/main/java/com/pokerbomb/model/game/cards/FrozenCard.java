@@ -1,7 +1,7 @@
 package com.pokerbomb.model.game.cards;
 
 public class FrozenCard extends Card {
-
+    
     public FrozenCard(Suit suit, Rank rank) {
         super(suit, rank);
         specialAttribute = 2;
