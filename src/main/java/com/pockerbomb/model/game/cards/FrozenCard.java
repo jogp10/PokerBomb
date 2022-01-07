@@ -1,7 +1,6 @@
 package com.pockerbomb.model.game.cards;
 
 public class FrozenCard extends Card {
-    private int specialAttribute;
 
 
     public FrozenCard(Suit suit, Rank rank) {

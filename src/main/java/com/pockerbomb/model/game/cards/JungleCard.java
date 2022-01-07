@@ -1,7 +1,6 @@
 package com.pockerbomb.model.game.cards;
 
 public class JungleCard extends Card {
-    private int specialAttribute;
     private int countToAddAttribute;
 
 
