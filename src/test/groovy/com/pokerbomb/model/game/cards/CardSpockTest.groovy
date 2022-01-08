@@ -43,4 +43,5 @@ class CardSpockTest extends Specification {
             !card.notInACombo();
     }
 
+
 }
