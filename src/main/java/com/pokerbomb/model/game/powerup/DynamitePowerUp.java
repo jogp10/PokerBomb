@@ -6,21 +6,24 @@ public class DynamitePowerUp implements GenericPowerUp{
     private int numberOfPowerUp;
 
     DynamitePowerUp(){
-
+        numberOfPowerUp=0;
     }
 
     @Override
     public int getNumberOfPowerUp() {
-        return 0;
+        return numberOfPowerUp;
     }
 
     @Override
     public void addPowerUp() {
-
+        numberOfPowerUp++;
     }
 
     public boolean addPlayToDynamiteCard(DynamiteCard dynamiteCard, int numberPlays){
-        return true;
+        int i = dynamiteCard.getSpecialAttribute();
+        dynamiteCard.removeSpecialAttribute(-numberPlays);
+        if(dynamiteCard.getSpecialAttribute()==i+numberPlays) return true;
+        return false;
     }
 
 

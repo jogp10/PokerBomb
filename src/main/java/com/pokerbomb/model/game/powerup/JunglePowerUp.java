@@ -6,19 +6,23 @@ public class JunglePowerUp implements GenericPowerUp{
     private int numberOfPowerUp;
 
     public JunglePowerUp(){
-
+        numberOfPowerUp=0;
     }
 
     @Override
     public int getNumberOfPowerUp() {
-        return 0;
+        return numberOfPowerUp;
     }
 
     @Override
     public void addPowerUp() {
+        numberOfPowerUp++;
     }
 
     public boolean removeLayerJungleCard(JungleCard jungleCard){
-        return true;
+        int i = jungleCard.getSpecialAttribute();
+        jungleCard.inACombo(1);
+        if(jungleCard.getSpecialAttribute()<i) return true;
+        return false;
     }
 }

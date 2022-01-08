@@ -5,7 +5,7 @@ public class JungleCard extends Card {
 
     public JungleCard(Suit suit, Rank rank) {
         super(suit, rank);
-        specialAttribute = 1;
+        specialAttribute = 0;
         countToAddAttribute = 0;
     }
 

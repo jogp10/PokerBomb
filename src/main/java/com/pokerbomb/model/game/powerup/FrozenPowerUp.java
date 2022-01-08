@@ -6,16 +6,19 @@ public class FrozenPowerUp implements GenericPowerUp{
     private int numberOfPowerUp;
 
     public FrozenPowerUp(){
-    }
-
-    public void addPowerUp(){
+        numberOfPowerUp=0;
     }
 
     public int getNumberOfPowerUp(){
-        return 0;
+        return numberOfPowerUp;
+    }
+
+    public void addPowerUp(){
+        numberOfPowerUp++;
     }
 
     public boolean Unfreeze(FrozenCard frozenCard){
-        return true;
+        frozenCard.inACombo(100);
+        return !frozenCard.isActive();
     }
 }

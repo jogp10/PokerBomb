@@ -22,7 +22,7 @@ class JungleCardSpockTest1 extends Specification{
             int numberSpecialAttribute = jungleCard.getSpecialAttribute()
 
         then:
-            numberSpecialAttribute==1
+            numberSpecialAttribute==0
     }
 
     def 'com.pokerbomb.model.cards.JungleCard isActive'() {
@@ -40,6 +40,6 @@ class JungleCardSpockTest1 extends Specification{
 
     def 'com.pokerbomb.model.cards.JungleCard PlayWithoutCombo'() {
         expect:
-            !jungleCard.notInACombo();
+            jungleCard.notInACombo();
     }
 }
