@@ -33,7 +33,7 @@ public class InsView extends View<Ins> {
         String s3 = "        |_|_|        ";
         String s4 = "    ___  ___  ___    ";
         String s5 = "   | <-|| | ||-> |   ";
-        String s6 = "   |___||___||___|   ";
+        String s6 = "   |___||_v_||___|   ";
         graphics.putString(getCol(s1), 14, s1, BOLD);
         graphics.putString(getCol(s2), 15, s2, BOLD);
         graphics.putString(getCol(s3), 16, s3, BOLD);
