@@ -19,7 +19,7 @@ public class InsView extends View<Ins> {
         String s2 = "||\\ ||_  | |_|| ||   | || ||\\ ||_ ";
         String s3 = "|| \\| _| | |\\ |_||_  | ||_|| \\| _|";
 
-        graphics.setForegroundColor(TextColor.Factory.fromString("#b249d2"));   //violet
+        graphics.setForegroundColor(TextColor.Factory.fromString("#FFFFFF"));
         graphics.putString(getCol(s1), 2, s1, BOLD);
         graphics.putString(getCol(s2), 3, s2, BOLD);
         graphics.putString(getCol(s3), 4, s3, BOLD);
@@ -33,7 +33,7 @@ public class InsView extends View<Ins> {
         String s3 = "        |_|_|        ";
         String s4 = "    ___  ___  ___    ";
         String s5 = "   | <-|| | ||-> |   ";
-        String s6 = "   |___||___||___|   ";
+        String s6 = "   |___||_v_||___|   ";
         graphics.putString(getCol(s1), 14, s1, BOLD);
         graphics.putString(getCol(s2), 15, s2, BOLD);
         graphics.putString(getCol(s3), 16, s3, BOLD);
@@ -48,11 +48,11 @@ public class InsView extends View<Ins> {
 
         drawTitle();
         drawString("#f2e744", 7, "ENTER \t\tSelect Card");
-        drawString("#f2e744", 8, "MOVE \t Arrows");
-        drawString("#f2e744", 9, "Q \t\t\tQuit         ");
-        drawString("#f2e744", 10, "ESC \t\tGo Back to Menu");
+        drawString("#f2e744", 8, "MOVEMENT \tArrows   ");
+        drawString("#f2e744", 9, "Q \t\t\tQuit          ");
+        drawString("#f2e744", 10, " ESC \t\tGo Back to Menu");
         drawKeys();
-        drawString("#FF0000", 21, "Press enter to continue...");
+        drawString("#FFFFFF", 21, "Press ENTER to go back to the Menu");
 
         refresh();
     }

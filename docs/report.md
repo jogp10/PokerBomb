@@ -14,7 +14,7 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 
 ## Planned Features
 
-- **Connected Menus** - The user has the capability of browsing through the different menus including in game ones. (Ex: Main com.pokerbomb.model.menu.Menu, Instructions, Play, Shop and Pause).
+- **Connected Menus** - The user has the capability of browsing through the different menus including in game ones. (Ex: Menu, Instructions, Play, Shop and Pause).
 - **Buttons** - Functional and interactive buttons.
 - **Mouse and Keyboard control** - The mouse and keyboard inputs are received through the respective events and interpreted according to the current game state.
 - **Different levels** - Different levels with an increasing difficulty will be implemented.
@@ -26,3 +26,16 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 - **Power Ups** - Implementation of power-ups (e.g. Unfreeze cards, stop the time, extra time).
 - **Seasons** - A season is determined by the number of levels passed and for each new season unlocks upgrades. New power-ups will be added to the game, or a free gift may be given to the player, like a money boost or a free power-up.
 - **Build your own level** - We invite you to collaborate with us and make your level from scratch.
+
+## Implemented Features (until now)
+
+- **Menus** - The user has the capability of browsing through the main menu and instructions menu. We will add the play and store menus when we fully develop those features.
+- **Keyboard control** - The user can use the keyboard to browse the options in the menu and interact with some of them.
+- **Cards and combinations logic** - The development of the logic that will check combinations between cards is almost fully developed, as the types of cards existent in the game.
+
+## Design Patterns (until now)
+
+- **MVC** - We started implementing the Model, View, Controller design pattern for some classes, but we plan to use it in the vast majority of our code.
+- **State** - We started implementing the State design pattern for the Menu and Instructions. We will also implement a state which represents that a game is taking place and another that represents that the user is in the store.
+
+

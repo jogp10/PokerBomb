@@ -12,11 +12,9 @@ public class Menu implements Model {
     Option selected;
     Option[] opt = Option.values();
 
-    public Menu(boolean inGame) {
+    public Menu() {
         this.selected = Option.START;
-        if (inGame) optString[0] = "CONTINUE";
     }
-
 
     public Option getSelected() {
         return selected;

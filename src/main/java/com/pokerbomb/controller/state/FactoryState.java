@@ -8,7 +8,7 @@ import com.pokerbomb.view.MenuView;
 public class FactoryState {
 
     public MenuState genMenuState(Boolean inGame) {
-        Menu menuModel = new Menu(inGame);
+        Menu menuModel = new Menu();
         MenuView menuView = new MenuView(menuModel);
         return new MenuState(this, inGame, menuModel, menuView);
     }
