@@ -52,11 +52,11 @@ public class Card implements Model {
 
     public int getSpecialAttribute() { return specialAttribute; }
 
-    boolean inACombo(int i){
+    public boolean inACombo(int i){
         return true;
     }
 
-    boolean notInACombo(){
+    public boolean notInACombo(){
         return false;
     }
 

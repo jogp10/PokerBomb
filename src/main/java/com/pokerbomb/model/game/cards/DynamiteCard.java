@@ -8,12 +8,12 @@ public class DynamiteCard extends Card {
     }
 
     @Override
-    boolean inACombo(int i) {
+    public boolean inACombo(int i) {
         return true;
     }
 
     @Override
-    boolean notInACombo() {
+    public boolean notInACombo() {
         removeSpecialAttribute(1);
         return specialAttribute==0;
     }

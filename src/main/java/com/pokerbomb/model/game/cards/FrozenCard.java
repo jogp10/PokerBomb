@@ -8,13 +8,13 @@ public class FrozenCard extends Card {
     }
 
     @Override
-    boolean inACombo(int i) {
+    public boolean inACombo(int i) {
         removeSpecialAttribute(i);
         return specialAttribute==0;
     }
 
     @Override
-    boolean notInACombo() {
+    public boolean notInACombo() {
         return false;
     }
 

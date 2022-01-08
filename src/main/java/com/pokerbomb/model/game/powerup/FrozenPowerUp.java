@@ -2,10 +2,10 @@ package com.pokerbomb.model.game.powerup;
 
 import com.pokerbomb.model.game.cards.FrozenCard;
 
-public class UnfreezeCard implements GenericPowerUp{
-    private int numberOfPowerups;
+public class FrozenPowerUp implements GenericPowerUp{
+    private int numberOfPowerUp;
 
-    public UnfreezeCard(){
+    public FrozenPowerUp(){
     }
 
     public void addPowerUp(){
