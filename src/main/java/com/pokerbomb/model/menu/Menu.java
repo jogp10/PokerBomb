@@ -16,7 +16,6 @@ public class Menu implements Model {
         this.selected = Option.START;
     }
 
-
     public Option getSelected() {
         return selected;
     }
