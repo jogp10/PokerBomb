@@ -37,5 +37,6 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 
 - **MVC** - We started implementing the Model, View, Controller design pattern for some classes, but we plan to use it in the vast majority of our code.
 - **State** - We started implementing the State design pattern for the Menu and Instructions. We will also implement a state which represents that a game is taking place and another that represents that the user is in the store.
+- **Factory Method** - We started implementing the Factory Method design pattern for the Cards, we expect to use it along our project more times.
 
 
