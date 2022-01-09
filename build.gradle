@@ -2,7 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id 'groovy'
-    id 'info.solidsoft.pitest' version '1.6.0'
+    id 'info.solidsoft.pitest' version '1.7.0'
 }
 
 group 'com.pockerbomb'
@@ -27,9 +27,9 @@ test {
 }
 
 application {
-    mainClass.set("Application")
+    mainClass.set "Application"
 }
 
 pitest {
-    junit5PluginVersion = '0.12'
+    junit5PluginVersion = '0.15'
 }
