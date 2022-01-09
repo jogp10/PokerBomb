@@ -39,4 +39,16 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 - **State** - We started implementing the State design pattern for the Menu and Instructions. We will also implement a state which represents that a game is taking place and another that represents that the user is in the store.
 - **Factory Method** - We started implementing the Factory Method design pattern for the Cards, we expect to use it along our project more times.
 
+## Testing
+
+### Screenshot of coverage report
+<p align="center" justify="center">
+  <img src="screenshots/TestsCoverage.png" width="941" height="289" title="Test Coverage" alt=""/>
+</p>
+<p align="center">
+  <b><i>Fig 6. Code coverage screenshot</i></b>
+</p>
+
+### Link to mutation testing report
+[Mutation tests](../build/reports/pitest/202201090607/index.html)
 

@@ -5,7 +5,7 @@ plugins {
     id 'info.solidsoft.pitest' version '1.7.0'
 }
 
-group 'com.pockerbomb'
+group 'com.pokerbomb'
 version '1.0-SNAPSHOT'
 
 repositories {
