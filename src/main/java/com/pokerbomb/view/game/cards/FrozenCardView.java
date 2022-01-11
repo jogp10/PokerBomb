@@ -1,4 +1,4 @@
-package com.pokerbomb.view.cards;
+package com.pokerbomb.view.game.cards;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.pokerbomb.model.game.cards.FrozenCard;
@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FrozenCardView extends View<FrozenCard> {
+public class FrozenCardView extends CardView {
 
     CardView cardView;
 
@@ -19,8 +19,7 @@ public class FrozenCardView extends View<FrozenCard> {
     }};
 
     public FrozenCardView(FrozenCard model, TextGraphics graphics) {
-        super(model);
-        this.graphics=graphics;
+        super(model, graphics);
         cardView = new CardView(model, graphics);
     }
 

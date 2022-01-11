@@ -1,4 +1,4 @@
-package com.pokerbomb.view.cards;
+package com.pokerbomb.view.game.cards;
 
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;

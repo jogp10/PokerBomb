@@ -1,4 +1,4 @@
-package com.pokerbomb.view.cards;
+package com.pokerbomb.view.game.cards;
 
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CardView extends View<Card> {
-    BorderView borderView;
 
     public static String backgroundColour = "#FFFFFF";
 
@@ -35,7 +34,6 @@ public class CardView extends View<Card> {
     public CardView(Card model, TextGraphics graphics){
         super(model);
         this.graphics = graphics;
-        borderView = new BorderView(16, 3, graphics);
     }
 
     public void setBackgroundColour(String backgroundColour) {
