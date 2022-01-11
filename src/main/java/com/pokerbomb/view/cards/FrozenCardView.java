@@ -8,9 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FrozenCardView extends View<FrozenCard> {
-
-    CardView cardView;
+public class FrozenCardView extends CardView {
 
     static final List<String> backgroundColors = new ArrayList<String>() {{
         add("#FFFFFF"); // default White
@@ -19,14 +17,12 @@ public class FrozenCardView extends View<FrozenCard> {
     }};
 
     public FrozenCardView(FrozenCard model, TextGraphics graphics) {
-        super(model);
-        this.graphics=graphics;
-        cardView = new CardView(model, graphics);
+        super(model, graphics);
     }
 
     @Override
     public void draw(int col, int row) throws IOException {
-        cardView.setBackgroundColour(backgroundColors.get(model.getSpecialAttribute()));
-        cardView.draw(col, row);
+        super.setBackgroundColour(backgroundColors.get(model.getSpecialAttribute()));
+        super.draw(col, row);
     }
 }

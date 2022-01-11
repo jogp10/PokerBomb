@@ -48,6 +48,5 @@ public class DeckView extends View<Deck> {
             cardView.draw(startCol, row);
             startCol+=incr;
         }
-
     }
 }

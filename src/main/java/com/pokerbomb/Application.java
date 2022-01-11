@@ -16,6 +16,8 @@ public class Application {
         Controller controller = new Controller(new FactoryState());
         controller.start();
 
+
+
         // Player's info
             //long playerCoins = 0;
 

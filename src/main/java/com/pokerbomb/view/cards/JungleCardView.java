@@ -1,6 +1,7 @@
 package com.pokerbomb.view.cards;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.pokerbomb.model.game.cards.Card;
 import com.pokerbomb.model.game.cards.JungleCard;
 import com.pokerbomb.view.View;
 
@@ -8,9 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JungleCardView extends View<JungleCard> {
-
-    CardView cardView;
+public class JungleCardView extends CardView {
 
     static final List<String> backgroundColors = new ArrayList<String>() {{
         add("#FFFFFF"); // default
@@ -20,13 +19,11 @@ public class JungleCardView extends View<JungleCard> {
     }};
 
     public JungleCardView(JungleCard model, TextGraphics graphics) {
-        super(model);
-        this.graphics=graphics;
-        cardView = new CardView(model, graphics);
+        super(model, graphics);
     }
 
     public void draw(int col, int row) throws IOException {
-        cardView.setBackgroundColour(backgroundColors.get(model.getSpecialAttribute()));
-        cardView.draw(col, row);
+        super.setBackgroundColour(backgroundColors.get(model.getSpecialAttribute()));
+        super.draw(col, row);
     }
 }

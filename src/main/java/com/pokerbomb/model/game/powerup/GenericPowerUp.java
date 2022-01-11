@@ -1,8 +1,10 @@
 package com.pokerbomb.model.game.powerup;
 
-public interface GenericPowerUp {
+import com.pokerbomb.model.Model;
 
-    public int getNumberOfPowerUp();
+public interface GenericPowerUp extends Model {
 
-    public void addPowerUp();
+    int getNumberOfPowerUp();
+
+    void addPowerUp();
 }

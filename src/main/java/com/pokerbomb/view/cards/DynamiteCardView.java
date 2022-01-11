@@ -10,7 +10,6 @@ public class DynamiteCardView extends CardView {
 
     public DynamiteCardView(DynamiteCard model, TextGraphics graphics) {
         super(model, graphics);
-        this.graphics=graphics;
     }
 
     @Override
