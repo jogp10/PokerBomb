@@ -9,7 +9,7 @@ class CardSpockTest extends Specification {
         card = new Card(Suit.CLUB, Rank.ACE)
     }
 
-    def 'com.pockerbomb.model.cards.Card com.pockerbomb.model.cards.Suit'() {
+    def 'com.pokerbomb.model.cards.Card com.pokerbomb.model.cards.Suit'() {
         when:
             Suit suit = card.getSuit()
 
@@ -17,7 +17,7 @@ class CardSpockTest extends Specification {
             suit == Suit.CLUB
     }
 
-    def 'com.pockerbomb.model.cards.Card to string'() {
+    def 'com.pokerbomb.model.cards.Card to string'() {
         when:
             String string = card.toString()
 
@@ -25,7 +25,7 @@ class CardSpockTest extends Specification {
             string == "CLUB-ACE"
     }
 
-    def 'com.pockerbomb.model.cards.Card Value'() {
+    def 'com.pokerbomb.model.cards.Card Value'() {
         when:
             Rank value = card.getRank()
 
@@ -33,12 +33,12 @@ class CardSpockTest extends Specification {
             value == Rank.ACE
     }
 
-    def 'com.pockerbomb.model.cards.Card PlayWithCombo'() {
+    def 'com.pokerbomb.model.cards.Card PlayWithCombo'() {
         expect:
             card.inACombo(1);
     }
 
-    def 'com.pockerbomb.model.cards.Card PlayWithoutCombo'() {
+    def 'com.pokerbomb.model.cards.Card PlayWithoutCombo'() {
         expect:
             !card.notInACombo();
     }

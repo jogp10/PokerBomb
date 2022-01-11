@@ -9,7 +9,7 @@ class FrozenCardSpockTest1 extends Specification{
         frozenCard = new FrozenCard(Suit.CLUB, Rank.ACE)
     }
 
-    def 'com.pockerbomb.model.cards.FrozenCard removeLayers'() {
+    def 'com.pokerbomb.model.cards.FrozenCard removeLayers'() {
         when:
             frozenCard.removeSpecialAttribute(1)
 
@@ -17,7 +17,7 @@ class FrozenCardSpockTest1 extends Specification{
             frozenCard.getSpecialAttribute()==1
     }
 
-    def 'com.pockerbomb.model.cards.FrozenCard removeLayers 2'() {
+    def 'com.pokerbomb.model.cards.FrozenCard removeLayers 2'() {
         when:
             frozenCard.removeSpecialAttribute(2)
 
@@ -25,7 +25,7 @@ class FrozenCardSpockTest1 extends Specification{
             frozenCard.getSpecialAttribute()==0
     }
 
-    def 'com.pockerbomb.model.cards.FrozenCard constructor'() {
+    def 'com.pokerbomb.model.cards.FrozenCard constructor'() {
         when:
             int numberOfLayers = frozenCard.getSpecialAttribute()
 
@@ -33,7 +33,7 @@ class FrozenCardSpockTest1 extends Specification{
             numberOfLayers==2
     }
 
-    def 'com.pockerbomb.model.cards.FrozenCard isActive'() {
+    def 'com.pokerbomb.model.cards.FrozenCard isActive'() {
         when:
             frozenCard.removeSpecialAttribute(2)
 
@@ -42,12 +42,12 @@ class FrozenCardSpockTest1 extends Specification{
 
     }
 
-    def 'com.pockerbomb.model.cards.FrozenCard PlayWithCombo'() {
+    def 'com.pokerbomb.model.cards.FrozenCard PlayWithCombo'() {
         expect:
             !frozenCard.inACombo(1);
     }
 
-    def 'com.pockerbomb.model.cards.FrozenCard PlayWithoutCombo'() {
+    def 'com.pokerbomb.model.cards.FrozenCard PlayWithoutCombo'() {
         expect:
             !frozenCard.notInACombo();
     }

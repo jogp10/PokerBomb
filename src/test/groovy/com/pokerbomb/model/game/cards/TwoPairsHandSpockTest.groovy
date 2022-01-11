@@ -4,7 +4,7 @@ package com.pokerbomb.model.game.cards
 import spock.lang.Specification
 
 class TwoPairsHandSpockTest extends Specification {
-    def 'Two Pairs com.pockerbomb.model.game.cards.Hand 1'() {
+    def 'Two Pairs com.pokerbomb.model.game.cards.Hand 1'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.TWO)
         Card card2 = new Card(Suit.HEART, Rank.TWO)
@@ -25,7 +25,7 @@ class TwoPairsHandSpockTest extends Specification {
         twoPairs
     }
 
-    def 'Two Pairs com.pockerbomb.model.game.cards.Hand 2'() {
+    def 'Two Pairs com.pokerbomb.model.game.cards.Hand 2'() {
         given:
         Card card1 = new Card(Suit.HEART, Rank.FOUR)
         Card card2 = new Card(Suit.CLUB, Rank.FOUR)
@@ -46,7 +46,7 @@ class TwoPairsHandSpockTest extends Specification {
         twoPairs
     }
 
-    def 'Two Pairs com.pockerbomb.model.game.cards.Hand 3'() {
+    def 'Two Pairs com.pokerbomb.model.game.cards.Hand 3'() {
         given:
         Card card1 = new Card(Suit.SPADE, Rank.THREE)
         Card card2 = new Card(Suit.CLUB, Rank.KING)
@@ -67,7 +67,7 @@ class TwoPairsHandSpockTest extends Specification {
         twoPairs
     }
 
-    def 'Two Pairs com.pockerbomb.model.game.cards.Hand 4'() {
+    def 'Two Pairs com.pokerbomb.model.game.cards.Hand 4'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.TWO)
         Card card2 = new Card(Suit.HEART, Rank.TWO)

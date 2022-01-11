@@ -5,7 +5,7 @@ import spock.lang.Specification
 
 class StraightHandSpockTest extends Specification {
 
-    def 'Straight com.pockerbomb.model.game.cards.Hand 1'() {
+    def 'Straight com.pokerbomb.model.game.cards.Hand 1'() {
         given:
         Card card1 = new Card(Suit.SPADE, Rank.FIVE)
         Card card2 = new Card(Suit.DIAMOND, Rank.SIX)
@@ -26,7 +26,7 @@ class StraightHandSpockTest extends Specification {
         straight
     }
 
-    def 'Straight com.pockerbomb.model.game.cards.Hand 2'() {
+    def 'Straight com.pokerbomb.model.game.cards.Hand 2'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.ACE)
         Card card2 = new Card(Suit.DIAMOND, Rank.TWO)
@@ -47,7 +47,7 @@ class StraightHandSpockTest extends Specification {
         straight
     }
 
-    def 'Straight com.pockerbomb.model.game.cards.Hand 3'() {
+    def 'Straight com.pokerbomb.model.game.cards.Hand 3'() {
         given:
         Card card1 = new Card(Suit.HEART, Rank.TEN)
         Card card2 = new Card(Suit.SPADE, Rank.JACK)

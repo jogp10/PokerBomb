@@ -4,7 +4,7 @@ package com.pokerbomb.model.game.cards
 import spock.lang.Specification
 
 class StraightFlushHandSpockTest extends Specification {
-    def 'Straight Flush com.pockerbomb.model.game.cards.Hand 1'() {
+    def 'Straight Flush com.pokerbomb.model.game.cards.Hand 1'() {
         given:
         Card card1 = new Card(Suit.CLUB, Rank.FIVE)
         Card card2 = new Card(Suit.CLUB, Rank.SIX)
@@ -25,7 +25,7 @@ class StraightFlushHandSpockTest extends Specification {
         straightFlush
     }
 
-    def 'Straight Flush com.pockerbomb.model.game.cards.Hand 2'() {
+    def 'Straight Flush com.pokerbomb.model.game.cards.Hand 2'() {
         given:
         Card card1 = new Card(Suit.HEART, Rank.ACE)
         Card card2 = new Card(Suit.HEART, Rank.TWO)
@@ -46,7 +46,7 @@ class StraightFlushHandSpockTest extends Specification {
         straightFlush
     }
 
-    def 'Straight Flush com.pockerbomb.model.game.cards.Hand 3'() {
+    def 'Straight Flush com.pokerbomb.model.game.cards.Hand 3'() {
         given:
         Card card1 = new Card(Suit.SPADE, Rank.NINE)
         Card card2 = new Card(Suit.SPADE, Rank.TEN)

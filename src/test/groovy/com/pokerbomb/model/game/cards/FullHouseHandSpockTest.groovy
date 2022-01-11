@@ -4,7 +4,7 @@ package com.pokerbomb.model.game.cards
 import spock.lang.Specification
 
 class FullHouseHandSpockTest extends Specification {
-    def 'Full House com.pockerbomb.model.game.cards.Hand 1'() {
+    def 'Full House com.pokerbomb.model.game.cards.Hand 1'() {
         given:
         Card card1 = new Card(Suit.CLUB, Rank.TWO)
         Card card2 = new Card(Suit.DIAMOND, Rank.TWO)
@@ -25,7 +25,7 @@ class FullHouseHandSpockTest extends Specification {
         fullHouse
     }
 
-    def 'Full House com.pockerbomb.model.game.cards.Hand 2'() {
+    def 'Full House com.pokerbomb.model.game.cards.Hand 2'() {
         given:
         Card card1 = new Card(Suit.CLUB, Rank.SIX)
         Card card2 = new Card(Suit.SPADE, Rank.SIX)
@@ -46,7 +46,7 @@ class FullHouseHandSpockTest extends Specification {
         fullHouse
     }
 
-    def 'Full House com.pockerbomb.model.game.cards.Hand 3'() {
+    def 'Full House com.pokerbomb.model.game.cards.Hand 3'() {
         given:
         Card card1 = new Card(Suit.DIAMOND, Rank.QUEEN)
         Card card2 = new Card(Suit.HEART, Rank.QUEEN)

@@ -9,7 +9,7 @@ class DynamiteCardSpockTest1 extends Specification{
         dynamiteCard = new DynamiteCard(Suit.CLUB, Rank.ACE)
     }
 
-    def 'com.pockerbomb.model.cards.DynamiteCard removePlays'() {
+    def 'com.pokerbomb.model.cards.DynamiteCard removePlays'() {
         when:
             dynamiteCard.removeSpecialAttribute(1)
 
@@ -17,14 +17,14 @@ class DynamiteCardSpockTest1 extends Specification{
             dynamiteCard.getSpecialAttribute()==4
     }
 
-    def 'com.pockerbomb.model.cards.DynamiteCard constructor'() {
+    def 'com.pokerbomb.model.cards.DynamiteCard constructor'() {
         when:
             int numberOfPlaysTillDynamite = dynamiteCard.getSpecialAttribute()
         then:
             numberOfPlaysTillDynamite==5
     }
 
-    def 'com.pockerbomb.model.cards.DynamiteCard isActive'() {
+    def 'com.pokerbomb.model.cards.DynamiteCard isActive'() {
         when:
             dynamiteCard.removeSpecialAttribute(5)
 
@@ -33,12 +33,12 @@ class DynamiteCardSpockTest1 extends Specification{
 
     }
 
-    def 'com.pockerbomb.model.cards.DynamiteCard PlayWithCombo'() {
+    def 'com.pokerbomb.model.cards.DynamiteCard PlayWithCombo'() {
         expect:
             dynamiteCard.inACombo(1);
     }
 
-    def 'com.pockerbomb.model.cards.DynamiteCard PlayWithoutCombo'() {
+    def 'com.pokerbomb.model.cards.DynamiteCard PlayWithoutCombo'() {
         expect:
             !dynamiteCard.notInACombo();
     }
