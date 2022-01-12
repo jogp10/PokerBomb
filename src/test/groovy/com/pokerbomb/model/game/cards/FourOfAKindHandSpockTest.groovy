@@ -19,7 +19,7 @@ class FourOfAKindHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean fourOfAKind = Hand.isFourOfAKind(deck)
+        boolean fourOfAKind = Hand.isFourOfAKind(deck.getDeck())
 
         then:
         fourOfAKind
@@ -40,7 +40,7 @@ class FourOfAKindHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean fourOfAKind = Hand.isFourOfAKind(deck)
+        boolean fourOfAKind = Hand.isFourOfAKind(deck.getDeck())
 
         then:
         fourOfAKind
@@ -61,7 +61,7 @@ class FourOfAKindHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean fourOfAKind = Hand.isFourOfAKind(deck)
+        boolean fourOfAKind = Hand.isFourOfAKind(deck.getDeck())
 
         then:
         fourOfAKind
@@ -81,7 +81,7 @@ class FourOfAKindHandSpockTest extends Specification {
         deck.addCard(card4)
 
         when:
-        boolean fourOfAKind = Hand.isFourOfAKind(deck)
+        boolean fourOfAKind = Hand.isFourOfAKind(deck.getDeck())
 
         then:
         fourOfAKind

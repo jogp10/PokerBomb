@@ -20,7 +20,7 @@ class StraightHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean straight = Hand.isStraight(deck)
+        boolean straight = Hand.isStraight(deck.getDeck())
 
         then:
         straight
@@ -41,7 +41,7 @@ class StraightHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean straight = Hand.isStraight(deck)
+        boolean straight = Hand.isStraight(deck.getDeck())
 
         then:
         straight
@@ -62,7 +62,7 @@ class StraightHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean straight = Hand.isStraight(deck)
+        boolean straight = Hand.isStraight(deck.getDeck())
 
         then:
         straight

@@ -19,7 +19,7 @@ class RoyalFlushHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean royalFlush = Hand.isRoyalFlush(deck)
+        boolean royalFlush = Hand.isRoyalFlush(deck.getDeck())
 
         then:
         royalFlush
@@ -40,7 +40,7 @@ class RoyalFlushHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean royalFlush = Hand.isRoyalFlush(deck)
+        boolean royalFlush = Hand.isRoyalFlush(deck.getDeck())
 
         then:
         royalFlush
@@ -61,7 +61,7 @@ class RoyalFlushHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean royalFlush = Hand.isRoyalFlush(deck)
+        boolean royalFlush = Hand.isRoyalFlush(deck.getDeck())
 
         then:
         royalFlush

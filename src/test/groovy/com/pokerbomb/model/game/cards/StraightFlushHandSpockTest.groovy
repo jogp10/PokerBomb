@@ -19,7 +19,7 @@ class StraightFlushHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean straightFlush = Hand.isStraightFlush(deck)
+        boolean straightFlush = Hand.isStraightFlush(deck.getDeck())
 
         then:
         straightFlush
@@ -40,7 +40,7 @@ class StraightFlushHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean straightFlush = Hand.isStraightFlush(deck)
+        boolean straightFlush = Hand.isStraightFlush(deck.getDeck())
 
         then:
         straightFlush
@@ -61,7 +61,7 @@ class StraightFlushHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean straightFlush = Hand.isStraightFlush(deck)
+        boolean straightFlush = Hand.isStraightFlush(deck.getDeck())
 
         then:
         straightFlush

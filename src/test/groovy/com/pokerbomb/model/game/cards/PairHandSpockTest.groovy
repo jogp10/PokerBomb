@@ -19,7 +19,7 @@ class PairHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean pair = Hand.isPair(deck)
+        boolean pair = Hand.isPair(deck.getDeck())
 
         then:
         pair
@@ -40,7 +40,7 @@ class PairHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean pair = Hand.isPair(deck)
+        boolean pair = Hand.isPair(deck.getDeck())
 
         then:
         pair
@@ -61,7 +61,7 @@ class PairHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean pair = Hand.isPair(deck)
+        boolean pair = Hand.isPair(deck.getDeck())
 
         then:
         pair
@@ -79,7 +79,7 @@ class PairHandSpockTest extends Specification {
 
 
         when:
-        boolean pair = Hand.isPair(deck)
+        boolean pair = Hand.isPair(deck.getDeck())
 
         then:
         pair
