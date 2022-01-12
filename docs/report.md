@@ -52,3 +52,10 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 ### Link to mutation testing report
 [Mutation tests](../build/reports/pitest/202201090607/index.html)
 
+<p align="center" justify="center">
+  <img src="screenshots/MutationTesting.png" width="785" height="162" title="Mutation Test" alt=""/>
+</p>
+<p align="center">
+  <b><i>Fig 6. Mutation Test screenshot</i></b>
+</p>
+

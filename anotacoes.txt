@@ -1,0 +1,7 @@
+mock ups
+
+descrever mais detalhadamente implementações
+
+code smells
+
+feature branches
