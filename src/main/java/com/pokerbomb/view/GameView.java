@@ -12,22 +12,17 @@ public class GameView extends View<Game>{
     BorderView borderView;
 
 
-
-
     public GameView(Game model, FactoryView factoryView) {
         super(model);
         this.factory = factoryView;
         initScreen();
     }
 
-
     private void drawShelves() {
         factory.genShelfView(model.getShelves().get(0), graphics).draw(5,13);
         factory.genShelfView(model.getShelves().get(1), graphics).draw(5,21);
         factory.genShelfView(model.getShelves().get(2), graphics).draw(5,39);
     }
-
-
 
     public void drawSelectedBorder() {
         Game.Cell selected = model.getSelected();
@@ -37,29 +32,12 @@ public class GameView extends View<Game>{
     }
 
     private void drawCards()  {
-
         try {
             factory.genDeckView(model.getGivenDeck(), graphics).draw(6, 14);
         } catch (IOException e) {
             e.printStackTrace();
         }
-/*
-        try {
-            factory.genCardView(model.getGivenDeck().getCard(0), graphics).draw(6,14);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
- */
-
-
-
-
-
-        //factory.genShelfView(model.getShelves().get(1), graphics).draw(5,21);
-        //factory.genShelfView(model.getShelves().get(2), graphics).draw(5,39);
     }
-
 
 
     public void drawQuests() {
@@ -70,10 +48,10 @@ public class GameView extends View<Game>{
         //draw current points
     }
 
+    private void drawPowerUps() {
+    }
 
-
-
-
+    
 
     @Override
     public void draw(int col, int row) throws IOException {
@@ -96,6 +74,8 @@ public class GameView extends View<Game>{
 
         //drawSelectedBorder();   draw selected card border
 
+
+        drawPowerUps();
         refresh();
     }
 }
