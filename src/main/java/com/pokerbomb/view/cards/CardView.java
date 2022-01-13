@@ -49,7 +49,7 @@ public class CardView extends View<Card> {
     @Override
     public void draw(int col, int row) throws IOException {
         graphics.setBackgroundColor(TextColor.Factory.fromString(backgroundColour));
-        graphics.fillRectangle(new TerminalPosition(col, row), new TerminalSize(3, 5), ' ');
+        graphics.fillRectangle(new TerminalPosition(col, row), new TerminalSize(8, 5), ' ');
 
         graphics.setForegroundColor(TextColor.Factory.fromString(colors.get(model.getSuitValue())));
         graphics.putString(col+1, row+1, model.getRank().toString());

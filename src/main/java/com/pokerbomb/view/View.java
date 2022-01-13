@@ -1,6 +1,7 @@
 package com.pokerbomb.view;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
+import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
 import com.pokerbomb.controller.CommandKey;
 import com.pokerbomb.model.Model;
 
@@ -11,6 +12,8 @@ import com.googlecode.lanterna.terminal.Terminal;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.googlecode.lanterna.screen.Screen;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 
 public abstract class View<T extends Model> {
@@ -33,8 +36,11 @@ public abstract class View<T extends Model> {
 
     public void initScreen() {
         try {
-            DefaultTerminalFactory factory = new DefaultTerminalFactory().setInitialTerminalSize(getSize());
+            DefaultTerminalFactory factory = new DefaultTerminalFactory().setInitialTerminalSize(getSize()).setTerminalEmulatorTitle("POKER BOMB");
+            factory.setForceAWTOverSwing(true);
             Terminal terminal = factory.createTerminal();
+
+
 
             screen = new TerminalScreen(terminal);
             screen.setCursorPosition(null);

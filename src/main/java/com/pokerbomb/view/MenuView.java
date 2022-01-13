@@ -26,7 +26,7 @@ public class MenuView extends View<Menu>{
         String s2 = "|__] |  | |_/  |___ |__/    |__] |  | |\\/| |__]";
         String s3 = "|    |__| | \\_ |___ |  \\    |__] |__| |  | |__]";
         graphics.setForegroundColor(TextColor.Factory.fromString("#FFFFFF"));
-        graphics.putString(getCol(s1), 2, s1, BOLD);
+        graphics.putString(getCol(s1)-1, 2, s1, BOLD);
         graphics.putString(getCol(s2), 3, s2, BOLD);
         graphics.putString(getCol(s3), 4, s3, BOLD);
     }
