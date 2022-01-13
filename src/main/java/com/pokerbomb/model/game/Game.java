@@ -2,7 +2,7 @@ package com.pokerbomb.model.game;
 
 import com.pokerbomb.model.Model;
 import com.pokerbomb.model.Shelf;
-import com.pokerbomb.model.game.cards.Deck;
+import com.pokerbomb.model.game.cards.*;
 import com.pokerbomb.model.menu.Menu;
 
 import java.util.Vector;
@@ -31,7 +31,6 @@ public class Game implements Model {
        initGivenCards();
 
        this.selected = Game.Cell.C15;
-
 
     }
 

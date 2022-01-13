@@ -1,15 +1,14 @@
 package com.pokerbomb.view.powerup;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
-import com.pokerbomb.model.Model;
-import com.pokerbomb.model.game.powerup.GenericPowerUp;
+import com.pokerbomb.model.game.powerup.PowerUp;
 import com.pokerbomb.view.View;
 
 import java.io.IOException;
 
-public class GenericPowerUpView extends View<GenericPowerUp> {
+public class PowerUpView extends View<PowerUp> {
 
-    protected GenericPowerUpView(GenericPowerUp model, TextGraphics graphics) {
+    protected PowerUpView(PowerUp model, TextGraphics graphics) {
         super(model);
     }
 

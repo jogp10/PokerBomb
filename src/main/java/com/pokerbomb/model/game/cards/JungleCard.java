@@ -1,6 +1,6 @@
 package com.pokerbomb.model.game.cards;
 
-public class JungleCard extends Card {
+public class JungleCard extends CardGeneric implements Card {
     private int countToAddAttribute;
 
     public JungleCard(Suit suit, Rank rank) {
@@ -24,6 +24,11 @@ public class JungleCard extends Card {
         }
         if(specialAttribute>3) specialAttribute=3;
         return specialAttribute==0;
+    }
+
+    @Override
+    public Card getCard() {
+        return this;
     }
 
 

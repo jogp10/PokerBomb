@@ -6,11 +6,11 @@ import spock.lang.Specification
 class RoyalFlushHandSpockTest extends Specification {
     def 'Royal Flush com.pockerbomb.model.game.cards.Hand 1'() {
         given:
-        Card card1 = new Card(Suit.HEART, Rank.TEN)
-        Card card2 = new Card(Suit.HEART, Rank.JACK)
-        Card card3 = new Card(Suit.HEART, Rank.QUEEN)
-        Card card4 = new Card(Suit.HEART, Rank.KING)
-        Card card5 = new Card(Suit.HEART, Rank.ACE)
+        Card card1 = new NormalCard(Suit.HEART, Rank.TEN)
+        Card card2 = new NormalCard(Suit.HEART, Rank.JACK)
+        Card card3 = new NormalCard(Suit.HEART, Rank.QUEEN)
+        Card card4 = new NormalCard(Suit.HEART, Rank.KING)
+        Card card5 = new NormalCard(Suit.HEART, Rank.ACE)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -27,11 +27,11 @@ class RoyalFlushHandSpockTest extends Specification {
 
     def 'Royal Flush com.pockerbomb.model.game.cards.Hand 2'() {
         given:
-        Card card1 = new Card(Suit.SPADE, Rank.TEN)
-        Card card2 = new Card(Suit.SPADE, Rank.JACK)
-        Card card3 = new Card(Suit.SPADE, Rank.QUEEN)
-        Card card4 = new Card(Suit.SPADE, Rank.KING)
-        Card card5 = new Card(Suit.SPADE, Rank.ACE)
+        Card card1 = new NormalCard(Suit.SPADE, Rank.TEN)
+        Card card2 = new NormalCard(Suit.SPADE, Rank.JACK)
+        Card card3 = new NormalCard(Suit.SPADE, Rank.QUEEN)
+        Card card4 = new NormalCard(Suit.SPADE, Rank.KING)
+        Card card5 = new NormalCard(Suit.SPADE, Rank.ACE)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -48,11 +48,11 @@ class RoyalFlushHandSpockTest extends Specification {
 
     def 'Royal Flush com.pockerbomb.model.game.cards.Hand 3'() {
         given:
-        Card card1 = new Card(Suit.DIAMOND, Rank.TEN)
-        Card card2 = new Card(Suit.DIAMOND, Rank.JACK)
-        Card card3 = new Card(Suit.DIAMOND, Rank.QUEEN)
-        Card card4 = new Card(Suit.DIAMOND, Rank.KING)
-        Card card5 = new Card(Suit.DIAMOND, Rank.ACE)
+        Card card1 = new NormalCard(Suit.DIAMOND, Rank.TEN)
+        Card card2 = new NormalCard(Suit.DIAMOND, Rank.JACK)
+        Card card3 = new NormalCard(Suit.DIAMOND, Rank.QUEEN)
+        Card card4 = new NormalCard(Suit.DIAMOND, Rank.KING)
+        Card card5 = new NormalCard(Suit.DIAMOND, Rank.ACE)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)

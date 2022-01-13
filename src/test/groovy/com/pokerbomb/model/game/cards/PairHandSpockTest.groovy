@@ -6,11 +6,11 @@ import spock.lang.Specification
 class PairHandSpockTest extends Specification {
     def 'Pair com.pockerbomb.model.game.cards.Hand 1'() {
         given:
-        Card card1 = new Card(Suit.SPADE, Rank.THREE)
-        Card card2 = new Card(Suit.CLUB, Rank.THREE)
-        Card card3 = new Card(Suit.DIAMOND, Rank.SIX)
-        Card card4 = new Card(Suit.DIAMOND, Rank.NINE)
-        Card card5 = new Card(Suit.SPADE, Rank.JACK)
+        Card card1 = new NormalCard(Suit.SPADE, Rank.THREE)
+        Card card2 = new NormalCard(Suit.CLUB, Rank.THREE)
+        Card card3 = new NormalCard(Suit.DIAMOND, Rank.SIX)
+        Card card4 = new NormalCard(Suit.DIAMOND, Rank.NINE)
+        Card card5 = new NormalCard(Suit.SPADE, Rank.JACK)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -27,11 +27,11 @@ class PairHandSpockTest extends Specification {
 
     def 'Pair com.pockerbomb.model.game.cards.Hand 2'() {
         given:
-        Card card1 = new Card(Suit.CLUB, Rank.TWO)
-        Card card2 = new Card(Suit.DIAMOND, Rank.NINE)
-        Card card3 = new Card(Suit.HEART, Rank.NINE)
-        Card card4 = new Card(Suit.SPADE, Rank.TEN)
-        Card card5 = new Card(Suit.CLUB, Rank.QUEEN)
+        Card card1 = new NormalCard(Suit.CLUB, Rank.TWO)
+        Card card2 = new NormalCard(Suit.DIAMOND, Rank.NINE)
+        Card card3 = new NormalCard(Suit.HEART, Rank.NINE)
+        Card card4 = new NormalCard(Suit.SPADE, Rank.TEN)
+        Card card5 = new NormalCard(Suit.CLUB, Rank.QUEEN)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -48,11 +48,11 @@ class PairHandSpockTest extends Specification {
 
     def 'Pair com.pockerbomb.model.game.cards.Hand 3'() {
         given:
-        Card card1 = new Card(Suit.DIAMOND, Rank.FOUR)
-        Card card2 = new Card(Suit.DIAMOND, Rank.FIVE)
-        Card card3 = new Card(Suit.SPADE, Rank.EIGHT)
-        Card card4 = new Card(Suit.CLUB, Rank.ACE)
-        Card card5 = new Card(Suit.HEART, Rank.ACE)
+        Card card1 = new NormalCard(Suit.DIAMOND, Rank.FOUR)
+        Card card2 = new NormalCard(Suit.DIAMOND, Rank.FIVE)
+        Card card3 = new NormalCard(Suit.SPADE, Rank.EIGHT)
+        Card card4 = new NormalCard(Suit.CLUB, Rank.ACE)
+        Card card5 = new NormalCard(Suit.HEART, Rank.ACE)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -69,8 +69,8 @@ class PairHandSpockTest extends Specification {
 
     def 'Pair com.pockerbomb.model.game.cards.Hand 4'() {
         given:
-        Card card1 = new Card(Suit.SPADE, Rank.THREE)
-        Card card2 = new Card(Suit.CLUB, Rank.THREE)
+        Card card1 = new NormalCard(Suit.SPADE, Rank.THREE)
+        Card card2 = new NormalCard(Suit.CLUB, Rank.THREE)
 
         Deck deck = new Deck()
 

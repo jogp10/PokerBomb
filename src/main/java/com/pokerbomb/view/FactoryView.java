@@ -5,6 +5,7 @@ import com.pokerbomb.model.Shelf;
 import com.pokerbomb.model.game.cards.Card;
 import com.pokerbomb.model.game.cards.Deck;
 import com.pokerbomb.view.cards.CardView;
+import com.pokerbomb.view.cards.CardViewFactory;
 import com.pokerbomb.view.cards.DeckView;
 
 public class FactoryView {
@@ -15,10 +16,12 @@ public class FactoryView {
     }
 
     public CardView genCardView(Card model, TextGraphics graphics) {
-        return new CardView(model, graphics);
+        CardViewFactory cardViewFactory = new CardViewFactory();
+        return cardViewFactory.createCardView(model, graphics);
     }
 
-    /*public DeckView genDeckView(Deck model, TextGraphics graphics) {
+
+    public DeckView genDeckView(Deck model, TextGraphics graphics) {
         return new DeckView(model, graphics);
-    }*/
+    }
 }

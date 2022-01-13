@@ -1,6 +1,6 @@
 package com.pokerbomb.model.game.cards;
 
-public class DynamiteCard extends Card {
+public class DynamiteCard extends CardGeneric implements Card {
 
     public DynamiteCard(Suit suit, Rank rank) {
         super(suit, rank);
@@ -18,10 +18,17 @@ public class DynamiteCard extends Card {
         return specialAttribute==0;
     }
 
+    @Override
+    public Card getCard() {
+        return this;
+    }
+
     public void removeSpecialAttribute(int i) {
         if(specialAttribute-i<0){
             specialAttribute=0;
         } else specialAttribute-=i;
     }
+
+
 
 }

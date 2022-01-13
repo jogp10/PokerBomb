@@ -7,11 +7,11 @@ class HandRankingSpockTest extends Specification {
 
     def 'Royal Flush com.pockerbomb.model.game.cards.Hand'() {
         given:
-        Card card1 = new Card(Suit.HEART, Rank.TEN)
-        Card card2 = new Card(Suit.HEART, Rank.JACK)
-        Card card3 = new Card(Suit.HEART, Rank.QUEEN)
-        Card card4 = new Card(Suit.HEART, Rank.KING)
-        Card card5 = new Card(Suit.HEART, Rank.ACE)
+        Card card1 = new NormalCard(Suit.HEART, Rank.TEN)
+        Card card2 = new NormalCard(Suit.HEART, Rank.JACK)
+        Card card3 = new NormalCard(Suit.HEART, Rank.QUEEN)
+        Card card4 = new NormalCard(Suit.HEART, Rank.KING)
+        Card card5 = new NormalCard(Suit.HEART, Rank.ACE)
 
         Deck deck = new Deck()
 
@@ -30,11 +30,11 @@ class HandRankingSpockTest extends Specification {
 
     def 'Straight Flush com.pockerbomb.model.game.cards.Hand'() {
         given:
-        Card card1 = new Card(Suit.DIAMOND, Rank.SEVEN)
-        Card card2 = new Card(Suit.DIAMOND, Rank.EIGHT)
-        Card card3 = new Card(Suit.DIAMOND, Rank.NINE)
-        Card card4 = new Card(Suit.DIAMOND, Rank.TEN)
-        Card card5 = new Card(Suit.DIAMOND, Rank.JACK)
+        Card card1 = new NormalCard(Suit.DIAMOND, Rank.SEVEN)
+        Card card2 = new NormalCard(Suit.DIAMOND, Rank.EIGHT)
+        Card card3 = new NormalCard(Suit.DIAMOND, Rank.NINE)
+        Card card4 = new NormalCard(Suit.DIAMOND, Rank.TEN)
+        Card card5 = new NormalCard(Suit.DIAMOND, Rank.JACK)
 
         Deck deck = new Deck()
 
@@ -53,11 +53,11 @@ class HandRankingSpockTest extends Specification {
 
     def 'Four of a Kind com.pockerbomb.model.game.cards.Hand'() {
         given:
-        Card card1 = new Card(Suit.HEART, Rank.NINE)
-        Card card2 = new Card(Suit.SPADE, Rank.NINE)
-        Card card3 = new Card(Suit.CLUB, Rank.NINE)
-        Card card4 = new Card(Suit.DIAMOND, Rank.NINE)
-        Card card5 = new Card(Suit.DIAMOND, Rank.THREE)
+        Card card1 = new NormalCard(Suit.HEART, Rank.NINE)
+        Card card2 = new NormalCard(Suit.SPADE, Rank.NINE)
+        Card card3 = new NormalCard(Suit.CLUB, Rank.NINE)
+        Card card4 = new NormalCard(Suit.DIAMOND, Rank.NINE)
+        Card card5 = new NormalCard(Suit.DIAMOND, Rank.THREE)
 
         Deck deck = new Deck()
 
@@ -76,11 +76,11 @@ class HandRankingSpockTest extends Specification {
 
     def 'Full House com.pockerbomb.model.game.cards.Hand'() {
         given:
-        Card card1 = new Card(Suit.DIAMOND, Rank.SIX)
-        Card card2 = new Card(Suit.SPADE, Rank.SIX)
-        Card card3 = new Card(Suit.HEART, Rank.SIX)
-        Card card4 = new Card(Suit.CLUB, Rank.THREE)
-        Card card5 = new Card(Suit.SPADE, Rank.THREE)
+        Card card1 = new NormalCard(Suit.DIAMOND, Rank.SIX)
+        Card card2 = new NormalCard(Suit.SPADE, Rank.SIX)
+        Card card3 = new NormalCard(Suit.HEART, Rank.SIX)
+        Card card4 = new NormalCard(Suit.CLUB, Rank.THREE)
+        Card card5 = new NormalCard(Suit.SPADE, Rank.THREE)
 
         Deck deck = new Deck()
 
@@ -99,11 +99,11 @@ class HandRankingSpockTest extends Specification {
 
     def 'Flush com.pockerbomb.model.game.cards.Hand'() {
         given:
-        Card card1 = new Card(Suit.HEART, Rank.TWO)
-        Card card2 = new Card(Suit.HEART, Rank.SEVEN)
-        Card card3 = new Card(Suit.HEART, Rank.JACK)
-        Card card4 = new Card(Suit.HEART, Rank.ACE)
-        Card card5 = new Card(Suit.HEART, Rank.FOUR)
+        Card card1 = new NormalCard(Suit.HEART, Rank.TWO)
+        Card card2 = new NormalCard(Suit.HEART, Rank.SEVEN)
+        Card card3 = new NormalCard(Suit.HEART, Rank.JACK)
+        Card card4 = new NormalCard(Suit.HEART, Rank.ACE)
+        Card card5 = new NormalCard(Suit.HEART, Rank.FOUR)
 
         Deck deck = new Deck()
 
@@ -122,11 +122,11 @@ class HandRankingSpockTest extends Specification {
 
     def 'Straight com.pockerbomb.model.game.cards.Hand'() {
         given:
-        Card card1 = new Card(Suit.DIAMOND, Rank.THREE)
-        Card card2 = new Card(Suit.CLUB, Rank.FOUR)
-        Card card3 = new Card(Suit.DIAMOND, Rank.FIVE)
-        Card card4 = new Card(Suit.SPADE, Rank.SIX)
-        Card card5 = new Card(Suit.HEART, Rank.SEVEN)
+        Card card1 = new NormalCard(Suit.DIAMOND, Rank.THREE)
+        Card card2 = new NormalCard(Suit.CLUB, Rank.FOUR)
+        Card card3 = new NormalCard(Suit.DIAMOND, Rank.FIVE)
+        Card card4 = new NormalCard(Suit.SPADE, Rank.SIX)
+        Card card5 = new NormalCard(Suit.HEART, Rank.SEVEN)
 
         Deck deck = new Deck()
 
@@ -145,10 +145,10 @@ class HandRankingSpockTest extends Specification {
 
     def 'Three of a Kind com.pockerbomb.model.game.cards.Hand'() {
         given:
-        Card card1 = new Card(Suit.HEART, Rank.EIGHT)
-        Card card2 = new Card(Suit.SPADE, Rank.EIGHT)
-        Card card3 = new Card(Suit.CLUB, Rank.EIGHT)
-        Card card4 = new Card(Suit.CLUB, Rank.TWO)
+        Card card1 = new NormalCard(Suit.HEART, Rank.EIGHT)
+        Card card2 = new NormalCard(Suit.SPADE, Rank.EIGHT)
+        Card card3 = new NormalCard(Suit.CLUB, Rank.EIGHT)
+        Card card4 = new NormalCard(Suit.CLUB, Rank.TWO)
         //com.pockerbomb.model.cards.Card card5 = new com.pockerbomb.model.cards.Card(com.pockerbomb.model.cards.Suit.DIAMOND, com.pockerbomb.model.cards.Rank.TEN)
 
         Deck deck = new Deck()
@@ -168,11 +168,11 @@ class HandRankingSpockTest extends Specification {
 
     def 'Two Pairs com.pockerbomb.model.game.cards.Hand'() {
         given:
-        Card card1 = new Card(Suit.DIAMOND, Rank.QUEEN)
-        Card card2 = new Card(Suit.SPADE, Rank.QUEEN)
-        Card card3 = new Card(Suit.HEART, Rank.FIVE)
-        Card card4 = new Card(Suit.CLUB, Rank.TWO)
-        Card card5 = new Card(Suit.SPADE, Rank.FIVE)
+        Card card1 = new NormalCard(Suit.DIAMOND, Rank.QUEEN)
+        Card card2 = new NormalCard(Suit.SPADE, Rank.QUEEN)
+        Card card3 = new NormalCard(Suit.HEART, Rank.FIVE)
+        Card card4 = new NormalCard(Suit.CLUB, Rank.TWO)
+        Card card5 = new NormalCard(Suit.SPADE, Rank.FIVE)
 
         Deck deck = new Deck()
 
@@ -191,9 +191,9 @@ class HandRankingSpockTest extends Specification {
 
     def 'Pair com.pockerbomb.model.game.cards.Hand'() {
         given:
-        Card card1 = new Card(Suit.DIAMOND, Rank.NINE)
-        Card card2 = new Card(Suit.HEART, Rank.NINE)
-        Card card3 = new Card(Suit.SPADE, Rank.TEN)
+        Card card1 = new NormalCard(Suit.DIAMOND, Rank.NINE)
+        Card card2 = new NormalCard(Suit.HEART, Rank.NINE)
+        Card card3 = new NormalCard(Suit.SPADE, Rank.TEN)
 
         Deck deck = new Deck()
 
@@ -210,7 +210,7 @@ class HandRankingSpockTest extends Specification {
 
     def 'None'() {
         given:
-        Card card1 = new Card(Suit.DIAMOND, Rank.ACE)
+        Card card1 = new NormalCard(Suit.DIAMOND, Rank.ACE)
         //com.pockerbomb.model.cards.Card card2 = new com.pockerbomb.model.cards.Card(com.pockerbomb.model.cards.Suit.HEART, com.pockerbomb.model.cards.Rank.NINE)
         //com.pockerbomb.model.cards.Card card3 = new com.pockerbomb.model.cards.Card(com.pockerbomb.model.cards.Suit.SPADE, com.pockerbomb.model.cards.Rank.TEN)
 

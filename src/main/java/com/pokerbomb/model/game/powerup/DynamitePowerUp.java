@@ -2,11 +2,19 @@ package com.pokerbomb.model.game.powerup;
 
 import com.pokerbomb.model.game.cards.DynamiteCard;
 
-public class DynamitePowerUp implements GenericPowerUp{
+public class DynamitePowerUp implements PowerUp {
     private int numberOfPowerUp;
+    private static DynamitePowerUp instance;
 
-    DynamitePowerUp(){
+    private DynamitePowerUp(){
         numberOfPowerUp=0;
+    }
+
+    public static DynamitePowerUp getInstance(){
+        if(DynamitePowerUp.instance == null){
+            DynamitePowerUp.instance = new DynamitePowerUp();
+        }
+        return DynamitePowerUp.instance;
     }
 
     @Override

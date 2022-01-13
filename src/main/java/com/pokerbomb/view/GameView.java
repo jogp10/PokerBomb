@@ -35,8 +35,6 @@ public class GameView extends View<Game>{
 
 
 
-
-
     public void drawSelectedBorder() {
         Game.Cell selected = model.getSelected();
         int COL_BEGIN_SELECTED = this.getSize().getColumns() / 2 - 8;
@@ -44,21 +42,23 @@ public class GameView extends View<Game>{
         borderView.draw(COL_BEGIN_SELECTED, getStringLine(model.getPosElem(selected)) - 1);
     }
 
-
-
-
-
-
-
-
-
     private void drawCards()  {
 
+        try {
+            factory.genDeckView(model.getGivenDeck(), graphics).draw(6, 14);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+/*
         try {
             factory.genCardView(model.getGivenDeck().getCard(0), graphics).draw(6,14);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+ */
+
+
 
 
 
@@ -98,7 +98,6 @@ public class GameView extends View<Game>{
 
         //draw cards on the screen
         drawCards();
-
 
 
         //drawSelectedBorder();   draw selected card border

@@ -6,7 +6,7 @@ import spock.lang.Specification
 class CardSpockTest extends Specification {
     Card card;
     def setup(){
-        card = new Card(Suit.CLUB, Rank.ACE)
+        card = new NormalCard(Suit.CLUB, Rank.ACE)
     }
 
     def 'com.pockerbomb.model.cards.Card com.pockerbomb.model.cards.Suit'() {

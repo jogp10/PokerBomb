@@ -1,5 +1,6 @@
 package com.pokerbomb.view;
 
+import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.pokerbomb.model.Shelf;
 
@@ -16,6 +17,7 @@ public class ShelfView extends View<Shelf> {
 
     @Override
     public void draw(int col, int row) {
+        graphics.setForegroundColor(TextColor.Factory.fromString("#FFFFFF"));
         shelfBorder.draw(col, row);
     }
 }
