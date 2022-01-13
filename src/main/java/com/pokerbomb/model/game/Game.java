@@ -3,11 +3,18 @@ package com.pokerbomb.model.game;
 import com.pokerbomb.model.Model;
 import com.pokerbomb.model.Shelf;
 import com.pokerbomb.model.game.cards.*;
-import com.pokerbomb.model.menu.Menu;
+import com.pokerbomb.model.game.powerup.DynamitePowerUp;
+import com.pokerbomb.model.game.powerup.FrozenPowerUp;
+import com.pokerbomb.model.game.powerup.JunglePowerUp;
+import com.pokerbomb.model.game.powerup.PowerUp;
 
+
+import java.util.ArrayList;
 import java.util.Vector;
 
 public class Game implements Model {
+    ArrayList<PowerUp> powerUps = new ArrayList<>();
+
     Shelf s1 = new Shelf(7,50);
     Shelf s2 = new Shelf(7,50);
     Shelf given = new Shelf(7,50);
@@ -32,6 +39,9 @@ public class Game implements Model {
 
        this.selected = Game.Cell.C15;
 
+        powerUps.add(FrozenPowerUp.getInstance());
+        powerUps.add(DynamitePowerUp.getInstance());
+        powerUps.add(JunglePowerUp.getInstance());
     }
 
     private void initGivenCards() {
@@ -57,6 +67,10 @@ public class Game implements Model {
     }
     public Deck getGivenDeck_2() {
         return d2;
+    }
+
+    public ArrayList<PowerUp> getPowerUps(){
+        return powerUps;
     }
 
 

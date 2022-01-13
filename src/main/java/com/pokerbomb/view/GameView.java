@@ -3,6 +3,14 @@ package com.pokerbomb.view;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.pokerbomb.model.game.Game;
+import com.pokerbomb.model.game.powerup.DynamitePowerUp;
+import com.pokerbomb.model.game.powerup.FrozenPowerUp;
+import com.pokerbomb.model.game.powerup.JunglePowerUp;
+import com.pokerbomb.model.game.powerup.PowerUp;
+import com.pokerbomb.view.game.powerup.DynamitePowerUpView;
+import com.pokerbomb.view.game.powerup.FrozenPowerUpView;
+import com.pokerbomb.view.game.powerup.JunglePowerUpView;
+import com.pokerbomb.view.game.powerup.PowerUpView;
 
 import java.io.IOException;
 
@@ -32,11 +40,13 @@ public class GameView extends View<Game>{
     }
 
     private void drawCards()  {
+        TextColor textColor = graphics.getBackgroundColor();
         try {
             factory.genDeckView(model.getGivenDeck(), graphics).draw(6, 14);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        graphics.setBackgroundColor(textColor);
     }
 
 
@@ -49,6 +59,16 @@ public class GameView extends View<Game>{
     }
 
     private void drawPowerUps() {
+        int col = 10;
+        int row = 50;
+        for(PowerUp i: model.getPowerUps()){
+            try {
+                factory.genPowerUpView(i, graphics).draw(col, row);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            col += 20;
+        }
     }
 
     
