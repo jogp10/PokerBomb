@@ -19,7 +19,7 @@ class ThreeOfAKindHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean threeOfAKind = Hand.isThreeOfAKind(deck)
+        boolean threeOfAKind = Hand.isThreeOfAKind(deck.getDeck())
 
         then:
         threeOfAKind
@@ -40,7 +40,7 @@ class ThreeOfAKindHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean threeOfAKind = Hand.isThreeOfAKind(deck)
+        boolean threeOfAKind = Hand.isThreeOfAKind(deck.getDeck())
 
         then:
         threeOfAKind
@@ -61,7 +61,7 @@ class ThreeOfAKindHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean threeOfAKind = Hand.isThreeOfAKind(deck)
+        boolean threeOfAKind = Hand.isThreeOfAKind(deck.getDeck())
 
         then:
         threeOfAKind
@@ -80,7 +80,7 @@ class ThreeOfAKindHandSpockTest extends Specification {
         deck.addCard(card3)
 
         when:
-        boolean threeOfAKind = Hand.isThreeOfAKind(deck)
+        boolean threeOfAKind = Hand.isThreeOfAKind(deck.getDeck())
 
         then:
         threeOfAKind
@@ -101,7 +101,7 @@ class ThreeOfAKindHandSpockTest extends Specification {
         deck.addCard(card4)
 
         when:
-        boolean threeOfAKind = Hand.isThreeOfAKind(deck)
+        boolean threeOfAKind = Hand.isThreeOfAKind(deck.getDeck())
 
         then:
         threeOfAKind

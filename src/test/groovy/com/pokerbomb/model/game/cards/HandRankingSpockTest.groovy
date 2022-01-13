@@ -22,7 +22,7 @@ class HandRankingSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        String royalFlush = Hand.handRanking(deck)
+        String royalFlush = Hand.handRanking(deck.getDeck())
 
         then:
         royalFlush == "Royal Flush"
@@ -45,7 +45,7 @@ class HandRankingSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        String straightFlush = Hand.handRanking(deck)
+        String straightFlush = Hand.handRanking(deck.getDeck())
 
         then:
         straightFlush == "Straight Flush"
@@ -68,7 +68,7 @@ class HandRankingSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        String fourOfAKind = Hand.handRanking(deck)
+        String fourOfAKind = Hand.handRanking(deck.getDeck())
 
         then:
         fourOfAKind == "Four of a Kind"
@@ -91,7 +91,7 @@ class HandRankingSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        String fullHouse = Hand.handRanking(deck)
+        String fullHouse = Hand.handRanking(deck.getDeck())
 
         then:
         fullHouse == "Full House"
@@ -114,7 +114,7 @@ class HandRankingSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        String flush = Hand.handRanking(deck)
+        String flush = Hand.handRanking(deck.getDeck())
 
         then:
         flush == "Flush"
@@ -137,7 +137,7 @@ class HandRankingSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        String straight = Hand.handRanking(deck)
+        String straight = Hand.handRanking(deck.getDeck())
 
         then:
         straight == "Straight"
@@ -160,7 +160,7 @@ class HandRankingSpockTest extends Specification {
         //deck.addCard(card5)
 
         when:
-        String threeOfAKind = Hand.handRanking(deck)
+        String threeOfAKind = Hand.handRanking(deck.getDeck())
 
         then:
         threeOfAKind == "Three of a Kind"
@@ -183,7 +183,7 @@ class HandRankingSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        String twoPairs = Hand.handRanking(deck)
+        String twoPairs = Hand.handRanking(deck.getDeck())
 
         then:
         twoPairs == "Two Pairs"
@@ -202,7 +202,7 @@ class HandRankingSpockTest extends Specification {
         deck.addCard(card3)
 
         when:
-        String pair = Hand.handRanking(deck)
+        String pair = Hand.handRanking(deck.getDeck())
 
         then:
         pair == "Pair"
@@ -221,7 +221,7 @@ class HandRankingSpockTest extends Specification {
         //deck.addCard(card3)
 
         when:
-        String none = Hand.handRanking(deck)
+        String none = Hand.handRanking(deck.getDeck())
 
         then:
         none == "None"

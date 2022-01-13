@@ -19,7 +19,7 @@ class FlushHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean flush = Hand.isFlush(deck)
+        boolean flush = Hand.isFlush(deck.getDeck())
 
         then:
         flush
@@ -40,7 +40,7 @@ class FlushHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean flush = Hand.isFlush(deck)
+        boolean flush = Hand.isFlush(deck.getDeck())
 
         then:
         flush
@@ -61,7 +61,7 @@ class FlushHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean flush = Hand.isFlush(deck)
+        boolean flush = Hand.isFlush(deck.getDeck())
 
         then:
         flush

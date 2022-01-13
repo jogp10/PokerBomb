@@ -19,7 +19,7 @@ class FullHouseHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean fullHouse = Hand.isFullHouse(deck)
+        boolean fullHouse = Hand.isFullHouse(deck.getDeck())
 
         then:
         fullHouse
@@ -40,7 +40,7 @@ class FullHouseHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean fullHouse = Hand.isFullHouse(deck)
+        boolean fullHouse = Hand.isFullHouse(deck.getDeck())
 
         then:
         fullHouse
@@ -61,7 +61,7 @@ class FullHouseHandSpockTest extends Specification {
         deck.addCard(card5)
 
         when:
-        boolean fullHouse = Hand.isFullHouse(deck)
+        boolean fullHouse = Hand.isFullHouse(deck.getDeck())
 
         then:
         fullHouse

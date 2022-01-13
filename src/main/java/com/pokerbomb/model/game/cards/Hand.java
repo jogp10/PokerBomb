@@ -6,6 +6,24 @@ import java.util.ArrayList;
 
 public class Hand implements Model {
 
+    private ArrayList<Card> cards;
+
+    public Hand() {
+        this.cards = new ArrayList<>();
+    }
+
+    public ArrayList<Card> getCards() {
+        return cards;
+    }
+    
+    public void setCards(ArrayList<Card> cards) {
+        this.cards = cards;
+    }
+
+    public void addCard(Card card) {
+        this.cards.add(card);
+    }
+
     public static void sortByRank(ArrayList<Card> hand) {
         int i, j, min_j;
 
@@ -63,8 +81,7 @@ public class Hand implements Model {
     }
 
     //5 cards of the same suit
-    public static boolean isFlush(Deck deck) {
-        ArrayList<Card> hand = deck.getDeck();
+    public static boolean isFlush(ArrayList<Card> hand) {
 
         if (hand.size() < 5)
             return false;   // Make sure we have 5 cards....
@@ -75,8 +92,8 @@ public class Hand implements Model {
     }
 
     //5 cards in sequence from low to high. An Ace can be high or low
-    public static boolean isStraight(Deck deck) {
-        ArrayList<Card> hand = deck.getDeck();
+    public static boolean isStraight(ArrayList<Card> hand) {
+        
         int i, testRank;
 
         if (hand.size() < 5 )
@@ -111,18 +128,18 @@ public class Hand implements Model {
     }
 
     //A continuous run of 5 cards, all of the same suit. An Ace will be low in a straight flush
-    public static boolean isStraightFlush(Deck deck) {
-        return isFlush(deck) && isStraight(deck);
+    public static boolean isStraightFlush(ArrayList<Card> hand) {
+        return isFlush(hand) && isStraight(hand);
     }
 
     //A continuous run of 5 cards from 10 to Ace, all of the same suit. The highest score hand!
-    public static boolean isRoyalFlush(Deck deck) {
-        return isFlush(deck) && isStraight(deck) && deck.getDeck().get(4).getRank() == Rank.ACE;
+    public static boolean isRoyalFlush(ArrayList<Card> hand) {
+        return isFlush(hand) && isStraight(hand) && hand.get(4).getRank() == Rank.ACE;
     }
 
     //4 cards of the same value
-    public static boolean isFourOfAKind(Deck deck) {
-        ArrayList<Card> hand = deck.getDeck();
+    public static boolean isFourOfAKind(ArrayList<Card> hand) {
+        
         boolean a1, a2 = false;
 
         if (hand.size() < 4)
@@ -150,8 +167,8 @@ public class Hand implements Model {
     }
 
     //2 cards of one value and 3 cards of another value
-    public static boolean isFullHouse(Deck deck) {
-        ArrayList<Card> hand = deck.getDeck();
+    public static boolean isFullHouse(ArrayList<Card> hand) {
+        
         boolean a1, a2;
 
         if (hand.size() < 5)
@@ -177,14 +194,14 @@ public class Hand implements Model {
     }
 
     //3 cards of the same value
-    public static boolean isThreeOfAKind(Deck deck) {
-        ArrayList<Card> hand = deck.getDeck();
+    public static boolean isThreeOfAKind(ArrayList<Card> hand) {
+        
         boolean a1, a2 = false, a3 = false;
 
         if (hand.size() < 3)
             return false;
 
-        if (isFourOfAKind(deck) || isFullHouse(deck))
+        if (isFourOfAKind(hand) || isFullHouse(hand))
             return false;        // The hand is not 3 of a kind (but better)
 
         sortByRank(hand);
@@ -213,14 +230,14 @@ public class Hand implements Model {
     }
 
     //2 cards of one value and 2 cards of another value
-    public static boolean isTwoPairs(Deck deck) {
-        ArrayList<Card> hand = deck.getDeck();
+    public static boolean isTwoPairs(ArrayList<Card> hand) {
+        
         boolean a1, a2 = false, a3 = false;
 
         if (hand.size() < 4)
             return false;
 
-        if (isFourOfAKind(deck) || isFullHouse(deck) || isThreeOfAKind(deck))
+        if (isFourOfAKind(hand) || isFullHouse(hand) || isThreeOfAKind(hand))
             return false;        // The hand is not 2 pairs (but better)
 
         sortByRank(hand);
@@ -249,14 +266,14 @@ public class Hand implements Model {
     }
 
     //2 cards of the same value
-    public static boolean isPair(Deck deck) {
-        ArrayList<Card> hand = deck.getDeck();
+    public static boolean isPair(ArrayList<Card> hand) {
+        
         boolean a1, a2 = false, a3 = false, a4 = false;
 
         if (hand.size() < 2)
             return false;
 
-        if (isFourOfAKind(deck) || isFullHouse(deck) || isThreeOfAKind(deck) || isTwoPairs(deck))
+        if (isFourOfAKind(hand) || isFullHouse(hand) || isThreeOfAKind(hand) || isTwoPairs(hand))
             return false;        // The hand is not one pair (but better)
 
         sortByRank(hand);
@@ -287,31 +304,31 @@ public class Hand implements Model {
         return a1 || a2 || a3 || a4;
     }
 
-    public static String handRanking(Deck deck) {
-        String hand;
+    public static String handRanking(ArrayList<Card> hand) {
+        String handType;
 
-        if (isRoyalFlush(deck)) {
-            hand = "Royal Flush";
-        } else if (isStraightFlush(deck)) {
-            hand = "Straight Flush";
-        } else if (isFourOfAKind(deck)) {
-            hand = "Four of a Kind";
-        } else if (isFullHouse(deck)) {
-            hand = "Full House";
-        } else if (isFlush(deck)) {
-            hand = "Flush";
-        } else if (isStraight(deck)) {
-            hand = "Straight";
-        } else if (isThreeOfAKind(deck)) {
-            hand = "Three of a Kind";
-        } else if (isTwoPairs(deck)) {
-            hand = "Two Pairs";
-        } else if (isPair(deck)) {
-            hand = "Pair";
+        if (isRoyalFlush(hand)) {
+            handType = "Royal Flush";
+        } else if (isStraightFlush(hand)) {
+            handType = "Straight Flush";
+        } else if (isFourOfAKind(hand)) {
+            handType = "Four of a Kind";
+        } else if (isFullHouse(hand)) {
+            handType = "Full House";
+        } else if (isFlush(hand)) {
+            handType = "Flush";
+        } else if (isStraight(hand)) {
+            handType = "Straight";
+        } else if (isThreeOfAKind(hand)) {
+            handType = "Three of a Kind";
+        } else if (isTwoPairs(hand)) {
+            handType = "Two Pairs";
+        } else if (isPair(hand)) {
+            handType = "Pair";
         } else {
-            hand = "None";
+            handType = "None";
         }
 
-        return hand;
+        return handType;
     }
 }
