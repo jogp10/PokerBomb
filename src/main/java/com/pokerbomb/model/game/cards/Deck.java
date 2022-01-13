@@ -20,7 +20,7 @@ public class Deck implements Model {
         for(Suit cardSuit : Suit.values()) {
             for(Rank cardRank : Rank.values()) {
                 // Add a new card to the deck
-                this.cards.add( new Card(cardSuit, cardRank));
+                this.cards.add( new NormalCard(cardSuit, cardRank));
             }
         }
     }

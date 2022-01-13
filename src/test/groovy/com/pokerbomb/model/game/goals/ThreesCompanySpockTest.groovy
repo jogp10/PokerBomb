@@ -2,6 +2,7 @@ package com.pokerbomb.model.game.goals
 
 import com.pokerbomb.model.game.cards.Card
 import com.pokerbomb.model.game.cards.Hand
+import com.pokerbomb.model.game.cards.NormalCard
 import com.pokerbomb.model.game.cards.Rank
 import com.pokerbomb.model.game.cards.Suit
 import spock.lang.Specification
@@ -11,9 +12,9 @@ class ThreesCompanySpockTest extends Specification {
         given:
         ArrayList<Hand> hands = new ArrayList<>()
 
-        Card card1 = new Card(Suit.HEART, Rank.QUEEN)
-        Card card2 = new Card(Suit.SPADE, Rank.QUEEN)
-        Card card3 = new Card(Suit.CLUB, Rank.QUEEN)
+        Card card1 = new NormalCard(Suit.HEART, Rank.QUEEN)
+        Card card2 = new NormalCard(Suit.SPADE, Rank.QUEEN)
+        Card card3 = new NormalCard(Suit.CLUB, Rank.QUEEN)
         Hand hand1 = new Hand()
         hand1.addCard(card1)
         hand1.addCard(card2)

@@ -31,7 +31,7 @@ class DeckSpockTest extends Specification{
     def 'AddCard'() {
         given:
             Deck deck = new Deck()
-            Card card = new Card(Suit.HEART, Rank.SEVEN)
+            Card card = new NormalCard(Suit.HEART, Rank.SEVEN)
 
         when:
             deck.addCard(card)
@@ -56,7 +56,7 @@ class DeckSpockTest extends Specification{
     def 'DrawCard'() {
         given:
             Deck deck = new Deck()
-            Card card = new Card(Suit.HEART, Rank.ACE)
+            Card card = new NormalCard(Suit.HEART, Rank.ACE)
             deck.addCard(card)
 
         when:
@@ -69,9 +69,9 @@ class DeckSpockTest extends Specification{
     def 'DrawCard 2'() {
         given:
         Deck deck = new Deck()
-        Card card = new Card(Suit.HEART, Rank.ACE)
+        Card card = new NormalCard(Suit.HEART, Rank.ACE)
             deck.addCard(card)
-            card = new Card(Suit.DIAMOND, Rank.JACK)
+            card = new NormalCard(Suit.DIAMOND, Rank.JACK)
             deck.addCard(card)
 
         when:
@@ -84,7 +84,7 @@ class DeckSpockTest extends Specification{
     def 'ToString' () {
         given:
             Deck deck = new Deck()
-            Card card = new Card(Suit.DIAMOND, Rank.TWO)
+            Card card = new NormalCard(Suit.DIAMOND, Rank.TWO)
             deck.addCard(card)
 
         expect:

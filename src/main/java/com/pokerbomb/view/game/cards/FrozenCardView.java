@@ -2,15 +2,12 @@ package com.pokerbomb.view.game.cards;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.pokerbomb.model.game.cards.FrozenCard;
-import com.pokerbomb.view.View;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FrozenCardView extends CardView {
-
-    CardView cardView;
+public class FrozenCardView extends CardViewGeneric {
 
     static final List<String> backgroundColors = new ArrayList<String>() {{
         add("#FFFFFF"); // default White
@@ -20,12 +17,11 @@ public class FrozenCardView extends CardView {
 
     public FrozenCardView(FrozenCard model, TextGraphics graphics) {
         super(model, graphics);
-        cardView = new CardView(model, graphics);
     }
 
     @Override
     public void draw(int col, int row) throws IOException {
-        cardView.setBackgroundColour(backgroundColors.get(model.getSpecialAttribute()));
-        cardView.draw(col, row);
+        if(model.isActive())  super.setBackgroundColour(backgroundColors.get(model.getSpecialAttribute()-1));
+        super.draw(col, row);
     }
 }

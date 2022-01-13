@@ -1,6 +1,6 @@
 package com.pokerbomb.model.game.cards;
 
-public class FrozenCard extends Card {
+public class FrozenCard extends CardGeneric implements Card {
 
     public FrozenCard(Suit suit, Rank rank) {
         super(suit, rank);
@@ -16,6 +16,11 @@ public class FrozenCard extends Card {
     @Override
     public boolean notInACombo() {
         return false;
+    }
+
+    @Override
+    public Card getCard() {
+        return this;
     }
 
     public void removeSpecialAttribute(int i) {

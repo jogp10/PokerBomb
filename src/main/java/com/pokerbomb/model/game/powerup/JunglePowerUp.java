@@ -2,11 +2,19 @@ package com.pokerbomb.model.game.powerup;
 
 import com.pokerbomb.model.game.cards.JungleCard;
 
-public class JunglePowerUp implements GenericPowerUp{
+public class JunglePowerUp implements PowerUp {
     private int numberOfPowerUp;
+    private static JunglePowerUp instance;
 
-    public JunglePowerUp(){
+    private JunglePowerUp(){
         numberOfPowerUp=0;
+    }
+
+    public static JunglePowerUp getInstance(){
+        if(JunglePowerUp.instance == null){
+            JunglePowerUp.instance = new JunglePowerUp();
+        }
+        return JunglePowerUp.instance;
     }
 
     @Override

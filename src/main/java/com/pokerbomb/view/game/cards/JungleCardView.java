@@ -3,15 +3,12 @@ package com.pokerbomb.view.game.cards;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.pokerbomb.model.game.cards.Card;
 import com.pokerbomb.model.game.cards.JungleCard;
-import com.pokerbomb.view.View;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JungleCardView extends CardView {
-
-    CardView cardView;
+public class JungleCardView extends CardViewGeneric {
 
     static final List<String> backgroundColors = new ArrayList<String>() {{
         add("#FFFFFF"); // default
@@ -22,11 +19,10 @@ public class JungleCardView extends CardView {
 
     public JungleCardView(JungleCard model, TextGraphics graphics) {
         super(model, graphics);
-        cardView = new CardView(model, graphics);
     }
 
     public void draw(int col, int row) throws IOException {
-        cardView.setBackgroundColour(backgroundColors.get(model.getSpecialAttribute()));
-        cardView.draw(col, row);
+        if(model.isActive()) super.setBackgroundColour(backgroundColors.get(model.getSpecialAttribute()-1));
+        super.draw(col, row);
     }
 }

@@ -6,11 +6,11 @@ import spock.lang.Specification
 class FullHouseHandSpockTest extends Specification {
     def 'Full House com.pokerbomb.model.game.cards.Hand 1'() {
         given:
-        Card card1 = new Card(Suit.CLUB, Rank.TWO)
-        Card card2 = new Card(Suit.DIAMOND, Rank.TWO)
-        Card card3 = new Card(Suit.DIAMOND, Rank.SEVEN)
-        Card card4 = new Card(Suit.SPADE, Rank.SEVEN)
-        Card card5 = new Card(Suit.HEART, Rank.SEVEN)
+        Card card1 = new NormalCard(Suit.CLUB, Rank.TWO)
+        Card card2 = new NormalCard(Suit.DIAMOND, Rank.TWO)
+        Card card3 = new NormalCard(Suit.DIAMOND, Rank.SEVEN)
+        Card card4 = new NormalCard(Suit.SPADE, Rank.SEVEN)
+        Card card5 = new NormalCard(Suit.HEART, Rank.SEVEN)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -27,11 +27,11 @@ class FullHouseHandSpockTest extends Specification {
 
     def 'Full House com.pokerbomb.model.game.cards.Hand 2'() {
         given:
-        Card card1 = new Card(Suit.CLUB, Rank.SIX)
-        Card card2 = new Card(Suit.SPADE, Rank.SIX)
-        Card card3 = new Card(Suit.HEART, Rank.SIX)
-        Card card4 = new Card(Suit.DIAMOND, Rank.KING)
-        Card card5 = new Card(Suit.SPADE, Rank.KING)
+        Card card1 = new NormalCard(Suit.CLUB, Rank.SIX)
+        Card card2 = new NormalCard(Suit.SPADE, Rank.SIX)
+        Card card3 = new NormalCard(Suit.HEART, Rank.SIX)
+        Card card4 = new NormalCard(Suit.DIAMOND, Rank.KING)
+        Card card5 = new NormalCard(Suit.SPADE, Rank.KING)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
@@ -48,11 +48,11 @@ class FullHouseHandSpockTest extends Specification {
 
     def 'Full House com.pokerbomb.model.game.cards.Hand 3'() {
         given:
-        Card card1 = new Card(Suit.DIAMOND, Rank.QUEEN)
-        Card card2 = new Card(Suit.HEART, Rank.QUEEN)
-        Card card3 = new Card(Suit.SPADE, Rank.ACE)
-        Card card4 = new Card(Suit.DIAMOND, Rank.ACE)
-        Card card5 = new Card(Suit.CLUB, Rank.ACE)
+        Card card1 = new NormalCard(Suit.DIAMOND, Rank.QUEEN)
+        Card card2 = new NormalCard(Suit.HEART, Rank.QUEEN)
+        Card card3 = new NormalCard(Suit.SPADE, Rank.ACE)
+        Card card4 = new NormalCard(Suit.DIAMOND, Rank.ACE)
+        Card card5 = new NormalCard(Suit.CLUB, Rank.ACE)
         Deck deck = new Deck()
         deck.addCard(card1)
         deck.addCard(card2)
