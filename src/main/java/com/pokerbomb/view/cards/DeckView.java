@@ -3,6 +3,7 @@ package com.pokerbomb.view.cards;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TerminalSize;
 import com.googlecode.lanterna.TextColor;
+import com.googlecode.lanterna.graphics.TextGraphics;
 import com.pokerbomb.model.game.cards.Deck;
 import com.pokerbomb.model.game.cards.Card;
 import com.pokerbomb.view.View;
@@ -12,8 +13,10 @@ import java.io.IOException;
 public class DeckView extends View<Deck> {
     private int incr = 4, startCol = 0;
 
-    protected DeckView(Deck model) {
+    public DeckView(Deck model) {
+
         super(model);
+        this.graphics = graphics;
     }
 
     private void increment(){
@@ -40,6 +43,7 @@ public class DeckView extends View<Deck> {
 
     @Override
     public void draw(int col, int row) throws IOException {
+        increment();
         graphics.setBackgroundColor(TextColor.Factory.fromString("#808080"));
         graphics.fillRectangle(new TerminalPosition(col, row), new TerminalSize(25, 7), ' ');
 
