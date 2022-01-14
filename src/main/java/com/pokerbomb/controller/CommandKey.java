@@ -6,7 +6,7 @@ import com.googlecode.lanterna.screen.Screen;
 import java.io.IOException;
 
 public class CommandKey {
-    public enum COMMAND {UP, RIGHT, DOWN, LEFT, ENTER, ESC, QUIT, NONE}
+    public enum COMMAND {UP, RIGHT, DOWN, LEFT, ENTER, ESC, QUIT, D1, D2, NONE}
 
     COMMAND command;
     Character key;
@@ -69,6 +69,12 @@ public class CommandKey {
                         break;
                     case 'd':
                         this.command = COMMAND.RIGHT;
+                        break;
+                    case '1':
+                        this.command = COMMAND.D1;
+                        break;
+                    case '2':
+                        this.command = COMMAND.D2;
                         break;
                     default:
                         break;

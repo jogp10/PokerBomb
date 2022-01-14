@@ -3,6 +3,7 @@ package com.pokerbomb.controller.state;
 import com.pokerbomb.controller.CommandKey;
 import com.pokerbomb.controller.Controller;
 import com.pokerbomb.model.game.Game;
+import com.pokerbomb.model.game.cards.Deck;
 import com.pokerbomb.view.GameView;
 import com.pokerbomb.view.View;
 
@@ -37,13 +38,33 @@ public class GameState extends ControllerState<Game> {
                 //gameModel.getCursor().moveDown();
                 break;
             case RIGHT:
-                //gameModel.nextSelected();
+                gameModel.nextSelected();
                 break;
             case LEFT:
-                //gameModel.previousSelected();
+                gameModel.previousSelected();
                 break;
             case ENTER:
                 //command = new Flag(gameModel);   place card in deck
+                break;
+            case D1:
+                Deck newd1 = gameModel.getDeck_1();
+                if (newd1.getDeck().size() <= 4) {
+                    gameModel.moveToDeck(newd1);
+                    gameModel.setD1(newd1);
+                    Deck newg1 = gameModel.getGivenDeck();
+                    gameModel.removeFromDeck(newg1);
+                    gameModel.addNewCardToG();
+                }
+                break;
+            case D2:
+                Deck newd2 = gameModel.getDeck_2();
+                if (newd2.getDeck().size() <= 4) {
+                    gameModel.moveToDeck(newd2);
+                    gameModel.setD2(newd2);
+                    Deck newg2 = gameModel.getGivenDeck();
+                    gameModel.removeFromDeck(newg2);
+                    gameModel.addNewCardToG();
+                }
                 break;
             case ESC:
                 nextState = factory.genMenuState(true);

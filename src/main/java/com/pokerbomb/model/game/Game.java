@@ -27,7 +27,7 @@ public class Game implements Model {
     Cell selected;
 
 
-    public enum Cell {C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, C15}  //from l->r, u->d
+    public enum Cell {C1, C2, C3, C4, C5}  //from l->r, u->d
     Game.Cell[] opt = Game.Cell.values();
 
     int score;
@@ -37,7 +37,7 @@ public class Game implements Model {
        cards.shuffle();
        initGivenCards();
 
-       this.selected = Game.Cell.C15;
+       this.selected = Game.Cell.C1;
 
         powerUps.add(FrozenPowerUp.getInstance());
         powerUps.add(DynamitePowerUp.getInstance());
@@ -65,7 +65,7 @@ public class Game implements Model {
     public Deck getDeck_1() {
         return d1;
     }
-    public Deck getGivenDeck_2() {
+    public Deck getDeck_2() {
         return d2;
     }
 
@@ -74,6 +74,33 @@ public class Game implements Model {
         return powerUps;
     }
 
+    public void moveToDeck(Deck dest) {
+        int selected = this.getSelectedAsInt();
+        Card toMove = g.getCard(selected);
+        dest.addCard(toMove);
+    }
+
+    public void removeFromDeck(Deck toRemove) {
+        toRemove.removeCard(getSelectedAsInt());  //removes selected card from GIVEN deck
+    }
+
+
+    public void addNewCardToG () {
+        g.addCard(cards.pop(cards));
+    }
+
+
+    public void setG(Deck set) {
+        this.g = set;
+    }
+
+    public void setD1(Deck set) {
+        this.d1 = set;
+    }
+
+    public void setD2(Deck set) {
+        this.d2 = set;
+    }
 
 
 
@@ -82,6 +109,29 @@ public class Game implements Model {
 
 
     public Game.Cell getSelected() {
+        return selected;
+    }
+
+    public int getSelectedAsInt() {
+        int selected = 0;
+
+        switch (this.getSelected()) {
+            case C1: ;
+                break;
+            case C2:
+                selected = 1;
+                break;
+            case C3:
+                selected = 2;
+                break;
+            case C4:
+                selected = 3;
+                break;
+            case C5:
+                selected = 4;
+                break;
+        }
+
         return selected;
     }
 
@@ -96,7 +146,7 @@ public class Game implements Model {
     }
 
     public void nextSelected() {
-        if (selected == Game.Cell.C15) selected = Game.Cell.C1;
+        if (selected == Game.Cell.C5) selected = Game.Cell.C1;
         else {
             //find the position of this.selected in the opt array
             int i = getPosElem(selected);
@@ -106,7 +156,7 @@ public class Game implements Model {
     }
 
     public void previousSelected() {
-        if (selected == Game.Cell.C1) selected = Game.Cell.C15;
+        if (selected == Game.Cell.C1) selected = Game.Cell.C5;
         else {
             //find the position of this.selected in the opt array
             int i = getPosElem(selected);
