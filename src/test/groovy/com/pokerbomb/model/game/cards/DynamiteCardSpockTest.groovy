@@ -3,7 +3,7 @@ package com.pokerbomb.model.game.cards
 
 import spock.lang.Specification
 
-class DynamiteCardSpockTest1 extends Specification{
+class DynamiteCardSpockTest extends Specification{
     DynamiteCard dynamiteCard;
     def setup(){
         dynamiteCard = new DynamiteCard(Suit.CLUB, Rank.ACE)
@@ -41,6 +41,11 @@ class DynamiteCardSpockTest1 extends Specification{
     def 'com.pokerbomb.model.cards.DynamiteCard PlayWithoutCombo'() {
         expect:
             !dynamiteCard.notInACombo();
+    }
+
+    def 'com.pokerbomb.model.cards.DynamiteCard getCard'() {
+        expect:
+            dynamiteCard.getCard().is(dynamiteCard)
     }
 
 

@@ -3,7 +3,7 @@ package com.pokerbomb.model.game.cards
 
 import spock.lang.Specification
 
-class FrozenCardSpockTest1 extends Specification{
+class FrozenCardSpockTest extends Specification{
     FrozenCard frozenCard;
     def setup(){
         frozenCard = new FrozenCard(Suit.CLUB, Rank.ACE)
@@ -25,7 +25,7 @@ class FrozenCardSpockTest1 extends Specification{
             frozenCard.getSpecialAttribute()==0
     }
 
-    def 'com.pokerbomb.model.cards.FrozenCard constructor'() {
+    def 'constructor'() {
         when:
             int numberOfLayers = frozenCard.getSpecialAttribute()
 
@@ -33,7 +33,7 @@ class FrozenCardSpockTest1 extends Specification{
             numberOfLayers==2
     }
 
-    def 'com.pokerbomb.model.cards.FrozenCard isActive'() {
+    def 'isActive'() {
         when:
             frozenCard.removeSpecialAttribute(2)
 
@@ -42,13 +42,19 @@ class FrozenCardSpockTest1 extends Specification{
 
     }
 
-    def 'com.pokerbomb.model.cards.FrozenCard PlayWithCombo'() {
+    def 'PlayWithCombo'() {
         expect:
             !frozenCard.inACombo(1);
     }
 
-    def 'com.pokerbomb.model.cards.FrozenCard PlayWithoutCombo'() {
+    def 'PlayWithoutCombo'() {
         expect:
             !frozenCard.notInACombo();
+    }
+
+
+    def "GetCard"() {
+        expect:
+            frozenCard.getCard().is(frozenCard)
     }
 }

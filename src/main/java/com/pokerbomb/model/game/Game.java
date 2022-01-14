@@ -69,7 +69,8 @@ public class Game implements Model {
         return d2;
     }
 
-    public ArrayList<PowerUp> getPowerUps(){
+    public
+    ArrayList<PowerUp> getPowerUps(){
         return powerUps;
     }
 

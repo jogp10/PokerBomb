@@ -3,7 +3,7 @@ package com.pokerbomb.model.game.cards
 
 import spock.lang.Specification
 
-class JungleCardSpockTest1 extends Specification{
+class JungleCardSpockTest extends Specification{
     JungleCard jungleCard;
     def setup(){
         jungleCard = new JungleCard(Suit.CLUB, Rank.ACE)
@@ -41,5 +41,10 @@ class JungleCardSpockTest1 extends Specification{
     def 'com.pokerbomb.model.cards.JungleCard PlayWithoutCombo'() {
         expect:
             jungleCard.notInACombo();
+    }
+
+    def "GetCard"() {
+        expect:
+            jungleCard.getCard().is(jungleCard)
     }
 }

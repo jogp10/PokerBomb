@@ -3,14 +3,7 @@ package com.pokerbomb.view;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.pokerbomb.model.game.Game;
-import com.pokerbomb.model.game.powerup.DynamitePowerUp;
-import com.pokerbomb.model.game.powerup.FrozenPowerUp;
-import com.pokerbomb.model.game.powerup.JunglePowerUp;
 import com.pokerbomb.model.game.powerup.PowerUp;
-import com.pokerbomb.view.game.powerup.DynamitePowerUpView;
-import com.pokerbomb.view.game.powerup.FrozenPowerUpView;
-import com.pokerbomb.view.game.powerup.JunglePowerUpView;
-import com.pokerbomb.view.game.powerup.PowerUpView;
 
 import java.io.IOException;
 
