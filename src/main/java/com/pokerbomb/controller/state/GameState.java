@@ -48,19 +48,23 @@ public class GameState extends ControllerState<Game> {
                 break;
             case D1:
                 Deck newd1 = gameModel.getDeck_1();
-                gameModel.moveToDeck(newd1);
-                gameModel.setD1(newd1);
-                Deck newg1 = gameModel.getGivenDeck();
-                gameModel.removeFromDeck(newg1);
-                gameModel.addNewCardToG();
+                if (newd1.getDeck().size() <= 4) {
+                    gameModel.moveToDeck(newd1);
+                    gameModel.setD1(newd1);
+                    Deck newg1 = gameModel.getGivenDeck();
+                    gameModel.removeFromDeck(newg1);
+                    gameModel.addNewCardToG();
+                }
                 break;
             case D2:
                 Deck newd2 = gameModel.getDeck_2();
-                gameModel.moveToDeck(newd2);
-                gameModel.setD2(newd2);
-                Deck newg2 = gameModel.getGivenDeck();
-                gameModel.removeFromDeck(newg2);
-                gameModel.addNewCardToG();
+                if (newd2.getDeck().size() <= 4) {
+                    gameModel.moveToDeck(newd2);
+                    gameModel.setD2(newd2);
+                    Deck newg2 = gameModel.getGivenDeck();
+                    gameModel.removeFromDeck(newg2);
+                    gameModel.addNewCardToG();
+                }
                 break;
             case ESC:
                 nextState = factory.genMenuState(true);
