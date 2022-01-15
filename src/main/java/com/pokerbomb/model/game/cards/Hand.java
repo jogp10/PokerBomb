@@ -4,10 +4,12 @@ import com.pokerbomb.model.Model;
 
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Set;
 
 public class Hand implements Model {
 
     private ArrayList<Card> cards;
+    private static Set<Integer> cardsInACombo;
 
     public Hand() {
         this.cards = new ArrayList<>();
@@ -99,8 +101,16 @@ public class Hand implements Model {
             return false;   // Make sure we have 5 cards....
 
         sortBySuit(hand);      // Sort the cards by the suit values
-
-        return (hand.get(0).getSuitValue() == hand.get(4).getSuitValue());   // All cards has same suit
+        if(hand.get(0).getSuitValue() == hand.get(4).getSuitValue())
+        {
+            cardInACombo(0);
+            cardInACombo(1);
+            cardInACombo(2);
+            cardInACombo(3);
+            cardInACombo(4);
+            return true;
+        }
+        return false;   // All cards has same suit
     }
 
     //5 cards in sequence from low to high. An Ace can be high or low
@@ -122,8 +132,15 @@ public class Hand implements Model {
             ================================= */
             boolean a = hand.get(0).getRank() == Rank.TWO && hand.get(1).getRank() == Rank.THREE && hand.get(2).getRank() == Rank.FOUR && hand.get(3).getRank() == Rank.FIVE;
             boolean b = hand.get(0).getRank() == Rank.TEN && hand.get(1).getRank() == Rank.JACK && hand.get(2).getRank() == Rank.QUEEN && hand.get(3).getRank() == Rank.KING;
-
-            return a || b;
+            if(a || b){
+                cardInACombo(0);
+                cardInACombo(1);
+                cardInACombo(2);
+                cardInACombo(3);
+                cardInACombo(4);
+                return true;
+            }
+            return false;
         } else {
          /* ===========================================
             General case: check for increasing values
@@ -135,6 +152,11 @@ public class Hand implements Model {
                     return false;        // Straight failed...
                 testRank++;   // Next card in hand
             }
+            cardInACombo(0);
+            cardInACombo(1);
+            cardInACombo(2);
+            cardInACombo(3);
+            cardInACombo(4);
             return true;        // Straight found
         }
     }
@@ -165,6 +187,13 @@ public class Hand implements Model {
         a1 = hand.get(0).getRank() == hand.get(1).getRank() &&
              hand.get(1).getRank() == hand.get(2).getRank() &&
              hand.get(2).getRank() == hand.get(3).getRank();
+        if(a1){
+            cardInACombo(0);
+            cardInACombo(1);
+            cardInACombo(2);
+            cardInACombo(3);
+            return true;
+        }
 
 
       /* ------------------------------------------------------
@@ -175,7 +204,15 @@ public class Hand implements Model {
                  hand.get(2).getRank() == hand.get(3).getRank() &&
                  hand.get(3).getRank() == hand.get(4).getRank();
 
-        return a1 || a2;
+        if(a2){
+            cardInACombo(1);
+            cardInACombo(2);
+            cardInACombo(3);
+            cardInACombo(4);
+            return true;
+        }
+
+        return false;
     }
 
     //2 cards of one value and 3 cards of another value
@@ -202,7 +239,16 @@ public class Hand implements Model {
              hand.get(2).getRank() == hand.get(3).getRank() &&
              hand.get(3).getRank() == hand.get(4).getRank();
 
-        return a1 || a2 ;
+        if(a1 || a2){
+            cardInACombo(0);
+            cardInACombo(1);
+            cardInACombo(2);
+            cardInACombo(3);
+            cardInACombo(4);
+            return true;
+        }
+
+        return false;
     }
 
     //3 cards of the same value
@@ -223,6 +269,12 @@ public class Hand implements Model {
 	 ------------------------------------------------------- */
         a1 = hand.get(0).getRank() == hand.get(1).getRank() &&
              hand.get(1).getRank() == hand.get(2).getRank();
+        if(a1){
+            cardInACombo(0);
+            cardInACombo(1);
+            cardInACombo(2);
+            return true;
+        }
 
       /* ------------------------------------------------------
          Check for: a x x x b
@@ -231,14 +283,27 @@ public class Hand implements Model {
             a2 = hand.get(1).getRank() == hand.get(2).getRank() &&
                  hand.get(2).getRank() == hand.get(3).getRank();
 
+        if(a2){
+            cardInACombo(1);
+            cardInACombo(2);
+            cardInACombo(3);
+            return true;
+        }
+
       /* ------------------------------------------------------
          Check for: a b x x x
 	 ------------------------------------------------------- */
         if (hand.size() > 4)
             a3 = hand.get(2).getRank() == hand.get(3).getRank() &&
                  hand.get(3).getRank() == hand.get(4).getRank();
+        if(a3){
+            cardInACombo(2);
+            cardInACombo(3);
+            cardInACombo(4);
+            return true;
+        }
 
-        return a1 || a2 || a3;
+        return false;
     }
 
     //2 cards of one value and 2 cards of another value
@@ -259,6 +324,13 @@ public class Hand implements Model {
 	 -------------------------------- */
         a1 = hand.get(0).getRank() == hand.get(1).getRank() &&
              hand.get(2).getRank() == hand.get(3).getRank();
+        if(a1){
+            cardInACombo(0);
+            cardInACombo(1);
+            cardInACombo(2);
+            cardInACombo(3);
+            return true;
+        }
 
       /* ------------------------------
          Checking: a a x  b b
@@ -266,15 +338,30 @@ public class Hand implements Model {
         if (hand.size() > 4) {
             a2 = hand.get(0).getRank() == hand.get(1).getRank() &&
                  hand.get(3).getRank() == hand.get(4).getRank();
+            if(a2){
+                cardInACombo(0);
+                cardInACombo(1);
+                cardInACombo(3);
+                cardInACombo(4);
+                return true;
+            }
 
       /* ------------------------------
          Checking: x a a  b b
 	 ------------------------------ */
             a3 = hand.get(1).getRank() == hand.get(2).getRank() &&
                  hand.get(3).getRank() == hand.get(4).getRank();
+
+            if(a3){
+                cardInACombo(1);
+                cardInACombo(2);
+                cardInACombo(3);
+                cardInACombo(4);
+                return true;
+            }
         }
 
-        return a1 || a2 || a3;
+        return false;
     }
 
     //2 cards of the same value
@@ -294,26 +381,46 @@ public class Hand implements Model {
          Checking: a a x y z
 	 -------------------------------- */
         a1 = hand.get(0).getRank() == hand.get(1).getRank();
+        if(a1){
+            cardInACombo(0);
+            cardInACombo(1);
+            return true;
+        }
 
       /* --------------------------------
          Checking: x a a y z
 	 -------------------------------- */
         if (hand.size() > 2)
             a2 = hand.get(1).getRank() == hand.get(2).getRank();
+        if(a2){
+            cardInACombo(2);
+            cardInACombo(1);
+            return true;
+        }
 
       /* --------------------------------
          Checking: x y a a z
 	 -------------------------------- */
         if (hand.size() > 3)
             a3 = hand.get(2).getRank() == hand.get(3).getRank();
+        if(a3){
+            cardInACombo(2);
+            cardInACombo(3);
+            return true;
+        }
 
       /* --------------------------------
          Checking: x y z a a
 	 -------------------------------- */
         if (hand.size() > 4)
             a4 = hand.get(3).getRank() == hand.get(4).getRank();
+        if(a4){
+            cardInACombo(3);
+            cardInACombo(4);
+            return true;
+        }
 
-        return a1 || a2 || a3 || a4;
+        return false;
     }
 
     public static String handRanking(ArrayList<Card> hand) {
@@ -348,16 +455,23 @@ public class Hand implements Model {
 
     public static Deck handConfirm(ArrayList<Card> hand) {
         Deck d = new Deck();
-        Map<Card, Boolean> cardComboMap = setCards(hand);
+        cardsInACombo = null;
+        handRanking(hand);
 
-        //handRanking(cardComboMap);
+        for(int i=0; i<hand.size(); i++) {
+            Card c = hand.get(i);
+            if (cardsInACombo.contains(i))
+                if(c.inACombo(1))
+                    continue;
+            else if(c.notInACombo())
+                continue;
 
-        for(Map.Entry<Card, Boolean> entry: cardComboMap.entrySet()){
-            if(entry.getValue()) if(entry.getKey().inACombo(1)) continue;
-            else if(entry.getKey().notInACombo()) continue;
-            d.addCard(entry.getKey());
+            d.addCard(c);
         }
-
         return d;
+    }
+
+    public static void cardInACombo(int i) {
+        cardsInACombo.add(i);
     }
 }
