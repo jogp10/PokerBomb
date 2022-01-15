@@ -428,25 +428,25 @@ public class Hand implements Model {
         String handType;
 
         if (isRoyalFlush(hand)) {
-            handType = "Royal Flush";
+            handType = "ROYAL FLUSH";
         } else if (isStraightFlush(hand)) {
-            handType = "Straight Flush";
+            handType = "STRAIGHT FLUGHS";
         } else if (isFourOfAKind(hand)) {
-            handType = "Four of a Kind";
+            handType = "FOUR OF A KIND";
         } else if (isFullHouse(hand)) {
-            handType = "Full House";
+            handType = "FULL HOUSE";
         } else if (isFlush(hand)) {
-            handType = "Flush";
+            handType = "FLUSH";
         } else if (isStraight(hand)) {
-            handType = "Straight";
+            handType = "STRAIGHT";
         } else if (isThreeOfAKind(hand)) {
-            handType = "Three of a Kind";
+            handType = "THREE OF A KIND";
         } else if (isTwoPairs(hand)) {
-            handType = "Two Pairs";
+            handType = "TWO PAIRS";
         } else if (isPair(hand)) {
-            handType = "Pair";
+            handType = "PAIR";
         } else {
-            handType = "None";
+            handType = "";
         }
 
         return handType;

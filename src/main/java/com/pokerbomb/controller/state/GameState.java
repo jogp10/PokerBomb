@@ -82,16 +82,16 @@ public class GameState extends ControllerState<Game> {
                 break;
             case ENTER:
                 if (gameModel.getSelectedU() == Game.CombineButton.U1) {
-
+                    gameModel.setD1(Hand.handConfirm(gameModel.getDeck_1().getDeck()));
+                    String s = Hand.handRanking(gameModel.getDeck_1().getDeck());
+                    gameModel.setString_1(s);
                 }
                 else if (gameModel.getSelectedU() == Game.CombineButton.U2) {
-
-                }
-                else {
-                    //do nothing
+                    gameModel.setD2(Hand.handConfirm(gameModel.getDeck_2().getDeck()));
+                    String s = Hand.handRanking(gameModel.getDeck_2().getDeck());
+                    gameModel.setString_2(s);
                 }
                 break;
-
 
 
 

@@ -76,6 +76,7 @@ public class GameView extends View<Game>{
     }
 
     private void printCurrentCombo() {
+        graphics.setForegroundColor(TextColor.Factory.fromString("#FFFFFF"));
         graphics.putString(6,32, model.getString_1());
         graphics.putString(42,32, model.getString_2());
 
