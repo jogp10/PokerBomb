@@ -22,7 +22,9 @@ public class JungleCardView extends CardViewGeneric {
     }
 
     public void draw(int col, int row) throws IOException {
+        String string = super.getBackgroundColour();
         if(model.isActive()) super.setBackgroundColour(backgroundColors.get(model.getSpecialAttribute()-1));
         super.draw(col, row);
+        super.setBackgroundColour(string);
     }
 }

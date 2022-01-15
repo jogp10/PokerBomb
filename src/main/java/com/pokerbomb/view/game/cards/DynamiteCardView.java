@@ -14,10 +14,13 @@ public class DynamiteCardView extends CardViewGeneric {
 
     @Override
     public void draw(int col, int row) throws IOException {
+        String string = super.getBackgroundColour();
+        if(model.isActive()) super.setBackgroundColour("#FFA500");
         super.draw(col, row);
         if(model.isActive()) {
             graphics.setForegroundColor(TextColor.Factory.fromString("#FF0000"));
             graphics.putString(col + 4, row + 3, String.valueOf(model.getSpecialAttribute()));
         }
+        super.setBackgroundColour(string);
     }
 }
