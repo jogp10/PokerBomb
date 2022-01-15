@@ -4,6 +4,7 @@ import com.pokerbomb.controller.CommandKey;
 import com.pokerbomb.controller.Controller;
 import com.pokerbomb.model.game.Game;
 import com.pokerbomb.model.game.cards.Deck;
+import com.pokerbomb.model.game.cards.Hand;
 import com.pokerbomb.view.GameView;
 import com.pokerbomb.view.View;
 
@@ -61,6 +62,11 @@ public class GameState extends ControllerState<Game> {
                     Deck newg1 = gameModel.getGivenDeck();
                     gameModel.removeFromDeck(newg1);
                     gameModel.addNewCardToG();
+
+                    Hand current = new Hand();
+                    current.setCards(newg1);
+                    String handClass = current.handRanking(newd1.getDeck());
+                    gameModel.setString_1(handClass);
                 }
                 break;
             case D2:
@@ -71,21 +77,25 @@ public class GameState extends ControllerState<Game> {
                     Deck newg2 = gameModel.getGivenDeck();
                     gameModel.removeFromDeck(newg2);
                     gameModel.addNewCardToG();
+
+                    Hand current = new Hand();
+                    current.setCards(newg2);
+                    String handClass = current.handRanking(newd2.getDeck());
+                    gameModel.setString_2(handClass);
+                }
+                break;
+            case ENTER:
+                if (gameModel.getSelectedU() == Game.CombineButton.U1) {
+
+                }
+                else if (gameModel.getSelectedU() == Game.CombineButton.U2) {
+
+                }
+                else {
+                    //do nothing
                 }
                 break;
 
-            case C1:
-
-
-
-
-
-                break;
-            case C2:
-
-
-
-                break;
 
 
 

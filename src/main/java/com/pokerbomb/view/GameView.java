@@ -75,6 +75,13 @@ public class GameView extends View<Game>{
         graphics.setBackgroundColor(textColor);
     }
 
+    private void printCurrentCombo() {
+        graphics.putString(6,30, model.getString_1());
+        graphics.putString(44,30, model.getString_2());
+
+        // print the current combos in each button
+    }
+
 
     public void drawQuests() {
         //draw the level quests

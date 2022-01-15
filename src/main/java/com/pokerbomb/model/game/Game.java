@@ -200,10 +200,19 @@ public class Game implements Model {
 
 
 
+    public void setString_1 (String s) {
+        this.c1 = s;
+    }
 
+    public void setString_2 (String s) {
+        this.c2 = s;
+    }
 
+    public String getString_1() {
+        return c1;
+    }
 
-
-
-
+    public String getString_2() {
+        return c2;
+    }
 }
