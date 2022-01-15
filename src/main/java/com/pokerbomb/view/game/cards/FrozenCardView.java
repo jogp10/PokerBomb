@@ -1,5 +1,6 @@
 package com.pokerbomb.view.game.cards;
 
+import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.pokerbomb.model.game.cards.FrozenCard;
 
@@ -21,7 +22,9 @@ public class FrozenCardView extends CardViewGeneric {
 
     @Override
     public void draw(int col, int row) throws IOException {
+        String string = super.getBackgroundColour();
         if(model.isActive())  super.setBackgroundColour(backgroundColors.get(model.getSpecialAttribute()-1));
         super.draw(col, row);
+        super.setBackgroundColour(string);
     }
 }

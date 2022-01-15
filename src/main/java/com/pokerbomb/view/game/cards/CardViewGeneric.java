@@ -39,7 +39,7 @@ public abstract class CardViewGeneric extends View<Card> implements CardView {
 
     @Override
     public void setBackgroundColour(String backgroundColour) {
-        NormalCardView.backgroundColour = backgroundColour;
+        this.backgroundColour = backgroundColour;
     }
 
     @Override
@@ -49,6 +49,7 @@ public abstract class CardViewGeneric extends View<Card> implements CardView {
 
     @Override
     public void draw(int col, int row) throws IOException {
+        graphics.setBackgroundColor(TextColor.Factory.fromString(backgroundColour));
         graphics.fillRectangle(new TerminalPosition(col, row), new TerminalSize(8, 5), ' ');
 
         graphics.setForegroundColor(TextColor.Factory.fromString(colors.get(model.getSuitValue())));

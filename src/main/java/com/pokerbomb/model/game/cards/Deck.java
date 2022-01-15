@@ -19,10 +19,22 @@ public class Deck implements Model {
 
     public void createFullDeck() {
         // Generate Cards
+        Random random = new Random();
         for(Suit cardSuit : Suit.values()) {
             for(Rank cardRank : Rank.values()) {
+                int n = random.nextInt(100);
+
                 // Add a new card to the deck
-                this.cards.add( new NormalCard(cardSuit, cardRank));
+                if(n<10) {
+                    this.cards.add( new JungleCard(cardSuit, cardRank));
+                }
+                else if(n<22) {
+                    this.cards.add( new DynamiteCard(cardSuit, cardRank));
+                }
+                else if(n<35) {
+                    this.cards.add( new FrozenCard(cardSuit, cardRank));
+                }
+                else this.cards.add( new NormalCard(cardSuit, cardRank));
             }
         }
     }
