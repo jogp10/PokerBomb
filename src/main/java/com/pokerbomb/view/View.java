@@ -2,6 +2,7 @@ package com.pokerbomb.view;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.googlecode.lanterna.terminal.swing.AWTTerminalFontConfiguration;
+import com.googlecode.lanterna.terminal.swing.AWTTerminalFrame;
 import com.pokerbomb.controller.CommandKey;
 import com.pokerbomb.model.Model;
 
@@ -38,6 +39,16 @@ public abstract class View<T extends Model> {
         try {
             DefaultTerminalFactory factory = new DefaultTerminalFactory().setInitialTerminalSize(getSize()).setTerminalEmulatorTitle("POKER BOMB");
             factory.setForceAWTOverSwing(true);
+
+            File fontFile = new File("src/main/resources/CourierNewPSMT.ttf");
+            Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
+
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(font);
+
+            Font loaded = font.deriveFont(Font.PLAIN,   16);
+            factory.setTerminalEmulatorFontConfiguration(AWTTerminalFontConfiguration.newInstance(loaded));
+
             Terminal terminal = factory.createTerminal();
 
 
@@ -48,6 +59,8 @@ public abstract class View<T extends Model> {
             screen.doResizeIfNecessary();
             graphics = screen.newTextGraphics();
 
+        } catch (FontFormatException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

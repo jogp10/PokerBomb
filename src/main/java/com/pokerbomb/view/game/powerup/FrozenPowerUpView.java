@@ -13,7 +13,7 @@ public class FrozenPowerUpView extends GenericPowerUpView {
     @Override
     public void draw(int col, int row) {
         graphics.setForegroundColor(TextColor.Factory.fromString("#00FFFF"));
-        graphics.putString(col, row, "\u2744");
+        graphics.putString(col, row, "c");
         graphics.putString(col, row+1, String.valueOf(model.getNumberOfPowerUp()));
     }
 }

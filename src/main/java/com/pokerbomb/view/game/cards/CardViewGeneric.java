@@ -18,7 +18,7 @@ public abstract class CardViewGeneric extends View<Card> implements CardView {
     static final List<String> suits = new ArrayList<String>() {{
         add("\u2665"); // hearts
         add("\u2666"); // diamonds
-        add("\u2664"); // spaces
+        add("\u2660"); // spaces
         add("\u2663"); // clubs
     }};
 

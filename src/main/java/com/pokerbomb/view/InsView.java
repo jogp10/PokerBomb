@@ -47,12 +47,12 @@ public class InsView extends View<Ins> {
         clear(col, row);
 
         drawTitle();
-        drawString("#f2e744", 7, "ENTER \t\tSelect Card");
-        drawString("#f2e744", 8, "MOVEMENT \tArrows   ");
-        drawString("#f2e744", 9, "Q \t\t\tQuit          ");
-        drawString("#f2e744", 10, " ESC \t\tGo Back to Menu");
+        drawString("#f2e744", 7, "ENTER \t\tSELECT CARD");
+        drawString("#f2e744", 8, "MOVEMENT \tARROWS   ");
+        drawString("#f2e744", 9, "Q \t\t\tQUIT          ");
+        drawString("#f2e744", 10, " ESC \t\tGO BACK TO MENU");
         drawKeys();
-        drawString("#FFFFFF", 21, "Press ENTER to go back to the Menu");
+        drawString("#FFFFFF", 21, "PRESS ENTER TO GO BACK TO THE MENU");
 
         refresh();
     }
