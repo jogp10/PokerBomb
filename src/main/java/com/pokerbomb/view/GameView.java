@@ -11,6 +11,7 @@ public class GameView extends View<Game>{
 
     FactoryView factory;
     BorderView borderView;
+    BorderView buttonBorder;
 
 
     public GameView(Game model, FactoryView factoryView) {
@@ -19,6 +20,7 @@ public class GameView extends View<Game>{
 
         initScreen();
         this.borderView = new BorderView(10,7, graphics);
+        this.buttonBorder = new BorderView(20,3,graphics);
     }
 
     private void drawShelves() {
@@ -29,6 +31,7 @@ public class GameView extends View<Game>{
 
     public void drawSelectedBorder() {
         Game.Cell selected = model.getSelected();
+        Game.CombineButton selectedU = model.getSelectedU();
         graphics.setForegroundColor(TextColor.Factory.fromString("#FF0000"));
         //int COL_BEGIN_SELECTED = this.getSize().getColumns() / 2 - 8;
         switch (selected) {
@@ -46,6 +49,16 @@ public class GameView extends View<Game>{
                 break;
             case C5:
                 borderView.draw(43,39);
+                break;
+        }
+        switch (selectedU) {
+            case U1:
+                borderView.draw(6,30);
+                break;
+            case U2:
+                borderView.draw(44,30);
+                break;
+            case NOT:
                 break;
         }
     }
