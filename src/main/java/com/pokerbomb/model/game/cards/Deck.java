@@ -2,6 +2,7 @@ package com.pokerbomb.model.game.cards;
 
 import com.pokerbomb.model.Model;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -9,6 +10,7 @@ public class Deck implements Model {
 
     // instance vars
     private ArrayList<Card> cards;
+    private ArrayList<Card> hand;
 
     // construct
     public Deck() {

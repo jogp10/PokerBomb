@@ -3,6 +3,7 @@ package com.pokerbomb.model.game.cards;
 import com.pokerbomb.model.Model;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Hand implements Model {
 
@@ -16,8 +17,18 @@ public class Hand implements Model {
         return cards;
     }
     
-    public void setCards(ArrayList<Card> cards) {
-        this.cards = cards;
+    public static Map<Card, Boolean> setCards(ArrayList<Card> cards) {
+        Map<Card, Boolean> cardMap = null;
+        for(Card card: cards){
+            cardMap.put(card, false);
+        }
+        return cardMap;
+    }
+
+    public void setCards(Deck deck){
+        for(Card card: deck.getDeck()){
+            this.addCard(card);
+        }
     }
 
     public void addCard(Card card) {
@@ -25,6 +36,7 @@ public class Hand implements Model {
     }
 
     public static void sortByRank(ArrayList<Card> hand) {
+
         int i, j, min_j;
 
       /* ---------------------------------------------------
@@ -305,6 +317,8 @@ public class Hand implements Model {
     }
 
     public static String handRanking(ArrayList<Card> hand) {
+
+
         String handType;
 
         if (isRoyalFlush(hand)) {
@@ -330,5 +344,20 @@ public class Hand implements Model {
         }
 
         return handType;
+    }
+
+    public static Deck handConfirm(ArrayList<Card> hand) {
+        Deck d = new Deck();
+        Map<Card, Boolean> cardComboMap = setCards(hand);
+
+        //handRanking(cardComboMap);
+
+        for(Map.Entry<Card, Boolean> entry: cardComboMap.entrySet()){
+            if(entry.getValue()) if(entry.getKey().inACombo(1)) continue;
+            else if(entry.getKey().notInACombo()) continue;
+            d.addCard(entry.getKey());
+        }
+
+        return d;
     }
 }
