@@ -392,8 +392,8 @@ public class Hand implements Model {
         if (hand.size() > 2)
             a2 = hand.get(1).getRank() == hand.get(2).getRank();
         if(a2){
-            cardInACombo(2);
             cardInACombo(1);
+            cardInACombo(2);
             return true;
         }
 
@@ -423,6 +423,7 @@ public class Hand implements Model {
     }
 
     public static String handRanking(ArrayList<Card> hand) {
+        cardsInACombo = new HashSet<>();
 
 
         String handType;
