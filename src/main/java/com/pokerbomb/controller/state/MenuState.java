@@ -39,13 +39,7 @@ public class MenuState extends ControllerState<Menu> {
             case ENTER:
                 switch (model.getSelected()) {
                     case START:
-                        if (!inGame) {
-                            nextState = factory.genGameState();
-                        }
-
-                        /*else {
-                            //nextState = factory.genGameState(controller.getGame());
-                        }*/
+                        nextState = factory.genGameState();
                         break;
                     case INST:
                         nextState = factory.genInsState(inGame);
