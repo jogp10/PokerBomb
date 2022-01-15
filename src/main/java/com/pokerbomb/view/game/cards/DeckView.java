@@ -21,19 +21,19 @@ public class DeckView extends View<Deck> {
             startCol = 2;
         }
         else if(model.getDeck().size()==4) {
-            incr = 10;
-            startCol = 5;
+            incr = 11;
+            startCol = 3;
         }
         else if(model.getDeck().size()==3) {
             incr = 9;
-            startCol = 10;
+            startCol = 11;
         }
         else if(model.getDeck().size()==2) {
-            incr = 12;
-            startCol = 15;
+            incr = 11;
+            startCol = 14;
         }
         else if(model.getDeck().size()==1) {
-            startCol = 21;
+            startCol = 20;
         }
     }
 
