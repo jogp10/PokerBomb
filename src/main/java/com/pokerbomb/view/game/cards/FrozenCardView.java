@@ -23,7 +23,7 @@ public class FrozenCardView extends CardViewGeneric {
     @Override
     public void draw(int col, int row) throws IOException {
         String string = super.getBackgroundColour();
-        if(model.isActive())  super.setBackgroundColour(backgroundColors.get(model.getSpecialAttribute()-1));
+        if(model.isActive())  super.setBackgroundColour(backgroundColors.get(model.getSpecialAttribute()));
         super.draw(col, row);
         super.setBackgroundColour(string);
     }

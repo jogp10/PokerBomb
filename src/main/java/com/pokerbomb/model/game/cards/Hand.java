@@ -3,13 +3,14 @@ package com.pokerbomb.model.game.cards;
 import com.pokerbomb.model.Model;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 public class Hand implements Model {
 
     private ArrayList<Card> cards;
-    private static Set<Integer> cardsInACombo;
+    private static Set<Integer> cardsInACombo = new HashSet<>();
 
     public Hand() {
         this.cards = new ArrayList<>();
@@ -19,12 +20,10 @@ public class Hand implements Model {
         return cards;
     }
     
-    public static Map<Card, Boolean> setCards(ArrayList<Card> cards) {
-        Map<Card, Boolean> cardMap = null;
+    public static void setCards(ArrayList<Card> cards) {
         for(Card card: cards){
-            cardMap.put(card, false);
+            cards.add(card);
         }
-        return cardMap;
     }
 
     public void setCards(Deck deck){
@@ -455,14 +454,14 @@ public class Hand implements Model {
 
     public static Deck handConfirm(ArrayList<Card> hand) {
         Deck d = new Deck();
-        cardsInACombo = null;
         handRanking(hand);
 
         for(int i=0; i<hand.size(); i++) {
             Card c = hand.get(i);
-            if (cardsInACombo.contains(i))
-                if(c.inACombo(1))
+            if (cardsInACombo.contains(i)) {
+                if (c.inACombo(1))
                     continue;
+            }
             else if(c.notInACombo())
                 continue;
 
