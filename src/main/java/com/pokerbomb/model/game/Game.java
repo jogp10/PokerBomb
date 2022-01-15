@@ -26,9 +26,16 @@ public class Game implements Model {
 
     Cell selected;
 
+    CombineButton selectedU;
+
+    String c1 = "";
+    String c2 = "";
 
     public enum Cell {C1, C2, C3, C4, C5}  //from l->r, u->d
     Game.Cell[] opt = Game.Cell.values();
+
+    public enum CombineButton {U1, U2, NOT}  //from l->r, u->d
+    Game.CombineButton[] but = Game.CombineButton.values();
 
     int score;
 
@@ -38,6 +45,7 @@ public class Game implements Model {
        initGivenCards();
 
        this.selected = Game.Cell.C1;
+        this.selectedU = Game.CombineButton.NOT;
 
         powerUps.add(FrozenPowerUp.getInstance());
         powerUps.add(DynamitePowerUp.getInstance());
@@ -164,6 +172,32 @@ public class Game implements Model {
             selected = opt[i];
         }
     }
+
+
+
+
+
+
+    public Game.CombineButton getSelectedU() {
+        return selectedU;
+    }
+
+    public void selectU() {
+        selectedU = Game.CombineButton.U1;
+    }
+
+    public void deselectU() {
+        selectedU = CombineButton.NOT;
+    }
+
+    public void changeSelectedU() {
+        if (selectedU == Game.CombineButton.U1) selectedU = Game.CombineButton.U2;
+        else {
+            selectedU = Game.CombineButton.U1;
+        }
+    }
+
+
 
 
 

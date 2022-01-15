@@ -32,19 +32,26 @@ public class GameState extends ControllerState<Game> {
         ControllerState<?> nextState = this;
         switch (commandKey.getCommandEnum()) {
             case UP:
-                //GameModel.getCursor().moveUp();
+                gameModel.selectU();
                 break;
             case DOWN:
-                //gameModel.getCursor().moveDown();
+                gameModel.deselectU();
                 break;
             case RIGHT:
-                gameModel.nextSelected();
+                if (gameModel.getSelectedU() == Game.CombineButton.NOT) {
+                    gameModel.nextSelected();
+                }
+                else {
+                    gameModel.changeSelectedU();
+                }
                 break;
             case LEFT:
-                gameModel.previousSelected();
-                break;
-            case ENTER:
-                //command = new Flag(gameModel);   place card in deck
+                if (gameModel.getSelectedU() == Game.CombineButton.NOT) {
+                    gameModel.previousSelected();
+                }
+                else {
+                    gameModel.changeSelectedU();
+                }
                 break;
             case D1:
                 Deck newd1 = gameModel.getDeck_1();
@@ -66,6 +73,22 @@ public class GameState extends ControllerState<Game> {
                     gameModel.addNewCardToG();
                 }
                 break;
+
+            case C1:
+
+
+
+
+
+                break;
+            case C2:
+
+
+
+                break;
+
+
+
             case ESC:
                 nextState = factory.genMenuState(true);
                 break;
