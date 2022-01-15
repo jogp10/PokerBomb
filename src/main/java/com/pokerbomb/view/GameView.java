@@ -53,10 +53,10 @@ public class GameView extends View<Game>{
         }
         switch (selectedU) {
             case U1:
-                borderView.draw(6,30);
+                buttonBorder.draw(5,31);
                 break;
             case U2:
-                borderView.draw(44,30);
+                buttonBorder.draw(35,31);
                 break;
             case NOT:
                 break;
