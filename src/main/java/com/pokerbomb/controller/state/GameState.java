@@ -63,10 +63,8 @@ public class GameState extends ControllerState<Game> {
                     gameModel.removeFromDeck(newg1);
                     gameModel.addNewCardToG();
 
-                    Hand current = new Hand();
-                    current.setCards(newg1);
-                    String handClass = current.handRanking(newd1.getDeck());
-                    gameModel.setString_1(handClass);
+                    String s = Hand.handRanking(newd1.getDeck());
+                    gameModel.setString_1(s);
                 }
                 break;
             case D2:
@@ -78,10 +76,8 @@ public class GameState extends ControllerState<Game> {
                     gameModel.removeFromDeck(newg2);
                     gameModel.addNewCardToG();
 
-                    Hand current = new Hand();
-                    current.setCards(newg2);
-                    String handClass = current.handRanking(newd2.getDeck());
-                    gameModel.setString_2(handClass);
+                    String s = Hand.handRanking(newd2.getDeck());
+                    gameModel.setString_2(s);
                 }
                 break;
             case ENTER:

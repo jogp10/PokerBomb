@@ -76,8 +76,8 @@ public class GameView extends View<Game>{
     }
 
     private void printCurrentCombo() {
-        graphics.putString(6,30, model.getString_1());
-        graphics.putString(44,30, model.getString_2());
+        graphics.putString(6,32, model.getString_1());
+        graphics.putString(42,32, model.getString_2());
 
         // print the current combos in each button
     }
@@ -126,6 +126,7 @@ public class GameView extends View<Game>{
 
         //drawSelectedBorder();   draw selected card border
 
+        printCurrentCombo();
 
         drawPowerUps();
 
