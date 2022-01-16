@@ -106,7 +106,7 @@ public class GameView extends View<Game>{
         //draw the level quests
         int col = 5;
         int row = 10;
-        for (Goal goal : model.getLevels().get(2).getGoals()) {
+        for (Goal goal : model.getLevels().get(model.getLevel()).getGoals()) {
             try {
                 factory.genGoalView(goal, graphics).draw(col, row);
             } catch (IOException e) {

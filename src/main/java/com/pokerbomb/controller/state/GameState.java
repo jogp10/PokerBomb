@@ -104,7 +104,7 @@ public class GameState extends ControllerState<Game> {
                 break;
             case ENTER:
                 Hand hand = new Hand();
-                ArrayList<Goal> goals = gameModel.getLevels().get(2).getGoals();
+                ArrayList<Goal> goals = gameModel.getLevels().get(gameModel.getLevel()).getGoals();
                 Collections.reverse(goals);
                 if (gameModel.getSelectedU() == Game.CombineButton.U1) {
                     gameModel.setD1(Hand.handConfirm(gameModel.getDeck_1().getDeck(), hand));

@@ -3,10 +3,8 @@ package com.pokerbomb.controller.state;
 import com.pokerbomb.model.game.Game;
 import com.pokerbomb.model.menu.Ins;
 import com.pokerbomb.model.menu.Menu;
-import com.pokerbomb.view.FactoryView;
-import com.pokerbomb.view.GameView;
-import com.pokerbomb.view.InsView;
-import com.pokerbomb.view.MenuView;
+import com.pokerbomb.model.menu.SelectLevel;
+import com.pokerbomb.view.*;
 
 public class FactoryState {
 
@@ -22,10 +20,17 @@ public class FactoryState {
         return new InsState(this, inGame, instModel, instView);
     }
 
-    public GameState genGameState() {
-        Game gameModel = new Game();
+    public GameState genGameState(int l) {
+        Game gameModel = new Game(l);
         GameView gameView = new GameView(gameModel, new FactoryView());
         GameState gameState = new GameState(this,gameModel, gameView);
         return gameState;
+    }
+
+    public SelectLevelState genSelectLevelState() {
+        SelectLevel selectModel = new SelectLevel();
+        SelectLevelView selectView = new SelectLevelView(selectModel);
+        SelectLevelState selectState = new SelectLevelState(this, selectModel, selectView);
+        return selectState;
     }
 }
