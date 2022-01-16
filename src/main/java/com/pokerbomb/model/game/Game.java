@@ -1,5 +1,6 @@
 package com.pokerbomb.model.game;
 
+import com.pokerbomb.model.Button;
 import com.pokerbomb.model.Model;
 import com.pokerbomb.model.Shelf;
 import com.pokerbomb.model.game.cards.*;
@@ -18,6 +19,9 @@ public class Game implements Model {
     Shelf s1 = new Shelf(7,50);
     Shelf s2 = new Shelf(7,50);
     Shelf given = new Shelf(7,50);
+
+    Button b1 = new Button(3,20);
+    Button b2 = new Button(3,20);
 
     Deck cards = new Deck();
     Deck g = new Deck();
@@ -214,5 +218,13 @@ public class Game implements Model {
 
     public String getString_2() {
         return c2;
+    }
+
+    public Button getB1() {
+        return b1;
+    }
+
+    public Button getB2() {
+        return b2;
     }
 }

@@ -53,10 +53,10 @@ public class GameView extends View<Game>{
         }
         switch (selectedU) {
             case U1:
-                borderView.draw(6,30);
+                buttonBorder.draw(5,31);
                 break;
             case U2:
-                borderView.draw(44,30);
+                buttonBorder.draw(35,31);
                 break;
             case NOT:
                 break;
@@ -105,6 +105,11 @@ public class GameView extends View<Game>{
         }
     }
 
+    private void drawButtons() {
+        factory.genButtonView(model.getB1(), graphics).draw(5,31);
+        factory.genButtonView(model.getB1(), graphics).draw(35,31);
+    }
+
 
     @Override
     public void draw(int col, int row) throws IOException {
@@ -116,6 +121,8 @@ public class GameView extends View<Game>{
 
         //draws all the shelves visible on the screen
         drawShelves();
+
+        drawButtons();
 
         //draw cards on the screen
         drawCards();
