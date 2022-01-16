@@ -454,6 +454,10 @@ public class Hand implements Model {
     }
 
     public static Deck handConfirm(ArrayList<Card> hand) {
+        return handConfirm(hand, new ArrayList<Card>());
+    }
+
+    public static Deck handConfirm(ArrayList<Card> hand, ArrayList<Card> cardsPopped){
         Deck d = new Deck();
         handRanking(hand);
 
@@ -461,11 +465,13 @@ public class Hand implements Model {
             Card c = hand.get(i);
             if (cardsInACombo.contains(i)) {
                 if (c.inACombo(1))
+                    cardsPopped.add(c);
                     continue;
             }
-            else if(c.notInACombo())
+            else if(c.notInACombo()) {
+                cardsPopped.add(c);
                 continue;
-
+            }
             d.addCard(c);
         }
         return d;
