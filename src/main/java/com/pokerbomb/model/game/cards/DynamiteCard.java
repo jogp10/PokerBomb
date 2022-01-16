@@ -29,6 +29,4 @@ public class DynamiteCard extends CardGeneric implements Card {
         } else specialAttribute-=i;
     }
 
-
-
 }

@@ -1,6 +1,9 @@
 package com.pokerbomb.model.game.powerup
 
+import com.pokerbomb.model.game.cards.Card
+import com.pokerbomb.model.game.cards.Deck
 import com.pokerbomb.model.game.cards.DynamiteCard
+import com.pokerbomb.model.game.cards.NormalCard
 import com.pokerbomb.model.game.cards.Rank
 import com.pokerbomb.model.game.cards.Suit
 import spock.lang.Specification
@@ -9,7 +12,7 @@ class DynamitePowerUpSpockTest extends Specification {
     DynamitePowerUp dynamitePowerUp;
 
     def setup(){
-        dynamitePowerUp = new DynamitePowerUp();
+        dynamitePowerUp = DynamitePowerUp.getInstance();
     }
 
     def 'com.pokerbomb.models.powerup.DynamitePowerUp constructor'() {
@@ -36,6 +39,33 @@ class DynamitePowerUpSpockTest extends Specification {
         then:
             dynamitePowerUp.getNumberOfPowerUp()==1
     }
+
+    def 'com.pokerbomb.models.powerup.DynamitePowerUp getInstance'() {
+        expect:
+            DynamitePowerUp.getInstance().is(dynamitePowerUp)
+    }
+
+    def 'com.pokerbomb.models.powerup.DynamitePowerUp AddPlays2'() {
+        given:
+            Card c1 = new NormalCard(Suit.CLUB, Rank.EIGHT)
+            Card c2 = new NormalCard(Suit.CLUB, Rank.EIGHT)
+            Card c3 = new NormalCard(Suit.CLUB, Rank.EIGHT)
+            Card c4 = new NormalCard(Suit.CLUB, Rank.EIGHT)
+            Card c5 = new DynamiteCard(Suit.CLUB, Rank.EIGHT)
+            ArrayList<Card> cards = new ArrayList<>()
+            cards.add(c1)
+            cards.add(c2)
+            cards.add(c3)
+            cards.add(c4)
+            cards.add(c5)
+
+        when:
+        dynamitePowerUp.addPlayToDynamiteCard(cards)
+        then:
+        cards.get(4).getSpecialAttribute()==8
+    }
+
+
 }
 
 
