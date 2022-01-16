@@ -23,6 +23,15 @@ public class ReadLevels {
                         case CLUBS:
                             goals.add(new InDaClubGoal(type, quantity));
                             break;
+                        case DIAMONDS:
+                            goals.add(new DiamondMinerGoal(type, quantity));
+                            break;
+                        case HEARTS:
+                            goals.add(new HeartbreakerGoal(type, quantity));
+                            break;
+                        case SPADES:
+                            goals.add(new CanYouDigItGoal(type, quantity));
+                            break;
                         case HANDS:
                             goals.add(new GiveUsAHandGoal(type, quantity));
                             break;
@@ -38,8 +47,17 @@ public class ReadLevels {
                         case THREE_OF_A_KIND:
                             goals.add(new ThreesCompanyGoal(type, quantity));
                             break;
+                        case FOUR_OF_A_KIND:
+                            goals.add(new SquadsOfQuadsGoal(type, quantity));
+                            break;
+                        case FLUSH:
+                            goals.add(new FlushedOutGoal(type, quantity));
+                            break;
                         case FULL_HOUSE:
                             goals.add(new TheHouseIsFullGoal(type, quantity));
+                            break;
+                        case STRAIGHT:
+                            goals.add(new RunRabbitRunGoal(type, quantity));
                             break;
                         /*case SCORE:
                             goals.add(new Goal(type, quantity));
