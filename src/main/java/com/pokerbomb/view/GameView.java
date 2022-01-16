@@ -12,6 +12,7 @@ public class GameView extends View<Game>{
     FactoryView factory;
     BorderView borderView;
     BorderView buttonBorder;
+    BorderView pUpBorder;
 
 
     public GameView(Game model, FactoryView factoryView) {
@@ -21,6 +22,7 @@ public class GameView extends View<Game>{
         initScreen();
         this.borderView = new BorderView(10,7, graphics);
         this.buttonBorder = new BorderView(20,3,graphics);
+        this.pUpBorder = new BorderView(5,4,graphics);
     }
 
     private void drawShelves() {
@@ -32,6 +34,7 @@ public class GameView extends View<Game>{
     public void drawSelectedBorder() {
         Game.Cell selected = model.getSelected();
         Game.CombineButton selectedU = model.getSelectedU();
+        Game.PowerUpButton selectedP = model.getSelectedP();
         graphics.setForegroundColor(TextColor.Factory.fromString("#FF0000"));
         //int COL_BEGIN_SELECTED = this.getSize().getColumns() / 2 - 8;
         switch (selected) {
@@ -57,6 +60,19 @@ public class GameView extends View<Game>{
                 break;
             case U2:
                 buttonBorder.draw(35,31);
+                break;
+            case NOT:
+                break;
+        }
+        switch (selectedP) {
+            case P1:
+                pUpBorder.draw(8,49);  //draw border for powerup1
+                break;
+            case P2:
+                pUpBorder.draw(28,49);  //draw border for powerup2
+                break;
+            case P3:
+                pUpBorder.draw(48,49);  //draw border for powerup3
                 break;
             case NOT:
                 break;

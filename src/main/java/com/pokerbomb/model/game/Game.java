@@ -32,6 +32,8 @@ public class Game implements Model {
 
     CombineButton selectedU;
 
+    PowerUpButton selectedP;
+
     String c1 = "";
     String c2 = "";
 
@@ -40,6 +42,9 @@ public class Game implements Model {
 
     public enum CombineButton {U1, U2, NOT}  //from l->r, u->d
     Game.CombineButton[] but = Game.CombineButton.values();
+
+    public enum PowerUpButton {P1, P2, P3, NOT}  //from l->r, u->d
+    Game.PowerUpButton[] pbut = Game.PowerUpButton.values();
 
     int score;
 
@@ -50,6 +55,7 @@ public class Game implements Model {
 
        this.selected = Game.Cell.C1;
         this.selectedU = Game.CombineButton.NOT;
+        this.selectedP = PowerUpButton.NOT;
 
         powerUps.add(FrozenPowerUp.getInstance());
         powerUps.add(DynamitePowerUp.getInstance());
@@ -198,6 +204,46 @@ public class Game implements Model {
         if (selectedU == Game.CombineButton.U1) selectedU = Game.CombineButton.U2;
         else {
             selectedU = Game.CombineButton.U1;
+        }
+    }
+
+    public Game.PowerUpButton getSelectedP() {
+        return selectedP;
+    }
+
+    public void selectP() {
+        selectedP = Game.PowerUpButton.P1;
+    }
+
+    public void deselectP() {
+        selectedP = PowerUpButton.NOT;
+    }
+
+
+    public int getPosElemP(Game.PowerUpButton target) {
+        int i = 0;
+        for (; pbut[i] != target; i++) ;
+        return i;
+    }
+
+
+    public void nextSelectedP() {
+        if (selectedP == Game.PowerUpButton.P3) selectedP = PowerUpButton.P1;
+        else {
+            //find the position of this.selected in the opt array
+            int i = getPosElemP(selectedP);
+            i++;
+            selectedP = pbut[i];
+        }
+    }
+
+    public void previousSelectedP() {
+        if (selectedP == Game.PowerUpButton.P1) selectedP = Game.PowerUpButton.P3;
+        else {
+            //find the position of this.selected in the opt array
+            int i = getPosElemP(selectedP);
+            i--;
+            selectedP = pbut[i];
         }
     }
 
