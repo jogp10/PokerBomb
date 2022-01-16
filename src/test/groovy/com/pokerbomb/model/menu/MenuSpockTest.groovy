@@ -38,5 +38,23 @@ class MenuSpockTest extends Specification {
         opts == "PLAY"
     }
 
+    def 'com.pokerbomb.model.menu nextSelect'() {
+        when:
+        menu.setSelected(Menu.Option.INST)
+        menu.nextSelected()
+
+        then:
+        menu.getSelected() == Menu.Option.STORE
+    }
+
+    def 'com.pokerbomb.model.menu previousSelect'() {
+        when:
+        menu.setSelected(Menu.Option.INST)
+        menu.previousSelected()
+
+        then:
+        menu.getSelected() == Menu.Option.START
+    }
+
 }
 
