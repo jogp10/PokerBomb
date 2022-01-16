@@ -11,9 +11,11 @@ public class CardCollectorGoal extends Goal implements GoalIncrement {
 
     @Override
     public void increment(Hand hand) {
-        for (int i = 0; i < hand.getCards().size(); i++) {
-            currentQuantity++;
+        if (!isAchieved()) {
+            for (int i = 0; i < hand.getCards().size(); i++) {
+                currentQuantity++;
+                checkAchieved();
+            }
         }
-        checkAchieved();
     }
 }

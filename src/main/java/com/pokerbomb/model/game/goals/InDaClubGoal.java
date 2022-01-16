@@ -13,11 +13,13 @@ public class InDaClubGoal extends Goal implements GoalIncrement {
 
     @Override
     public void increment(Hand hand) {
-        for (Card card : hand.getCards()) {
-            if (card.getSuit() == Suit.CLUB) {
-                currentQuantity++;
+        if (!isAchieved()) {
+            for (Card card : hand.getCards()) {
+                if (card.getSuit() == Suit.CLUB) {
+                    currentQuantity++;
+                    checkAchieved();
+                }
             }
         }
-        checkAchieved();
     }
 }

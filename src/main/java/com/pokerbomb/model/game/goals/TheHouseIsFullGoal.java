@@ -11,9 +11,11 @@ public class TheHouseIsFullGoal extends Goal implements GoalIncrement{
 
     @Override
     public void increment(Hand hand) {
-        if (Hand.isFullHouse(hand.getCards())) {
-            currentQuantity++;
+        if (!isAchieved()) {
+            if (Hand.isFullHouse(hand.getCards())) {
+                currentQuantity++;
+            }
+            checkAchieved();
         }
-        checkAchieved();
     }
 }

@@ -12,9 +12,11 @@ public class ThreesCompanyGoal extends Goal implements GoalIncrement {
 
     @Override
     public void increment(Hand hand) {
-        if (Hand.isThreeOfAKind(hand.getCards())) {
-            currentQuantity++;
+        if (!isAchieved()) {
+            if (Hand.isThreeOfAKind(hand.getCards())) {
+                currentQuantity++;
+            }
+            checkAchieved();
         }
-        checkAchieved();
     }
 }

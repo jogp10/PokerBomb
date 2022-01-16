@@ -11,9 +11,11 @@ public class SeeingDoubleGoal extends Goal implements GoalIncrement {
 
     @Override
     public void increment(Hand hand) {
-        if (Hand.isPair(hand.getCards())) {
-            currentQuantity++;
+        if (!isAchieved()) {
+            if (Hand.isPair(hand.getCards())) {
+                currentQuantity++;
+            }
+            checkAchieved();
         }
-        checkAchieved();
     }
 }

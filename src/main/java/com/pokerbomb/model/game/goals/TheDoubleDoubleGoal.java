@@ -11,9 +11,11 @@ public class TheDoubleDoubleGoal extends Goal implements GoalIncrement {
 
     @Override
     public void increment(Hand hand) {
-        if (Hand.isTwoPairs(hand.getCards())) {
-            currentQuantity++;
+        if (!isAchieved()) {
+            if (Hand.isTwoPairs(hand.getCards())) {
+                currentQuantity++;
+            }
+            checkAchieved();
         }
-        checkAchieved();
     }
 }

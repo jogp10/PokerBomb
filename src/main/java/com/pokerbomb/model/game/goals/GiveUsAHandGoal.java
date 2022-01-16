@@ -11,7 +11,9 @@ public class GiveUsAHandGoal extends Goal implements GoalIncrement {
 
     @Override
     public void increment(Hand hand) {
-        currentQuantity++;
-        checkAchieved();
+        if (!isAchieved()) {
+            currentQuantity++;
+            checkAchieved();
+        }
     }
 }
