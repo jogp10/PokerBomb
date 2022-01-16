@@ -3,18 +3,21 @@ package com.pokerbomb.model.game;
 import com.pokerbomb.model.Button;
 import com.pokerbomb.model.Model;
 import com.pokerbomb.model.Shelf;
-import com.pokerbomb.model.game.cards.*;
+import com.pokerbomb.model.game.cards.Card;
+import com.pokerbomb.model.game.cards.Deck;
+import com.pokerbomb.model.game.player.Player;
 import com.pokerbomb.model.game.powerup.DynamitePowerUp;
 import com.pokerbomb.model.game.powerup.FrozenPowerUp;
 import com.pokerbomb.model.game.powerup.JunglePowerUp;
 import com.pokerbomb.model.game.powerup.PowerUp;
-
 
 import java.util.ArrayList;
 import java.util.Vector;
 
 public class Game implements Model {
     ArrayList<PowerUp> powerUps = new ArrayList<>();
+    ArrayList<Level> levels = ReadLevels.readLevels("src/main/java/com/pokerbomb/model/game/Levels.txt");
+    Player player;
 
     Shelf s1 = new Shelf(7,50);
     Shelf s2 = new Shelf(7,50);
@@ -37,6 +40,15 @@ public class Game implements Model {
     String c1 = "";
     String c2 = "";
 
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public ArrayList<Level> getLevels() {
+        return levels;
+    }
+
     public enum Cell {C1, C2, C3, C4, C5}  //from l->r, u->d
     Game.Cell[] opt = Game.Cell.values();
 
@@ -47,6 +59,8 @@ public class Game implements Model {
     Game.PowerUpButton[] pbut = Game.PowerUpButton.values();
 
     int score;
+    int coins;
+    int gems;
 
     public Game() {
        cards.createFullDeck();
@@ -134,7 +148,7 @@ public class Game implements Model {
         int selected = 0;
 
         switch (this.getSelected()) {
-            case C1: ;
+            case C1:
                 break;
             case C2:
                 selected = 1;
