@@ -5,10 +5,13 @@ import com.pokerbomb.model.Button;
 import com.pokerbomb.model.Shelf;
 import com.pokerbomb.model.game.cards.Card;
 import com.pokerbomb.model.game.cards.Deck;
+import com.pokerbomb.model.game.goals.Goal;
 import com.pokerbomb.model.game.powerup.PowerUp;
 import com.pokerbomb.view.game.cards.CardView;
 import com.pokerbomb.view.game.cards.CardViewFactory;
 import com.pokerbomb.view.game.cards.DeckView;
+import com.pokerbomb.view.game.goals.GoalView;
+import com.pokerbomb.view.game.goals.GoalViewFactory;
 import com.pokerbomb.view.game.powerup.PowerUpView;
 import com.pokerbomb.view.game.powerup.PowerUpViewFactory;
 
@@ -37,5 +40,10 @@ public class FactoryView {
     public ButtonView genButtonView(Button model, TextGraphics graphics) {
         BorderView borderView = new BorderView(model.getWidth(), model.getHeight(), graphics);
         return new ButtonView(model, borderView, graphics);
+    }
+
+    public GoalView genGoalView(Goal model, TextGraphics graphics) {
+        GoalViewFactory goalViewFactory = new GoalViewFactory();
+        return goalViewFactory.createGoalView(model, graphics);
     }
 }
