@@ -105,6 +105,11 @@ public class GameView extends View<Game>{
         }
     }
 
+    private void drawButtons() {
+        factory.genButtonView(model.getB1(), graphics).draw(5,31);
+        factory.genButtonView(model.getB1(), graphics).draw(35,31);
+    }
+
 
     @Override
     public void draw(int col, int row) throws IOException {
@@ -116,6 +121,8 @@ public class GameView extends View<Game>{
 
         //draws all the shelves visible on the screen
         drawShelves();
+
+        drawButtons();
 
         //draw cards on the screen
         drawCards();

@@ -1,6 +1,7 @@
 package com.pokerbomb.view;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
+import com.pokerbomb.model.Button;
 import com.pokerbomb.model.Shelf;
 import com.pokerbomb.model.game.cards.Card;
 import com.pokerbomb.model.game.cards.Deck;
@@ -31,5 +32,10 @@ public class FactoryView {
     public PowerUpView genPowerUpView(PowerUp model, TextGraphics graphics) {
         PowerUpViewFactory powerUpViewFactory = new PowerUpViewFactory();
         return powerUpViewFactory.createPowerUpView(model, graphics);
+    }
+
+    public ButtonView genButtonView(Button model, TextGraphics graphics) {
+        BorderView borderView = new BorderView(model.getWidth(), model.getHeight(), graphics);
+        return new ButtonView(model, borderView, graphics);
     }
 }
