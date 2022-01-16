@@ -227,4 +227,19 @@ class HandRankingSpockTest extends Specification {
         then:
         none == ""
     }
+
+    def 'HandConfirm'(){
+        given:
+            Card c1 = new NormalCard(Suit.DIAMOND, Rank.EIGHT)
+            Card c2 = new NormalCard(Suit.CLUB, Rank.EIGHT)
+            ArrayList<Card> cards = new ArrayList<>()
+            cards.add(c1)
+            cards.add(c2)
+
+        when:
+            Deck d = Hand.handConfirm(cards)
+
+        then:
+            d.getDeck().isEmpty()
+    }
 }
