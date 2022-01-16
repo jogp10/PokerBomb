@@ -34,25 +34,41 @@ public class GameState extends ControllerState<Game> {
         ControllerState<?> nextState = this;
         switch (commandKey.getCommandEnum()) {
             case UP:
-                gameModel.selectU();
-                break;
-            case DOWN:
-                gameModel.deselectU();
-                break;
-            case RIGHT:
-                if (gameModel.getSelectedU() == Game.CombineButton.NOT) {
-                    gameModel.nextSelected();
+                if (gameModel.getSelectedP() != Game.PowerUpButton.NOT) {
+                    gameModel.deselectP();
                 }
                 else {
+                    gameModel.selectU();
+                }
+                break;
+            case DOWN:
+                if (gameModel.getSelectedU() != Game.CombineButton.NOT) {
+                    gameModel.deselectU();
+                }
+                else {
+                    gameModel.selectP();
+                }
+                break;
+            case RIGHT:
+                if ((gameModel.getSelectedU() == Game.CombineButton.NOT) && (gameModel.getSelectedP() == Game.PowerUpButton.NOT)) {
+                    gameModel.nextSelected();
+                }
+                else if (gameModel.getSelectedU() != Game.CombineButton.NOT) {
                     gameModel.changeSelectedU();
+                }
+                else if (gameModel.getSelectedP() != Game.PowerUpButton.NOT) {
+                    gameModel.nextSelectedP();
                 }
                 break;
             case LEFT:
-                if (gameModel.getSelectedU() == Game.CombineButton.NOT) {
+                if ((gameModel.getSelectedU() == Game.CombineButton.NOT) && (gameModel.getSelectedP() == Game.PowerUpButton.NOT)) {
                     gameModel.previousSelected();
                 }
-                else {
+                else if ((gameModel.getSelectedU() != Game.CombineButton.NOT)) {
                     gameModel.changeSelectedU();
+                }
+                else if (gameModel.getSelectedP() != Game.PowerUpButton.NOT) {
+                    gameModel.previousSelectedP();
                 }
                 break;
             case D1:
