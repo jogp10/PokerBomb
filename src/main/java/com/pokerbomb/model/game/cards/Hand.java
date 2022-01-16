@@ -431,7 +431,7 @@ public class Hand implements Model {
         if (isRoyalFlush(hand)) {
             handType = "ROYAL FLUSH";
         } else if (isStraightFlush(hand)) {
-            handType = "STRAIGHT FLUGHS";
+            handType = "STRAIGHT FLUSH";
         } else if (isFourOfAKind(hand)) {
             handType = "FOUR OF A KIND";
         } else if (isFullHouse(hand)) {

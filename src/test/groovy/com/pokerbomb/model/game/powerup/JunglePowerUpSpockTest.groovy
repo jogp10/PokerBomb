@@ -23,6 +23,8 @@ class JunglePowerUpSpockTest extends Specification{
             jungleCard.notInACombo()
             jungleCard.notInACombo()
             jungleCard.notInACombo()
+            jungleCard.notInACombo()
+            jungleCard.notInACombo()
 
         when:
             boolean confirm =  junglePowerUp.removeLayerJungleCard(jungleCard)

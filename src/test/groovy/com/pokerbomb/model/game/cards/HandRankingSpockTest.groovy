@@ -25,7 +25,7 @@ class HandRankingSpockTest extends Specification {
         String royalFlush = Hand.handRanking(deck.getDeck())
 
         then:
-        royalFlush == "Royal Flush"
+        royalFlush == "ROYAL FLUSH"
     }
 
     def 'Straight Flush com.pokerbomb.model.game.cards.Hand'() {
@@ -48,7 +48,7 @@ class HandRankingSpockTest extends Specification {
         String straightFlush = Hand.handRanking(deck.getDeck())
 
         then:
-        straightFlush == "Straight Flush"
+        straightFlush == "STRAIGHT FLUSH"
     }
 
     def 'Four of a Kind com.pokerbomb.model.game.cards.Hand'() {
@@ -71,7 +71,7 @@ class HandRankingSpockTest extends Specification {
         String fourOfAKind = Hand.handRanking(deck.getDeck())
 
         then:
-        fourOfAKind == "Four of a Kind"
+        fourOfAKind == "FOUR OF A KIND"
     }
 
     def 'Full House com.pokerbomb.model.game.cards.Hand'() {
@@ -94,7 +94,7 @@ class HandRankingSpockTest extends Specification {
         String fullHouse = Hand.handRanking(deck.getDeck())
 
         then:
-        fullHouse == "Full House"
+        fullHouse == "FULL HOUSE"
     }
 
     def 'Flush com.pokerbomb.model.game.cards.Hand'() {
@@ -117,7 +117,7 @@ class HandRankingSpockTest extends Specification {
         String flush = Hand.handRanking(deck.getDeck())
 
         then:
-        flush == "Flush"
+        flush == "FLUSH"
     }
 
     def 'Straight com.pokerbomb.model.game.cards.Hand'() {
@@ -140,7 +140,7 @@ class HandRankingSpockTest extends Specification {
         String straight = Hand.handRanking(deck.getDeck())
 
         then:
-        straight == "Straight"
+        straight == "STRAIGHT"
     }
 
     def 'Three of a Kind com.pokerbomb.model.game.cards.Hand'() {
@@ -163,7 +163,7 @@ class HandRankingSpockTest extends Specification {
         String threeOfAKind = Hand.handRanking(deck.getDeck())
 
         then:
-        threeOfAKind == "Three of a Kind"
+        threeOfAKind == "THREE OF A KIND"
     }
 
     def 'Two Pairs com.pokerbomb.model.game.cards.Hand'() {
@@ -186,7 +186,7 @@ class HandRankingSpockTest extends Specification {
         String twoPairs = Hand.handRanking(deck.getDeck())
 
         then:
-        twoPairs == "Two Pairs"
+        twoPairs == "TWO PAIRS"
     }
 
     def 'Pair com.pokerbomb.model.game.cards.Hand'() {
@@ -205,7 +205,7 @@ class HandRankingSpockTest extends Specification {
         String pair = Hand.handRanking(deck.getDeck())
 
         then:
-        pair == "Pair"
+        pair == "PAIR"
     }
 
     def 'None'() {
@@ -225,6 +225,6 @@ class HandRankingSpockTest extends Specification {
         String none = Hand.handRanking(deck.getDeck())
 
         then:
-        none == "None"
+        none == ""
     }
 }
