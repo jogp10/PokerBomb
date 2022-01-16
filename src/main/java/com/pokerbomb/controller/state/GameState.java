@@ -6,10 +6,13 @@ import com.pokerbomb.model.game.Game;
 import com.pokerbomb.model.game.cards.Card;
 import com.pokerbomb.model.game.cards.Deck;
 import com.pokerbomb.model.game.cards.Hand;
+import com.pokerbomb.model.game.goals.Goal;
 import com.pokerbomb.view.GameView;
 import com.pokerbomb.view.View;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class GameState extends ControllerState<Game> {
     Game gameModel;
@@ -100,19 +103,27 @@ public class GameState extends ControllerState<Game> {
                 }
                 break;
             case ENTER:
+                Hand hand = new Hand();
+                ArrayList<Goal> goals = gameModel.getLevels().get(2).getGoals();
+                Collections.reverse(goals);
                 if (gameModel.getSelectedU() == Game.CombineButton.U1) {
-                    gameModel.setD1(Hand.handConfirm(gameModel.getDeck_1().getDeck()));
+                    gameModel.setD1(Hand.handConfirm(gameModel.getDeck_1().getDeck(), hand));
                     String s = Hand.handRanking(gameModel.getDeck_1().getDeck());
                     gameModel.setString_1(s);
+                    for (Goal goal : goals) {
+                        goal.increment(hand);
+                    }
                 }
                 else if (gameModel.getSelectedU() == Game.CombineButton.U2) {
-                    gameModel.setD2(Hand.handConfirm(gameModel.getDeck_2().getDeck()));
+                    gameModel.setD2(Hand.handConfirm(gameModel.getDeck_2().getDeck(), hand));
                     String s = Hand.handRanking(gameModel.getDeck_2().getDeck());
                     gameModel.setString_2(s);
+                    for (Goal goal : goals) {
+                        goal.increment(hand);
+                    }
                 }
+                Collections.reverse(goals);
                 break;
-
-
 
             case ESC:
                 nextState = factory.genMenuState(true);
