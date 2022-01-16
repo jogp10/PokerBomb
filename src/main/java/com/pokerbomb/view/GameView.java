@@ -117,13 +117,8 @@ public class GameView extends View<Game>{
         //draws all the shelves visible on the screen
         drawShelves();
 
-        //drawDecks();
-
-
-
         //draw cards on the screen
         drawCards();
-
 
         //drawSelectedBorder();   draw selected card border
 
