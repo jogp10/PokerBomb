@@ -12,7 +12,7 @@ public class JungleCardView extends CardViewGeneric {
 
     static final List<String> backgroundColors = new ArrayList<String>() {{
         add("#FFFFFF"); // default
-        add("##00FF00"); // Lime
+        add("#00FF00"); // Lime
         add("#008000"); // Green
         add("#008080"); // Teal
     }};

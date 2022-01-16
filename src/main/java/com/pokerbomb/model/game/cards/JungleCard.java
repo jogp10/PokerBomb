@@ -18,7 +18,7 @@ public class JungleCard extends CardGeneric implements Card {
     @Override
     public boolean notInACombo() {
         countToAddAttribute++;
-        if(countToAddAttribute==3){
+        if(countToAddAttribute==4){
             specialAttribute++;
             countToAddAttribute=0;
         }
