@@ -17,7 +17,6 @@ import java.util.Vector;
 public class Game implements Model {
     ArrayList<PowerUp> powerUps = new ArrayList<>();
     ArrayList<Level> levels = ReadLevels.readLevels("src/main/java/com/pokerbomb/model/game/Levels.txt");
-    Player player;
 
     Shelf s1 = new Shelf(7,50);
     Shelf s2 = new Shelf(7,50);
@@ -39,11 +38,6 @@ public class Game implements Model {
 
     String c1 = "";
     String c2 = "";
-
-
-    public Player getPlayer() {
-        return player;
-    }
 
     public ArrayList<Level> getLevels() {
         return levels;
