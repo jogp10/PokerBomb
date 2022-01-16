@@ -34,6 +34,7 @@ public class CommandKey {
         switch (key.getKeyType()) {
             case EOF:
                 this.command = COMMAND.QUIT;
+                break;
             case ArrowUp:
                 this.command = COMMAND.UP;
                 break;
@@ -75,10 +76,6 @@ public class CommandKey {
                         break;
                     case '2':
                         this.command = COMMAND.D2;
-                        break;
-
-
-                    default:
                         break;
                 }
         }

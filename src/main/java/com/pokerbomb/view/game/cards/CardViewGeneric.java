@@ -16,8 +16,8 @@ public abstract class CardViewGeneric extends View<Card> implements CardView {
     public static String backgroundColour = "#FFFFFF";
 
     static final List<String> suits = new ArrayList<String>() {{
-        add("\u2665"); // hearts
         add("\u2666"); // diamonds
+        add("\u2665"); // hearts
         add("\u2660"); // spaces
         add("\u2663"); // clubs
     }};

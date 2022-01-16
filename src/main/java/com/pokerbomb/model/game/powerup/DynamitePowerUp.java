@@ -1,6 +1,9 @@
 package com.pokerbomb.model.game.powerup;
 
+import com.pokerbomb.model.game.cards.Card;
 import com.pokerbomb.model.game.cards.DynamiteCard;
+
+import java.util.ArrayList;
 
 public class DynamitePowerUp implements PowerUp {
     private int numberOfPowerUp;
@@ -34,5 +37,13 @@ public class DynamitePowerUp implements PowerUp {
         return false;
     }
 
+    public boolean addPlayToDynamiteCard(ArrayList<Card> cards){
+        for(Card card: cards){
+            if(card instanceof DynamiteCard) {
+                return this.addPlayToDynamiteCard((DynamiteCard) card, 3);
+            }
+        }
+        return false;
+    }
 
 }

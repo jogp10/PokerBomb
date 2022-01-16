@@ -1,6 +1,10 @@
 package com.pokerbomb.model.game.powerup;
 
+import com.pokerbomb.model.game.cards.Card;
+import com.pokerbomb.model.game.cards.DynamiteCard;
 import com.pokerbomb.model.game.cards.FrozenCard;
+
+import java.util.ArrayList;
 
 public class FrozenPowerUp implements PowerUp {
     private int numberOfPowerUp;
@@ -28,5 +32,14 @@ public class FrozenPowerUp implements PowerUp {
     public boolean Unfreeze(FrozenCard frozenCard){
         frozenCard.inACombo(100);
         return !frozenCard.isActive();
+    }
+
+    public boolean Unfreeze(ArrayList<Card> cards){
+        for(Card card: cards){
+            if(card instanceof FrozenCard) {
+                return this.Unfreeze((FrozenCard) card);
+            }
+        }
+        return false;
     }
 }

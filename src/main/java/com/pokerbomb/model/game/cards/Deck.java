@@ -25,16 +25,19 @@ public class Deck implements Model {
                 int n = random.nextInt(100);
 
                 // Add a new card to the deck
-                if(n<10) {
+                if(n<12) {
                     this.cards.add( new JungleCard(cardSuit, cardRank));
+                    continue;
                 }
-                else if(n<22) {
+                if(n<24) {
                     this.cards.add( new DynamiteCard(cardSuit, cardRank));
+                    continue;
                 }
-                else if(n<35) {
+                if(n<37) {
                     this.cards.add( new FrozenCard(cardSuit, cardRank));
+                    continue;
                 }
-                else this.cards.add( new NormalCard(cardSuit, cardRank));
+                this.cards.add( new NormalCard(cardSuit, cardRank));
             }
         }
     }

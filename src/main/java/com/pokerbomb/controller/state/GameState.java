@@ -3,6 +3,7 @@ package com.pokerbomb.controller.state;
 import com.pokerbomb.controller.CommandKey;
 import com.pokerbomb.controller.Controller;
 import com.pokerbomb.model.game.Game;
+import com.pokerbomb.model.game.cards.Card;
 import com.pokerbomb.model.game.cards.Deck;
 import com.pokerbomb.model.game.cards.Hand;
 import com.pokerbomb.view.GameView;
@@ -62,6 +63,7 @@ public class GameState extends ControllerState<Game> {
                     Deck newg1 = gameModel.getGivenDeck();
                     gameModel.removeFromDeck(newg1);
                     gameModel.addNewCardToG();
+                    PlayWithoutCombo();
 
                     String s = Hand.handRanking(newd1.getDeck());
                     gameModel.setString_1(s);
@@ -75,6 +77,7 @@ public class GameState extends ControllerState<Game> {
                     Deck newg2 = gameModel.getGivenDeck();
                     gameModel.removeFromDeck(newg2);
                     gameModel.addNewCardToG();
+                    PlayWithoutCombo();
 
                     String s = Hand.handRanking(newd2.getDeck());
                     gameModel.setString_2(s);
@@ -113,6 +116,15 @@ public class GameState extends ControllerState<Game> {
             }*/
         return goToState(nextState);
 
+    }
+
+    void PlayWithoutCombo(){
+        for(Card card: gameModel.getDeck_1().getDeck()){
+            card.notInACombo();
+        }
+        for(Card card: gameModel.getDeck_2().getDeck()){
+            card.notInACombo();
+        }
     }
 
 }
