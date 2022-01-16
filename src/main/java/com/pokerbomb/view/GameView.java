@@ -3,6 +3,8 @@ package com.pokerbomb.view;
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
 import com.pokerbomb.model.game.Game;
+import com.pokerbomb.model.game.Level;
+import com.pokerbomb.model.game.goals.Goal;
 import com.pokerbomb.model.game.powerup.PowerUp;
 
 import java.io.IOException;
@@ -102,6 +104,16 @@ public class GameView extends View<Game>{
 
     public void drawQuests() {
         //draw the level quests
+        int col = 5;
+        int row = 10;
+        for (Goal goal : model.getLevels().get(2).getGoals()) {
+            try {
+                factory.genGoalView(goal, graphics).draw(col, row);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            col += 18;
+        }
     }
 
     public void drawPoints() {
@@ -146,6 +158,8 @@ public class GameView extends View<Game>{
         //drawSelectedBorder();   draw selected card border
 
         printCurrentCombo();
+
+        drawQuests();
 
         drawPowerUps();
 
