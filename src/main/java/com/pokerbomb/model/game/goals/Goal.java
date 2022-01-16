@@ -1,6 +1,9 @@
 package com.pokerbomb.model.game.goals;
 
-public class Goal {
+import com.pokerbomb.model.Model;
+import com.pokerbomb.model.game.cards.Hand;
+
+public abstract class Goal implements Model {
     protected final Type type;
     protected String name;
     protected String description;
@@ -28,4 +31,14 @@ public class Goal {
         Goal goal = (Goal) o;
         return this.type == goal.type && this.currentQuantity == goal.currentQuantity;
     }
+
+    public int getCurrentQuantity() {
+        return currentQuantity;
+    }
+
+    public int getTotalQuantity() {
+        return totalQuantity;
+    }
+
+    public abstract void increment(Hand hand);
 }
