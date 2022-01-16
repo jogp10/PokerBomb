@@ -10,4 +10,3 @@ public enum Type {
     FULL_HOUSE,
     SCORE
 }
-
