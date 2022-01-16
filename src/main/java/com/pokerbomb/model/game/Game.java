@@ -5,7 +5,6 @@ import com.pokerbomb.model.Model;
 import com.pokerbomb.model.Shelf;
 import com.pokerbomb.model.game.cards.Card;
 import com.pokerbomb.model.game.cards.Deck;
-import com.pokerbomb.model.game.player.Player;
 import com.pokerbomb.model.game.powerup.DynamitePowerUp;
 import com.pokerbomb.model.game.powerup.FrozenPowerUp;
 import com.pokerbomb.model.game.powerup.JunglePowerUp;
