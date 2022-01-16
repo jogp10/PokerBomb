@@ -41,9 +41,9 @@ public class ReadLevels {
                         case FULL_HOUSE:
                             goals.add(new TheHouseIsFullGoal(type, quantity));
                             break;
-                        case SCORE:
+                        /*case SCORE:
                             goals.add(new Goal(type, quantity));
-                            break;
+                            break;*/
                     }
                 }
                 levels.add(new Level(level, goals));
