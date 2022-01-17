@@ -45,7 +45,7 @@ public class DynamitePowerUp implements PowerUp {
             }
             d.addCard(card);
         }
-        numberOfPowerUp--;
+        this.numberOfPowerUp--;
         return d;
     }
 

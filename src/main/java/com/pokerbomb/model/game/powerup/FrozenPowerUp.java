@@ -44,7 +44,7 @@ public class FrozenPowerUp implements PowerUp {
             }
             d.addCard(card);
         }
-        numberOfPowerUp--;
+        this.numberOfPowerUp--;
         return d;
     }
 }
