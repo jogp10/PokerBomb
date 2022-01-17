@@ -68,9 +68,9 @@ public class Game implements Model {
         this.selectedU = Game.CombineButton.NOT;
         this.selectedP = PowerUpButton.NOT;
 
-        powerUps.add(FrozenPowerUp.getInstance());
-        powerUps.add(DynamitePowerUp.getInstance());
         powerUps.add(JunglePowerUp.getInstance());
+        powerUps.add(DynamitePowerUp.getInstance());
+        powerUps.add(FrozenPowerUp.getInstance());
     }
 
     private void initGivenCards() {

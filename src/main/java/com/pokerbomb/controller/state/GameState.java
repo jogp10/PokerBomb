@@ -128,6 +128,7 @@ public class GameState extends ControllerState<Game> {
                 else if (gameModel.getSelectedP() == Game.PowerUpButton.P1) {
                     JunglePowerUp jungle = JunglePowerUp.getInstance();
                     jungle.addPowerUp();
+                    jungle.addPowerUp();
 
                     Deck newdeck1 = gameModel.getDeck_1();
                     Deck newdeck2 = gameModel.getDeck_2();
@@ -141,6 +142,7 @@ public class GameState extends ControllerState<Game> {
                 }
                 else if (gameModel.getSelectedP() == Game.PowerUpButton.P2) {
                     DynamitePowerUp dynamite = DynamitePowerUp.getInstance();
+                    dynamite.addPowerUp();
                     dynamite.addPowerUp();
 
 
@@ -156,6 +158,7 @@ public class GameState extends ControllerState<Game> {
                 }
                 else if (gameModel.getSelectedP() == Game.PowerUpButton.P3) {
                     FrozenPowerUp frozen = FrozenPowerUp.getInstance();
+                    frozen.addPowerUp();
                     frozen.addPowerUp();
 
 
