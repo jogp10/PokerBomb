@@ -1,6 +1,7 @@
 package com.pokerbomb.model.game.powerup;
 
 import com.pokerbomb.model.game.cards.Card;
+import com.pokerbomb.model.game.cards.Deck;
 import com.pokerbomb.model.game.cards.DynamiteCard;
 import com.pokerbomb.model.game.cards.FrozenCard;
 
@@ -29,17 +30,21 @@ public class FrozenPowerUp implements PowerUp {
         numberOfPowerUp++;
     }
 
-    public boolean Unfreeze(FrozenCard frozenCard){
+    public Card Unfreeze(FrozenCard frozenCard){
+        if(getNumberOfPowerUp()==0) return frozenCard;
         frozenCard.inACombo(100);
-        return !frozenCard.isActive();
+        return frozenCard;
     }
 
-    public boolean Unfreeze(ArrayList<Card> cards){
+    public Deck Unfreeze(ArrayList<Card> cards){
+        Deck d = new Deck();
         for(Card card: cards){
             if(card instanceof FrozenCard) {
-                return this.Unfreeze((FrozenCard) card);
+                this.Unfreeze((FrozenCard) card);
             }
+            d.addCard(card);
         }
-        return false;
+        numberOfPowerUp--;
+        return d;
     }
 }
