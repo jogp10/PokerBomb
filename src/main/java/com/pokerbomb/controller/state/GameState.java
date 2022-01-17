@@ -7,6 +7,9 @@ import com.pokerbomb.model.game.cards.Card;
 import com.pokerbomb.model.game.cards.Deck;
 import com.pokerbomb.model.game.cards.Hand;
 import com.pokerbomb.model.game.goals.Goal;
+import com.pokerbomb.model.game.powerup.DynamitePowerUp;
+import com.pokerbomb.model.game.powerup.FrozenPowerUp;
+import com.pokerbomb.model.game.powerup.JunglePowerUp;
 import com.pokerbomb.view.GameView;
 import com.pokerbomb.view.View;
 
@@ -121,6 +124,50 @@ public class GameState extends ControllerState<Game> {
                     for (Goal goal : goals) {
                         goal.increment(hand);
                     }
+                }
+                else if (gameModel.getSelectedP() == Game.PowerUpButton.P1) {
+                    JunglePowerUp jungle = JunglePowerUp.getInstance();
+                    jungle.addPowerUp();
+
+                    Deck newdeck1 = gameModel.getDeck_1();
+                    Deck newdeck2 = gameModel.getDeck_2();
+
+                    newdeck1 = jungle.removeLayerJungleCard(newdeck1.getDeck());
+                    newdeck2 = jungle.removeLayerJungleCard(newdeck2.getDeck());
+
+
+                    gameModel.setD1(newdeck1);
+                    gameModel.setD2(newdeck2);
+                }
+                else if (gameModel.getSelectedP() == Game.PowerUpButton.P2) {
+                    DynamitePowerUp dynamite = DynamitePowerUp.getInstance();
+                    dynamite.addPowerUp();
+
+
+                    Deck newdeck1 = gameModel.getDeck_1();
+                    Deck newdeck2 = gameModel.getDeck_2();
+
+                    newdeck1 = dynamite.addPlayToDynamiteCard(newdeck1.getDeck());
+                    newdeck2 = dynamite.addPlayToDynamiteCard(newdeck2.getDeck());
+
+
+                    gameModel.setD1(newdeck1);
+                    gameModel.setD2(newdeck2);
+                }
+                else if (gameModel.getSelectedP() == Game.PowerUpButton.P3) {
+                    FrozenPowerUp frozen = FrozenPowerUp.getInstance();
+                    frozen.addPowerUp();
+
+
+
+                    Deck newdeck1 = gameModel.getDeck_1();
+                    Deck newdeck2 = gameModel.getDeck_2();
+
+                    newdeck1 = frozen.Unfreeze(newdeck1.getDeck());
+                    newdeck2 = frozen.Unfreeze(newdeck2.getDeck());
+
+                    gameModel.setD1(newdeck1);
+                    gameModel.setD2(newdeck2);
                 }
                 Collections.reverse(goals);
                 break;
