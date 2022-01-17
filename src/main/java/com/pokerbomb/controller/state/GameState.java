@@ -125,24 +125,23 @@ public class GameState extends ControllerState<Game> {
                         goal.increment(hand);
                     }
                 }
-                else if (gameModel.getSelectedP() == Game.PowerUpButton.P1) {
-                    JunglePowerUp jungle = JunglePowerUp.getInstance();
-                    jungle.addPowerUp();
-                    jungle.addPowerUp();
+                else if (gameModel.getSelectedP() == Game.PowerUpButton.P3) {
+                    FrozenPowerUp frozen = FrozenPowerUp.getInstance();
+                    frozen.addPowerUp();
+
+
 
                     Deck newdeck1 = gameModel.getDeck_1();
                     Deck newdeck2 = gameModel.getDeck_2();
 
-                    newdeck1 = jungle.removeLayerJungleCard(newdeck1.getDeck());
-                    newdeck2 = jungle.removeLayerJungleCard(newdeck2.getDeck());
-
+                    newdeck1 = frozen.Unfreeze(newdeck1.getDeck());
+                    newdeck2 = frozen.Unfreeze(newdeck2.getDeck());
 
                     gameModel.setD1(newdeck1);
                     gameModel.setD2(newdeck2);
                 }
                 else if (gameModel.getSelectedP() == Game.PowerUpButton.P2) {
                     DynamitePowerUp dynamite = DynamitePowerUp.getInstance();
-                    dynamite.addPowerUp();
                     dynamite.addPowerUp();
 
 
@@ -156,18 +155,16 @@ public class GameState extends ControllerState<Game> {
                     gameModel.setD1(newdeck1);
                     gameModel.setD2(newdeck2);
                 }
-                else if (gameModel.getSelectedP() == Game.PowerUpButton.P3) {
-                    FrozenPowerUp frozen = FrozenPowerUp.getInstance();
-                    frozen.addPowerUp();
-                    frozen.addPowerUp();
-
-
+                else if (gameModel.getSelectedP() == Game.PowerUpButton.P1) {
+                    JunglePowerUp jungle = JunglePowerUp.getInstance();
+                    jungle.addPowerUp();
 
                     Deck newdeck1 = gameModel.getDeck_1();
                     Deck newdeck2 = gameModel.getDeck_2();
 
-                    newdeck1 = frozen.Unfreeze(newdeck1.getDeck());
-                    newdeck2 = frozen.Unfreeze(newdeck2.getDeck());
+                    newdeck1 = jungle.removeLayerJungleCard(newdeck1.getDeck());
+                    newdeck2 = jungle.removeLayerJungleCard(newdeck2.getDeck());
+
 
                     gameModel.setD1(newdeck1);
                     gameModel.setD2(newdeck2);
@@ -182,15 +179,6 @@ public class GameState extends ControllerState<Game> {
                 nextState = null;
                 break;
         }
-        /*if (command != null)
-            try {
-                command.execute();
-                gameModel.addCommand(command);
-                if (gameModel.checkWin())
-                    nextState = factory.genGameOverState(configuration, gameModel.getTable().getScore());
-            } catch (GameOver g) {
-                nextState = factory.genGameOverState(configuration, gameModel.getTable().getScore());
-            }*/
         return goToState(nextState);
 
     }

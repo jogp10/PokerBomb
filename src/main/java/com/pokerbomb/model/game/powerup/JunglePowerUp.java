@@ -12,7 +12,7 @@ public class JunglePowerUp implements PowerUp {
     private static JunglePowerUp instance;
 
     private JunglePowerUp(){
-        numberOfPowerUp=0;
+        numberOfPowerUp=999;
     }
 
     public static JunglePowerUp getInstance(){
@@ -33,7 +33,10 @@ public class JunglePowerUp implements PowerUp {
     }
 
     public Card removeLayerJungleCard(JungleCard jungleCard){
-        if(getNumberOfPowerUp()==0) return jungleCard;
+        if(getNumberOfPowerUp()<0) {
+            numberOfPowerUp=0;
+            return jungleCard;
+        }
         jungleCard.inACombo(1);
         return jungleCard;
     }

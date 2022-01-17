@@ -11,7 +11,7 @@ public class DynamitePowerUp implements PowerUp {
     private static DynamitePowerUp instance;
 
     private DynamitePowerUp(){
-        numberOfPowerUp=0;
+        numberOfPowerUp=999;
     }
 
     public static DynamitePowerUp getInstance(){
@@ -48,5 +48,4 @@ public class DynamitePowerUp implements PowerUp {
         this.numberOfPowerUp--;
         return d;
     }
-
 }

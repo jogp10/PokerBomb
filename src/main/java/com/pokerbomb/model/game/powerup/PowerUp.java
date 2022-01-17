@@ -4,7 +4,7 @@ import com.pokerbomb.model.Model;
 
 public interface PowerUp extends Model {
 
-    public int getNumberOfPowerUp();
+    int getNumberOfPowerUp();
 
-    public void addPowerUp();
+    void addPowerUp();
 }

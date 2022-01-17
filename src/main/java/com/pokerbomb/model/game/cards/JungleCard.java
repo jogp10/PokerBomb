@@ -5,7 +5,7 @@ public class JungleCard extends CardGeneric implements Card {
 
     public JungleCard(Suit suit, Rank rank) {
         super(suit, rank);
-        specialAttribute = 0;
+        specialAttribute = 1;
         countToAddAttribute = 0;
     }
 
@@ -22,7 +22,7 @@ public class JungleCard extends CardGeneric implements Card {
             specialAttribute++;
             countToAddAttribute=0;
         }
-        if(specialAttribute>3) specialAttribute=3;
+        if(specialAttribute>4) specialAttribute=4;
         return specialAttribute==0;
     }
 

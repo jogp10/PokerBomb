@@ -12,7 +12,7 @@ public class FrozenPowerUp implements PowerUp {
     private static FrozenPowerUp instance;
 
     private FrozenPowerUp(){
-        numberOfPowerUp=0;
+        numberOfPowerUp=999;
     }
 
     public static FrozenPowerUp getInstance(){

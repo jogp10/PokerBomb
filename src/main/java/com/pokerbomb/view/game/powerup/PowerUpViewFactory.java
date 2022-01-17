@@ -14,10 +14,10 @@ public class PowerUpViewFactory {
             return new DynamitePowerUpView((DynamitePowerUp) powerUp, graphics);
         }
         if(powerUp instanceof JunglePowerUp) {
-            return new FrozenPowerUpView((JunglePowerUp) powerUp, graphics);
+            return new JunglePowerUpView((JunglePowerUp) powerUp, graphics);
         }
         if(powerUp instanceof FrozenPowerUp) {
-            return new JunglePowerUpView((FrozenPowerUp) powerUp, graphics);
+            return new FrozenPowerUpView((FrozenPowerUp) powerUp, graphics);
         }
         return null;
     }
