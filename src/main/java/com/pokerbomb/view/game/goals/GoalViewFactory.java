@@ -17,6 +17,9 @@ public class GoalViewFactory {
         if(goal instanceof CanYouDigItGoal) {
             return new CanYouDigItGoalView((CanYouDigItGoal) goal, graphics);
         }
+        if(goal instanceof GiveUsAHandGoal) {
+            return new GiveUsAHandGoalView((GiveUsAHandGoal) goal, graphics);
+        }
         if(goal instanceof CardCollectorGoal) {
             return new CardCollectorGoalView((CardCollectorGoal) goal, graphics);
         }
