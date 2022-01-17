@@ -11,7 +11,8 @@ import spock.lang.Specification
 class FrozenPowerUpSpockTest extends Specification{
     FrozenPowerUp frozenPowerUp;
     def setup(){
-        frozenPowerUp = FrozenPowerUp.getInstance();
+        frozenPowerUp = FrozenPowerUp.getInstance()
+        frozenPowerUp.addPowerUp()
     }
     /*
     def 'com.pokerbomb.models.powerup.FrozenPowerUp constructor'() {
@@ -65,7 +66,7 @@ class FrozenPowerUpSpockTest extends Specification{
         when:
         frozenPowerUp.Unfreeze(cards)
         then:
-        cards.get(4).getSpecialAttribute()==2
+        cards.get(4).getSpecialAttribute()==0
     }
 
 }

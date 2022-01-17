@@ -12,7 +12,8 @@ class JunglePowerUpSpockTest extends Specification{
     JunglePowerUp junglePowerUp;
 
     def setup(){
-        junglePowerUp = JunglePowerUp.getInstance();
+        junglePowerUp = JunglePowerUp.getInstance()
+        junglePowerUp.addPowerUp()
     }
 /*
     def 'com.pokerbomb.models.powerup.JunglePowerUp constructor'() {
@@ -32,10 +33,9 @@ class JunglePowerUpSpockTest extends Specification{
             jungleCard.notInACombo()
 
         when:
-            boolean confirm =  junglePowerUp.removeLayerJungleCard(jungleCard)
+            jungleCard = junglePowerUp.removeLayerJungleCard(jungleCard)
 
         then:
-            confirm
             !jungleCard.isActive()
     }
 /*

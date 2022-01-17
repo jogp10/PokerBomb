@@ -196,12 +196,19 @@ public class GameState extends ControllerState<Game> {
     }
 
     void PlayWithoutCombo(){
+        Deck d1 = new Deck();
+        Deck d2 = new Deck();
         for(Card card: gameModel.getDeck_1().getDeck()){
-            card.notInACombo();
+            if(!card.notInACombo())
+                d1.addCard(card);
         }
         for(Card card: gameModel.getDeck_2().getDeck()){
-            card.notInACombo();
+            if(!card.notInACombo())
+                d2.addCard(card);
         }
+
+        gameModel.setD1(d1);
+        gameModel.setD2(d2);
     }
 
 }

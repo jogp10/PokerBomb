@@ -12,7 +12,8 @@ class DynamitePowerUpSpockTest extends Specification {
     DynamitePowerUp dynamitePowerUp;
 
     def setup(){
-        dynamitePowerUp = DynamitePowerUp.getInstance();
+        dynamitePowerUp = DynamitePowerUp.getInstance()
+        dynamitePowerUp.addPowerUp()
     }
 /*
     def 'com.pokerbomb.models.powerup.DynamitePowerUp constructor'() {
