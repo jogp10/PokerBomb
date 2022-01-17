@@ -12,7 +12,7 @@ import com.pokerbomb.model.game.goals.Type
 import spock.lang.Specification
 
 class ReadLevelsSpockTest extends Specification {
-    def 'Read Levels'() {
+    def "Read Levels' Goals"() {
         given:
         ArrayList<Level> levels = new ArrayList<>()
 
@@ -41,7 +41,7 @@ class ReadLevelsSpockTest extends Specification {
         levels.add(level4)
 
         ArrayList<Goal> goals5 = new ArrayList<>()
-        goals5.add(new Goal(Type.SCORE, 2000))
+        //goals5.add(new Goal(Type.SCORE, 2000))
         Level level5 = new Level(15, goals5)
         levels.add(level5)
 
@@ -51,7 +51,7 @@ class ReadLevelsSpockTest extends Specification {
         levels.add(level6)
 
         when:
-        ArrayList<Level> levelsFile = ReadLevels.readLevels("src/main/java/com/pokerbomb/model/game/Levels.txt")
+        ArrayList<Level> levelsFile = ReadLevels.readLevels("src/main/resources/Levels.txt")
 
         then:
         levels.equals(levelsFile)
