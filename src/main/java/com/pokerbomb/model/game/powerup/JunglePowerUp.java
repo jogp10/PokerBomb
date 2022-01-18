@@ -12,7 +12,7 @@ public class JunglePowerUp implements PowerUp {
     private static JunglePowerUp instance;
 
     private JunglePowerUp(){
-        numberOfPowerUp=999;
+        numberOfPowerUp=2;
     }
 
     public static JunglePowerUp getInstance(){
