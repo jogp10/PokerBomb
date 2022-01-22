@@ -1,6 +1,6 @@
 package com.pokerbomb.controller.state;
 
-import com.pokerbomb.model.game.GameImplementation;
+import com.pokerbomb.model.game.Game;
 import com.pokerbomb.model.menu.Ins;
 import com.pokerbomb.model.menu.Menu;
 import com.pokerbomb.model.menu.SelectLevel;
@@ -21,9 +21,9 @@ public class FactoryState {
     }
 
     public GameState genGameState(int l) {
-        GameImplementation gameImplementationModel = new GameImplementation(l);
-        GameView gameView = new GameView(gameImplementationModel, new FactoryView());
-        GameState gameState = new GameState(this, gameImplementationModel, gameView);
+        Game gameModel = new Game(l);
+        GameView gameView = new GameView(gameModel, new FactoryView());
+        GameState gameState = new GameState(this,gameModel, gameView);
         return gameState;
     }
 

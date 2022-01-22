@@ -2,13 +2,14 @@ package com.pokerbomb.view;
 
 import com.googlecode.lanterna.TerminalPosition;
 import com.googlecode.lanterna.TextColor;
-import com.pokerbomb.model.game.GameImplementation;
+import com.pokerbomb.model.game.Game;
+import com.pokerbomb.model.game.Level;
 import com.pokerbomb.model.game.goals.Goal;
 import com.pokerbomb.model.game.powerup.PowerUp;
 
 import java.io.IOException;
 
-public class GameView extends View<GameImplementation>{
+public class GameView extends View<Game>{
 
     FactoryView factory;
     BorderView borderView;
@@ -16,7 +17,7 @@ public class GameView extends View<GameImplementation>{
     BorderView pUpBorder;
 
 
-    public GameView(GameImplementation model, FactoryView factoryView) {
+    public GameView(Game model, FactoryView factoryView) {
         super(model);
         this.factory = factoryView;
 
@@ -33,9 +34,9 @@ public class GameView extends View<GameImplementation>{
     }
 
     public void drawSelectedBorder() {
-        GameImplementation.Cell selected = model.getSelected();
-        GameImplementation.CombineButton selectedU = model.getSelectedU();
-        GameImplementation.PowerUpButton selectedP = model.getSelectedP();
+        Game.Cell selected = model.getSelected();
+        Game.CombineButton selectedU = model.getSelectedU();
+        Game.PowerUpButton selectedP = model.getSelectedP();
         graphics.setForegroundColor(TextColor.Factory.fromString("#FF0000"));
         //int COL_BEGIN_SELECTED = this.getSize().getColumns() / 2 - 8;
         switch (selected) {
