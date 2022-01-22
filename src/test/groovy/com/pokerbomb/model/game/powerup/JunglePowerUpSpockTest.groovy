@@ -33,6 +33,7 @@ class JunglePowerUpSpockTest extends Specification{
 
         when:
             jungleCard = junglePowerUp.usePowerUp(jungleCard)
+            jungleCard = junglePowerUp.usePowerUp(jungleCard)
 
         then:
             !jungleCard.isActive()
@@ -67,7 +68,7 @@ class JunglePowerUpSpockTest extends Specification{
         when:
         junglePowerUp.usePowerUp(cards)
         then:
-        cards.get(1).getSpecialAttribute()==0
+        cards.get(1).getSpecialAttribute()==1
     }
 }
 

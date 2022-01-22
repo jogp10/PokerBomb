@@ -24,6 +24,7 @@ public class Deck implements Model {
     }
 
     public void createFullDeck() {
+        if(deckStrategy==null) deckStrategy=new EasyDeckStrategy();
         this.cards=deckStrategy.createFullDeck(cards);
     }
 

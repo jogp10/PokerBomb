@@ -29,11 +29,11 @@ class DynamitePowerUpSpockTest extends Specification {
 
         when:
             int dynamiteSpecialAttribute = dynamiteCard.getSpecialAttribute()
-            boolean confirm =  dynamitePowerUp.usePowerUp(dynamiteCard, 2)
+            boolean confirm =  dynamitePowerUp.usePowerUp(dynamiteCard)
 
         then:
             confirm
-            dynamiteSpecialAttribute+2==dynamiteCard.getSpecialAttribute()
+            dynamiteSpecialAttribute+3==dynamiteCard.getSpecialAttribute()
     }
 
 /*
