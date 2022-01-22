@@ -5,6 +5,7 @@ import com.pokerbomb.model.game.Game;
 import com.pokerbomb.model.menu.Ins;
 import com.pokerbomb.model.menu.Menu;
 import com.pokerbomb.model.menu.SelectLevel;
+import com.pokerbomb.model.menu.Store;
 import com.pokerbomb.view.*;
 
 public class FactoryState {
@@ -40,5 +41,12 @@ public class FactoryState {
         GameOverView gameOverView = new GameOverView(gameOver);
         GameOverState gameOverState = new GameOverState(this, gameOver, gameOverView);
         return gameOverState;
+    }
+
+    public StoreState genStoreState() {
+        Store store = new Store();
+        StoreView storeView = new StoreView(store);
+        StoreState storeState = new StoreState(this, store, storeView);
+        return storeState;
     }
 }
