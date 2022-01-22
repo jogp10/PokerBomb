@@ -11,33 +11,42 @@ public class Deck implements Model {
     // instance vars
     private ArrayList<Card> cards;
     private ArrayList<Card> hand;
+    private DeckStrategy deckStrategy;
+
 
     // construct
     public Deck() {
         this.cards = new ArrayList<>();
     }
 
-    public void createFullDeck() {
-        // Generate Cards
-        Random random = new Random();
-        for(Suit cardSuit : Suit.values()) {
-            for(Rank cardRank : Rank.values()) {
-                int n = random.nextInt(100);
+    public void setDeckStrategy(DeckStrategy deckStrategy){
+        this.deckStrategy=deckStrategy;
+    }
 
-                // Add a new card to the deck
-                if(n<12) {
-                    this.cards.add( new JungleCard(cardSuit, cardRank));
-                    continue;
+    public void createFullDeck() {
+        if(deckStrategy!=null) this.cards=deckStrategy.createFullDeck(cards);
+        else {
+            // Generate Cards
+            Random random = new Random();
+            for (Suit cardSuit : Suit.values()) {
+                for (Rank cardRank : Rank.values()) {
+                    int n = random.nextInt(100);
+
+                    // Add a new card to the deck
+                    if (n < 12) {
+                        this.cards.add(new JungleCard(cardSuit, cardRank));
+                        continue;
+                    }
+                    if (n < 24) {
+                        this.cards.add(new DynamiteCard(cardSuit, cardRank));
+                        continue;
+                    }
+                    if (n < 37) {
+                        this.cards.add(new FrozenCard(cardSuit, cardRank));
+                        continue;
+                    }
+                    this.cards.add(new NormalCard(cardSuit, cardRank));
                 }
-                if(n<24) {
-                    this.cards.add( new DynamiteCard(cardSuit, cardRank));
-                    continue;
-                }
-                if(n<37) {
-                    this.cards.add( new FrozenCard(cardSuit, cardRank));
-                    continue;
-                }
-                this.cards.add( new NormalCard(cardSuit, cardRank));
             }
         }
     }

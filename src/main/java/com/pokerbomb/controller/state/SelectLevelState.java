@@ -40,7 +40,7 @@ public class SelectLevelState extends ControllerState<SelectLevel> {
                 break;
             case ENTER:
                 int selected = lModel.getSelectedAsInt();
-                nextState = factory.genGameState(selected);  //determine theh level selected, and initialize a new game instance with it
+                nextState = factory.genGameState(selected);  //determine the level selected, and initialize a new game instance with it
                 break;
             case ESC:
                 nextState = factory.genMenuState(true);

@@ -15,6 +15,7 @@ class DynamitePowerUpSpockTest extends Specification {
         dynamitePowerUp = DynamitePowerUp.getInstance()
         dynamitePowerUp.addPowerUp()
     }
+
 /*
     def 'com.pokerbomb.models.powerup.DynamitePowerUp constructor'() {
         expect:
@@ -35,6 +36,7 @@ class DynamitePowerUpSpockTest extends Specification {
             confirm
             dynamiteSpecialAttribute+2==dynamiteCard.getSpecialAttribute()
     }
+
 /*
     def 'com.pokerbomb.models.powerup.DynamitePowerUp buy AddPlays'() {
         when:
@@ -42,7 +44,6 @@ class DynamitePowerUpSpockTest extends Specification {
         then:
             dynamitePowerUp.getNumberOfPowerUp()==1
     }
-
  */
 
     def 'com.pokerbomb.models.powerup.DynamitePowerUp getInstance'() {
