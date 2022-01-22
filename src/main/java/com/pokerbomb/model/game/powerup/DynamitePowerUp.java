@@ -1,7 +1,8 @@
 package com.pokerbomb.model.game.powerup;
 
 import com.pokerbomb.model.game.cards.Card;
-import com.pokerbomb.model.game.cards.Deck;
+import com.pokerbomb.model.game.cards.SpecialCard;
+import com.pokerbomb.model.game.deck.Deck;
 import com.pokerbomb.model.game.cards.DynamiteCard;
 
 import java.util.ArrayList;
@@ -31,17 +32,17 @@ public class DynamitePowerUp implements PowerUp {
         numberOfPowerUp++;
     }
 
-    public Card addPlayToDynamiteCard(DynamiteCard dynamiteCard, int numberPlays){
+    public Card usePowerUp(SpecialCard dynamiteCard){
         if(getNumberOfPowerUp()==0) return dynamiteCard;
-        dynamiteCard.removeSpecialAttribute(-numberPlays);
+        dynamiteCard.removeSpecialAttribute(-3);
         return dynamiteCard;
     }
 
-    public Deck addPlayToDynamiteCard(ArrayList<Card> cards){
+    public Deck usePowerUp(ArrayList<Card> cards){
         Deck d = new Deck();
         for(Card card: cards){
             if(card instanceof DynamiteCard) {
-                this.addPlayToDynamiteCard((DynamiteCard) card, 3);
+                this.usePowerUp((DynamiteCard) card);
             }
             d.addCard(card);
         }

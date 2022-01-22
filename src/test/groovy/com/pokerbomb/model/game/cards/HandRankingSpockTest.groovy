@@ -1,6 +1,6 @@
 package com.pokerbomb.model.game.cards
 
-
+import com.pokerbomb.model.game.deck.Deck
 import spock.lang.Specification
 
 class HandRankingSpockTest extends Specification {

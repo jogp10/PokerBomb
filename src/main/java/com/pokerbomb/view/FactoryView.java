@@ -4,7 +4,7 @@ import com.googlecode.lanterna.graphics.TextGraphics;
 import com.pokerbomb.model.Button;
 import com.pokerbomb.model.Shelf;
 import com.pokerbomb.model.game.cards.Card;
-import com.pokerbomb.model.game.cards.Deck;
+import com.pokerbomb.model.game.deck.Deck;
 import com.pokerbomb.model.game.goals.Goal;
 import com.pokerbomb.model.game.powerup.PowerUp;
 import com.pokerbomb.view.game.cards.CardView;

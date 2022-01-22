@@ -1,7 +1,6 @@
 package com.pokerbomb.model.game.powerup
 
 import com.pokerbomb.model.game.cards.Card
-import com.pokerbomb.model.game.cards.Deck
 import com.pokerbomb.model.game.cards.DynamiteCard
 import com.pokerbomb.model.game.cards.NormalCard
 import com.pokerbomb.model.game.cards.Rank
@@ -30,7 +29,7 @@ class DynamitePowerUpSpockTest extends Specification {
 
         when:
             int dynamiteSpecialAttribute = dynamiteCard.getSpecialAttribute()
-            boolean confirm =  dynamitePowerUp.addPlayToDynamiteCard(dynamiteCard, 2)
+            boolean confirm =  dynamitePowerUp.usePowerUp(dynamiteCard, 2)
 
         then:
             confirm
@@ -66,7 +65,7 @@ class DynamitePowerUpSpockTest extends Specification {
             cards.add(c5)
 
         when:
-        dynamitePowerUp.addPlayToDynamiteCard(cards)
+        dynamitePowerUp.usePowerUp(cards)
         then:
         cards.get(4).getSpecialAttribute()==8
     }

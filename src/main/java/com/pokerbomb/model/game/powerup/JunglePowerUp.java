@@ -1,8 +1,8 @@
 package com.pokerbomb.model.game.powerup;
 
 import com.pokerbomb.model.game.cards.Card;
-import com.pokerbomb.model.game.cards.Deck;
-import com.pokerbomb.model.game.cards.FrozenCard;
+import com.pokerbomb.model.game.cards.SpecialCard;
+import com.pokerbomb.model.game.deck.Deck;
 import com.pokerbomb.model.game.cards.JungleCard;
 
 import java.util.ArrayList;
@@ -32,7 +32,7 @@ public class JunglePowerUp implements PowerUp {
         numberOfPowerUp++;
     }
 
-    public Card removeLayerJungleCard(JungleCard jungleCard){
+    public Card usePowerUp(SpecialCard jungleCard){
         if(getNumberOfPowerUp()<0) {
             numberOfPowerUp=0;
             return jungleCard;
@@ -41,11 +41,11 @@ public class JunglePowerUp implements PowerUp {
         return jungleCard;
     }
 
-    public Deck removeLayerJungleCard(ArrayList<Card> cards){
+    public Deck usePowerUp(ArrayList<Card> cards){
         Deck d = new Deck();
         for(Card card: cards){
             if(card instanceof JungleCard) {
-                this.removeLayerJungleCard((JungleCard) card);
+                this.usePowerUp((JungleCard) card);
             }
             d.addCard(card);
         }

@@ -1,6 +1,10 @@
-package com.pokerbomb.model.game.cards
+package com.pokerbomb.model.game.deck
 
-
+import com.pokerbomb.model.game.cards.Card
+import com.pokerbomb.model.game.cards.NormalCard
+import com.pokerbomb.model.game.cards.Rank
+import com.pokerbomb.model.game.cards.Suit
+import com.pokerbomb.model.game.deck.Deck
 import spock.lang.Specification
 
 class DeckSpockTest extends Specification{

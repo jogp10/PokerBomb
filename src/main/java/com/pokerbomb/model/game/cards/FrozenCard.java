@@ -1,6 +1,6 @@
 package com.pokerbomb.model.game.cards;
 
-public class FrozenCard extends CardGeneric implements Card {
+public class FrozenCard extends CardGeneric implements Card, SpecialCard {
 
     public FrozenCard(Suit suit, Rank rank) {
         super(suit, rank);

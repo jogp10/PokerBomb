@@ -4,12 +4,13 @@ import com.pokerbomb.controller.CommandKey;
 import com.pokerbomb.controller.Controller;
 import com.pokerbomb.model.game.Game;
 import com.pokerbomb.model.game.cards.Card;
-import com.pokerbomb.model.game.cards.Deck;
+import com.pokerbomb.model.game.deck.Deck;
 import com.pokerbomb.model.game.cards.Hand;
 import com.pokerbomb.model.game.goals.Goal;
 import com.pokerbomb.model.game.powerup.DynamitePowerUp;
 import com.pokerbomb.model.game.powerup.FrozenPowerUp;
 import com.pokerbomb.model.game.powerup.JunglePowerUp;
+import com.pokerbomb.model.game.powerup.PowerUp;
 import com.pokerbomb.view.GameView;
 import com.pokerbomb.view.View;
 
@@ -40,70 +41,22 @@ public class GameState extends ControllerState<Game> {
         ControllerState<?> nextState = this;
         switch (commandKey.getCommandEnum()) {
             case UP:
-                if (gameModel.getSelectedP() != Game.PowerUpButton.NOT) {
-                    gameModel.deselectP();
-                }
-                else {
-                    gameModel.selectU();
-                }
+                Up();
                 break;
             case DOWN:
-                if (gameModel.getSelectedU() != Game.CombineButton.NOT) {
-                    gameModel.deselectU();
-                }
-                else {
-                    gameModel.selectP();
-                }
+                Down();
                 break;
             case RIGHT:
-                if ((gameModel.getSelectedU() == Game.CombineButton.NOT) && (gameModel.getSelectedP() == Game.PowerUpButton.NOT)) {
-                    gameModel.nextSelected();
-                }
-                else if (gameModel.getSelectedU() != Game.CombineButton.NOT) {
-                    gameModel.changeSelectedU();
-                }
-                else if (gameModel.getSelectedP() != Game.PowerUpButton.NOT) {
-                    gameModel.nextSelectedP();
-                }
+                Right();
                 break;
             case LEFT:
-                if ((gameModel.getSelectedU() == Game.CombineButton.NOT) && (gameModel.getSelectedP() == Game.PowerUpButton.NOT)) {
-                    gameModel.previousSelected();
-                }
-                else if ((gameModel.getSelectedU() != Game.CombineButton.NOT)) {
-                    gameModel.changeSelectedU();
-                }
-                else if (gameModel.getSelectedP() != Game.PowerUpButton.NOT) {
-                    gameModel.previousSelectedP();
-                }
+                Left();
                 break;
             case D1:
-                Deck newd1 = gameModel.getDeck_1();
-                if (newd1.getDeck().size() <= 4) {
-                    gameModel.moveToDeck(newd1);
-                    gameModel.setD1(newd1);
-                    Deck newg1 = gameModel.getGivenDeck();
-                    gameModel.removeFromDeck(newg1);
-                    gameModel.addNewCardToG();
-                    PlayWithoutCombo();
-
-                    String s = Hand.handRanking(newd1.getDeck());
-                    gameModel.setString_1(s);
-                }
+                DeckChoice(1);
                 break;
             case D2:
-                Deck newd2 = gameModel.getDeck_2();
-                if (newd2.getDeck().size() <= 4) {
-                    gameModel.moveToDeck(newd2);
-                    gameModel.setD2(newd2);
-                    Deck newg2 = gameModel.getGivenDeck();
-                    gameModel.removeFromDeck(newg2);
-                    gameModel.addNewCardToG();
-                    PlayWithoutCombo();
-
-                    String s = Hand.handRanking(newd2.getDeck());
-                    gameModel.setString_2(s);
-                }
+                DeckChoice(2);
                 break;
             case ENTER:
                 Hand hand = new Hand();
@@ -126,48 +79,13 @@ public class GameState extends ControllerState<Game> {
                     }
                 }
                 else if (gameModel.getSelectedP() == Game.PowerUpButton.P3) {
-                    FrozenPowerUp frozen = FrozenPowerUp.getInstance();
-                    frozen.addPowerUp();
-
-
-
-                    Deck newdeck1 = gameModel.getDeck_1();
-                    Deck newdeck2 = gameModel.getDeck_2();
-
-                    newdeck1 = frozen.Unfreeze(newdeck1.getDeck());
-                    newdeck2 = frozen.Unfreeze(newdeck2.getDeck());
-
-                    gameModel.setD1(newdeck1);
-                    gameModel.setD2(newdeck2);
+                    PowerUpSelect(3);
                 }
                 else if (gameModel.getSelectedP() == Game.PowerUpButton.P2) {
-                    DynamitePowerUp dynamite = DynamitePowerUp.getInstance();
-                    dynamite.addPowerUp();
-
-
-                    Deck newdeck1 = gameModel.getDeck_1();
-                    Deck newdeck2 = gameModel.getDeck_2();
-
-                    newdeck1 = dynamite.addPlayToDynamiteCard(newdeck1.getDeck());
-                    newdeck2 = dynamite.addPlayToDynamiteCard(newdeck2.getDeck());
-
-
-                    gameModel.setD1(newdeck1);
-                    gameModel.setD2(newdeck2);
+                    PowerUpSelect(2);
                 }
                 else if (gameModel.getSelectedP() == Game.PowerUpButton.P1) {
-                    JunglePowerUp jungle = JunglePowerUp.getInstance();
-                    jungle.addPowerUp();
-
-                    Deck newdeck1 = gameModel.getDeck_1();
-                    Deck newdeck2 = gameModel.getDeck_2();
-
-                    newdeck1 = jungle.removeLayerJungleCard(newdeck1.getDeck());
-                    newdeck2 = jungle.removeLayerJungleCard(newdeck2.getDeck());
-
-
-                    gameModel.setD1(newdeck1);
-                    gameModel.setD2(newdeck2);
+                    PowerUpSelect(1);
                 }
                 Collections.reverse(goals);
                 break;
@@ -198,5 +116,93 @@ public class GameState extends ControllerState<Game> {
         gameModel.setD1(d1);
         gameModel.setD2(d2);
     }
+
+    void Right(){
+        if ((gameModel.getSelectedU() == Game.CombineButton.NOT) && (gameModel.getSelectedP() == Game.PowerUpButton.NOT)) {
+            gameModel.nextSelected();
+        }
+        else if (gameModel.getSelectedU() != Game.CombineButton.NOT) {
+            gameModel.changeSelectedU();
+        }
+        else if (gameModel.getSelectedP() != Game.PowerUpButton.NOT) {
+            gameModel.nextSelectedP();
+        }
+    }
+
+    void Up(){
+        if (gameModel.getSelectedP() != Game.PowerUpButton.NOT) {
+            gameModel.deselectP();
+        }
+        else {
+            gameModel.selectU();
+        }
+    }
+
+    void Down(){
+        if (gameModel.getSelectedU() != Game.CombineButton.NOT) {
+            gameModel.deselectU();
+        }
+        else {
+            gameModel.selectP();
+        }
+    }
+
+    void Left(){
+        if ((gameModel.getSelectedU() == Game.CombineButton.NOT) && (gameModel.getSelectedP() == Game.PowerUpButton.NOT)) {
+            gameModel.previousSelected();
+        }
+        else if ((gameModel.getSelectedU() != Game.CombineButton.NOT)) {
+            gameModel.changeSelectedU();
+        }
+        else if (gameModel.getSelectedP() != Game.PowerUpButton.NOT) {
+            gameModel.previousSelectedP();
+        }
+    }
+
+    void DeckChoice(int i){
+        Deck newd;
+        if(i==1) newd = gameModel.getDeck_1();
+        else newd = gameModel.getDeck_2();
+
+        if (newd.getDeck().size() <= 4) {
+            gameModel.moveToDeck(newd);
+
+            if(i==1) gameModel.setD1(newd);
+            else gameModel.setD2(newd);
+
+            Deck newg = gameModel.getGivenDeck();
+
+            gameModel.removeFromDeck(newg);
+            gameModel.addNewCardToG();
+            PlayWithoutCombo();
+
+            String s = Hand.handRanking(newd.getDeck());
+            if(i==1) gameModel.setString_1(s);
+            else gameModel.setString_2(s);
+        }
+    }
+
+    void PowerUpSelect(int i){
+        PowerUp powerUp;
+        if(i==1) powerUp = JunglePowerUp.getInstance();
+        else if(i==2) powerUp = DynamitePowerUp.getInstance();
+        else powerUp = FrozenPowerUp.getInstance();
+
+        powerUp.addPowerUp();
+
+        Deck newdeck1 = gameModel.getDeck_1();
+        Deck newdeck2 = gameModel.getDeck_2();
+
+        newdeck1 = powerUp.usePowerUp(newdeck1.getDeck());
+        newdeck2 = powerUp.usePowerUp(newdeck2.getDeck());
+
+
+        gameModel.setD1(newdeck1);
+        gameModel.setD2(newdeck2);
+    }
+
+    void HandSelect(int i){
+    }
+
 
 }

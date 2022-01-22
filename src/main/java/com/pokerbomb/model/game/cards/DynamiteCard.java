@@ -1,6 +1,6 @@
 package com.pokerbomb.model.game.cards;
 
-public class DynamiteCard extends CardGeneric implements Card {
+public class DynamiteCard extends CardGeneric implements Card, SpecialCard {
 
     public DynamiteCard(Suit suit, Rank rank) {
         super(suit, rank);

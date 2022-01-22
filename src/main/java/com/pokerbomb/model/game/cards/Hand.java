@@ -1,6 +1,7 @@
 package com.pokerbomb.model.game.cards;
 
 import com.pokerbomb.model.Model;
+import com.pokerbomb.model.game.deck.Deck;
 
 import java.util.ArrayList;
 import java.util.HashSet;

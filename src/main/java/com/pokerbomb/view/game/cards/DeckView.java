@@ -2,6 +2,7 @@ package com.pokerbomb.view.game.cards;
 
 import com.googlecode.lanterna.graphics.TextGraphics;
 import com.pokerbomb.model.game.cards.*;
+import com.pokerbomb.model.game.deck.Deck;
 import com.pokerbomb.view.FactoryView;
 import com.pokerbomb.view.View;
 

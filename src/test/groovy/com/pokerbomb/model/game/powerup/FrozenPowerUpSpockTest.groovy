@@ -1,7 +1,6 @@
 package com.pokerbomb.model.game.powerup
 
 import com.pokerbomb.model.game.cards.Card
-import com.pokerbomb.model.game.cards.DynamiteCard
 import com.pokerbomb.model.game.cards.FrozenCard
 import com.pokerbomb.model.game.cards.NormalCard
 import com.pokerbomb.model.game.cards.Rank
@@ -27,7 +26,7 @@ class FrozenPowerUpSpockTest extends Specification{
             FrozenCard frozenCard = new FrozenCard(Suit.DIAMOND, Rank.QUEEN)
 
         when:
-            frozenPowerUp.Unfreeze(frozenCard)
+            frozenPowerUp.usePowerUp(frozenCard)
 
         then:
             frozenCard.getSpecialAttribute()==0;
@@ -64,7 +63,7 @@ class FrozenPowerUpSpockTest extends Specification{
         cards.add(c5)
 
         when:
-        frozenPowerUp.Unfreeze(cards)
+        frozenPowerUp.usePowerUp(cards)
         then:
         cards.get(4).getSpecialAttribute()==0
     }

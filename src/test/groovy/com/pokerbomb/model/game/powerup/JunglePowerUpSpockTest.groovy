@@ -1,7 +1,6 @@
 package com.pokerbomb.model.game.powerup
 
 import com.pokerbomb.model.game.cards.Card
-import com.pokerbomb.model.game.cards.DynamiteCard
 import com.pokerbomb.model.game.cards.JungleCard
 import com.pokerbomb.model.game.cards.NormalCard
 import com.pokerbomb.model.game.cards.Rank
@@ -33,7 +32,7 @@ class JunglePowerUpSpockTest extends Specification{
             jungleCard.notInACombo()
 
         when:
-            jungleCard = junglePowerUp.removeLayerJungleCard(jungleCard)
+            jungleCard = junglePowerUp.usePowerUp(jungleCard)
 
         then:
             !jungleCard.isActive()
@@ -66,7 +65,7 @@ class JunglePowerUpSpockTest extends Specification{
         cards.add(c5)
 
         when:
-        junglePowerUp.removeLayerJungleCard(cards)
+        junglePowerUp.usePowerUp(cards)
         then:
         cards.get(1).getSpecialAttribute()==0
     }

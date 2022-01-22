@@ -1,8 +1,8 @@
-package com.pokerbomb.model.game.cards;
+package com.pokerbomb.model.game.deck;
 
 import com.pokerbomb.model.Model;
+import com.pokerbomb.model.game.cards.*;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 

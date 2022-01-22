@@ -1,7 +1,6 @@
 package com.pokerbomb.model.game.goals
 
 import com.pokerbomb.model.game.cards.Card
-import com.pokerbomb.model.game.cards.Deck
 import com.pokerbomb.model.game.cards.Hand
 import com.pokerbomb.model.game.cards.NormalCard
 import com.pokerbomb.model.game.cards.Rank
