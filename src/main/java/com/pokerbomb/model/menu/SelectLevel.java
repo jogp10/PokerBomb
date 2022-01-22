@@ -1,7 +1,6 @@
 package com.pokerbomb.model.menu;
 
 import com.pokerbomb.model.Model;
-import com.pokerbomb.model.game.Game;
 
 public class SelectLevel implements Model {
 
