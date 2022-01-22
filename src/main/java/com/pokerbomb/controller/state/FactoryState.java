@@ -1,5 +1,6 @@
 package com.pokerbomb.controller.state;
 
+import com.pokerbomb.model.GameOver;
 import com.pokerbomb.model.game.Game;
 import com.pokerbomb.model.menu.Ins;
 import com.pokerbomb.model.menu.Menu;
@@ -32,5 +33,12 @@ public class FactoryState {
         SelectLevelView selectView = new SelectLevelView(selectModel);
         SelectLevelState selectState = new SelectLevelState(this, selectModel, selectView);
         return selectState;
+    }
+
+    public GameOverState genGameOverState() {
+        GameOver gameOver = new GameOver();
+        GameOverView gameOverView = new GameOverView(gameOver);
+        GameOverState gameOverState = new GameOverState(this, gameOver, gameOverView);
+        return gameOverState;
     }
 }
