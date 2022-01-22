@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class FrozenPowerUp implements PowerUp {
     private int numberOfPowerUp;
     private static FrozenPowerUp instance;
+    private static int price = 1;
 
     private FrozenPowerUp(){
         numberOfPowerUp=1;
@@ -46,5 +47,11 @@ public class FrozenPowerUp implements PowerUp {
         }
         this.numberOfPowerUp--;
         return d;
+    }
+
+    @Override
+    public int buy() {
+        price+=3;
+        return price-3;
     }
 }

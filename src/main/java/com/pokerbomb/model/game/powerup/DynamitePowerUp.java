@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class DynamitePowerUp implements PowerUp {
     private int numberOfPowerUp;
     private static DynamitePowerUp instance;
+    private static int price = 1;
 
     private DynamitePowerUp(){
         numberOfPowerUp=3;
@@ -48,5 +49,11 @@ public class DynamitePowerUp implements PowerUp {
         }
         this.numberOfPowerUp--;
         return d;
+    }
+
+    @Override
+    public int buy() {
+        price+=3;
+        return price-3;
     }
 }

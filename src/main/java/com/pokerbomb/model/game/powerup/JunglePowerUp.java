@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class JunglePowerUp implements PowerUp {
     private int numberOfPowerUp;
     private static JunglePowerUp instance;
+    private static int price = 1;
 
     private JunglePowerUp(){
         numberOfPowerUp=2;
@@ -51,5 +52,11 @@ public class JunglePowerUp implements PowerUp {
         }
         this.numberOfPowerUp--;
         return d;
+    }
+
+    @Override
+    public int buy() {
+        price+=3;
+        return price-3;
     }
 }

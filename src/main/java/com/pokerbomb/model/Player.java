@@ -4,14 +4,15 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class player {
+public class Player {
+    private static Player instance;
     String name;
     int coins;
     int level;
 
-    player(){
+    private Player(){
         try{
-            Scanner myReader = new Scanner(new File("src/main/resources/player.txt"));
+            Scanner myReader = new Scanner(new File("src/main/resources/Player.txt"));
             myReader.nextLine();
             name = myReader.nextLine();
             myReader.nextLine();
@@ -21,8 +22,15 @@ public class player {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
     }
 
+    public static Player getInstance(){
+        if(Player.instance == null){
+            Player.instance = new Player();
+        }
+        return Player.instance;
+    }
     public int getLevel() {
         return level;
     }
