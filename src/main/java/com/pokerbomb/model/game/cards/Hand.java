@@ -463,8 +463,8 @@ public class Hand implements Model {
         for(int i=0; i<hand.size(); i++) {
             Card c = hand.get(i);
             if (cardsInACombo.contains(i)) {
+                cardsPopped.addCard(c);
                 if (c.inACombo(1)) {
-                    cardsPopped.addCard(c);
                     continue;
                 }
             }

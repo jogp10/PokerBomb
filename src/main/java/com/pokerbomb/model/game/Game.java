@@ -5,6 +5,8 @@ import com.pokerbomb.model.Model;
 import com.pokerbomb.model.Shelf;
 import com.pokerbomb.model.game.cards.Card;
 import com.pokerbomb.model.game.cards.Deck;
+import com.pokerbomb.model.game.cards.EasyDeckStrategy;
+import com.pokerbomb.model.game.cards.HardDeckStrategy;
 import com.pokerbomb.model.game.powerup.DynamitePowerUp;
 import com.pokerbomb.model.game.powerup.FrozenPowerUp;
 import com.pokerbomb.model.game.powerup.JunglePowerUp;
@@ -57,8 +59,10 @@ public class Game implements Model {
     int gems;
 
     public Game(int l) {
-
         this.level = l;
+
+        if(level>4) cards.setDeckStrategy(new HardDeckStrategy());
+        else cards.setDeckStrategy(new EasyDeckStrategy());
 
        cards.createFullDeck();
        cards.shuffle();
