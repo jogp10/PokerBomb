@@ -55,31 +55,34 @@ public class CommandKey {
                 break;
             case Character:
                 this.key = key.getCharacter();
-                switch (this.key) {
-                    case 'q':
-                        this.command = COMMAND.QUIT;
-                        break;
-                    case 'w':
-                        this.command = COMMAND.UP;
-                        break;
-                    case 'a':
-                        this.command = COMMAND.LEFT;
-                        break;
-                    case 's':
-                        this.command = COMMAND.DOWN;
-                        break;
-                    case 'd':
-                        this.command = COMMAND.RIGHT;
-                        break;
-                    case '1':
-                        this.command = COMMAND.D1;
-                        break;
-                    case '2':
-                        this.command = COMMAND.D2;
-                        break;
-                }
+                Character();
         }
         return this;
+    }
+
+    void Character() {
+        switch (this.key) {
+            case 'q':
+                this.command = COMMAND.QUIT;
+                break;
+            case 'w':
+                this.command = COMMAND.UP;
+                break;
+            case 'a':
+                this.command = COMMAND.LEFT;
+                break;
+            case 's':
+                this.command = COMMAND.DOWN;
+                break;
+            case 'd':
+                this.command = COMMAND.RIGHT;
+                break;
+            case '1':
+                this.command = COMMAND.D1;
+                break;
+            case '2':
+                this.command = COMMAND.D2;
+        }
     }
 }
 

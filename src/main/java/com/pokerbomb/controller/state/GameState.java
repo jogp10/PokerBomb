@@ -59,30 +59,8 @@ public class GameState extends ControllerState<Game> {
                 DeckChoice(2);
                 break;
             case ENTER:
-                Hand hand = new Hand();
-                ArrayList<Goal> goals = gameModel.getLevels().get(gameModel.getLevel()-1).getGoals();
-                Collections.reverse(goals);
-                if (gameModel.getSelectedU() == Game.CombineButton.U1 || gameModel.getSelectedU() == Game.CombineButton.U2) {
-                    if (gameModel.getSelectedU() == Game.CombineButton.U1)
-                        HandSelect(1, hand);
-                    else HandSelect(2, hand);
-
-                    for (Goal goal : goals) {
-                        goal.increment(hand);
-                    }
-                }
-                else if (gameModel.getSelectedP() == Game.PowerUpButton.P3) {
-                    PowerUpSelect(3);
-                }
-                else if (gameModel.getSelectedP() == Game.PowerUpButton.P2) {
-                    PowerUpSelect(2);
-                }
-                else if (gameModel.getSelectedP() == Game.PowerUpButton.P1) {
-                    PowerUpSelect(1);
-                }
-                Collections.reverse(goals);
+                Enter();
                 break;
-
             case ESC:
                 nextState = factory.genMenuState(true);
                 break;
@@ -202,5 +180,35 @@ public class GameState extends ControllerState<Game> {
         gameModel.setString_1(s);
         s = Hand.handRanking(gameModel.getDeck_2().getDeck());
         gameModel.setString_2(s);
+    }
+
+    void Enter(){
+        Hand hand = new Hand();
+        ArrayList<Goal> goals = gameModel.getLevels().get(gameModel.getLevel()-1).getGoals();
+        Collections.reverse(goals);
+
+        if (gameModel.getSelectedU() == Game.CombineButton.U1) {
+            HandSelect(1, hand);
+            for (Goal goal : goals) {
+                goal.increment(hand);
+            }
+        }
+        else if(gameModel.getSelectedU() == Game.CombineButton.U2){
+            HandSelect(2, hand);
+
+            for (Goal goal : goals) {
+                goal.increment(hand);
+            }
+        }
+        else if (gameModel.getSelectedP() == Game.PowerUpButton.P3) {
+            PowerUpSelect(3);
+        }
+        else if (gameModel.getSelectedP() == Game.PowerUpButton.P2) {
+            PowerUpSelect(2);
+        }
+        else if (gameModel.getSelectedP() == Game.PowerUpButton.P1) {
+            PowerUpSelect(1);
+        }
+        Collections.reverse(goals);
     }
 }

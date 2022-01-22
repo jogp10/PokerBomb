@@ -59,9 +59,6 @@ public class ReadLevels {
                         case STRAIGHT:
                             goals.add(new RunRabbitRunGoal(type, quantity));
                             break;
-                        /*case SCORE:
-                            goals.add(new Goal(type, quantity));
-                            break;*/
                     }
                 }
                 levels.add(new Level(level, goals));
