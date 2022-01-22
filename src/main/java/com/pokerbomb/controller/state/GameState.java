@@ -62,18 +62,11 @@ public class GameState extends ControllerState<Game> {
                 Hand hand = new Hand();
                 ArrayList<Goal> goals = gameModel.getLevels().get(gameModel.getLevel()-1).getGoals();
                 Collections.reverse(goals);
-                if (gameModel.getSelectedU() == Game.CombineButton.U1) {
-                    gameModel.setD1(Hand.handConfirm(gameModel.getDeck_1().getDeck(), hand));
-                    String s = Hand.handRanking(gameModel.getDeck_1().getDeck());
-                    gameModel.setString_1(s);
-                    for (Goal goal : goals) {
-                        goal.increment(hand);
-                    }
-                }
-                else if (gameModel.getSelectedU() == Game.CombineButton.U2) {
-                    gameModel.setD2(Hand.handConfirm(gameModel.getDeck_2().getDeck(), hand));
-                    String s = Hand.handRanking(gameModel.getDeck_2().getDeck());
-                    gameModel.setString_2(s);
+                if (gameModel.getSelectedU() == Game.CombineButton.U1 || gameModel.getSelectedU() == Game.CombineButton.U2) {
+                    if (gameModel.getSelectedU() == Game.CombineButton.U1)
+                        HandSelect(1, hand);
+                    else HandSelect(2, hand);
+
                     for (Goal goal : goals) {
                         goal.increment(hand);
                     }
@@ -201,8 +194,13 @@ public class GameState extends ControllerState<Game> {
         gameModel.setD2(newdeck2);
     }
 
-    void HandSelect(int i){
+    void HandSelect(int i, Hand hand){
+        if(i==1) gameModel.setD1(Hand.handConfirm(gameModel.getDeck_1().getDeck(), hand));
+        else gameModel.setD2(Hand.handConfirm(gameModel.getDeck_2().getDeck(), hand));
+
+        String s = Hand.handRanking(gameModel.getDeck_1().getDeck());
+        gameModel.setString_1(s);
+        s = Hand.handRanking(gameModel.getDeck_2().getDeck());
+        gameModel.setString_2(s);
     }
-
-
 }
