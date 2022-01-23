@@ -35,6 +35,11 @@ public class JunglePowerUp implements PowerUp {
     }
 
     @Override
+    public int getPrice() {
+        return price;
+    }
+
+    @Override
     public void addPowerUp() {
         numberOfPowerUp++;
     }
@@ -67,4 +72,6 @@ public class JunglePowerUp implements PowerUp {
         price+=3;
         return price-3;
     }
+
+
 }

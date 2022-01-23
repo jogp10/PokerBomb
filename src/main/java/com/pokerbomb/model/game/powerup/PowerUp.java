@@ -12,6 +12,8 @@ public interface PowerUp extends Model {
     int getNumberOfPowerUp();
     void setNumberOfPowerUp(int i);
 
+    int getPrice();
+
     void addPowerUp();
 
     Card usePowerUp(SpecialCard card);

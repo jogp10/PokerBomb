@@ -33,6 +33,11 @@ public class FrozenPowerUp implements PowerUp {
         numberOfPowerUp=i;
     }
 
+    @Override
+    public int getPrice() {
+        return price;
+    }
+
     public void addPowerUp(){
         numberOfPowerUp++;
     }

@@ -35,6 +35,11 @@ public class DynamitePowerUp implements PowerUp {
     }
 
     @Override
+    public int getPrice() {
+        return price;
+    }
+
+    @Override
     public void addPowerUp() {
         numberOfPowerUp++;
     }
