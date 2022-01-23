@@ -1,5 +1,6 @@
 package com.pokerbomb.model.game.powerup;
 
+import com.pokerbomb.model.Player;
 import com.pokerbomb.model.game.cards.Card;
 import com.pokerbomb.model.game.cards.SpecialCard;
 import com.pokerbomb.model.game.deck.Deck;
@@ -27,6 +28,11 @@ public class FrozenPowerUp implements PowerUp {
         return numberOfPowerUp;
     }
 
+    @Override
+    public void setNumberOfPowerUp(int i) {
+        numberOfPowerUp=i;
+    }
+
     public void addPowerUp(){
         numberOfPowerUp++;
     }
@@ -51,6 +57,8 @@ public class FrozenPowerUp implements PowerUp {
 
     @Override
     public int buy() {
+        if(!Player.getInstance().buy(price)) return 0;
+        addPowerUp();
         price+=3;
         return price-3;
     }

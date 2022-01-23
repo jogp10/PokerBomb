@@ -1,5 +1,6 @@
 package com.pokerbomb.model.game.powerup;
 
+import com.pokerbomb.model.Player;
 import com.pokerbomb.model.game.cards.Card;
 import com.pokerbomb.model.game.cards.SpecialCard;
 import com.pokerbomb.model.game.deck.Deck;
@@ -29,6 +30,11 @@ public class DynamitePowerUp implements PowerUp {
     }
 
     @Override
+    public void setNumberOfPowerUp(int i) {
+        numberOfPowerUp=i;
+    }
+
+    @Override
     public void addPowerUp() {
         numberOfPowerUp++;
     }
@@ -53,6 +59,8 @@ public class DynamitePowerUp implements PowerUp {
 
     @Override
     public int buy() {
+        if(!Player.getInstance().buy(price)) return 0;
+        addPowerUp();
         price+=3;
         return price-3;
     }

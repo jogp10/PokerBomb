@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public interface PowerUp extends Model {
 
     int getNumberOfPowerUp();
+    void setNumberOfPowerUp(int i);
 
     void addPowerUp();
 

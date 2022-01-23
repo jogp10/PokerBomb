@@ -1,6 +1,12 @@
-name
+Name
 
-level
+Level
 1
-coins
+Coins
 10
+Jungle
+2
+Dynamite
+3
+Frozen
+1
