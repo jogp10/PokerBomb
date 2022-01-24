@@ -6,7 +6,7 @@ public class CardCollectorGoal extends Goal implements GoalIncrement {
     public CardCollectorGoal(Type type, int totalQuantity) {
         super(type, totalQuantity);
         this.name = "CARD COLLECTOR";
-        this.description = String.format("Collect %s cards of any kind", totalQuantity);
+        this.description = String.format("COLLECT %s CARDS OF ANY KIND", totalQuantity);
     }
 
     @Override

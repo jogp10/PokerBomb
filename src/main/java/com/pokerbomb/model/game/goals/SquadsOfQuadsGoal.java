@@ -7,7 +7,7 @@ public class SquadsOfQuadsGoal extends Goal implements GoalIncrement {
     public SquadsOfQuadsGoal(Type type, int totalQuantity) {
         super(type, totalQuantity);
         this.name = "SQUADS OF QUADS";
-        this.description = String.format("Collect %s \"four of a kind\"", totalQuantity);
+        this.description = String.format("COLLECT %s \"FOUR OF A KIND\"", totalQuantity);
     }
 
     @Override

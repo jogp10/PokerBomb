@@ -8,7 +8,7 @@ public class DiamondMinerGoal extends Goal implements GoalIncrement {
     public DiamondMinerGoal(Type type, int totalQuantity) {
         super(type, totalQuantity);
         this.name = "DIAMOND MINER";
-        this.description = String.format("Collect %s diamond cards", totalQuantity);
+        this.description = String.format("COLLECT %s DIAMOND CARDS", totalQuantity);
     }
 
     @Override

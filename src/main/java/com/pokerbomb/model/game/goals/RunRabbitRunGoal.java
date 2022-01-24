@@ -7,7 +7,7 @@ public class RunRabbitRunGoal extends Goal implements GoalIncrement {
     public RunRabbitRunGoal(Type type, int totalQuantity) {
         super(type, totalQuantity);
         this.name = "RUN RABBIT RUN!";
-        this.description = String.format("Collect %s \"straight\"", totalQuantity);
+        this.description = String.format("COLLECT %s \"STRAIGHT\"", totalQuantity);
     }
 
     @Override

@@ -6,7 +6,7 @@ public class SeeingDoubleGoal extends Goal implements GoalIncrement {
     public SeeingDoubleGoal(Type type, int totalQuantity) {
         super(type, totalQuantity);
         this.name = "SEEING DOUBLE";
-        this.description = String.format("Collect %s \"pairs\"", totalQuantity);
+        this.description = String.format("COLLECT %s \"PAIRS\"", totalQuantity);
     }
 
     @Override

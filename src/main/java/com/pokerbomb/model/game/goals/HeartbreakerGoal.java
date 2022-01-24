@@ -8,7 +8,7 @@ public class HeartbreakerGoal extends Goal implements GoalIncrement {
     public HeartbreakerGoal(Type type, int totalQuantity) {
         super(type, totalQuantity);
         this.name = "HEARTBREAKER!";
-        this.description = String.format("Collect %s heart cards", totalQuantity);
+        this.description = String.format("COLLECT %s HEART CARDS", totalQuantity);
     }
 
     @Override

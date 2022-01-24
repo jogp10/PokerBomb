@@ -6,7 +6,7 @@ public class TheHouseIsFullGoal extends Goal implements GoalIncrement{
     public TheHouseIsFullGoal(Type type, int totalQuantity) {
         super(type, totalQuantity);
         this.name = "THE HOUSE IS FULL!";
-        this.description = String.format("Collect %s \"full houses\"", totalQuantity);
+        this.description = String.format("COLLECT %s \"FULL HOUSES\"", totalQuantity);
     }
 
     @Override

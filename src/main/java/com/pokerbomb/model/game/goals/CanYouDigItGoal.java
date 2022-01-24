@@ -8,7 +8,7 @@ public class CanYouDigItGoal extends Goal implements GoalIncrement {
     public CanYouDigItGoal(Type type, int totalQuantity) {
         super(type, totalQuantity);
         this.name = "CAN YOU DIG IT?";
-        this.description = String.format("Collect %s spade cards", totalQuantity);
+        this.description = String.format("COLLECT %s SPADE CARDS", totalQuantity);
     }
 
     @Override

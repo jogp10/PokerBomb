@@ -8,7 +8,7 @@ public class InDaClubGoal extends Goal implements GoalIncrement {
     public InDaClubGoal(Type type, int totalQuantity) {
         super(type, totalQuantity);
         this.name = "IN DA CLUB";
-        this.description = String.format("Collect %s hands of any kind", totalQuantity);
+        this.description = String.format("COLLECT %s CLUB CARDS", totalQuantity);
     }
 
     @Override

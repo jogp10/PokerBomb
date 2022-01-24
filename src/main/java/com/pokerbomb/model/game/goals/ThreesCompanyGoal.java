@@ -7,7 +7,7 @@ public class ThreesCompanyGoal extends Goal implements GoalIncrement {
     public ThreesCompanyGoal(Type type, int totalQuantity) {
         super(type, totalQuantity);
         this.name = "THREE'S COMPANY";
-        this.description = String.format("Collect %s \"three of a kind\"", totalQuantity);
+        this.description = String.format("COLLECT %s \"THREE OF A KIND\"", totalQuantity);
     }
 
     @Override
