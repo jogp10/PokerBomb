@@ -67,4 +67,9 @@ public class FrozenPowerUp implements PowerUp {
         price+=3;
         return price-3;
     }
+
+    @Override
+    public void setPrice(int i) {
+        price = i;
+    }
 }
