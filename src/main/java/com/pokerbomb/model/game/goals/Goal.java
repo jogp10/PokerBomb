@@ -41,4 +41,12 @@ public abstract class Goal implements Model {
     }
 
     public abstract void increment(Hand hand);
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }
