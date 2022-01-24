@@ -4,7 +4,6 @@ package com.pokerbomb;
 import com.pokerbomb.controller.Controller;
 import com.pokerbomb.controller.state.FactoryState;
 
-
 import java.io.IOException;
 
 public class Application {

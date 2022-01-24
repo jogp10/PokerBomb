@@ -73,5 +73,10 @@ public class JunglePowerUp implements PowerUp {
         return price-3;
     }
 
+    @Override
+    public void setPrice(int i) {
+        price = i;
+    }
+
 
 }

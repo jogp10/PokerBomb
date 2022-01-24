@@ -28,12 +28,15 @@ public class Player implements Model {
             myReader.nextLine();
             JunglePowerUp junglePowerUp = JunglePowerUp.getInstance();
             junglePowerUp.setNumberOfPowerUp(Integer.parseInt(myReader.nextLine()));
+            junglePowerUp.setPrice(Integer.parseInt(myReader.nextLine()));
             myReader.nextLine();
             DynamitePowerUp dynamitePowerUp = DynamitePowerUp.getInstance();
             dynamitePowerUp.setNumberOfPowerUp(Integer.parseInt(myReader.nextLine()));
+            dynamitePowerUp.setPrice(Integer.parseInt(myReader.nextLine()));
             myReader.nextLine();
             FrozenPowerUp frozenPowerUp = FrozenPowerUp.getInstance();
             frozenPowerUp.setNumberOfPowerUp(Integer.parseInt(myReader.nextLine()));
+            frozenPowerUp.setPrice(Integer.parseInt(myReader.nextLine()));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -81,10 +84,16 @@ public class Player implements Model {
             fileWriter.write(Integer.toString(Player.getInstance().getCoins()));
             fileWriter.write("\nJungle\n");
             fileWriter.write(Integer.toString(JunglePowerUp.getInstance().getNumberOfPowerUp()));
+            fileWriter.write("\n");
+            fileWriter.write(Integer.toString(JunglePowerUp.getInstance().getPrice()));
             fileWriter.write("\nDynamite\n");
             fileWriter.write(Integer.toString(DynamitePowerUp.getInstance().getNumberOfPowerUp()));
+            fileWriter.write("\n");
+            fileWriter.write(Integer.toString(DynamitePowerUp.getInstance().getPrice()));
             fileWriter.write("\nFrozen\n");
             fileWriter.write(Integer.toString(FrozenPowerUp.getInstance().getNumberOfPowerUp()));
+            fileWriter.write("\n");
+            fileWriter.write(Integer.toString(FrozenPowerUp.getInstance().getPrice()));
             fileWriter.close();
         } catch (IOException e) {}
     }

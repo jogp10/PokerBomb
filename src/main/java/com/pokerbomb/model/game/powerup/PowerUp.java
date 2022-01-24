@@ -20,4 +20,6 @@ public interface PowerUp extends Model {
     Deck usePowerUp(ArrayList<Card> cards);
 
     int buy();
+
+    void setPrice(int i);
 }
