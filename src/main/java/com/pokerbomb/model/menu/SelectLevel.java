@@ -1,12 +1,15 @@
 package com.pokerbomb.model.menu;
 
 import com.pokerbomb.model.Model;
-import com.pokerbomb.model.game.Game;
+import com.pokerbomb.model.game.ReadLevels;
+
+import java.util.ArrayList;
 
 public class SelectLevel implements Model {
 
     public enum Level {L1, L2, L3, L4, L5, L6,L7, L8, L9, L10}
     SelectLevel.Level[] opt = SelectLevel.Level.values();
+    ArrayList<com.pokerbomb.model.game.Level> levels = ReadLevels.readLevels("src/main/resources/Levels.txt");
 
     Level selected;
     int selectedi;
@@ -56,6 +59,10 @@ public class SelectLevel implements Model {
         }
 
         return selected;
+    }
+
+    public ArrayList<com.pokerbomb.model.game.Level> getLevels() {
+        return levels;
     }
 
     public void setSelected(SelectLevel.Level selected) {
