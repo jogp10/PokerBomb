@@ -3,10 +3,13 @@ Name
 Level
 1
 Coins
-5
+10
 Jungle
 5
+1
 Dynamite
 4
+1
 Frozen
 5
+1
