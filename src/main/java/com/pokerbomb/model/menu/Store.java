@@ -1,8 +1,19 @@
 package com.pokerbomb.model.menu;
 
 import com.pokerbomb.model.Model;
+import com.pokerbomb.model.Player;
+import com.pokerbomb.model.game.powerup.DynamitePowerUp;
+import com.pokerbomb.model.game.powerup.FrozenPowerUp;
+import com.pokerbomb.model.game.powerup.JunglePowerUp;
+import com.pokerbomb.model.game.powerup.PowerUp;
 
 public class Store implements Model {
+
+    Player player = Player.getInstance();
+
+    PowerUp jungle = JunglePowerUp.getInstance();
+    PowerUp dynamite = DynamitePowerUp.getInstance();
+    PowerUp defreeze = FrozenPowerUp.getInstance();
 
     public enum Option {JUNGLE, DYNAMITE, DEFREEZE, EXIT}
     public String[] optString = {"BUY JUNGLE POWERUP", "BUY DYNAMITE POWERUP", "BUY DEFREEZE POWERUP", "EXIT"};
@@ -52,4 +63,22 @@ public class Store implements Model {
         int position = getPosElem(storeOption);
         return optString[position];
     }
+
+    public int getPlayerCoins() {
+        return player.getCoins();
+    }
+
+    public int getJunglePrice() {
+        return jungle.getPrice();
+    }
+
+    public int getDynamitePrice() {
+        return dynamite.getPrice();
+    }
+
+    public int getDefreezePrice() {
+        return defreeze.getPrice();
+    }
+
+
 }

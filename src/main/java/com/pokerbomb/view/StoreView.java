@@ -33,9 +33,9 @@ public class StoreView extends View <Store>{
     }
 
     public void drawOptions() {
-        drawString("#00FF00", getStringLine(model.getPosElem(JUNGLE)), model.enumToString(JUNGLE));
-        drawString("#FF0000", getStringLine(model.getPosElem(DYNAMITE)), model.enumToString(DYNAMITE));
-        drawString("#87CEFA", getStringLine(model.getPosElem(DEFREEZE)), model.enumToString(DEFREEZE));
+        drawString("#00FF00", 13, model.enumToString(JUNGLE));
+        drawString("#FF0000", 15, model.enumToString(DYNAMITE));
+        drawString("#87CEFA", 17, model.enumToString(DEFREEZE));
         drawString("#FF0000", 45, model.enumToString(EXIT));
     }
 
@@ -46,13 +46,13 @@ public class StoreView extends View <Store>{
 
         switch (selected) {
             case JUNGLE:
-                borderView.draw(18, 9);
+                borderView.draw(18, 12);
                 break;
             case DYNAMITE:
-                borderView.draw(18, 11);
+                borderView.draw(18, 14);
                 break;
             case DEFREEZE:
-                borderView.draw(18, 13);
+                borderView.draw(18, 16);
                 break;
             case EXIT:
                 borderView.draw(18, 44);
@@ -62,6 +62,34 @@ public class StoreView extends View <Store>{
 
         }
 
+    }
+
+    public void drawPlayerCoins() {
+        int coins = model.getPlayerCoins();
+        String coinsstr = "YOUR COINS: " + Integer.toString(coins);
+        graphics.setForegroundColor(TextColor.Factory.fromString("#FFFF00"));
+
+        graphics.putString(getCol(coinsstr), 9, coinsstr, BOLD);
+    }
+
+    public void drawPowerupPrices() {
+        int jungle = model.getJunglePrice();
+        int dynamite = model.getDynamitePrice();
+        int defreeze = model.getDefreezePrice();
+        String sjungle = "b " + Integer.toString(jungle) + " COINS";
+        String sdynamite = "a " + Integer.toString(dynamite) + " COINS";
+        String sdefreeze = "c " + Integer.toString(defreeze) + " COINS";
+        String prices = "-----PRICES-----";
+
+        graphics.setForegroundColor(TextColor.Factory.fromString("#FFFF00"));
+        graphics.putString(getCol(prices), 24, prices);
+
+        graphics.setForegroundColor(TextColor.Factory.fromString("#00FF00"));
+        graphics.putString(getCol(sjungle), 28, sjungle);
+        graphics.setForegroundColor(TextColor.Factory.fromString("#FF0000"));
+        graphics.putString(getCol(sdynamite), 30, sdynamite);
+        graphics.setForegroundColor(TextColor.Factory.fromString("#87CEFA"));
+        graphics.putString(getCol(sdefreeze), 32, sdefreeze);
     }
 
     @Override
@@ -74,6 +102,8 @@ public class StoreView extends View <Store>{
         drawTitle();
         drawOptions();
         drawSelectedBorder();
+        drawPlayerCoins();
+        drawPowerupPrices();
 
         refresh();
     }
