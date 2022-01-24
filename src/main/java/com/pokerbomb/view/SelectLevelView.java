@@ -1,8 +1,7 @@
 package com.pokerbomb.view;
 
 import com.googlecode.lanterna.TextColor;
-import com.pokerbomb.model.menu.Ins;
-import com.pokerbomb.model.menu.Menu;
+import com.pokerbomb.model.game.goals.Goal;
 import com.pokerbomb.model.menu.SelectLevel;
 
 import java.io.IOException;
@@ -31,39 +30,58 @@ public class SelectLevelView extends View<SelectLevel> {
         graphics.putString(getCol(s3), 4, s3, BOLD);
     }
 
+    public void drawLevelGoals(int level) {
+        int i = 0;
+        for (Goal goal : model.getLevels().get(level).getGoals()) {
+            drawString("#D3FFFF", 50+i, goal.getName());
+            drawString("#FFFFFF",51+i, goal.getDescription());
+            i += 3;
+        }
+    }
+
     public void drawSelectedBorder() {
         SelectLevel.Level selected = model.getSelected();
         graphics.setForegroundColor(TextColor.Factory.fromString("#FFFFFF"));
         switch (selected) {
             case L1:
                 graphics.putString(16,9, "->");
+                drawLevelGoals(0);
                 break;
             case L2:
                 graphics.putString(16,13, "->");
+                drawLevelGoals(1);
                 break;
             case L3:
                 graphics.putString(16,17, "->");
+                drawLevelGoals(2);
                 break;
             case L4:
                 graphics.putString(16,21, "->");
+                drawLevelGoals(3);
                 break;
             case L5:
                 graphics.putString(16,25, "->");
+                drawLevelGoals(4);
                 break;
             case L6:
                 graphics.putString(16,29, "->");
+                drawLevelGoals(5);
                 break;
             case L7:
                 graphics.putString(16,33, "->");
+                drawLevelGoals(6);
                 break;
             case L8:
                 graphics.putString(16,37, "->");
+                drawLevelGoals(7);
                 break;
             case L9:
                 graphics.putString(16,41, "->");
+                drawLevelGoals(8);
                 break;
             case L10:
                 graphics.putString(16,45, "->");
+                drawLevelGoals(9);
                 break;
         }
     }
@@ -83,6 +101,8 @@ public class SelectLevelView extends View<SelectLevel> {
         drawString("#f2e744", 37, "LEVEL 8");
         drawString("#f2e744", 41, "LEVEL 9");
         drawString("#f2e744", 45, "LEVEL 10");
+
+        drawString("#FEDEDC", 48, "LEVEL GOALS:");
 
         drawSelectedBorder();
 
