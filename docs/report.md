@@ -29,6 +29,7 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 ## Design Patterns
 
 ##MVC
+
 **Problem in context**:
 It is important to separate the data, interface and control of the game to have a more code reusability and to make the code more organized and easy to implement.
 
