@@ -28,12 +28,26 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 
 ## Design Patterns
 
-**MVC**
-## Implementation:
-We implemented the Model, View, Controller design pattern in the vast majority of our code. We have classes which their purpose is to store data (model), classes to represent the interface to the user (view) and
-classes 
-- **State** - We started implementing the State design pattern for the Menu and Instructions. We will also implement a state which represents that a game is taking place and another that represents that the user is in the store.
-- **Factory Method** - We started implementing the Factory Method design pattern for the Cards, we expect to use it along our project more times.
+##MVC
+**Problem in context:**
+It is important to separate the data, interface and control of the game to have a more code reusability and to make the code more organized and easy to implement.
+
+**The pattern:**
+This design pattern is used to separate all the code in three elements(Model, View and Control). The Model does not have dependencies, the View depends on the Model, and the Controller depends on both the Viewer and Model.
+
+**Implementation:**
+The main directory of our project is sub-divided into three different directories for each of the pattern's components: Model, View and Controller.
+<p align="center" justify="center">
+  <img src="screenshots/MVC.png" width="334" height="227" title="MVC" alt=""/>
+</p>
+<p align="center">
+  <b><i>Fig . MVC Pattern</i></b>
+</p>
+**Consequences:**
+- Related actions are grouped together so the code is more organized. 
+- The front-end and back-end can be done simultaneously. 
+- The program becomes easier to modify because all three elements are separated from each other.
+
 
 ## Testing
 
