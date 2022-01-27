@@ -42,6 +42,4 @@ public class GameOverState extends ControllerState<GameOver>{
         return goToState(nextState);
     }
 
-
-
 }
