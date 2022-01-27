@@ -51,11 +51,12 @@ public class FrozenPowerUp implements PowerUp {
     public Deck usePowerUp(ArrayList<Card> cards){
         Deck d = new Deck();
         for(Card card: cards){
-            if(card instanceof FrozenCard) {
+            if(card instanceof FrozenCard && getNumberOfPowerUp()>0) {
                 this.usePowerUp((FrozenCard) card);
             }
             d.addCard(card);
         }
+        if(getNumberOfPowerUp()<1) return d;
         this.numberOfPowerUp--;
         return d;
     }

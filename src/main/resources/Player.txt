@@ -5,11 +5,11 @@ Level
 Coins
 10
 Jungle
-5
-1
-Dynamite
 4
 1
+Dynamite
+3
+1
 Frozen
-5
+1
 1

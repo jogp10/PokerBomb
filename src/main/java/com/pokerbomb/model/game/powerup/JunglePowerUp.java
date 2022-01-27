@@ -9,7 +9,7 @@ import com.pokerbomb.model.game.cards.JungleCard;
 import java.util.ArrayList;
 
 public class JunglePowerUp implements PowerUp {
-    private static int numberOfPowerUp;
+    private int numberOfPowerUp;
     private static JunglePowerUp instance;
     private static int price = 1;
 
@@ -56,18 +56,20 @@ public class JunglePowerUp implements PowerUp {
     public Deck usePowerUp(ArrayList<Card> cards){
         Deck d = new Deck();
         for(Card card: cards){
-            if(card instanceof JungleCard) {
+            if(card instanceof JungleCard && getNumberOfPowerUp()>0) {
                 this.usePowerUp((JungleCard) card);
             }
             d.addCard(card);
         }
-        this.numberOfPowerUp--;
+        if(getNumberOfPowerUp()<1) return d;
+        numberOfPowerUp--;
         return d;
     }
 
     @Override
     public int buy() {
         if(!Player.getInstance().buy(price)) return 0;
+
         addPowerUp();
         price+=3;
         return price-3;

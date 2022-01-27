@@ -53,11 +53,12 @@ public class DynamitePowerUp implements PowerUp {
     public Deck usePowerUp(ArrayList<Card> cards){
         Deck d = new Deck();
         for(Card card: cards){
-            if(card instanceof DynamiteCard) {
+            if(card instanceof DynamiteCard && getNumberOfPowerUp()>0) {
                 this.usePowerUp((DynamiteCard) card);
             }
             d.addCard(card);
         }
+        if(getNumberOfPowerUp()<1) return d;
         this.numberOfPowerUp--;
         return d;
     }
