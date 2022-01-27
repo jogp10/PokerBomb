@@ -51,6 +51,42 @@ The main directory of our project is sub-divided into three different directorie
 - The program becomes easier to modify because all three elements are separated from each other.
 
 
+### Singleton
+
+#### Problem in context:
+We wanted to make sure that, during the execution of the game, all of the three PowerUps only have a single instance, so that the player can buy them in the store, use them, and the number of powerups will always be updated globally.
+The player must also be a single instance, in order to manage its coins and interaction with the game effectively.
+
+#### The pattern:
+Just like a global variable, the Singleton pattern grants access to some object from anywhere in the program. However, it also protects that instance from being overwritten by other code.
+As our code has access to the Singleton class, it is able to call the Singleton’s static method. So whenever that method is called, the same object is always returned.
+
+#### Implementation:
+Our "Player" and "PowerUp" classes both implement the Singleton pattern.
+<p align="center" justify="center">
+  <img src="screenshots/Singleton.png" width="430" height="144" title="MVC" alt=""/>
+</p>
+<p align="center">
+  <b><i>Fig . Singleton Pattern</i></b>
+</p>
+
+These classes can be found in the following files:
+- [DynamitePowerUp](../src/main/java/com/pokerbomb/model/game/powerup/DynamitePowerUp.java)
+- [FrozenPowerUp](../src/main/java/com/pokerbomb/model/game/powerup/FrozenPowerUp.java)
+- [JunglePowerUp](../src/main/java/com/pokerbomb/model/game/powerup/JunglePowerUp.java)
+- [Player](../src/main/java/com/pokerbomb/model/Player.java)
+
+
+#### Consequences:
+- We can be sure that the class has only a single instance.
+- We gain a global access point to that instance.
+- The singleton object is initialized only when it’s requested for the first time.
+
+
+
+
+
+
 ## Testing
 
 ### Screenshot of coverage report
