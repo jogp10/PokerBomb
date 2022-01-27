@@ -39,6 +39,9 @@ public class GameState extends ControllerState<Game> {
     public ControllerState<?> execute(Controller controller, CommandKey commandKey) throws IOException {
         CommandKey command = null;
         ControllerState<?> nextState = this;
+        if ((gameModel.getDeck_1().getDeck().size() >=5) && (gameModel.getDeck_2().getDeck().size() >=5) && (Hand.handRanking(gameModel.getDeck_1().getDeck()).equals("")) && (Hand.handRanking(gameModel.getDeck_2().getDeck()).equals(""))) {
+            nextState = factory.genGameOverState();
+        }
         switch (commandKey.getCommandEnum()) {
             case UP:
                 Up();

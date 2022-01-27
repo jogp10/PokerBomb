@@ -3,10 +3,10 @@ Name
 Level
 1
 Coins
-10
+9
 Jungle
-5
-1
+6
+4
 Dynamite
 4
 1

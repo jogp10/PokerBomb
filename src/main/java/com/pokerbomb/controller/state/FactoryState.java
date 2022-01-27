@@ -1,6 +1,7 @@
 package com.pokerbomb.controller.state;
 
 import com.pokerbomb.model.GameOver;
+import com.pokerbomb.model.GameWin;
 import com.pokerbomb.model.game.Game;
 import com.pokerbomb.model.menu.Ins;
 import com.pokerbomb.model.menu.Menu;
@@ -48,5 +49,12 @@ public class FactoryState {
         StoreView storeView = new StoreView(store);
         StoreState storeState = new StoreState(this, store, storeView);
         return storeState;
+    }
+
+    public GameWinState genGameWinState() {
+        GameWin gameWin = new GameWin();
+        GameWinView gameWinView = new GameWinView(gameWin);
+        GameWinState gameWinState = new GameWinState(this, gameWin, gameWinView);
+        return gameWinState;
     }
 }
