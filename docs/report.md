@@ -33,7 +33,7 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 #### Problem in context:
 It is important to separate the data, interface and control of the game to have a more code reusability and to make the code more organized and easy to implement.
 
-#### The pattern**:
+#### The pattern:
 This design pattern is used to separate all the code in three elements(Model, View and Control). The Model does not have dependencies, the View depends on the Model, and the Controller depends on both the Viewer and Model.
 
 #### Implementation:
