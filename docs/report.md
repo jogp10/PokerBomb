@@ -29,23 +29,76 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 # Design Patterns
 
 ##**MVC**
-### Implementation:
+#### Implementation:
 We implemented the Model, View, Controller design pattern in the vast majority of our code. We have classes which their purpose is to store data (model), classes to represent the interface to the user (view) and
 classes 
 - **State** - We started implementing the State design pattern for the Menu and Instructions. We will also implement a state which represents that a game is taking place and another that represents that the user is in the store.
 - **Factory Method** - We started implementing the Factory Method design pattern for the Cards, we expect to use it along our project more times.
 
+
+##**Abstract Factory**
+#### Problem in a Context:
+We create
+
+#### The Pattern:
+Abstract Factory is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
+
+#### Implementation:
+<p align="center" justify="center">
+  <img src="screenshots/StrategyPattern.png" width="316" height="298" title="Mutation Test" alt=""/>
+</p>
+<p align="center">
+  <b><i>Fig 4. Strategy Pattern screenshot</i></b>
+</p>
+
+These classes can be found in the following file:
+- [Deck](../src/main/java/com/pokerbomb/model/game/deck/)
+- [DeckStrategy](../src/main/java/com/pokerbomb/model/game/deck/DeckStrategy.java)
+- [EasyDeckStrategy](../src/main/java/com/pokerbomb/model/game/deck/EasyDeckStrategy.java)
+- [HardDeckStrategy](../src/main/java/com/pokerbomb/model/game/deck/HardDeckStrategy.java)
+
+#### Consequences:
+- The code may become more complicated than it should be, since a lot of new interfaces and classes are introduced along with the pattern.
+
+
+##**Strategy Pattern**
+#### Problem in a Context:
+Aiming for a way to change difficulty of the levels. We generate our decks with probabilities for each special card. This implementation
+makes it possible to not only create this two difficulties but in the future implement more without ease.
+
+#### The Pattern:
+Strategy is a behavioral design pattern that lets you define a family of algorithms, put each of them into a separate class, and make their objects interchangeable.
+
+#### Implementation:
+<p align="center" justify="center">
+  <img src="screenshots/StrategyPattern.png" width="316" height="298" title="Mutation Test" alt=""/>
+</p>
+<p align="center">
+  <b><i>Fig 4. Strategy Pattern screenshot</i></b>
+</p>
+
+These classes can be found in the following file:
+- [Deck](../src/main/java/com/pokerbomb/model/game/deck/Deck.java)
+- [DeckStrategy](../src/main/java/com/pokerbomb/model/game/deck/DeckStrategy.java)
+- [EasyDeckStrategy](../src/main/java/com/pokerbomb/model/game/deck/EasyDeckStrategy.java)
+- [HardDeckStrategy](../src/main/java/com/pokerbomb/model/game/deck/HardDeckStrategy.java)
+
+#### Consequences:
+- Clients must be aware of the differences between strategies to be able to select a proper one.
+
+
 ## Testing
 
-### Screenshot of coverage report
+#### Screenshot of coverage report
 <p align="center" justify="center">
   <img src="screenshots/TestsCoverage.png" width="981" height="227" title="Test Coverage" alt=""/>
 </p>
 <p align="center">
-  <b><i>Fig 6. Code coverage screenshot</i></b>
+  <b><i>Fig 5. Code coverage screenshot</i></b>
 </p>
 
-### Screenshot of mutation testing report
+#### Screenshot of mutation testing report
+[Mutation tests](../build/reports/pitest/202201161841/index.html)
 <p align="center" justify="center">
   <img src="screenshots/MutationTesting.png" width="664" height="176" title="Mutation Test" alt=""/>
 </p>
@@ -53,3 +106,4 @@ classes
   <b><i>Fig 6. Mutation Test screenshot</i></b>
 </p>
 
+## Self-evaluation
