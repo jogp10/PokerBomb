@@ -26,10 +26,10 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 - **Seasons** - A season is determined by the number of levels passed and for each new season unlocks upgrades. New power-ups will be added to the game, or a free gift may be given to the player, like a money boost or a free power-up.
 - **Build your own level** - We invite you to collaborate with us and make your level from scratch.
 
-## Design Patterns
+# Design Patterns
 
-**MVC**
-## Implementation:
+##**MVC**
+### Implementation:
 We implemented the Model, View, Controller design pattern in the vast majority of our code. We have classes which their purpose is to store data (model), classes to represent the interface to the user (view) and
 classes 
 - **State** - We started implementing the State design pattern for the Menu and Instructions. We will also implement a state which represents that a game is taking place and another that represents that the user is in the store.
