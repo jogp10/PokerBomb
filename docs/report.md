@@ -29,13 +29,13 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 ## Design Patterns
 
 ##MVC
-####**Problem in context:**
+####Problem in context:
 It is important to separate the data, interface and control of the game to have a more code reusability and to make the code more organized and easy to implement.
 
-####**The pattern:**
+####The pattern:
 This design pattern is used to separate all the code in three elements(Model, View and Control). The Model does not have dependencies, the View depends on the Model, and the Controller depends on both the Viewer and Model.
 
-####**Implementation:**
+####Implementation:
 The main directory of our project is sub-divided into three different directories for each of the pattern's components: Model, View and Controller.
 <p align="center" justify="center">
   <img src="screenshots/MVC.png" width="321" height="111" title="MVC" alt=""/>
@@ -44,7 +44,7 @@ The main directory of our project is sub-divided into three different directorie
   <b><i>Fig . MVC Pattern</i></b>
 </p>
 
-####**Consequences:**
+####Consequences:
 - Related actions are grouped together so the code is more organized. 
 - The front-end and back-end can be done simultaneously. 
 - The program becomes easier to modify because all three elements are separated from each other.
