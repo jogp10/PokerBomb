@@ -43,9 +43,10 @@ After a while, we decided to go creative. Our code would get full of conditional
 
 #### The Pattern:
 Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
+
 #### Implementation:
 <p align="center" justify="center">
-  <img src="screenshots/FactoryMethod.png" width="660" height="380" title="Mutation Test" alt=""/>
+  <img src="screenshots/FactoryMethod.png" width="330" height="152" title="Mutation Test" alt=""/>
 </p>
 <p align="center">
   <b><i>Fig 3. Factory Method screenshot</i></b>
@@ -75,8 +76,10 @@ We also used the same implementation in creation of States for MVC:
 - [State Factory](../src/main/java/com/pokerbomb/controller/state/FactoryState.java)
 
 #### Consequences:
-- The code may become more complicated since you need to introduce a lot of new subclasses to implement the pattern. The best case scenario is when you’re introducing the pattern into an existing hierarchy of creator classes.
+The use of these patterns in the current design allow the following benefits:
 
+- We can introduce new types of products into the program without breaking existing client code.
+- We avoided tight coupling between the creator and the concrete products.
 ### Strategy Pattern
 
 #### Problem in a Context:
@@ -101,8 +104,10 @@ These classes can be found in the following file:
 - [HardDeckStrategy](../src/main/java/com/pokerbomb/model/game/deck/HardDeckStrategy.java)
 
 #### Consequences:
-- Clients must be aware of the differences between strategies to be able to select a proper one.
+The use of these patterns in the current design allow the following benefits:
 
+- We could isolate the implementation details of an algorithm from the code that uses it.
+- We can introduce new strategies without having to change the context.
 
 ## Testing
 
