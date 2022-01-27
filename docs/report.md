@@ -38,7 +38,7 @@ This design pattern is used to separate all the code in three elements(Model, Vi
 **Implementation:**
 The main directory of our project is sub-divided into three different directories for each of the pattern's components: Model, View and Controller.
 <p align="center" justify="center">
-  <img src="screenshots/MVC.png" width="334" height="227" title="MVC" alt=""/>
+  <img src="screenshots/MVC.png" width="321" height="111" title="MVC" alt=""/>
 </p>
 <p align="center">
   <b><i>Fig . MVC Pattern</i></b>
