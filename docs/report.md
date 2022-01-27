@@ -28,7 +28,7 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 
 # Design Patterns
 
-##**MVC**
+##MVC
 #### Implementation:
 We implemented the Model, View, Controller design pattern in the vast majority of our code. We have classes which their purpose is to store data (model), classes to represent the interface to the user (view) and
 classes 
@@ -36,7 +36,7 @@ classes
 - **Factory Method** - We started implementing the Factory Method design pattern for the Cards, we expect to use it along our project more times.
 
 
-##**Abstract Factory**
+##Abstract Factory
 #### Problem in a Context:
 We create
 
@@ -61,7 +61,7 @@ These classes can be found in the following file:
 - The code may become more complicated than it should be, since a lot of new interfaces and classes are introduced along with the pattern.
 
 
-##**Strategy Pattern**
+##Strategy Pattern
 #### Problem in a Context:
 Aiming for a way to change difficulty of the levels. We generate our decks with probabilities for each special card. This implementation
 makes it possible to not only create this two difficulties but in the future implement more without ease.
