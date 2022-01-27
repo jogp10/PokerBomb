@@ -36,30 +36,46 @@ classes
 - **Factory Method** - We started implementing the Factory Method design pattern for the Cards, we expect to use it along our project more times.
 
 
-### Abstract Factory
+### Factory Method
 #### Problem in a Context:
-We create
+We needed to create various types of cards. Jungle, Frozen, etc. Our first version only handled with Normal Cards, so the code lived inside the Card class.
+After a while, we decided to go creative. Our code would get full of conditionals that switch the app's behavior depending on the class objects.
 
 #### The Pattern:
-Abstract Factory is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
-
+Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
 #### Implementation:
 <p align="center" justify="center">
-  <img src="screenshots/StrategyPattern.png" width="316" height="298" title="Mutation Test" alt=""/>
+  <img src="screenshots/FactoryMethod.png" width="660" height="380" title="Mutation Test" alt=""/>
 </p>
 <p align="center">
-  <b><i>Fig 4. Strategy Pattern screenshot</i></b>
+  <b><i>Fig 3. Factory Method screenshot</i></b>
 </p>
 
 These classes can be found in the following file:
-- [Deck](../src/main/java/com/pokerbomb/model/game/deck/)
-- [DeckStrategy](../src/main/java/com/pokerbomb/model/game/deck/DeckStrategy.java)
-- [EasyDeckStrategy](../src/main/java/com/pokerbomb/model/game/deck/EasyDeckStrategy.java)
-- [HardDeckStrategy](../src/main/java/com/pokerbomb/model/game/deck/HardDeckStrategy.java)
+- [Card](../src/main/java/com/pokerbomb/model/game/cards/Card.java)
+- [Normal Card](../src/main/java/com/pokerbomb/model/game/cards/CardGeneric.java)
+- [Jungle Card](../src/main/java/com/pokerbomb/model/game/cards/JungleCard.java)
+- [Dynamite Card](../src/main/java/com/pokerbomb/model/game/cards/DynamiteCard.java)
+- [Frozen Card](../src/main/java/com/pokerbomb/model/game/cards/FrozenCard.java)
+- [Card Factory](../src/main/java/com/pokerbomb/model/game/cards/CardFactory.java)
+- [Normal Card Factory](../src/main/java/com/pokerbomb/model/game/cards/NormalCardFactory.java)
+- [Jungle Card Factory](../src/main/java/com/pokerbomb/model/game/cards/JungleCardFactory.java)
+- [Dynamite Card Factory](../src/main/java/com/pokerbomb/model/game/cards/DynamiteCardFactory.java)
+- [Frozen Card Factory](../src/main/java/com/pokerbomb/model/game/cards/FrozenCardFactory.java)
+
+We also used the same implementation in creation of States for MVC:
+- [Controller State](../src/main/java/com/pokerbomb/controller/state/ControllerState.java)
+- [Menu State](../src/main/java/com/pokerbomb/controller/state/MenuState.java)
+- [Instructions State](../src/main/java/com/pokerbomb/controller/state/InsState.java)
+- [Store State](../src/main/java/com/pokerbomb/controller/state/StoreState.java)
+- [Select Level State](../src/main/java/com/pokerbomb/controller/state/SelectLevelState.java)
+- [Game State](../src/main/java/com/pokerbomb/controller/state/GameState.java)
+- [Game Win State](../src/main/java/com/pokerbomb/controller/state/GameWinState.java)
+- [Game Over State](../src/main/java/com/pokerbomb/controller/state/GameOverState.java)
+- [State Factory](../src/main/java/com/pokerbomb/controller/state/FactoryState.java)
 
 #### Consequences:
-- The code may become more complicated than it should be, since a lot of new interfaces and classes are introduced along with the pattern.
-
+- The code may become more complicated since you need to introduce a lot of new subclasses to implement the pattern. The best case scenario is when you’re introducing the pattern into an existing hierarchy of creator classes.
 
 ### Strategy Pattern
 
