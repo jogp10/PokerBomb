@@ -29,11 +29,57 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 ## Design Patterns
 
 ### MVC
+#### Problem in context:
+It is important to separate the data, interface and control of the game to have a more code reusability and to make the code more organized and easy to implement.
+
+#### The pattern:
+This design pattern is used to separate all the code in three elements(Model, View and Control). The Model does not have dependencies, the View depends on the Model, and the Controller depends on both the Viewer and Model.
+
 #### Implementation:
-We implemented the Model, View, Controller design pattern in the vast majority of our code. We have classes which their purpose is to store data (model), classes to represent the interface to the user (view) and
-classes 
-- **State** - We started implementing the State design pattern for the Menu and Instructions. We will also implement a state which represents that a game is taking place and another that represents that the user is in the store.
-- **Factory Method** - We started implementing the Factory Method design pattern for the Cards, we expect to use it along our project more times.
+The main directory of our project is sub-divided into three different directories for each of the pattern's components: Model, View and Controller.
+<p align="center" justify="center">
+  <img src="screenshots/MVC.png" width="321" height="111" title="MVC" alt=""/>
+</p>
+<p align="center">
+  <b><i>Fig 1. MVC Pattern</i></b>
+</p>
+
+#### Consequences:
+- Related actions are grouped together so the code is more organized. 
+- The front-end and back-end can be done simultaneously. 
+- The program becomes easier to modify because all three elements are separated from each other.
+
+
+### Singleton
+
+#### Problem in context:
+We wanted to make sure that, during the execution of the game, all of the three PowerUps only have a single instance, so that the player can buy them in the store, use them, and the number of powerups will always be updated globally.
+The player must also be a single instance, in order to manage its coins and interaction with the game effectively.
+
+#### The pattern:
+Just like a global variable, the Singleton pattern grants access to some object from anywhere in the program. However, it also protects that instance from being overwritten by other code.
+As our code has access to the Singleton class, it is able to call the Singleton’s static method. So whenever that method is called, the same object is always returned.
+
+#### Implementation:
+Our "Player" and "PowerUp" classes both implement the Singleton pattern.
+<p align="center" justify="center">
+  <img src="screenshots/Singleton.png" width="430" height="144" title="MVC" alt=""/>
+</p>
+<p align="center">
+  <b><i>Fig 2. Singleton Pattern</i></b>
+</p>
+
+These classes can be found in the following files:
+- [DynamitePowerUp](../src/main/java/com/pokerbomb/model/game/powerup/DynamitePowerUp.java)
+- [FrozenPowerUp](../src/main/java/com/pokerbomb/model/game/powerup/FrozenPowerUp.java)
+- [JunglePowerUp](../src/main/java/com/pokerbomb/model/game/powerup/JunglePowerUp.java)
+- [Player](../src/main/java/com/pokerbomb/model/Player.java)
+
+
+#### Consequences:
+- We can be sure that the class has only a single instance.
+- We gain a global access point to that instance.
+- The singleton object is initialized only when it’s requested for the first time.
 
 
 ### Factory Method
@@ -122,7 +168,7 @@ The use of these patterns in the current design allow the following benefits:
 #### Screenshot of mutation testing report
 [Mutation tests](../build/reports/pitest/202201161841/index.html)
 <p align="center" justify="center">
-  <img src="screenshots/MutationTesting.png" width="664" height="176" title="Mutation Test" alt=""/>
+  <img src="screenshots/MutationTesting.png" width="1097" height="504" title="Mutation Test" alt=""/>
 </p>
 <p align="center">
   <b><i>Fig 6. Mutation Test screenshot</i></b>
