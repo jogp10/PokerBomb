@@ -2,6 +2,7 @@ package com.pokerbomb.controller.state;
 
 import com.pokerbomb.controller.CommandKey;
 import com.pokerbomb.controller.Controller;
+import com.pokerbomb.model.Player;
 import com.pokerbomb.model.game.Game;
 import com.pokerbomb.model.game.cards.Card;
 import com.pokerbomb.model.game.deck.Deck;
@@ -42,6 +43,19 @@ public class GameState extends ControllerState<Game> {
         if ((gameModel.getDeck_1().getDeck().size() >=5) && (gameModel.getDeck_2().getDeck().size() >=5) && (Hand.handRanking(gameModel.getDeck_1().getDeck()).equals("")) && (Hand.handRanking(gameModel.getDeck_2().getDeck()).equals(""))) {
             nextState = factory.genGameOverState();
         }
+
+        boolean flag = true;
+        for (Goal g: gameModel.getLevels().get(gameModel.getLevel()-1).getGoals()) {
+            if (!g.isAchieved()) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag) {
+            nextState = factory.genGameWinState();
+            Player.getInstance().addCoins(20);
+        }
+
         switch (commandKey.getCommandEnum()) {
             case UP:
                 Up();
