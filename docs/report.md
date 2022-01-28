@@ -95,7 +95,7 @@ Factory Method is a creational design pattern that provides an interface for cre
   <img src="screenshots/FactoryMethod.png" width="330" height="152" title="Mutation Test" alt=""/>
 </p>
 <p align="center">
-  <b><i>Fig 3. Factory Method screenshot</i></b>
+  <b><i>Fig 3. Factory Method</i></b>
 </p>
 
 These classes can be found in the following file:
@@ -140,7 +140,7 @@ Strategy is a behavioral design pattern that lets you define a family of algorit
   <img src="screenshots/StrategyPattern.png" width="316" height="298" title="Mutation Test" alt=""/>
 </p>
 <p align="center">
-  <b><i>Fig 4. Strategy Pattern screenshot</i></b>
+  <b><i>Fig 4. Strategy Pattern</i></b>
 </p>
 
 These classes can be found in the following file:
@@ -175,3 +175,9 @@ The use of these patterns in the current design allow the following benefits:
 </p>
 
 ## Self-evaluation
+
+The work was divided in a mutual way and we all contributed with our best. It helped us to enrich our java and principle/pattern knwoledge, as well as our team work.
+
+- Afonso Martins: 33.3%
+- Alexandre Sá: 33.3%
+- João Pinheiro: 33.3%
