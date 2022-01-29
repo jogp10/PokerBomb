@@ -7,6 +7,23 @@ The variety of levels will have increased difficulty with different types of car
 
 This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro (up202008133@up.pt) and Alexandre Sa (up201905383@up.pt) for LDTS 2021-22.
 
+##Game Screenshots
+
+<p align="center" justify="center">
+  <img src="screenshots/game.png" width="579" height="943" title="MVC" alt=""/>
+</p>
+<p align="center">
+  <b><i>Fig 1. In-Game</i></b>
+</p>
+
+<p align="center" justify="center">
+  <img src="screenshots/store.png" width="589" height="839" title="MVC" alt=""/>
+</p>
+<p align="center">
+  <b><i>Fig 2. Game Store</i></b>
+</p>
+
+
 ## Implemented Features
 
 - **Menus** - The user has the capability of browsing through all the menus of the application (Main Menu, Instructions, Store, Level Selection, Game).
@@ -41,7 +58,7 @@ The main directory of our project is sub-divided into three different directorie
   <img src="screenshots/MVC.png" width="321" height="111" title="MVC" alt=""/>
 </p>
 <p align="center">
-  <b><i>Fig 1. MVC Pattern</i></b>
+  <b><i>Fig 3. MVC Pattern</i></b>
 </p>
 
 #### Consequences:
@@ -66,7 +83,7 @@ Our "Player" and "PowerUp" classes both implement the Singleton pattern.
   <img src="screenshots/Singleton.png" width="430" height="144" title="MVC" alt=""/>
 </p>
 <p align="center">
-  <b><i>Fig 2. Singleton Pattern</i></b>
+  <b><i>Fig 4. Singleton Pattern</i></b>
 </p>
 
 These classes can be found in the following files:
@@ -95,7 +112,7 @@ Factory Method is a creational design pattern that provides an interface for cre
   <img src="screenshots/FactoryMethod.png" width="330" height="152" title="Mutation Test" alt=""/>
 </p>
 <p align="center">
-  <b><i>Fig 3. Factory Method</i></b>
+  <b><i>Fig 5. Factory Method</i></b>
 </p>
 
 These classes can be found in the following file:
@@ -140,7 +157,7 @@ Strategy is a behavioral design pattern that lets you define a family of algorit
   <img src="screenshots/StrategyPattern.png" width="316" height="298" title="Mutation Test" alt=""/>
 </p>
 <p align="center">
-  <b><i>Fig 4. Strategy Pattern</i></b>
+  <b><i>Fig 6. Strategy Pattern</i></b>
 </p>
 
 These classes can be found in the following file:
@@ -162,7 +179,7 @@ The use of these patterns in the current design allow the following benefits:
   <img src="screenshots/TestsCoverage.png" width="981" height="227" title="Test Coverage" alt=""/>
 </p>
 <p align="center">
-  <b><i>Fig 5. Code coverage screenshot</i></b>
+  <b><i>Fig 7. Code coverage screenshot</i></b>
 </p>
 
 #### Screenshot of mutation testing report
@@ -171,7 +188,7 @@ The use of these patterns in the current design allow the following benefits:
   <img src="screenshots/MutationTesting.png" width="1097" height="504" title="Mutation Test" alt=""/>
 </p>
 <p align="center">
-  <b><i>Fig 6. Mutation Test screenshot</i></b>
+  <b><i>Fig 8. Mutation Test screenshot</i></b>
 </p>
 
 ## Self-evaluation
