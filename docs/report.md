@@ -7,7 +7,7 @@ The variety of levels will have increased difficulty with different types of car
 
 This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro (up202008133@up.pt) and Alexandre Sa (up201905383@up.pt) for LDTS 2021-22.
 
-##Game Screenshots
+## Game Screenshots
 
 <p align="center" justify="center">
   <img src="screenshots/game.png" width="579" height="943" title="MVC" alt=""/>
