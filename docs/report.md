@@ -36,7 +36,7 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 - **Quests** - To complete a level, the player must complete a set of quests.
 - **Cards and combinations logic** - The game can check for combinations of poker hands and determine if  acertain goal was achieved, updating the in-game quests.
 
-## Planned Features (only the ones on this list were not implemented)
+## Planned Features (the ones we would implement if we add more time)
 
 - **Multipliers** - Each card combination ( poker hand ) will have a multiplier. The hand-score is obtained by multiplying the base type-hand with the multiplier.
 - **Animations** - Several animations are incorporated in this game, like card explosions, win and loss messages or level loading.
