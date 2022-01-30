@@ -171,6 +171,29 @@ The use of these patterns in the current design allow the following benefits:
 
 - We could isolate the implementation details of an algorithm from the code that uses it.
 - We can introduce new strategies without having to change the context.
+### State Pattern
+
+#### Problem in a Context:
+Just like in every game, in this project it was essential that we had some way of changing the game behaviour based on what the user is doing (in the menus, playing or in the store). To solve this problem, we used the state pattern, which is closely related to the concept of a Finite-State Machine.
+
+#### The Pattern:
+The main idea is that, at any given moment, there’s a finite number of states which a program can be in. Within any unique state, the program behaves differently, and the program can be switched from one state to another instantaneously. 
+
+#### Implementation:
+For each state the game can be in, we created a new class. Whenever the controller detects that the game should switch states, a new instance of a state is generated via a factory method and passed to the controller.
+<p align="center" justify="center">
+  <img src="screenshots/StatePattern.png" width="881" height="327" title="Mutation Test" alt=""/>
+</p>
+<p align="center">
+  <b><i>Fig 7. State Pattern</i></b>
+</p>
+
+These classes can be found in the following directory files:
+- [State](../src/main/java/com/pokerbomb/controller/state)
+
+#### Consequences:
+- Single Responsibility Principle. The code related to particular states is organized into separate classes.
+- Simplifies the code of the context by eliminating bulky state machine conditionals.
 
 ## Testing
 
@@ -179,7 +202,7 @@ The use of these patterns in the current design allow the following benefits:
   <img src="screenshots/TestsCoverage.png" width="981" height="227" title="Test Coverage" alt=""/>
 </p>
 <p align="center">
-  <b><i>Fig 7. Code coverage screenshot</i></b>
+  <b><i>Fig 8. Code coverage screenshot</i></b>
 </p>
 
 #### Screenshot of mutation testing report
@@ -188,7 +211,7 @@ The use of these patterns in the current design allow the following benefits:
   <img src="screenshots/MutationTesting.png" width="1097" height="504" title="Mutation Test" alt=""/>
 </p>
 <p align="center">
-  <b><i>Fig 8. Mutation Test screenshot</i></b>
+  <b><i>Fig 9. Mutation Test screenshot</i></b>
 </p>
 
 ## Self-evaluation
