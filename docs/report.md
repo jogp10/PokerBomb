@@ -29,18 +29,18 @@ This project was developed by Afonso Martins (up202005900@up.pt), Joao Pinheiro 
 - **Menus** - The user has the capability of browsing through all the menus of the application (Main Menu, Instructions, Store, Level Selection, Game).
 - **Buttons** - Functional and interactive buttons.
 - **Keyboard control** - The user can use the keyboard to browse and interact with the options in the menu and to control the in-game commands. Inputs are received through the respective events and interpreted according to the current game state.
-- **Shop and money management** - The player may buy new powerups in the store, using the coins earned by playing the game and completing levels.
+- **Shop and money management** - The player may buy new power ups in the store, using the coins earned by playing the game and completing levels.
 - **Cards** - Several types of cards to deal with (jungle cards, dynamite cards , frozen cards).
 - **Power Ups** - Implementation of power-ups (e.g. Unfreeze cards, add plays to dynamite cards, eliminate layers of jungle cards).
 - **Levels** - The player can choose the level to play based on the quests of each one (displayed in the level selection screen).
 - **Quests** - To complete a level, the player must complete a set of quests.
-- **Cards and combinations logic** - The game can check for combinations of poker hands and determine if  acertain goal was achieved, updating the in-game quests.
+- **Cards and combinations logic** - The game can check for combinations of poker hands and determine if  certain goal was achieved, updating the in-game quests.
 
 ## Planned Features (the ones we would implement if we add more time)
 
 - **Multipliers** - Each card combination ( poker hand ) will have a multiplier. The hand-score is obtained by multiplying the base type-hand with the multiplier.
 - **Animations** - Several animations are incorporated in this game, like card explosions, win and loss messages or level loading.
-- **Seasons** - A season is determined by the number of levels passed and for each new season unlocks upgrades. New power-ups will be added to the game, or a free gift may be given to the player, like a money boost or a free power-up.
+- **Seasons** - A season is determined by the number of levels passed and for each new season unlocks upgrades. New power-ups will be added to the game, or a gift may be given to the player, like a money boost or a free power-up.
 - **Build your own level** - We invite you to collaborate with us and make your level from scratch.
 
 ## Design Patterns
@@ -53,7 +53,7 @@ It is important to separate the data, interface and control of the game to have 
 This design pattern is used to separate all the code in three elements(Model, View and Control). The Model does not have dependencies, the View depends on the Model, and the Controller depends on both the Viewer and Model.
 
 #### Implementation:
-The main directory of our project is sub-divided into three different directories for each of the pattern's components: Model, View and Controller.
+The main directory of our project is subdivided into three different directories for each of the pattern's components: Model, View and Controller.
 <p align="center" justify="center">
   <img src="screenshots/MVC.png" width="321" height="111" title="MVC" alt=""/>
 </p>
@@ -70,7 +70,7 @@ The main directory of our project is sub-divided into three different directorie
 ### Singleton
 
 #### Problem in context:
-We wanted to make sure that, during the execution of the game, all of the three PowerUps only have a single instance, so that the player can buy them in the store, use them, and the number of powerups will always be updated globally.
+We wanted to make sure that, during the execution of the game, all of the three PowerUps only have a single instance, so that the player can buy them in the store, use them, and the number of power ups will always be updated globally.
 The player must also be a single instance, in order to manage its coins and interaction with the game effectively.
 
 #### The pattern:
@@ -182,7 +182,7 @@ The main idea is that, at any given moment, there’s a finite number of states 
 #### Implementation:
 For each state the game can be in, we created a new class. Whenever the controller detects that the game should switch states, a new instance of a state is generated via a factory method and passed to the controller.
 <p align="center" justify="center">
-  <img src="screenshots/StatePattern.png" width="882" height="401" title="Mutation Test" alt=""/>
+  <img src="screenshots/StatePattern.png" width="882" height="402" title="Mutation Test" alt=""/>
 </p>
 <p align="center">
   <b><i>Fig 7. State Pattern</i></b>
@@ -194,6 +194,19 @@ These classes can be found in the following directory files:
 #### Consequences:
 - Single Responsibility Principle. The code related to particular states is organized into separate classes.
 - Simplifies the code of the context by eliminating bulky state machine conditionals.
+
+## Know Code Smells And Refactoring Suggestions
+
+#### Switch Statements
+Some classes (e.g. DrawSelectedBorder, ReadLevels) contain many if/switch clauses. We could use
+polymorphism in a large scale in a way to resolve this code smell.
+
+#### Large Classes
+Class Game contain many fields and many methods. We find it needed because class require these fields, the Game is the main class of the program, and it stores a lot of data and deals with all the interface.
+
+#### Data Class
+Some model classes are Data CLasses, as they have no behavior, they just store data. This is caused by **MVC** architectural pattern which holds the responsibility to the controller to implement the logic.
+
 
 ## Testing
 
@@ -216,7 +229,7 @@ These classes can be found in the following directory files:
 
 ## Self-evaluation
 
-The work was divided in a mutual way and we all contributed with our best. It helped us to enrich our java and principle/pattern knwoledge, as well as our team work.
+The work was divided in a mutual way, and we all contributed with our best. It helped us to enrich our java and principle/pattern knowledge, as well as our team work.
 
 - Afonso Martins: 33.3%
 - Alexandre Sá: 33.3%
