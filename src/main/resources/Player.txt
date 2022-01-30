@@ -8,8 +8,8 @@ Jungle
 4
 1
 Dynamite
-3
+5
 1
 Frozen
-1
+2
 1
