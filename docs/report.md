@@ -182,7 +182,7 @@ The main idea is that, at any given moment, there’s a finite number of states 
 #### Implementation:
 For each state the game can be in, we created a new class. Whenever the controller detects that the game should switch states, a new instance of a state is generated via a factory method and passed to the controller.
 <p align="center" justify="center">
-  <img src="screenshots/StatePattern.png" width="881" height="327" title="Mutation Test" alt=""/>
+  <img src="screenshots/StatePattern.png" width="882" height="401" title="Mutation Test" alt=""/>
 </p>
 <p align="center">
   <b><i>Fig 7. State Pattern</i></b>
