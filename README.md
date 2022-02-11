@@ -1,4 +1,4 @@
-# LDTS_T12_G03 - POKER BOMB
+# POKER BOMB
 
 ## Game Description
 
